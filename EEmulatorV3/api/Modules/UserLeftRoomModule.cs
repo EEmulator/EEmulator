@@ -1,0 +1,36 @@
+using System;
+using Nancy;
+using ProtoBuf;
+
+namespace EEmulatorV3.Modules
+{
+    public class UserLeftRoomModule : NancyModule
+    {
+        public UserLeftRoomModule()
+        {
+            this.Post("/api/40", ctx =>
+            {
+                var args = Serializer.Deserialize<UserLeftRoomArgs>(this.Request.Body);
+                throw new NotImplementedException($"The module {nameof(UserLeftRoomModule)} (/api/40) has not been implemented yet.");
+            });
+        }
+    }
+
+    [ProtoContract]
+    public class UserLeftRoomArgs
+    {
+        [ProtoMember(1)]
+        public string ExtendedRoomId { get; set; }
+
+        [ProtoMember(2)]
+        public int NewPlayerCount { get; set; }
+
+        [ProtoMember(3)]
+        public bool Closed { get; set; }
+    }
+
+    [ProtoContract]
+    public class UserLeftRoomOutput
+    {
+    }
+}
