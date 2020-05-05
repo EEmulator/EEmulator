@@ -48,4 +48,26 @@ namespace EEmulatorV3
             }
         }
     }
+
+    public class StatusCodeHandler : IStatusCodeHandler
+    {
+        private readonly IRootPathProvider _rootPathProvider;
+
+        public StatusCodeHandler(IRootPathProvider rootPathProvider)
+        {
+            _rootPathProvider = rootPathProvider;
+        }
+
+        public bool HandlesStatusCode(HttpStatusCode statusCode, NancyContext context)
+        {
+            return statusCode == HttpStatusCode.NotFound;
+        }
+
+        public void Handle(HttpStatusCode statusCode, NancyContext context)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("(Nancy) 404 -> " + context.Request.Path);
+            Console.ResetColor();
+        }
+    }
 }
