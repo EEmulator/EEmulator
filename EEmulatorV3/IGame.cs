@@ -4,5 +4,7 @@
     {
         string GameId { get; }
         GameAssembly GameAssembly { get; }
+
+        void Run();
     }
 }

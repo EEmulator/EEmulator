@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using Nancy;
+using Nancy.ErrorHandling;
 using Nancy.Hosting.Self;
 using PlayerIO.ServerCore.Microlog;
 using PlayerIO.ServerCore.PlayerIOClient;
@@ -14,6 +17,8 @@ namespace EEmulatorV3
 
         public static void Run(IGame game)
         {
+            game.Run();
+            Games.Add(game);
         }
 
         public static void PatchDevelopmentServer()
@@ -22,6 +27,25 @@ namespace EEmulatorV3
             var field = channel.GetType().GetField("apiRegex", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(channel, new Regex("", RegexOptions.Compiled));
             Micrologger.Output.AddFixedTarget(new ConsoleTarget(MicrologLevel.Trace, new MicrologLayout(null)), false);
+        }
+    }
+
+    public class ErrorStatusCodeHandler : IStatusCodeHandler
+    {
+        public bool HandlesStatusCode(HttpStatusCode statusCode, NancyContext context)
+        {
+            return statusCode == HttpStatusCode.InternalServerError;
+        }
+
+        public void Handle(HttpStatusCode statusCode, NancyContext context)
+        {
+            if (context.Items.TryGetValue(NancyEngine.ERROR_EXCEPTION, out var errorObject))
+            {
+                if (errorObject is Exception exception)
+                {
+                    throw exception;
+                }
+            }
         }
     }
 }

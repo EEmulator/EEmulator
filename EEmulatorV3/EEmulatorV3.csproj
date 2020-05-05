@@ -103,6 +103,7 @@
     <Compile Include="api\Modules\DeleteIndexRangeModule.cs" />
     <Compile Include="api\Modules\DeleteObjectsModule.cs" />
     <Compile Include="api\Modules\FacebookOAuthConnectModule.cs" />
+    <Compile Include="api\Modules\FlashBridgeModule.cs" />
     <Compile Include="api\Modules\GameRequestsDeleteModule.cs" />
     <Compile Include="api\Modules\GameRequestsRefreshModule.cs" />
     <Compile Include="api\Modules\GameRequestsSendModule.cs" />
