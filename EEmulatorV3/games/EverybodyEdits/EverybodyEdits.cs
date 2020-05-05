@@ -50,7 +50,7 @@ namespace EEmulatorV3
 
             if (isLine)
                 Console.WriteLine();
-            
+
             Console.ResetColor();
         }
     }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
 
