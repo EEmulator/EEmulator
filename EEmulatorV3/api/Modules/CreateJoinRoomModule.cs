@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,34 @@ namespace EEmulatorV3.Modules
             this.Post("/api/27", ctx =>
             {
                 var args = Serializer.Deserialize<CreateJoinRoomArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(CreateJoinRoomModule)} (/api/27) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                if (string.IsNullOrEmpty(args.RoomId))
+                    args.RoomId = "$service-room$";
+
+                return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
+                {
+                    RoomId = args.RoomId,
+                    Endpoints = new List<ServerEndpoint>() { new ServerEndpoint() { Address = "localhost", Port = 8184 } },
+                    JoinKey = JoinInfo.Create(
+                        encryptionKey: GameManager.EncryptionKey,
+                        serverId: "serverId",
+                        gameId: 1,
+                        gameConnectId: game.GameId,
+                        gameCodeId: "gameCodeId",
+                        serverType: args.RoomType,
+                        roomId: args.RoomId,
+                        roomData: new byte[] { },
+                        extendedRoomId: "",
+                        connectUserId: "",
+                        playerIoToken: token,
+                        visible: true,
+                        roomFlags: 0,
+                        partnerId: "",
+                        userId: 1,
+                        gameCodeVersion: 1)
+                });
             });
         }
     }

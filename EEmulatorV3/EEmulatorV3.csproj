@@ -164,6 +164,7 @@
     <Compile Include="GameAssembly.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="IGame.cs" />
+    <Compile Include="JoinInfo.cs" />
     <Compile Include="PlayerIO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

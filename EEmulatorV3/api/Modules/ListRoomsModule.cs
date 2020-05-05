@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,12 @@ namespace EEmulatorV3.Modules
             this.Post("/api/30", ctx =>
             {
                 var args = Serializer.Deserialize<ListRoomsArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(ListRoomsModule)} (/api/30) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                return PlayerIO.CreateResponse(token, true, new ListRoomsOutput()
+                {
+                    Rooms = new List<RoomInfo>() { } // TODO: collate list rooms with running rooms in game instance.
+                });
             });
         }
     }

@@ -18,8 +18,8 @@ namespace EEmulatorV3
 
         public static void Run(IGame game)
         {
-            game.Run();
             Games.Add(game);
+            game.Run();
         }
 
         public static void PatchDevelopmentServer()
@@ -28,6 +28,13 @@ namespace EEmulatorV3
             var field = channel.GetType().GetField("apiRegex", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(channel, new Regex("", RegexOptions.Compiled));
             Micrologger.Output.AddFixedTarget(new ConsoleTarget(MicrologLevel.Trace, new MicrologLayout(null)), false);
+        }
+
+        public static IGame GetGameFromToken(string token)
+        {
+            var gameConnectId = token.Split(':')[0];
+            var game = Games.Find(x => x.GameId == gameConnectId);
+            return game;
         }
     }
 
