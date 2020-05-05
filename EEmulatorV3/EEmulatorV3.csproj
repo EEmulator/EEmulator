@@ -97,6 +97,7 @@
     <Compile Include="api\Modules\AchievementsRefreshModule.cs" />
     <Compile Include="api\Messages\ApiSecurityRule.cs" />
     <Compile Include="api\Modules\AuthenticateModule.cs" />
+    <Compile Include="api\Modules\ConnectModule.cs" />
     <Compile Include="api\Modules\CreateJoinRoomModule.cs" />
     <Compile Include="api\Modules\CreateObjectsModule.cs" />
     <Compile Include="api\Modules\CreateRoomModule.cs" />
