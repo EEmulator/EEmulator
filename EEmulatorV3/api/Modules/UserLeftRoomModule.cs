@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 using Nancy;
 using ProtoBuf;
 
@@ -11,7 +11,10 @@ namespace EEmulatorV3.Modules
             this.Post("/api/40", ctx =>
             {
                 var args = Serializer.Deserialize<UserLeftRoomArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(UserLeftRoomModule)} (/api/40) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                return PlayerIO.CreateResponse(token, true, new UserLeftRoomOutput());
             });
         }
     }
