@@ -156,12 +156,14 @@
     <Compile Include="api\Modules\SteamConnectModule.cs" />
     <Compile Include="api\Modules\UpdateRoomModule.cs" />
     <Compile Include="api\Modules\UserLeftRoomModule.cs" />
+    <Compile Include="api\Modules\WebserviceOnlineTestModule1.cs" />
     <Compile Include="api\Modules\WriteErrorModule.cs" />
     <Compile Include="games\EverybodyEdits\EverybodyEdits.cs" />
     <Compile Include="games\EverybodyEdits\EverybodyEditsVersion.cs" />
     <Compile Include="GameAssembly.cs" />
     <Compile Include="GameManager.cs" />
     <Compile Include="IGame.cs" />
+    <Compile Include="PlayerIO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

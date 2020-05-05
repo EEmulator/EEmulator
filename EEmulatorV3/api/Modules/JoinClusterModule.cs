@@ -13,7 +13,27 @@ namespace EEmulatorV3.Modules
             this.Post("/api/504", ctx =>
             {
                 var args = Serializer.Deserialize<JoinClusterArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(JoinClusterModule)} (/api/513) has not been implemented yet.");
+
+                return PlayerIO.CreateResponse("token", true, new JoinClusterOutput()
+                {
+                    ActivityLog = "",
+                    APIEndpoints = new List<string>() { "http://localhost:80/api" },
+                    ApiServerName = "WEB5",
+                    ApiServerVersion = "v3.0.7332.33209",
+                    CodescanGameCode = false,
+                    DevelopmentServerDownloadUrl = "https://playerio.com/download/PlayerIO%20SDK.zip",
+                    DevelopmentServerLatestVersion = "3.5.0.0",
+                    DevelopmentServerReleaseNotes = null,
+                    DevelopmentServerRequiredVersion = "2.3.2.0",
+                    EncryptionKey = GameManager.EncryptionKey,
+                    InstanceId = "Instance@1234",
+                    JoinedClusterName = "Main Cluster",
+                    MaxCPUWatchTime = 1000,
+                    MaxPlayersPerRoom = 45,
+                    MaxRoomCloseAPIRequests = 100000,
+                    MaxRoomMB = 10000,
+                    ValidEndpoints = null
+                });
             });
         }
     }

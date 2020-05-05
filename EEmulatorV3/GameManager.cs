@@ -14,6 +14,7 @@ namespace EEmulatorV3
     {
         public static NancyHost WebAPI { get; set; }
         public static List<IGame> Games { get; } = new List<IGame>();
+        public static byte[] EncryptionKey = new byte[] { 0xC0, 0xFF, 0xEE, 0x80, 0x08, 0x55, 0x10, 0xA1, 0xA2, 0xA3, 0xA4, 0xA5, 0xA6, 0xA7, 0xA8, 0xA9 };
 
         public static void Run(IGame game)
         {

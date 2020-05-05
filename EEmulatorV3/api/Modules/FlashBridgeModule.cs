@@ -26,6 +26,11 @@ namespace EEmulatorV3.api.Modules
                 return this.Response.FromStream(new MemoryStream(File.ReadAllBytes(@"bridge\1.swf")), "text/html; charset=utf-8");
             });
 
+            this.Get("/flashbridge/1", x =>
+            {
+                return this.Response.FromStream(new MemoryStream(File.ReadAllBytes(@"bridge\1.swf")), "text/html; charset=utf-8");
+            });
+
             this.Get("crossdomain.xml", x => this.Response.FromStream(new MemoryStream(File.ReadAllBytes(@"bridge\crossdomain.xml")), "application/xml"));
             this.Get("/clients/{version}", x => this.Response.FromStream(new MemoryStream(File.ReadAllBytes(Path.Combine(@"games", "EverybodyEdits", "clients", ((string)x.version).Split(' ')[0], "EverybodyEdits.swf"))), "application/xml"));
         }
