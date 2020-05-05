@@ -109,6 +109,7 @@
     <Compile Include="api\Modules\GameRequestsSendModule.cs" />
     <Compile Include="api\Modules\GetGameAssemblyUrlModule.cs" />
     <Compile Include="api\Modules\GetServerInfoModule.cs" />
+    <Compile Include="api\Modules\JoinClusterModule.cs" />
     <Compile Include="api\Modules\JoinRoomModule.cs" />
     <Compile Include="api\Modules\KongregateConnectModule.cs" />
     <Compile Include="api\Modules\ListRoomsModule.cs" />
