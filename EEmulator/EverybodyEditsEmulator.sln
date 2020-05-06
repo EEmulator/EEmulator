@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEmulator", "EEmulator.csproj", "{8F029242-8413-41B8-9176-4D73B9F23F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixelWalker", "..\GameCode\FlixelWalker\FlixelWalker\FlixelWalker.csproj", "{77BC4533-2681-4CDC-A21A-363F31C2A269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixelWalkerFX3", "..\GameCode\FlixelWalkerFX3\FlixelWalkerFX3\FlixelWalkerFX3.csproj", "{D936458F-5464-4A9D-A4DE-149F0CF9EB49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverybodyEdits01", "..\GameCode\EverybodyEdits01\EverybodyEdits01\EverybodyEdits01.csproj", "{E862BF1A-A7D0-4759-B265-0684EB79DF66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverybodyEdits89", "..\GameCode\EverybodyEdits89\EverybodyEdits\EverybodyEdits89.csproj", "{CC02C1FE-24D2-4891-8552-31CE2E66FF63}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F029242-8413-41B8-9176-4D73B9F23F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F029242-8413-41B8-9176-4D73B9F23F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F029242-8413-41B8-9176-4D73B9F23F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F029242-8413-41B8-9176-4D73B9F23F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E862BF1A-A7D0-4759-B265-0684EB79DF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E862BF1A-A7D0-4759-B265-0684EB79DF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E862BF1A-A7D0-4759-B265-0684EB79DF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E862BF1A-A7D0-4759-B265-0684EB79DF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC02C1FE-24D2-4891-8552-31CE2E66FF63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC02C1FE-24D2-4891-8552-31CE2E66FF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC02C1FE-24D2-4891-8552-31CE2E66FF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC02C1FE-24D2-4891-8552-31CE2E66FF63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1344FD7B-4286-48FA-8052-017FE2C3430D}
+	EndGlobalSection
+EndGlobal
