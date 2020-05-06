@@ -1,5 +1,4 @@
-﻿using System;
-using PlayerIO.GameLibrary;
+﻿using PlayerIO.GameLibrary;
 
 namespace MyGame
 {
