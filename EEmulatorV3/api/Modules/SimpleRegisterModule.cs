@@ -20,7 +20,7 @@ namespace EEmulatorV3.Modules
                 if (File.Exists(Path.Combine(location, args.Username + ".tson")))
                     throw new Exception($"An account already exists with the username '{args.Username}' in game '{args.GameId}'");
 
-                File.WriteAllText(Path.Combine(location, args.Username + ".tson"), 
+                File.WriteAllText(Path.Combine(location, args.Username + ".tson"),
                     new DatabaseObject()
                     .Set("gameId", args.GameId)
                     .Set("email", args.Email ?? "")

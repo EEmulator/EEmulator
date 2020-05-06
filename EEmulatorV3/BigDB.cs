@@ -16,7 +16,7 @@ namespace EEmulatorV3
         {
             this.Game = game;
             this.StorageLocation = Path.Combine("games", "EverybodyEdits", "bigdb", this.Game.GameId);
-            
+
             Directory.CreateDirectory(this.StorageLocation);
         }
 
@@ -63,7 +63,7 @@ namespace EEmulatorV3
         private bool TableExists(string table) => Directory.GetDirectories(this.StorageLocation, "*", SearchOption.TopDirectoryOnly).Select(t => new DirectoryInfo(t)).Any(x => x.Name.ToLower() == table.ToLower());
         private string CorrectTableCase(string table) => Directory.GetDirectories(this.StorageLocation, "*", SearchOption.TopDirectoryOnly).Select(t => new DirectoryInfo(t)).First(x => x.Name.ToLower() == table.ToLower()).Name;
 
-        public (bool exists, DatabaseObject obj) FindObjectIfExists(string table, string key) 
+        public (bool exists, DatabaseObject obj) FindObjectIfExists(string table, string key)
             => File.Exists(Path.Combine(this.StorageLocation, this.CorrectTableCase(table), key + ".tson"))
                 ? (true, DatabaseObject.LoadFromString(File.ReadAllText(Path.Combine(this.StorageLocation, this.CorrectTableCase(table), key + ".tson"))))
                 : ((bool exists, DatabaseObject obj))(false, null);

@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
