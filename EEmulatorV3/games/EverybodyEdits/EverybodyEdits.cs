@@ -12,13 +12,14 @@ namespace EEmulatorV3
         public bool IsRunning { get; private set; }
 
         public GameAssembly GameAssembly =>
-            this.Version == EverybodyEditsVersion.v0500 ? new GameAssembly("FlixelWalker.dll", "FlixelWalker.pdb")
+            this.Version == EverybodyEditsVersion.v0500 ? new GameAssembly("FlixelWalker.dll", "FlixelWalker.pdb") :
+            this.Version == EverybodyEditsVersion.v0700 ? new GameAssembly("FlixelWalkerFX3.dll", "FlixelWalkerFX3.pdb")
             : throw new NotImplementedException($"The version of game specified '{ this.Version }' does not have a game assembly associated with it.");
 
         public string GameId =>
-            this.Version == EverybodyEditsVersion.v0500 ? "everybody-edits-v5"
+            this.Version == EverybodyEditsVersion.v0500 ? "everybody-edits-v5" :
+            this.Version == EverybodyEditsVersion.v0700 ? "everybody-edits-v7"
             : throw new NotImplementedException($"The version of game specified '{ this.Version }' does not have a game id associated with it.");
-
 
         public EverybodyEdits(EverybodyEditsVersion version)
         {
@@ -34,13 +35,13 @@ namespace EEmulatorV3
             this.DevelopmentServer.SetClusterAccessKey("clusterAccessKey", "Username", true);
             this.DevelopmentServer.TryStart();
             this.IsRunning = true;
-            this.DevelopmentServer.Console += this.DevelopmentServerConsoleOutput;
+            this.DevelopmentServer.Console += this.DevelopmentServer_ConsoleOutput;
             this.DevelopmentServer.SetDll(this.GameId, this.GameAssembly.Dll);
 
             Process.Start(Path.Combine("inc", "flashplayer_32_sa_debug.exe"), $"\"" + "http://localhost:80/clients/" + this.Version.ToString() + "\"").WaitForExit();
         }
 
-        private void DevelopmentServerConsoleOutput(string sourceAppDomain, string text, bool isLine, bool isErrorStream)
+        private void DevelopmentServer_ConsoleOutput(string sourceAppDomain, string text, bool isLine, bool isErrorStream)
         {
             if (isErrorStream)
                 Console.ForegroundColor = ConsoleColor.Red;

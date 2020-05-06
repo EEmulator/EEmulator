@@ -19,27 +19,37 @@ namespace EEmulatorV3.Modules
                 if (string.IsNullOrEmpty(args.RoomId))
                     args.RoomId = "$service-room$";
 
+
+                string joinKey = null;
+
+                switch (game.GameId)
+                {
+                    default:
+                        joinKey = JoinInfo.Create(
+                            encryptionKey: GameManager.EncryptionKey,
+                            serverId: "serverId",
+                            gameId: 128,
+                            gameConnectId: game.GameId,
+                            gameCodeId: "gameCodeId",
+                            serverType: args.RoomType,
+                            roomId: args.RoomId,
+                            roomData: new byte[] { },
+                            extendedRoomId: "extendedRoomId",
+                            connectUserId: token.Split(':')[1],
+                            playerIoToken: token,
+                            visible: true,
+                            roomFlags: 0,
+                            partnerId: "",
+                            userId: 1234,
+                            gameCodeVersion: 1);
+                        break;
+                }
+
                 return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
                 {
                     RoomId = args.RoomId,
                     Endpoints = new List<ServerEndpoint>() { new ServerEndpoint() { Address = "localhost", Port = 8184 } },
-                    JoinKey = JoinInfo.Create(
-                        encryptionKey: GameManager.EncryptionKey,
-                        serverId: "serverId",
-                        gameId: 1,
-                        gameConnectId: game.GameId,
-                        gameCodeId: "gameCodeId",
-                        serverType: args.RoomType,
-                        roomId: args.RoomId,
-                        roomData: new byte[] { },
-                        extendedRoomId: "",
-                        connectUserId: "",
-                        playerIoToken: token,
-                        visible: true,
-                        roomFlags: 0,
-                        partnerId: "",
-                        userId: 1,
-                        gameCodeVersion: 1)
+                    JoinKey = joinKey
                 });
             });
         }

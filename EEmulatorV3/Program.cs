@@ -18,6 +18,7 @@ namespace EEmulatorV3
 
             GameManager.WebAPI.Start();
             GameManager.PatchDevelopmentServer();
+            //GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0500));
             GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0500));
 
             Thread.Sleep(-1);

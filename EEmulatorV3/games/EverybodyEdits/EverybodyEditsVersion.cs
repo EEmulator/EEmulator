@@ -2,6 +2,7 @@
 {
     public enum EverybodyEditsVersion
     {
-        v0500
+        v0500,
+        v0700
     }
 }

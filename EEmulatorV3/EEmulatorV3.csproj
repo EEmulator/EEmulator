@@ -186,6 +186,9 @@
     <Content Include="games\EverybodyEdits\clients\v0500\EverybodyEdits.swf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="games\EverybodyEdits\clients\v0700\EverybodyEdits.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="inc\flashplayer_32_sa.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -203,6 +206,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameCode\FlixelWalkerFX3\FlixelWalkerFX3\FlixelWalkerFX3.csproj">
+      <Project>{d936458f-5464-4a9d-a4de-149f0cf9eb49}</Project>
+      <Name>FlixelWalkerFX3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameCode\FlixelWalker\FlixelWalker\FlixelWalker.csproj">
       <Project>{77bc4533-2681-4cdc-a21a-363f31c2a269}</Project>
       <Name>FlixelWalker</Name>

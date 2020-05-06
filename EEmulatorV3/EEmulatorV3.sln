@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEmulatorV3", "EEmulatorV3.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixelWalker", "..\GameCode\FlixelWalker\FlixelWalker\FlixelWalker.csproj", "{77BC4533-2681-4CDC-A21A-363F31C2A269}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixelWalkerFX3", "..\GameCode\FlixelWalkerFX3\FlixelWalkerFX3\FlixelWalkerFX3.csproj", "{D936458F-5464-4A9D-A4DE-149F0CF9EB49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77BC4533-2681-4CDC-A21A-363F31C2A269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D936458F-5464-4A9D-A4DE-149F0CF9EB49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
