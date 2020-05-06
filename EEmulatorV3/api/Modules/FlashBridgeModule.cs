@@ -5,14 +5,13 @@ using Nancy;
 namespace EEmulatorV3.api.Modules
 {
     // TODO: update module to handle games outside of Everybody Edits
-
     public class FlashBridgeModule : NancyModule
     {
         public FlashBridgeModule()
         {
             this.Get("/flashbridge/1/{version}", x =>
             {
-                if (Enum.TryParse<EverybodyEditsVersion>(((string)x.version).Split(' ')[0], out EverybodyEditsVersion gameVersion))
+                if (Enum.TryParse<EverybodyEditsVersion>(((string)x.version).Split(' ')[0], out var gameVersion))
                 {
                     switch (gameVersion)
                     {

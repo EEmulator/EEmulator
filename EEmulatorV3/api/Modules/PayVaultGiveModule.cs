@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
 
 namespace EEmulatorV3.Modules
 {
+    // TODO: Implement this.
     public class PayVaultGiveModule : NancyModule
     {
         public PayVaultGiveModule()
@@ -13,7 +15,17 @@ namespace EEmulatorV3.Modules
             this.Post("/api/178", ctx =>
             {
                 var args = Serializer.Deserialize<PayVaultGiveArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(PayVaultGiveModule)} (/api/178) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                return PlayerIO.CreateResponse(token, true, new PayVaultGiveOutput
+                {
+                    VaultContents = new PayVaultContents
+                    {
+                        Coins = 0,
+                        Items = new List<PayVaultItem>(),
+                        Version = "1"
+                    }
+                });
             });
         }
     }

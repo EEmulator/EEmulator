@@ -255,13 +255,13 @@ namespace MyGame
 				int @int = m.GetInt(0U);
 				if (@int >= 0 && @int <= 5)
 				{
-					this.ips[player.IPAddress.Address] = @int;
+					//this.ips[player.IPAddress.Address] = @int;
 					decimal d = 0m;
 					foreach (long key in this.ips.Keys)
 					{
-						d += this.ips[key];
+					//	d += this.ips[key];
 					}
-					d /= this.ips.Keys.Count;
+					//d /= this.ips.Keys.Count;
 					base.RoomData["rating"] = Math.Round(d * 2m).ToString();
 					base.RoomData.Save();
 				}

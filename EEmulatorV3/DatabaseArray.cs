@@ -8,11 +8,7 @@ namespace EEmulatorV3
 {
     public class DatabaseArray : DatabaseObject, IEnumerable<object>
     {
-        internal DatabaseArray(BigDB owner, string table, string key, string version, List<ObjectProperty> properties) : base(owner, table, key, version, properties)
-        {
-        }
-
-        public DatabaseArray() : base(null, string.Empty, string.Empty, string.Empty, new List<ObjectProperty>())
+        public DatabaseArray() : base(string.Empty, string.Empty, string.Empty, new List<ObjectProperty>())
         {
         }
 

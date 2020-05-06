@@ -12,7 +12,7 @@ namespace EEmulatorV3.Modules
         {
             this.Post("/api/163", ctx =>
             {
-                var args = Serializer.Deserialize<PayVaultRefreshArgs>(this.Request.Body);
+                //var args = Serializer.Deserialize<PayVaultRefreshArgs>(this.Request.Body);
                 var token = this.Request.Headers["playertoken"].FirstOrDefault();
                 var game = GameManager.GetGameFromToken(token);
 

@@ -23,7 +23,7 @@ namespace EEmulatorV3.api.Modules
                         Creator = 0,
                         Key = userId,
                         Properties = DatabaseObjectExtensions.FromDatabaseObject(game.BigDB.Load("PlayerObjects", userId)),
-                        Version = "1"
+                        Version = "1",
                     }
                 });
             });

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,15 @@ namespace EEmulatorV3.Modules
             this.Post("/api/97", ctx =>
             {
                 var args = Serializer.Deserialize<LoadIndexRangeArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(LoadIndexRangeModule)} (/api/97) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                var output = game.BigDB.LoadRange(args.Table, args.Index, args.StartIndexValue, args.StopIndexValue, args.Limit);
+
+                return PlayerIO.CreateResponse(token, true, new LoadIndexRangeOutput
+                {
+                    Objects = output.Select(x => new BigDBObject() { Creator = 0, Key = x.Key, Version = "1", Properties = DatabaseObjectExtensions.FromDatabaseObject(x) }).ToList()
+                });
             });
         }
     }

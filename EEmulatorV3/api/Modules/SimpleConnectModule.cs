@@ -21,6 +21,9 @@ namespace EEmulatorV3.Modules
                     UserId = args.UsernameOrEmail,
                     Token = token,
                     ShowBranding = true,
+                    GameFSRedirectMap = "",
+                    PartnerId = "",
+                    PlayerInsightState = new PlayerInsightState() { PlayersOnline = 0, Segments = new List<KeyValuePair>() { } }
                 });
             });
         }

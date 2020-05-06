@@ -9,9 +9,8 @@ namespace EEmulatorV3
 {
     public partial class DatabaseObject : IDictionary<string, object>
     {
-        internal DatabaseObject(BigDB owner, string table, string key, string version, List<ObjectProperty> properties)
+        internal DatabaseObject(string table, string key, string version, List<ObjectProperty> properties)
         {
-            this.Owner = owner;
             this.Table = table;
             this.Key = key;
             this.Version = version;

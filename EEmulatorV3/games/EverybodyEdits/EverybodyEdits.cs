@@ -74,6 +74,7 @@ namespace EEmulatorV3
                 case EverybodyEditsVersion.v89:
                     this.BigDB.CreateTable("Config");
                     this.BigDB.CreateTable("Worlds");
+                    this.BigDB.CreateTable("Usernames");
 
                     this.BigDB.CreateObject("PlayerObjects", "guest", new DatabaseObject()
                         .Set("owner", "simpleGuest")
