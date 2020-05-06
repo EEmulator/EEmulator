@@ -19,6 +19,9 @@ namespace EEmulatorV3.api.Modules
                         case EverybodyEditsVersion.v0500:
                             return this.Response.FromStream(new MemoryStream(File.ReadAllBytes(@"bridge\1.swf")), "text/html; charset=utf-8");
 
+                        case EverybodyEditsVersion.v89:
+                            return this.Response.FromStream(new MemoryStream(File.ReadAllBytes(@"bridge\v89.swf")), "text/html; charset=utf-8");
+
                         default: throw new NotImplementedException("The game version requested does not have a corresponding flash bridge version.");
                     }
                 }

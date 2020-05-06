@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,21 @@ namespace EEmulatorV3.Modules
             this.Post("/api/88", ctx =>
             {
                 var args = Serializer.Deserialize<SaveObjectChangesArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(SaveObjectChangesModule)} (/api/88) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                var versions = new List<string>();
+
+                foreach (var set in args.Changesets)
+                {
+                    var dbo = game.BigDB.Load(set.Table, set.Key);
+
+                    if (set.FullOverwrite)
+                    {
+                    }
+                }
+
+                return PlayerIO.CreateResponse(token, true, new SaveObjectChangesOutput() { Versions = versions });
             });
         }
     }

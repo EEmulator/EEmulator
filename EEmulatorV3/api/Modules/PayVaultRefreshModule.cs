@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -12,7 +13,17 @@ namespace EEmulatorV3.Modules
             this.Post("/api/163", ctx =>
             {
                 var args = Serializer.Deserialize<PayVaultRefreshArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(PayVaultRefreshModule)} (/api/163) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                return PlayerIO.CreateResponse(token, true, new PayVaultRefreshOutput()
+                {
+                    VaultContents = new PayVaultContents()
+                    {
+                        Coins = 0,
+                        Version = "22040806-3e9f-438e-97eb-51069207926d"
+                    }
+                });
             });
         }
     }

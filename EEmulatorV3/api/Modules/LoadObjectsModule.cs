@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,29 @@ namespace EEmulatorV3.Modules
             this.Post("/api/85", ctx =>
             {
                 var args = Serializer.Deserialize<LoadObjectsArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(LoadObjectsModule)} (/api/85) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                var response = new List<BigDBObject>();
+                foreach (var kvp in args.ObjectIds)
+                {
+                    var table = kvp.Table.ToLower();
+
+                    foreach (var key in kvp.Keys)
+                    {
+                        var obj = game.BigDB.Load(table, key);
+
+                        response.Add(new BigDBObject()
+                        {
+                            Creator = 0,
+                            Key = key,
+                            Properties = DatabaseObjectExtensions.FromDatabaseObject(obj),
+                            Version = "1"
+                        });
+                    }
+                }
+
+                return PlayerIO.CreateResponse(token, true, new LoadObjectsOutput() { Objects = response });
             });
         }
     }

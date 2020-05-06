@@ -18,8 +18,11 @@ namespace EEmulatorV3
 
             GameManager.WebAPI.Start();
             GameManager.PatchDevelopmentServer();
+
             //GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0500));
-            GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0500));
+            //GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0700));
+            //GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v0800));
+            GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v89));
 
             Thread.Sleep(-1);
         }

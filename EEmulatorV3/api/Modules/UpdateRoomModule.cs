@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,9 @@ namespace EEmulatorV3.Modules
             this.Post("/api/53", ctx =>
             {
                 var args = Serializer.Deserialize<UpdateRoomArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(UpdateRoomModule)} (/api/53) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                return PlayerIO.CreateResponse(token, true, new UpdateRoomOutput() { });
             });
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,14 @@ namespace EEmulatorV3.Modules
             this.Post("/api/400", ctx =>
             {
                 var args = Serializer.Deserialize<SimpleConnectArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(SimpleConnectModule)} (/api/400) has not been implemented yet.");
+                var token = args.GameId + ":" + args.UsernameOrEmail;
+
+                return PlayerIO.CreateResponse(token, true, new SimpleConnectOutput()
+                {
+                    UserId = args.UsernameOrEmail,
+                    Token = token,
+                    ShowBranding = true,
+                });
             });
         }
     }

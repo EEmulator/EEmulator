@@ -88,6 +88,7 @@
     <Compile Include="api\Messages\SocialProfile.cs" />
     <Compile Include="api\Messages\UserAchievements.cs" />
     <Compile Include="api\Messages\ValueObject.cs" />
+    <Compile Include="api\Messages\ValueType.cs" />
     <Compile Include="api\Messages\WaitingGameRequest.cs" />
     <Compile Include="api\Modules\AchievementsLoadModule.cs" />
     <Compile Include="api\Modules\AchievementsProgressAddModule.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="api\Modules\ListRoomsModule.cs" />
     <Compile Include="api\Modules\LoadIndexRangeModule.cs" />
     <Compile Include="api\Modules\LoadMatchingObjectsModule.cs" />
+    <Compile Include="api\Modules\LoadMyPlayerObjectModule.cs" />
     <Compile Include="api\Modules\LoadObjectsModule.cs" />
     <Compile Include="api\Messages\LockType.cs" />
     <Compile Include="api\Modules\NotificationsDeleteEndpointsModule.cs" />
@@ -159,10 +161,16 @@
     <Compile Include="api\Modules\UserLeftRoomModule.cs" />
     <Compile Include="api\Modules\WebserviceOnlineTestModule1.cs" />
     <Compile Include="api\Modules\WriteErrorModule.cs" />
+    <Compile Include="BigDB.cs" />
+    <Compile Include="DatabaseArray.cs" />
+    <Compile Include="DatabaseObject.cs" />
+    <Compile Include="helpers\DatabaseObjectExtensions.cs" />
     <Compile Include="games\EverybodyEdits\EverybodyEdits.cs" />
     <Compile Include="games\EverybodyEdits\EverybodyEditsVersion.cs" />
     <Compile Include="GameAssembly.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="helpers\DateTimeExtensions.cs" />
+    <Compile Include="helpers\Tson.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="JoinInfo.cs" />
     <Compile Include="PlayerIO.cs" />
@@ -189,6 +197,12 @@
     <Content Include="games\EverybodyEdits\clients\v0700\EverybodyEdits.swf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="games\EverybodyEdits\clients\v0800\EverybodyEdits.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\clients\v89\EverybodyEdits.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="inc\flashplayer_32_sa.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -206,6 +220,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameCode\EverybodyEdits01\EverybodyEdits01\EverybodyEdits01.csproj">
+      <Project>{e862bf1a-a7d0-4759-b265-0684eb79df66}</Project>
+      <Name>EverybodyEdits01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\EverybodyEdits89\EverybodyEdits\EverybodyEdits89.csproj">
+      <Project>{cc02c1fe-24d2-4891-8552-31ce2e66ff63}</Project>
+      <Name>EverybodyEdits89</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GameCode\FlixelWalkerFX3\FlixelWalkerFX3\FlixelWalkerFX3.csproj">
       <Project>{d936458f-5464-4a9d-a4de-149f0cf9eb49}</Project>
       <Name>FlixelWalkerFX3</Name>

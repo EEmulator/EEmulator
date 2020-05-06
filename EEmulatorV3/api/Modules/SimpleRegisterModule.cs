@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using EEmulatorV3.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,26 @@ namespace EEmulatorV3.Modules
             this.Post("/api/403", ctx =>
             {
                 var args = Serializer.Deserialize<SimpleRegisterArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(SimpleRegisterModule)} (/api/403) has not been implemented yet.");
+                var token = args.GameId + ":" + args.Username;
+                var location = Path.Combine("games", "EverybodyEdits", "accounts", args.GameId);
+
+                if (File.Exists(Path.Combine(location, args.Username + ".tson")))
+                    throw new Exception($"An account already exists with the username '{args.Username}' in game '{args.GameId}'");
+
+                File.WriteAllText(Path.Combine(location, args.Username + ".tson"), 
+                    new DatabaseObject()
+                    .Set("gameId", args.GameId)
+                    .Set("email", args.Email ?? "")
+                    .Set("username", args.Username)
+                    .Set("password", args.Password)
+                    .ToString());
+
+                return PlayerIO.CreateResponse(token, true, new SimpleRegisterOutput()
+                {
+                    UserId = args.Username,
+                    Token = token,
+                    ShowBranding = true
+                });
             });
         }
     }
