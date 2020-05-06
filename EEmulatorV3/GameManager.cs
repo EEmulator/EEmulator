@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Nancy;
+using Nancy.Bootstrapper;
 using Nancy.ErrorHandling;
 using Nancy.Hosting.Self;
 using PlayerIO.ServerCore.Microlog;
@@ -35,6 +37,21 @@ namespace EEmulatorV3
             var gameConnectId = token.Split(':')[0];
             var game = Games.Find(x => x.GameId == gameConnectId);
             return game;
+        }
+    }
+
+    public class BeforeAllRequests : IApplicationStartup
+    {
+        public void Initialize(IPipelines pipelines)
+        {
+            pipelines.BeforeRequest.AddItemToStartOfPipeline(ctx =>
+            {
+                if (ctx != null)
+                {
+                    Console.WriteLine("Request: " + ctx.Request.Session + " >> " + ctx.Request.Url);
+                }
+                return null;
+            });
         }
     }
 

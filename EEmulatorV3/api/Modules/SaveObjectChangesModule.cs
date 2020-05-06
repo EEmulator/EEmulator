@@ -26,6 +26,8 @@ namespace EEmulatorV3.Modules
                     if (set.FullOverwrite)
                     {
                     }
+
+                    versions.Add("1");
                 }
 
                 return PlayerIO.CreateResponse(token, true, new SaveObjectChangesOutput() { Versions = versions });

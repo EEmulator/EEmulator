@@ -30,6 +30,7 @@ namespace EEmulatorV3.Modules
                     else
                     {
                         game.BigDB.CreateObject(obj.Table, obj.Key, new DatabaseObject(obj.Table, obj.Key, "1", obj.Properties));
+                        results.Add(new BigDBObject() { Key = obj.Key, Creator = 1, Properties = obj.Properties, Version = "1" });
                     }
                 }
 
