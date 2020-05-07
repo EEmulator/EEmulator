@@ -19,6 +19,8 @@ namespace EEmulator.Modules
                 if (string.IsNullOrEmpty(args.RoomId))
                     args.RoomId = "$service-room$";
 
+                args.RoomId.Replace(" ", "-");
+
                 string joinKey = null;
 
                 switch (game.GameId)

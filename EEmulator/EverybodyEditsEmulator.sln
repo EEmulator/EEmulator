@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameCode", "GameCode", "{DF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEmulatorLauncher", "..\EEmulatorLauncher\EEmulatorLauncher.csproj", "{E4C9E5E1-58E9-44B3-9796-43C675DF5E2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverybodyEdits188", "..\GameCode\EverybodyEdits188\Serverside Code\Game Code\EverybodyEdits188.csproj", "{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{E4C9E5E1-58E9-44B3-9796-43C675DF5E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4C9E5E1-58E9-44B3-9796-43C675DF5E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4C9E5E1-58E9-44B3-9796-43C675DF5E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{D936458F-5464-4A9D-A4DE-149F0CF9EB49} = {DFBB9DA6-3620-4F4E-8386-2785D23D343B}
 		{E862BF1A-A7D0-4759-B265-0684EB79DF66} = {DFBB9DA6-3620-4F4E-8386-2785D23D343B}
 		{CC02C1FE-24D2-4891-8552-31CE2E66FF63} = {DFBB9DA6-3620-4F4E-8386-2785D23D343B}
+		{9D801530-A9AF-4A0B-8639-B2DEB7D9E333} = {DFBB9DA6-3620-4F4E-8386-2785D23D343B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1344FD7B-4286-48FA-8052-017FE2C3430D}

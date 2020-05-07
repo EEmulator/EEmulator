@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulator.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +13,15 @@ namespace EEmulator.Modules
             this.Post("/api/94", ctx =>
             {
                 var args = Serializer.Deserialize<LoadMatchingObjectsArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(LoadMatchingObjectsModule)} (/api/94) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
+
+                var matches = game.BigDB.LoadMatchingObjects(args.Table, args.Index, args.IndexValue, args.Limit);
+
+                return PlayerIO.CreateResponse(token, true, new LoadMatchingObjectsOutput()
+                {
+                    Objects = matches.Select(x => new BigDBObject() { Creator = 0, Key = x.Key, Properties = DatabaseObjectExtensions.FromDatabaseObject(x), Version = "1" }).ToList()
+                });
             });
         }
     }

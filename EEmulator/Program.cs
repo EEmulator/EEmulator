@@ -20,7 +20,7 @@ namespace EEmulator
 
             if (Debugger.IsAttached)
             {
-                args = new string[] { "EverybodyEdits", "v0800" };
+                args = new string[] { "EverybodyEdits", "v188" };
             }
 
             if (args.Length < 2)
@@ -60,6 +60,14 @@ namespace EEmulator
 
                     case "v89":
                         GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v89));
+                        break;
+
+                    case "v188":
+                        GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v188));
+                        break;
+
+                    default:
+                        Console.WriteLine("ERROR: A preset for the specified game and version could not be found.");
                         break;
                 }
             }

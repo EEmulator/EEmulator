@@ -179,6 +179,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="games\EverybodyEdits\includes\PW01.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +201,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="games\EverybodyEdits\clients\v0800\EverybodyEdits.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\clients\v188\EverybodyEdits.swf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="games\EverybodyEdits\clients\v89\EverybodyEdits.swf">
@@ -223,6 +229,10 @@
     <ProjectReference Include="..\GameCode\EverybodyEdits01\EverybodyEdits01\EverybodyEdits01.csproj">
       <Project>{e862bf1a-a7d0-4759-b265-0684eb79df66}</Project>
       <Name>EverybodyEdits01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\EverybodyEdits188\Serverside Code\Game Code\EverybodyEdits188.csproj">
+      <Project>{9d801530-a9af-4a0b-8639-b2deb7d9e333}</Project>
+      <Name>EverybodyEdits188</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameCode\EverybodyEdits89\EverybodyEdits\EverybodyEdits89.csproj">
       <Project>{cc02c1fe-24d2-4891-8552-31ce2e66ff63}</Project>

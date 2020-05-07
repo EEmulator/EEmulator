@@ -19,7 +19,11 @@ namespace EEmulator.Modules
                 var roomType = args.ExtendedRoomId.Split('/')[1];
                 var roomId = args.ExtendedRoomId.Split('/')[2];
 
-                game.Rooms.Add(new RoomInfo() { Id = roomId, OnlineUsers = 1, RoomData = new List<KeyValuePair>(), RoomType = roomType });
+                if (!game.Rooms.Any(x => x.RoomType == roomType && x.Id == roomId))
+                {
+                    game.Rooms.Add(new RoomInfo() { Id = roomId, OnlineUsers = 1, RoomData = new List<KeyValuePair>(), RoomType = roomType });
+                }
+
                 return PlayerIO.CreateResponse(token, true, new UpdateRoomOutput() { });
             });
         }

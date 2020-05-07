@@ -1,0 +1,286 @@
+{
+    "width": int(600),
+    "height": int(25),
+    "name": string("Benjaminsen's Stuff"),
+    "worlddata": [
+        {
+            "type": uint(9),
+            "x": bytes("AQABAQECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQEOAQ8BEAERARIBEwEUARUBFgEXARgBGQEaARsBHAEdAR4BHwEgASEBIgEjASQBJQEmAScBKAEpASoBKwEsAS0BLgEvATABMQEyATMBNAE1ATYBNwE4ATkBOgE7ATwBPQE+AT8BQAFBAUIBQwFEAUUBRgFHAUgBSQFKAUsBTAFNAU4BTwFQAVEBUgFTAVQBVQFWAVcBWAFZAVoBWwFcAV0BXgFfAWABYQFiAWMBZAFlAWYBZwFoAWkBagFrAWwBbQFuAW8BcAFxAXIBcwF0AXUBdgF3AXgBeQF6AXsBfAF9AX4BfwGAAYEBggGDAYQBhQGGAYcBiAGJAYoBiwGMAY0BjgGPAZABkQGSAZMBlAGVAZYBlwGYAZkBmgGbAZwBnQGeAZ8BoAGhAaIBowGkAaUBpgGnAagBqQGqAasBrAGtAa4BrwGwAbEBsgGzAbQBtQG2AbcBuAG5AboBuwG8Ab0BvgG/AcABwQHCAcMBxAHFAcYBxwHIAckBygHLAcwBzQHOAc8B0AHRAdIB0wHUAdUB1gHXAdgB2QHaAdsB3AHdAd4B3wHgAeEB4gHjAeQB5QHmAecB6AHpAeoB6wHsAe0B7gHvAfAB8QHyAfMB9AH1AfYB9wH4AfkB+gH7AfwB/QH+Af8CAAIBAgICAwIEAgUCBgIHAggCCQIKAgsCDAINAg4CDwIQAhECEgITAhQCFQIWAhcCGAIZAhoCGwIcAh0CHgIfAiACIQIiAiMCJAIlAiYCJwIoAikCKgIrAiwCLQIuAi8CMAIxAjICMwI0AjUCNgI3AjgCOQI6AjsCPAI9Aj4CPwJAAkECQgJDAkQCRQJGAkcCSAJJAkoCSwJMAk0CTgJPAlACUQJSAlMCVAJVAlYCVwJXAlcCVwJXAgQCVwJXAgECBwJXAgECAgIDAgQCBQIGAgcCCAIJAgoCCwIMAg0CDgIPAhACEQISAhMCFAIVAhYCFwIYAhkCGgIbAh0CHgIfAiACIwIkAiUCJgInAigCKQIqAisCLAIuAi8CMAIxAjICMwI0AjUCNgI3AjgCOQI6AjsCPAI9Aj4CPwJAAkECQgJDAkQCRQJGAkcCSAJJAkoCSwJMAk0CVwJXAlcCTQJXAlcCVwJNAlcCVwJXAk0CVwJXAlcCVwJXAlcCVwEAAQEBAgEDAQQBBQEGAQcBCAEJAQoBCwEMAQ0BDgEPARABEQESARMBFAEVARYBFwEYARkBGgEbARwBHQEeAR8BIAEhASIBIwEkASUBJgEnASgBKQEqASsBLAEtAS4BLwEwATEBMgEzATQBNQE2ATcBOAE5AToBOwE8AT0BPgE/AUABQQFCAUMBRAFFAUYBRwFIAUkBSgFLAUwBTQFOAU8BUAFRAVIBUwFUAVUBVgFXAVgBWQFaAVsBXAFdAV4BXwFgAWEBYgFjAWQBZQFmAWcBaAFpAWoBawFsAW0BbgFvAXABcQFyAXMBdAF1AXYBdwF4AXkBegF7AXwBfQF+AX8BgAGBAYIBgwGEAYUBhgGHAYgBiQGKAYsBjAGNAY4BjwGQAZEBkgGTAZQBlQGWAZcBmAGZAZoBmwGcAZ0BngGfAaABoQGiAaMBpAGlAaYBpwGoAakBqgGrAawBrQGuAa8BsAGxAbIBswG0AbUBtgG3AbgBuQG6AbsBvAG9Ab4BvwHAAcEBwgHDAcQBxQHGAccByAHJAcoBywHMAc0BzgHPAdAB0QHSAdMB1AHVAdYB1wHYAdkB2gHbAdwB3QHeAd8B4AHhAeIB4wHkAeUB5gHnAegB6QHqAesB7AHtAe4B7wHwAfEB8gHzAfQB9QH2AfcB+AH5AfoB+wH8Af0B/gH/AgACAQICAgMCBAIFAgYCBwIIAgkCCgILAgwCDQIOAg8CEAIRAhICEwIUAhUCFgIXAhgCGQIaAhsCHAIdAh4CHwIgAiECIgIjAiQCJQImAicCKAIpAioCKwIsAi0CLgIvAjACMQIyAjMCNAI1AjYCNwI4AjkCOgI7AjwCPQI+Aj8CQAJBAkICQwJEAkUCRgJHAkgCSQJKAksCTAJNAk4CTwJQAlECUgJTAlQCVQJWAlc="),
+            "y": bytes("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAIAAwAEAAUABQAGAAcABwAHAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAJAAoACwALAAwADQAOAA4ADwAQABEAEQASABMAFAAVABYAFwAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABgAGAAYABg="),
+            "layer": int(0),
+            "x1": bytes("AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w=="),
+            "y1": bytes("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGA==")
+        },
+        {
+            "type": uint(3),
+            "layer": int(0),
+            "x1": bytes("AwMDAwMDAwMDAwMD"),
+            "y1": bytes("AQIDBAUGBwgJCgsM")
+        },
+        {
+            "type": uint(43),
+            "layer": int(0),
+            "goal": uint(1),
+            "x1": bytes("BgYGBgYGBgYGBgYGBgYGBg=="),
+            "y1": bytes("AQIDBAUGBwgJCgsMDQ4PEA==")
+        },
+        {
+            "type": uint(100),
+            "layer": int(0),
+            "x1": bytes("CQ0EARg="),
+            "y1": bytes("AQECFBY=")
+        },
+        {
+            "type": uint(43),
+            "layer": int(0),
+            "goal": uint(2),
+            "x1": bytes("CgoKCgoKCgoKCgoKCgoKCgo="),
+            "y1": bytes("AQIDBAUGBwgJCgsMDQ4PEBE=")
+        },
+        {
+            "type": uint(16),
+            "layer": int(0),
+            "x": bytes("AkoCSwJMAk0CTgJPAlA="),
+            "y": bytes("ABQAFAAUABQAFAAUABQ="),
+            "x1": bytes("Dg4ODhYODg4ODg4ODg8QERITFBUWFxgZDhkODhkOGQ4ZDA0OEBESExQVFhcYGVtcXV5fYGFiY2RlZmdoaWprbG1ub3BxcgIMGQIMGQECAwQHCAkKCwwZDA4RFBcZGQ=="),
+            "y1": bytes("AQIDBAQFBgcICQoLDAwMDAwMDAwMDAwMDQ0ODw8QEBEREhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhMTExQUFBUVFRUVFRUVFRUVFhYWFhYWFw==")
+        },
+        {
+            "type": uint(1),
+            "layer": int(0),
+            "x": bytes("AkE="),
+            "y": bytes("ABQ="),
+            "x1": bytes("BQUFBQUFGxwdHh8gISIjBQUFBQUFBQUODxAREhMUFRYXGA=="),
+            "y1": bytes("AgMEBQYHBwcHBwcHBwcHCAkKCwwNDg8XFxcXFxcXFxcXFw==")
+        },
+        {
+            "type": uint(2),
+            "layer": int(0),
+            "x1": bytes("DAwLCw0NDQwM"),
+            "y1": bytes("AwQGBwgJCg0O")
+        },
+        {
+            "type": uint(4),
+            "layer": int(0),
+            "x1": bytes("CQkJCQkJCRoaGhoaGg8aDxoPGg8aGg=="),
+            "y1": bytes("BAUGBwgJCgwNDxAREhMTFBQVFRYWFw==")
+        },
+        {
+            "type": uint(385),
+            "layer": int(0),
+            "x": bytes("AgQ="),
+            "y": bytes("AAQ="),
+            "text": string("jesse was here!"),
+            "signtype": uint(0)
+        },
+        {
+            "type": uint(50),
+            "layer": int(0),
+            "x": bytes("AhsCIAIbAiA="),
+            "y": bytes("AAYABgAHAAc=")
+        },
+        {
+            "type": uint(17),
+            "layer": int(0),
+            "x1": bytes("ExI="),
+            "y1": bytes("Bwg=")
+        },
+        {
+            "type": uint(5),
+            "layer": int(0),
+            "x": bytes("AgQ="),
+            "y": bytes("AAc=")
+        },
+        {
+            "type": uint(92),
+            "layer": int(0),
+            "x": bytes("AVwBXQFcAV0BXAFdAVwBXQFcAV0BXQ=="),
+            "y": bytes("AAoACgALAAsADAAMAA0ADQAOAA4ADw==")
+        },
+        {
+            "type": uint(315),
+            "layer": int(0),
+            "x": bytes("AV4="),
+            "y": bytes("AAw=")
+        },
+        {
+            "type": uint(311),
+            "layer": int(0),
+            "x": bytes("AV8BYAFhAWIBYw=="),
+            "y": bytes("AAwADAAMAAwADA==")
+        },
+        {
+            "type": uint(255),
+            "layer": int(0),
+            "x1": bytes("Ag=="),
+            "y1": bytes("DQ==")
+        },
+        {
+            "type": uint(143),
+            "layer": int(0),
+            "x": bytes("AV4BXwFgAWEBYgFj"),
+            "y": bytes("AA0ADQANAA0ADQAN")
+        },
+        {
+            "type": uint(314),
+            "layer": int(0),
+            "x": bytes("AWQ="),
+            "y": bytes("AA0=")
+        },
+        {
+            "type": uint(35),
+            "layer": int(0),
+            "x1": bytes("AQIDBAUEBQYHCAk="),
+            "y1": bytes("ERERERESEhISEhI=")
+        },
+        {
+            "type": uint(36),
+            "layer": int(0),
+            "x1": bytes("Bgo="),
+            "y1": bytes("ERI=")
+        },
+        {
+            "type": uint(43),
+            "layer": int(0),
+            "x1": bytes("Cw=="),
+            "y1": bytes("Eg=="),
+            "goal": uint(3)
+        },
+        {
+            "type": uint(43),
+            "layer": int(0),
+            "x1": bytes("Dw=="),
+            "y1": bytes("Eg=="),
+            "goal": uint(5)
+        },
+        {
+            "type": uint(265),
+            "layer": int(0),
+            "x1": bytes("JCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0+P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn+AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+/w=="),
+            "y1": bytes("ExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTEw=="),
+            "x": bytes("AQABAQECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQEOAQ8BEAERARIBEwEUARUBFgEXARgBGQEaARsBHAEdAR4BHwEgASEBIgEjASQBJQEmAScBKAEpASoBKwEsAS0BLgEvATABMQEyATMBNAE1ATYBNwE4ATkBOgE7ATwBPQE+AT8BQAFBAUIBQwFEAUUBRgFHAUgBSQFKAUsBTAFNAU4BTwFQAVEBUgFTAVQBVQFWAVcBWAFZAVoBWwFcAV0BXgFfAWABYQFiAWMBZAFlAWYBZwFoAWkBagFrAWwBbQFuAW8BcAFxAXIBcwF0AXUBdgF3AXgBeQF6AXsBfAF9AX4BfwGAAYEBggGDAYQBhQGGAYcBiAGJAYoBiwGMAY0BjgGPAZABkQGSAZMBlAGVAZYBlwGYAZkBmgGbAZw="),
+            "y": bytes("ABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABMAEwATABM=")
+        },
+        {
+            "type": uint(412),
+            "layer": int(0),
+            "x": bytes("Akc="),
+            "y": bytes("ABQ=")
+        },
+        {
+            "type": uint(43),
+            "layer": int(0),
+            "x1": bytes("DA=="),
+            "y1": bytes("Fw=="),
+            "goal": uint(4)
+        },
+        {
+            "type": uint(507),
+            "layer": int(1),
+            "x1": bytes("AQIDBAUHCAkLDA0BAgMEBQcICQsMDQECAwQFBwgJCwwNAQIDBAUHCAkLDA0BAgMEBQcICQsMDQECAwQFBwgJCwwNAQIDBAUHCAkLDA0BAgMEBQcICQsMDQECAwQFBwgJCwwNAQIDBAUHCAkLDA0BAgMEBQcICQsMDQECAwQFBwgJCwwNAQIDBAUHCAkLDA0BAgMEBQcICQsMDQECAwQFBwgJCwwNAQIDBAUHCAkLDA0HCAkLDA0BAgMBAgMEBQYHCAkKCwECAwQFBgcICQoLAQIDBAUGBwECAwQFBgcICQoLAAECAwQFBgcICQoL"),
+            "y1": bytes("AQEBAQEBAQEBAQECAgICAgICAgICAgMDAwMDAwMDAwMDBAQEBAQEBAQEBAQFBQUFBQUFBQUFBQYGBgYGBgYGBgYGBwcHBwcHBwcHBwcICAgICAgICAgICAkJCQkJCQkJCQkJCgoKCgoKCgoKCgoLCwsLCwsLCwsLCwwMDAwMDAwMDAwMDQ0NDQ0NDQ0NDQ0ODg4ODg4ODg4ODg8PDw8PDw8PDw8PEBAQEBAQEBAQEBARERERERESEhITExMTExMTExMTExQUFBQUFBQUFBQUFRUVFRUVFRYWFhYWFhYWFhYWFxcXFxcXFxcXFxcX")
+        },
+        {
+            "type": uint(512),
+            "layer": int(1),
+            "x1": bytes("BgoGCgYKBgoGCgYKBgoGCgYKBgoGCgYKBgoGCgYKBgoKCww="),
+            "y1": bytes("AQECAgMDBAQFBQYGBwcICAkJCgoLCwwMDQ0ODg8PEBAREhc=")
+        },
+        {
+            "type": uint(541),
+            "layer": int(1),
+            "x1": bytes("e3x+dXt/gIGCg4GCg4RzeoCBc3p9dHV3eXFyc3B0b3dvdG9wcQ=="),
+            "y1": bytes("BAQEBQUFBQUFBQYGBgYHBwcHCAgICQkJCQoKCgsLDAwNDQ4ODg==")
+        },
+        {
+            "type": uint(551),
+            "layer": int(1),
+            "x1": bytes("lZajlpucnp+goaKlpqiUmp6foKGjpKaoqaqsrZSZnp+io6anqaqtrrDBwsvMzZmeoKGipqmsra6xubrBzM3OlJqbnp+goaKlp7C5urvAwczNnJ6goaKjpaerra6vubrAzM3Oz9DRlJaco6SoqaqrrLq7vL2+v8GYpKWnqarLwsPGybmruK2usbS1"),
+            "y1": bytes("BQUFBgYGBgYGBgYGBgYHBwcHBwcHBwcHBwcHBwgICAgICAgICAgICAgICAgICAkJCQkJCQkJCQkJCQkJCQkJCgoKCgoKCgoKCgoKCgoKCgoKCwsLCwsLCwsLCwsLCwsLCwsLCwsLDAwMDAwMDAwMDAwMDAwMDAwNDQ0NDQ0NDg4ODg8RERMTExMT")
+        },
+        {
+            "type": uint(553),
+            "layer": int(1),
+            "x1": bytes("3eDi59rb3N3f4OHi4+Tn6Onq69nb3d7f4OHi4+bn6Onq6+zt7tjZ2tzd3+Dj5OXm6Onq6+zu0tTV2Nna29zd3t/j5ejp7O7S2drc3t/h4uTm5+jp6uvt7tLc3d7j5ebn6Onq6+zT2t3j5ebW2N7h"),
+            "y1": bytes("BgYGBgcHBwcHBwcHBwcHBwcHBwgICAgICAgICAgICAgICAgICAkJCQkJCQkJCQkJCQkJCQkJCgoKCgoKCgoKCgoKCgoKCgoLCwsLCwsLCwsLCwsLCwsLCwwMDAwMDAwMDAwMDAwNDQ0NDQ0ODg4O")
+        },
+        {
+            "type": uint(500),
+            "layer": int(1),
+            "x1": bytes("Li8wMTIzNDU2Nzg5Ojs8PT4/QEFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFlaW1xdXl9gYWJjZGVmZ2hpbG1ub3BxcnR1dnd4eXt8fX5/goOEhYaHiImKi4yNjo+QkZKTlZaXmJmbnJ2ipaerrq+wsbKztLW2t7i5uru8vb6/wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nne5ebs7e7v8PHy8/T19vf4+fr7/P3+/y0uLzAxMjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZqa21ub3BxcnR1dnd4eXt8fn+AgYKDhIWGh4iJiouMjY6PkJGSk5WWl5iam5ydoKGkpairrK+xsrO0tba3uLm6u7y9vr/Aw8TFxsfIycrOz9DR0tPU1dbX2Nrc5OXv8PHy8/T19vf4+fr7/P3+/y4vMDEuLzAxLi8wMS4vMDEuLzAxLi8wMQ=="),
+            "y1": bytes("BwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwcHBwgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAkJCQkKCgoKCwsLCwwMDAwNDQ0NDg4ODg=="),
+            "x": bytes("AQABAQECAQMBBAEFAQYBBwEIAQkBCgELAQwBDQEOAQ8BEAERARIBEwEUARUBFgEXARgBGQEaARsBAAEBAQIBAwEEAQUBBgEHAQgBCQEKAQsBDAENAQ4BDwEQAREBEgETARcBGAEZARoBGwEcAgkCCgILAgwCDQIOAg8CEAIRAhICEwIUAhUCFgIXAhgCGQIaAhsCHAIdAh4CHwIgAiECIgIjAiQCJQImAicCKAIpAioCKwIsAi0CLgIvAjACMQIyAjMCNAI1AjYCNwI4AjkCOgI7AjwCPQ=="),
+            "y": bytes("AAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcABwAHAAcACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACA==")
+        },
+        {
+            "type": uint(563),
+            "layer": int(1),
+            "x1": bytes("amtnaGlsZ218fX+Bg4dnaGlqa2xtbm9wdHV2d3h5ent8fX5/gIGCiYtteXp7fH1+f4GCg4SMaWprbHl6e3x+f4CDjHt9fn+Bi36Hf4GE"),
+            "y1": bytes("BwcICAgICQkJCQkJCQkKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoLCwsLCwsLCwsLCwsLDAwMDAwMDAwMDAwMDA0NDQ0NDQ4ODw8P")
+        },
+        {
+            "type": uint(517),
+            "layer": int(1),
+            "x1": bytes("/v/8/fz6+9rb3N3e+dXY3t/g4eLj5OXm+NLT5ufo6err7O3u7/Dx8vP09fb3"),
+            "y1": bytes("DAwNDQ4PDxAQEBAQEBERERERERERERERERISEhISEhISEhISEhISEhISEhIS"),
+            "x": bytes("ARQBFQEWAREBEgETARQBFQEWARcBGAEOAQ8BEAERARgBGQEIAQkBCgELAQwBDQEOARoBGwEcAR0BAAEBAQIBAwEEAQUBBgEHAQgBHQEeAR4BHwEgASEBIgEjAUYBRwFIASMBJAElASYBJwFEAUUBRgEoASkBKgFCAUMBKwEsAS0BQAFBAS0BLgEvAT0BPgE/AS8BMAExATIBMwE0ATUBNgE3ATgBOQE6ATsBPAE9ATUBNgE4"),
+            "y": bytes("AAgACAAIAAkACQAJAAkACQAJAAkACQAKAAoACgAKAAoACgALAAsACwALAAsACwALAAsACwALAAsADAAMAAwADAAMAAwADAAMAAwADAAMAA0ADQANAA0ADQANAA0ADQANAA4ADgAOAA4ADgAOAA4ADgAPAA8ADwAPAA8AEAAQABAAEAAQABEAEQARABEAEQARABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABMAEwAT")
+        },
+        {
+            "type": uint(531),
+            "layer": int(1),
+            "x": bytes("AVoBWwFcAV0BXgFfAWABYQFiAWMBZAFlAWYBWgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZgFbAVwBXQFeAV8BYAFhAWIBYwFkAWUBZg=="),
+            "y": bytes("AAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAKAAoACgAKAAoACgAKAAoACgAKAAoACgALAAsACwALAAsACwALAAsACwALAAsACwAMAAwADAAMAAwADAAMAAwADAAMAAwADAANAA0ADQANAA0ADQANAA0ADQANAA0ADQAOAA4ADgAOAA4ADgAOAA4ADgAOAA4ADg==")
+        },
+        {
+            "type": uint(561),
+            "layer": int(1),
+            "x1": bytes("MjM0NTY3ODk6Ozw9Pj9AQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVpbXF1eX2BhYmNkZWZoaWprbG5vcHFyc3Z4ent+gIKEhYaIiYqLjI2Oj5CRkoWGh4iKjI2Oj5CRkpOVlpc="),
+            "y1": bytes("CQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQoKCgoKCgoKCgoKCgoKCgo=")
+        },
+        {
+            "type": uint(549),
+            "layer": int(1),
+            "x1": bytes("ISEiISI="),
+            "y1": bytes("CwwMDQ0=")
+        },
+        {
+            "type": uint(546),
+            "layer": int(1),
+            "x1": bytes("Ig=="),
+            "y1": bytes("Cw==")
+        },
+        {
+            "type": uint(536),
+            "layer": int(1),
+            "x1": bytes("Iw=="),
+            "y1": bytes("Cw==")
+        },
+        {
+            "type": uint(548),
+            "layer": int(1),
+            "x1": bytes("IyQ="),
+            "y1": bytes("DAw=")
+        },
+        {
+            "type": uint(540),
+            "layer": int(1),
+            "x1": bytes("DxAREhMUFRYXGCMkJQ8QERITFBUWFxgPEBESExQVFhcYDxAREhMUFRYXGA8QERITFBUWFxg="),
+            "y1": bytes("DQ0NDQ0NDQ0NDQ0NDQ4ODg4ODg4ODg4PDw8PDw8PDw8PEBAQEBAQEBAQEBERERERERERERE=")
+        },
+        {
+            "type": uint(539),
+            "layer": int(1),
+            "x1": bytes("Hh8gISIjJA=="),
+            "y1": bytes("Dg4ODg4ODg==")
+        }
+    ],
+    "plays": int(7859),
+    "owner": string("guest"),
+    "allowpotions": bool(false),
+    "woots": int(0),
+    "totalwoots": int(48),
+    "visible": bool(true),
+    "Likes": int(68),
+    "Favorites": int(64)
+}

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D801530-A9AF-4A0B-8639-B2DEB7D9E333}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EverybodyEdits</RootNamespace>
+    <AssemblyName>EverybodyEdits188</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Player.IO GameLibrary">
+      <HintPath>..\..\..\..\EEmulator\inc\Player.IO GameLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game\Beta.cs" />
+    <Compile Include="Game\BlockMap.cs" />
+    <Compile Include="Game\ChatCommands\BanUserCommand.cs" />
+    <Compile Include="Game\ChatCommands\BgColorCommand.cs" />
+    <Compile Include="Game\ChatCommands\ChatCommand.cs" />
+    <Compile Include="Game\ChatCommands\CheckIPCommand.cs" />
+    <Compile Include="Game\ChatCommands\ClearAndSaveCommand.cs" />
+    <Compile Include="Game\ChatCommands\CopyWorldCommand.cs" />
+    <Compile Include="Game\ChatCommands\EditToggleCommand.cs" />
+    <Compile Include="Game\ChatCommands\GetPosCommand.cs" />
+    <Compile Include="Game\ChatCommands\TempBan.cs" />
+    <Compile Include="Game\ChatCommands\HelpCommand.cs" />
+    <Compile Include="Game\ChatCommands\KickCommand.cs" />
+    <Compile Include="Game\ChatCommands\KickGuestsCommand.cs" />
+    <Compile Include="Game\ChatCommands\KillCommand.cs" />
+    <Compile Include="Game\ChatCommands\KillEmAllCommand.cs" />
+    <Compile Include="Game\ChatCommands\ListPortalsCommand.cs" />
+    <Compile Include="Game\ChatCommands\MuteCommand.cs" />
+    <Compile Include="Game\ChatCommands\PotionsOnOffCommand.cs" />
+    <Compile Include="Game\ChatCommands\PrivateMessageCommand.cs" />
+    <Compile Include="Game\ChatCommands\ReportCommand.cs" />
+    <Compile Include="Game\ChatCommands\RespawnAllPlayersCommand.cs" />
+    <Compile Include="Game\ChatCommands\SetPosCommand.cs" />
+    <Compile Include="Game\ChatCommands\UnMuteCommand.cs" />
+    <Compile Include="Game\ChatCommands\VisibilityCommand.cs" />
+    <Compile Include="Game\Common.cs" />
+    <Compile Include="Game\Friends.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\ItemManager.cs" />
+    <Compile Include="Game\OnlineStatus.cs" />
+    <Compile Include="Game\PotionStatus.cs" />
+    <Compile Include="Game\SmileyMap.cs" />
+    <Compile Include="Game\Statistics.cs" />
+    <Compile Include="Game\UrlEncoder.cs" />
+    <Compile Include="Game\Woots.cs" />
+    <Compile Include="Game\World.cs" />
+    <Compile Include="Game\WorldPresentation.cs" />
+    <Compile Include="Guardian\GuardianRoom.cs" />
+    <Compile Include="Lobby\Auth.cs" />
+    <Compile Include="Lobby\JSON.cs" />
+    <Compile Include="Lobby\Lobby.cs" />
+    <Compile Include="Lobby\QuickInviteHandler.cs" />
+    <Compile Include="Lobby\Shop.cs" />
+    <Compile Include="Lobby\Test.cs" />
+    <Compile Include="Statistics\TrackingRoom.cs" />
+    <Compile Include="Tutorial\Tutorial.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
