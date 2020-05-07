@@ -9,8 +9,20 @@ namespace EEmulator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(@"
+                     _____ _____                _       _             
+   Version 0.1.0   |  ___|  ___|              | |     | |            
+     written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
+    miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
+====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
+                    \____/\____/_| |_| |_|\__,_|_|\__,_|\__\___/|_|" + "\n\n");
+
+
             if (args.Length < 2)
+            {
+                Console.WriteLine("ERROR: You must specify a game and a version.");
                 return;
+            }
 
             var game = args[0];
             var version = args[1];

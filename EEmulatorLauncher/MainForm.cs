@@ -64,7 +64,7 @@ namespace EEmulatorLauncher
 
         private void btnPlay89_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
+            MessageBox.Show("To use, log in with email as \"user\" without quotes, any password will work.", "Before you start.", MessageBoxButtons.OK);
             Process.Start("EEmulator.exe", "EverybodyEdits v89").WaitForExit();
         }
     }
