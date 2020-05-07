@@ -282,7 +282,7 @@ namespace EverybodyEdits.Lobby
             //Give pro to old beta members;
             if (!player.PayVault.Has("pro") && haveBeta)
             {
-                player.PayVault.Give(new[] {new BuyItemInfo("pro")}, delegate { });
+                player.PayVault.Give(new[] { new BuyItemInfo("pro") }, delegate { });
             }
 
             //if (!player.PlayerObject.Contains("timezone")) {
@@ -338,20 +338,20 @@ namespace EverybodyEdits.Lobby
             if (p.PayVault.Has("club1"))
             {
                 club = p.PayVault.First("club1");
-                p.PayVault.Give(new[] {new BuyItemInfo("world4")}, delegate { });
+                p.PayVault.Give(new[] { new BuyItemInfo("world4") }, delegate { });
                 add_monts = 1;
             }
             if (p.PayVault.Has("club3"))
             {
                 club = p.PayVault.First("club3");
-                p.PayVault.Give(new[] {new BuyItemInfo("world4"), new BuyItemInfo("world6")}, delegate { });
+                p.PayVault.Give(new[] { new BuyItemInfo("world4"), new BuyItemInfo("world6") }, delegate { });
                 add_monts = 3;
             }
             if (p.PayVault.Has("club6"))
             {
                 club = p.PayVault.First("club6");
                 p.PayVault.Give(
-                    new[] {new BuyItemInfo("world4"), new BuyItemInfo("world6"), new BuyItemInfo("world3")},
+                    new[] { new BuyItemInfo("world4"), new BuyItemInfo("world6"), new BuyItemInfo("world3") },
                     delegate { });
                 add_monts = 6;
             }
@@ -394,7 +394,7 @@ namespace EverybodyEdits.Lobby
                         {
                             if (club != null)
                             {
-                                p.PayVault.Consume(new[] {club},
+                                p.PayVault.Consume(new[] { club },
                                     delegate /* success */
                                     {
                                         if (callback != null)
@@ -433,7 +433,7 @@ namespace EverybodyEdits.Lobby
                 if (!p.PlayerObject.Contains("club_membernumber"))
                 {
                     Console.WriteLine("Finding member number");
-                    this.FindNextMemberNumber(trial, delegate(int membernumber)
+                    this.FindNextMemberNumber(trial, delegate (int membernumber)
                     {
                         Console.WriteLine("Found member number");
                         if (trial)
@@ -518,7 +518,7 @@ namespace EverybodyEdits.Lobby
 
         protected void FindNextMemberNumber(bool trial, Callback<int> callback)
         {
-            this.PlayerIO.BigDB.Load("ClubMembers", "membernumber", delegate(DatabaseObject dataobj)
+            this.PlayerIO.BigDB.Load("ClubMembers", "membernumber", delegate (DatabaseObject dataobj)
             {
                 var membernumber = 0;
                 if (trial)
@@ -542,7 +542,7 @@ namespace EverybodyEdits.Lobby
 
         private void CheckTempBanned(Player player, Callback callback)
         {
-            this.PlayerIO.BigDB.Load("TempBans", player.ConnectUserId, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("TempBans", player.ConnectUserId, delegate (DatabaseObject o)
             {
                 if (o == null)
                 {
@@ -603,10 +603,10 @@ namespace EverybodyEdits.Lobby
                 //    Console.WriteLine("Awarded world complete");
                 //});
 
-                this.getUniqueId(false, player, delegate(string newid)
+                this.getUniqueId(false, player, delegate (string newid)
                 {
                     this.PlayerIO.BigDB.Load("worlds", /*"PWmQhDs0g_bUI"*/"PWQe-HH_N2bUI",
-                        delegate(DatabaseObject original)
+                        delegate (DatabaseObject original)
                         {
                             //string worldname = "Home of " + player.Name.ToUpper();
                             var worldname = "My Home World";
@@ -727,27 +727,27 @@ namespace EverybodyEdits.Lobby
 
                                             //Callback ondataloaded = delegate
                                             //{
-                                                //if (wootup >= 0 && wootstatus != null)
-                                                //{
-                                                    p.Level = (0); //wootstatus.level;
-                                                    rtn.Add(0); //(wootup);
-                                                    rtn.Add(0);//(wootstatus.current);
-                                                    rtn.Add(p.Level);
-                                                    // levelcap prev
-                                                    rtn.Add(p.Level == 0 ? 0 : Config.levelcap[p.Level - 1]);
-                                                    // levelcap next
-                                                    rtn.Add(Config.levelcap[p.Level]);
-                                                    rtn.Add(p.ClassTitle.ToUpper());
-                                                    rtn.Add(0);//(wootstatus.total);
-                                                    //wootstatus.timezone = p.TimeZone;
-                                                    rtn.Add(0);//(wootstatus.getWootsToday());
-                                                    rtn.Add(0); //Config.level_woot_decay[p.Level - 1]);
-                                                    rtn.Add(0);
-                                                        //Convert.ToInt32(
-                                                        //    (wootstatus.nextdecay - DateTime.Now).TotalSeconds));
-                                                    rtn.Add(p.MaxEnergy);
-                                                    p.Send(rtn);
-                                                //}
+                                            //if (wootup >= 0 && wootstatus != null)
+                                            //{
+                                            p.Level = (0); //wootstatus.level;
+                                            rtn.Add(0); //(wootup);
+                                            rtn.Add(0);//(wootstatus.current);
+                                            rtn.Add(p.Level);
+                                            // levelcap prev
+                                            rtn.Add(p.Level == 0 ? 0 : Config.levelcap[p.Level - 1]);
+                                            // levelcap next
+                                            rtn.Add(Config.levelcap[p.Level]);
+                                            rtn.Add(p.ClassTitle.ToUpper());
+                                            rtn.Add(0);//(wootstatus.total);
+                                                       //wootstatus.timezone = p.TimeZone;
+                                            rtn.Add(0);//(wootstatus.getWootsToday());
+                                            rtn.Add(0); //Config.level_woot_decay[p.Level - 1]);
+                                            rtn.Add(0);
+                                            //Convert.ToInt32(
+                                            //    (wootstatus.nextdecay - DateTime.Now).TotalSeconds));
+                                            rtn.Add(p.MaxEnergy);
+                                            p.Send(rtn);
+                                            //}
                                             //};
 
                                             //WootUpPlayer.getWootStatusAmount(this.PlayerIO, p.ConnectUserId,
@@ -844,7 +844,7 @@ namespace EverybodyEdits.Lobby
                                             {
                                                 p.SetEnergyStatus(itm.key, 0);
                                                 p.PayVault.Give(
-                                                    new[] {new BuyItemInfo(itm.key)},
+                                                    new[] { new BuyItemInfo(itm.key) },
                                                     delegate
                                                     {
                                                         p.SaveShop(delegate { this.SendShopUpdate(item, p, true); });
@@ -876,7 +876,7 @@ namespace EverybodyEdits.Lobby
                                     if ((itm.Type != "potion" || p.PayVault.Count(itm.key) < Config.max_potions) &&
                                         (!itm.BetaOnly || p.HasBeta))
                                     {
-                                        p.PayVault.Buy(true, new[] {new BuyItemInfo(item.message.GetString(0))},
+                                        p.PayVault.Buy(true, new[] { new BuyItemInfo(item.message.GetString(0)) },
                                             delegate
                                             {
                                                 this.CheckClubMembership(p,
@@ -893,12 +893,12 @@ namespace EverybodyEdits.Lobby
 
                                 case "getFriends":
                                 {
-                                    this.friendhandler.GetFriendKeys(p.ConnectUserId, delegate(string[] keys)
+                                    this.friendhandler.GetFriendKeys(p.ConnectUserId, delegate (string[] keys)
                                     {
                                         if (keys.Length > 0)
                                         {
                                             OnlineStatus.getOnlineStatus(this.PlayerIO, keys,
-                                                delegate(OnlineStatus[] status)
+                                                delegate (OnlineStatus[] status)
                                                 {
                                                     var rtn = Message.Create(item.method);
                                                     for (var i = 0; i < status.Length; i++)
@@ -921,7 +921,7 @@ namespace EverybodyEdits.Lobby
 
                                 case "getPending":
                                 {
-                                    this.friendhandler.GetPending(p.ConnectUserId, delegate(ArrayList emails)
+                                    this.friendhandler.GetPending(p.ConnectUserId, delegate (ArrayList emails)
                                     {
                                         var rtn = Message.Create(item.method);
                                         for (var i = 0; i < emails.Count; i++)
@@ -935,7 +935,7 @@ namespace EverybodyEdits.Lobby
 
                                 case "getInvitesToMe":
                                 {
-                                    this.friendhandler.GetInvitesToMe(p.ConnectUserId, delegate(ArrayList inviteparams)
+                                    this.friendhandler.GetInvitesToMe(p.ConnectUserId, delegate (ArrayList inviteparams)
                                     {
                                         var rtn = Message.Create(item.method);
                                         for (var i = 0; i < inviteparams.Count; i++)
@@ -950,7 +950,7 @@ namespace EverybodyEdits.Lobby
                                 case "getBlockedUsers":
                                 {
                                     this.friendhandler.GetBlockedUsers(p.ConnectUserId,
-                                        delegate(ArrayList blockedparams)
+                                        delegate (ArrayList blockedparams)
                                         {
                                             var rtn = Message.Create(item.method);
                                             for (var i = 0; i < blockedparams.Count; i++)
@@ -976,7 +976,7 @@ namespace EverybodyEdits.Lobby
 
                                     this.friendhandler.CreateInvitation(p.ConnectUserId,
                                         p.PlayerObject.GetString("name", ""), friendmail,
-                                        delegate { p.Send(item.method, true, ""); }, delegate(int error)
+                                        delegate { p.Send(item.method, true, ""); }, delegate (int error)
                                         {
                                             switch (error)
                                             {
@@ -1011,7 +1011,7 @@ namespace EverybodyEdits.Lobby
                                     Console.WriteLine("deletePending: " + recipientEmail);
 
                                     this.friendhandler.DeletePending(p.ConnectUserId, recipientEmail,
-                                        delegate(bool success)
+                                        delegate (bool success)
                                         {
                                             if (!success)
                                                 this.PlayerIO.ErrorLog.WriteError(
@@ -1033,7 +1033,7 @@ namespace EverybodyEdits.Lobby
 
                                     var invite_id = item.message.GetString(0);
                                     this.friendhandler.ActivateMyInvitation(p.ConnectUserId, invite_id,
-                                        delegate { p.Send(item.method, true); }, delegate(int error)
+                                        delegate { p.Send(item.method, true); }, delegate (int error)
                                         {
                                             switch (error)
                                             {
@@ -1062,7 +1062,7 @@ namespace EverybodyEdits.Lobby
                                     var invited_by = item.message.GetString(0);
 
                                     this.friendhandler.BlockInvite(p.ConnectUserId, invited_by,
-                                        delegate { p.Send(item.method, true); }, delegate(int error)
+                                        delegate { p.Send(item.method, true); }, delegate (int error)
                                         {
                                             switch (error)
                                             {
@@ -1088,7 +1088,7 @@ namespace EverybodyEdits.Lobby
                                     var mail = item.message.GetString(0);
                                     var invited_by = item.message.GetString(1);
                                     this.friendhandler.UnblockInvite(p.ConnectUserId, mail, invited_by,
-                                        delegate { p.Send(item.method, true); }, delegate(int error)
+                                        delegate { p.Send(item.method, true); }, delegate (int error)
                                         {
                                             switch (error)
                                             {
@@ -1116,7 +1116,7 @@ namespace EverybodyEdits.Lobby
                                     var accept = item.message.GetBoolean(1);
 
                                     this.friendhandler.AnswerMyInvitation(p.ConnectUserId, invited_by, accept,
-                                        delegate { p.Send(item.method, true); }, delegate(int error)
+                                        delegate { p.Send(item.method, true); }, delegate (int error)
                                         {
                                             switch (error)
                                             {
@@ -1143,11 +1143,11 @@ namespace EverybodyEdits.Lobby
                                 {
                                     var friendId = item.message.GetString(0);
 
-                                    this.PlayerIO.BigDB.LoadSingle("PlayerObjects", "name", new Object[] {friendId},
-                                        delegate(DatabaseObject po)
+                                    this.PlayerIO.BigDB.LoadSingle("PlayerObjects", "name", new Object[] { friendId },
+                                        delegate (DatabaseObject po)
                                         {
                                             this.friendhandler.RemoveFriends(p.ConnectUserId, po.Key,
-                                                delegate(bool success)
+                                                delegate (bool success)
                                                 {
                                                     if (!success)
                                                         this.PlayerIO.ErrorLog.WriteError(
@@ -1165,7 +1165,7 @@ namespace EverybodyEdits.Lobby
                                 {
                                     var id = item.message.Count > 0 ? item.message.GetString(0) : p.ConnectUserId;
                                     OnlineStatus.getOnlineStatus(this.PlayerIO, id,
-                                        delegate(OnlineStatus os) { p.Send(os.ToMessage(item.method)); });
+                                        delegate (OnlineStatus os) { p.Send(os.ToMessage(item.method)); });
                                     break;
                                 }
                             }
@@ -1221,7 +1221,7 @@ namespace EverybodyEdits.Lobby
 
                 case "getNews":
                 {
-                    this.GetLatestNewsMessage(delegate(Message news_msg) { player.Send(news_msg); }, m.GetString(0));
+                    this.GetLatestNewsMessage(delegate (Message news_msg) { player.Send(news_msg); }, m.GetString(0));
                     break;
                 }
 
@@ -1241,7 +1241,7 @@ namespace EverybodyEdits.Lobby
                 {
                     var checkname = m.GetString(0);
                     this.PlayerIO.BigDB.Load("Usernames", checkname.ToLower(),
-                        delegate(DatabaseObject result)
+                        delegate (DatabaseObject result)
                         {
                             player.Send("checkUsername", checkname, (result == null || !result.Contains("owner")));
                         },
@@ -1291,7 +1291,7 @@ namespace EverybodyEdits.Lobby
                     var type = m.GetInt(0);
                     var offset = m.GetInt(1);
                     var count = player.PayVault.Count("world" + type);
-                    if (type == 0 && haveSmileyPackage) count ++;
+                    if (type == 0 && haveSmileyPackage) count++;
 
                     if (count == 0) return;
                     if (count > offset)
@@ -1303,7 +1303,7 @@ namespace EverybodyEdits.Lobby
                         }
                         else
                         {
-                            this.getUniqueId(false, player, delegate(string newid)
+                            this.getUniqueId(false, player, delegate (string newid)
                             {
                                 var newworld = new DatabaseObject();
                                 newworld.Set("allowpotions", true);
@@ -1489,7 +1489,7 @@ namespace EverybodyEdits.Lobby
                 case "getProfileObject":
                 {
                     var profilename = m.GetString(0);
-                    new Profile().LoadProfile(this.PlayerIO, profilename, delegate(Message msg) { player.Send(msg); },
+                    new Profile().LoadProfile(this.PlayerIO, profilename, delegate (Message msg) { player.Send(msg); },
                         profilename == player.Name);
 
                     break;
@@ -1520,7 +1520,7 @@ namespace EverybodyEdits.Lobby
                             .Replace("/", "-");
             }
 
-            this.PlayerIO.BigDB.Load("Worlds", newid, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("Worlds", newid, delegate (DatabaseObject o)
             {
                 if (o != null)
                 {
@@ -1535,7 +1535,7 @@ namespace EverybodyEdits.Lobby
 
         private void createId(Boolean isbetaonly, Player player)
         {
-            this.getUniqueId(isbetaonly, player, delegate(string newid)
+            this.getUniqueId(isbetaonly, player, delegate (string newid)
             {
                 player.PlayerObject.Set(isbetaonly ? "betaonlyroom" : "room0", newid);
                 player.PlayerObject.Save(delegate { player.Send("r", newid); });
@@ -1581,7 +1581,7 @@ namespace EverybodyEdits.Lobby
 
         protected void GetLatestNewsMessage(Callback<Message> callback, string newskey = "")
         {
-            this.PlayerIO.BigDB.LoadRange("News", "current", null, null, null, 1000, delegate(DatabaseObject[] newslist)
+            this.PlayerIO.BigDB.LoadRange("News", "current", null, null, null, 1000, delegate (DatabaseObject[] newslist)
             {
                 var news = newslist[0];
                 if (newskey.Length > 0)
@@ -1598,7 +1598,7 @@ namespace EverybodyEdits.Lobby
 
                 var msg = Message.Create("getNews");
 
-                string[] mandatoryfields = {"header", "body", "date", "image"};
+                string[] mandatoryfields = { "header", "body", "date", "image" };
                 var missingfiels = "";
                 for (var i = 0; i < mandatoryfields.Length; i++)
                 {
@@ -1664,7 +1664,7 @@ namespace EverybodyEdits.Lobby
 
                 case "getNews":
                 {
-                    this.GetLatestNewsMessage(delegate(Message news_msg) { player.Send(news_msg); }, m.GetString(0));
+                    this.GetLatestNewsMessage(delegate (Message news_msg) { player.Send(news_msg); }, m.GetString(0));
                     break;
                 }
 
@@ -1673,7 +1673,7 @@ namespace EverybodyEdits.Lobby
                     var checkname = m.GetString(0);
                     Console.WriteLine("checkUsername: " + checkname);
                     this.PlayerIO.BigDB.Load("Usernames", checkname.ToLower(),
-                        delegate(DatabaseObject result)
+                        delegate (DatabaseObject result)
                         {
                             player.Send("checkUsername", checkname, (result == null || !result.Contains("owner")));
                         },
@@ -1683,7 +1683,7 @@ namespace EverybodyEdits.Lobby
                 }
                 case "getProfileObject":
                 {
-                    new Profile().LoadProfile(this.PlayerIO, m.GetString(0), delegate(Message msg) { player.Send(msg); });
+                    new Profile().LoadProfile(this.PlayerIO, m.GetString(0), delegate (Message msg) { player.Send(msg); });
 
                     break;
                 }
@@ -1732,75 +1732,75 @@ namespace EverybodyEdits.Lobby
     {
         public void LoadProfile(Client client, string name, Callback<Message> callback, bool ignoreVisible = false)
         {
-            client.BigDB.LoadSingle("PlayerObjects", "name", new Object[] {name}, delegate(DatabaseObject po)
-            {
-                var rtn = Message.Create("getProfileObject");
+            client.BigDB.LoadSingle("PlayerObjects", "name", new Object[] { name }, delegate (DatabaseObject po)
+              {
+                  var rtn = Message.Create("getProfileObject");
 
-                if (po.GetBool("banned", false))
-                {
-                    rtn.Add("error");
-                    callback(rtn);
-                    return;
-                }
+                  if (po.GetBool("banned", false))
+                  {
+                      rtn.Add("error");
+                      callback(rtn);
+                      return;
+                  }
 
-                var visible = po.GetBool("visible", true);
-                if (!visible && !ignoreVisible)
-                {
-                    rtn.Add("private");
-                    callback(rtn);
-                    return;
-                }
+                  var visible = po.GetBool("visible", true);
+                  if (!visible && !ignoreVisible)
+                  {
+                      rtn.Add("private");
+                      callback(rtn);
+                      return;
+                  }
 
-                rtn.Add("public");
-                rtn.Add(po.Key);
-                rtn.Add(po.GetString("name", ""));
-                rtn.Add(po.GetInt("smiley", 0));
-                rtn.Add(po.GetBool("haveSmileyPackage", false));
-                rtn.Add(po.GetBool("isModerator", false));
+                  rtn.Add("public");
+                  rtn.Add(po.Key);
+                  rtn.Add(po.GetString("name", ""));
+                  rtn.Add(po.GetInt("smiley", 0));
+                  rtn.Add(po.GetBool("haveSmileyPackage", false));
+                  rtn.Add(po.GetBool("isModerator", false));
                 // is club MemberAccessException?
                 rtn.Add(po.Contains("club_expire") && po.GetDateTime("club_expire") > DateTime.Now);
-                rtn.Add((po.GetDateTime("club_expire", DateTime.Now) - DateTime.Now).TotalMilliseconds);
-                rtn.Add((po.GetDateTime("club_join", DateTime.Now) - DateTime.Now).TotalMilliseconds);
-                rtn.Add(po.GetString("club_membernumber", "0"));
-                rtn.Add(po.GetString("room0", ""));
-                rtn.Add(po.GetString("betaonlyroom", ""));
+                  rtn.Add((po.GetDateTime("club_expire", DateTime.Now) - DateTime.Now).TotalMilliseconds);
+                  rtn.Add((po.GetDateTime("club_join", DateTime.Now) - DateTime.Now).TotalMilliseconds);
+                  rtn.Add(po.GetString("club_membernumber", "0"));
+                  rtn.Add(po.GetString("room0", ""));
+                  rtn.Add(po.GetString("betaonlyroom", ""));
 
-                var worlds = new ArrayList();
-                var worldkeys = new ArrayList();
-                var worldnames = new ArrayList();
-                var mwn = po.GetObject("myworldnames");
-                foreach (var key in po.Properties)
-                {
-                    if (key.StartsWith("world"))
-                    {
-                        worldkeys.Add(key);
-                        worlds.Add(po[key]);
+                  var worlds = new ArrayList();
+                  var worldkeys = new ArrayList();
+                  var worldnames = new ArrayList();
+                  var mwn = po.GetObject("myworldnames");
+                  foreach (var key in po.Properties)
+                  {
+                      if (key.StartsWith("world"))
+                      {
+                          worldkeys.Add(key);
+                          worlds.Add(po[key]);
                         //Console.WriteLine(po[key] + " - " + mwn.GetString((string)po[key], ""));
                         worldnames.Add((mwn != null ? mwn.GetString((string)po[key], "") : ""));
-                    }
-                }
-                rtn.Add(string.Join(",", worldkeys.ToArray(typeof(string)) as string[]));
-                rtn.Add(string.Join(",", worlds.ToArray(typeof(string)) as string[]));
-                rtn.Add(string.Join(",", worldnames.ToArray(typeof(string)) as string[]));
+                      }
+                  }
+                  rtn.Add(string.Join(",", worldkeys.ToArray(typeof(string)) as string[]));
+                  rtn.Add(string.Join(",", worlds.ToArray(typeof(string)) as string[]));
+                  rtn.Add(string.Join(",", worldnames.ToArray(typeof(string)) as string[]));
 
-                var wootup = -1;
+                  var wootup = -1;
                 //WootStatus wootstatus = null;
 
                 //Callback ondataloaded = delegate
                 //{
                 //    if (wootup >= 0 && wootstatus != null)
                 //    {
-                        var level = 0;//wootstatus.level;
-                        rtn.Add(0);//(wootstatus.current);
-                        rtn.Add(level);
-                        // levelcap prev
-                        rtn.Add(0);//level == 0 ? 0 : Config.levelcap[level - 1]);
-                        // levelcap next
-                        rtn.Add(0); //Config.levelcap[level]);
-                        rtn.Add(0); //Config.leveltitles[level - 1].ToUpper());
-                        rtn.Add(0); //wootstatus.total);
+                var level = 0;//wootstatus.level;
+                rtn.Add(0);//(wootstatus.current);
+                rtn.Add(level);
+                // levelcap prev
+                rtn.Add(0);//level == 0 ? 0 : Config.levelcap[level - 1]);
+                           // levelcap next
+                rtn.Add(0); //Config.levelcap[level]);
+                rtn.Add(0); //Config.leveltitles[level - 1].ToUpper());
+                rtn.Add(0); //wootstatus.total);
 
-                        callback(rtn);
+                callback(rtn);
                 //    }
                 //};
 

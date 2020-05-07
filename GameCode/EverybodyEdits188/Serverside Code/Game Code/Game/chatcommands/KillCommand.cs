@@ -15,7 +15,7 @@
                 if (p.name.ToLower() == commandInput[1].ToLower())
                 {
                     if (p.canbemod && !_player.canbemod)
-                        /* If the player isn't moderator and tries to kill a moderator, the command backfires */
+                    /* If the player isn't moderator and tries to kill a moderator, the command backfires */
                     {
                         _player.Send("info", "Tsk tsk tsk",
                             "You tried to kill a moderator. Don't you know we are immortal?");

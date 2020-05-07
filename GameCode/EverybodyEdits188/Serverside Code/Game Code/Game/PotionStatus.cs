@@ -133,7 +133,7 @@ namespace EverybodyEdits.Game
             this.removeExpiredPotions();
             this.status.Save(true,
                 delegate { if (successCallback != null) successCallback.Invoke(); },
-                delegate(PlayerIOError error)
+                delegate (PlayerIOError error)
                 {
                     if (error.ErrorCode == ErrorCode.StaleVersion)
                     {
@@ -151,7 +151,7 @@ namespace EverybodyEdits.Game
             if (!this.isReloading)
             {
                 this.isReloading = true;
-                this.client.BigDB.LoadOrCreate(POTION_STATUS_TABLE, this.key, delegate(DatabaseObject latest)
+                this.client.BigDB.LoadOrCreate(POTION_STATUS_TABLE, this.key, delegate (DatabaseObject latest)
                 {
                     // Add the potions used in this world to the latest potionstatus object
                     var currentpotions = this.getPotions();
@@ -172,7 +172,7 @@ namespace EverybodyEdits.Game
         public static void getPotioneStatus(Client c, String connectUserId, Callback<PotionStatus> callback)
         {
             c.BigDB.LoadOrCreate(POTION_STATUS_TABLE, connectUserId,
-                delegate(DatabaseObject result) { callback.Invoke(new PotionStatus(c, result)); });
+                delegate (DatabaseObject result) { callback.Invoke(new PotionStatus(c, result)); });
         }
     }
 }

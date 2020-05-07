@@ -7,14 +7,14 @@ namespace EverybodyEdits.Game
 {
     public class SmileyMap
     {
-        protected int[] beta = {6, 7, 8, 9, 10, 11};
+        protected int[] beta = { 6, 7, 8, 9, 10, 11 };
 
-        protected int[] buildersclub = {20, 49};
+        protected int[] buildersclub = { 20, 49 };
         // These smileys are included when you buy a pack. So builders club have access to them.
 
         protected Dictionary<int, string> exclusives = new Dictionary<int, string>();
 
-        protected int[] freeForAll = {0, 1, 2, 3, 4, 5, 18 /*, 98*/};
+        protected int[] freeForAll = { 0, 1, 2, 3, 4, 5, 18 /*, 98*/};
         protected Dictionary<int, string> vaultEnabled = new Dictionary<int, string>();
 
         public SmileyMap()

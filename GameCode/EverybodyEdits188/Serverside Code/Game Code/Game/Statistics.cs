@@ -22,7 +22,7 @@ namespace EverybodyEdits.Game
         public const String STATISTIC_TABLE = "PlayerStats";
         public const double STATISTIC_VERSION = 3;
 
-        private readonly string[] DEPRECATED_STATS_VALUES = {"IsGuest"};
+        private readonly string[] DEPRECATED_STATS_VALUES = { "IsGuest" };
         private DatabaseObject abtest;
 
         public Client client;
@@ -56,7 +56,7 @@ namespace EverybodyEdits.Game
         public void activate(string key, Callback successcallback = null)
         {
             Console.WriteLine("Activate user: " + key);
-            this.client.BigDB.LoadOrCreate(STATISTIC_TABLE, key, delegate(DatabaseObject result)
+            this.client.BigDB.LoadOrCreate(STATISTIC_TABLE, key, delegate (DatabaseObject result)
             {
                 this.stats = result;
 
@@ -423,7 +423,7 @@ namespace EverybodyEdits.Game
                 view.Set("StatsDate", DateTime.Now);
                 if (this.abtest != null) view.Set("ABTest", this.abtest);
                 this.client.BigDB.CreateObject(STATISTIC_TABLE, null, view,
-                    delegate(DatabaseObject d) { Console.WriteLine("Saved viewed stats as " + d.Key); });
+                    delegate (DatabaseObject d) { Console.WriteLine("Saved viewed stats as " + d.Key); });
             }
         }
 
@@ -432,7 +432,7 @@ namespace EverybodyEdits.Game
             Console.WriteLine("Save Stats as: " + key);
             this.isReady = false;
 
-            this.client.BigDB.Load(STATISTIC_TABLE, key, delegate(DatabaseObject result)
+            this.client.BigDB.Load(STATISTIC_TABLE, key, delegate (DatabaseObject result)
             {
                 Console.WriteLine("load " + result);
                 if (result != null)
@@ -444,10 +444,10 @@ namespace EverybodyEdits.Game
                 }
 
                 this.stats.Set("GuestSessions", this.stats.GetInt("TotalSessions", 1));
-                this.client.BigDB.CreateObject(STATISTIC_TABLE, key, this.stats, delegate(DatabaseObject newstat)
+                this.client.BigDB.CreateObject(STATISTIC_TABLE, key, this.stats, delegate (DatabaseObject newstat)
                 {
                     Console.WriteLine("Success! Created stats as " + newstat.Key);
-                    this.client.BigDB.DeleteKeys(STATISTIC_TABLE, new[] {this.stats.Key});
+                    this.client.BigDB.DeleteKeys(STATISTIC_TABLE, new[] { this.stats.Key });
                     this.activate(key);
                 });
             });

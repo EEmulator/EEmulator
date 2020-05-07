@@ -682,7 +682,7 @@ namespace EverybodyEdits.Game
 
                 switch (b.type)
                 {
-                        // Coin door
+                    // Coin door
                     case (uint)ItemTypes.CoinDoor:
                     case (uint)ItemTypes.CoinGate:
                     case (uint)ItemTypes.BlueCoinDoor:
@@ -697,7 +697,7 @@ namespace EverybodyEdits.Game
                         break;
                     }
 
-                        // Portals
+                    // Portals
                     case (uint)ItemTypes.PortalInvisible:
                     case (uint)ItemTypes.Portal:
                     {
@@ -707,7 +707,7 @@ namespace EverybodyEdits.Game
                         break;
                     }
 
-                        // World Portals
+                    // World Portals
                     case (uint)ItemTypes.WorldPortal:
                     {
                         cb.Set("target", b.targetworld);
@@ -715,7 +715,7 @@ namespace EverybodyEdits.Game
                     }
 
 
-                        // Spikes
+                    // Spikes
                     case (uint)ItemTypes.Spike:
                     {
                         cb.Set("rotation", b.rotation);
@@ -1295,7 +1295,7 @@ namespace EverybodyEdits.Game
 
                 switch (b.type)
                 {
-                        //Coin doors and other stuffs
+                    //Coin doors and other stuffs
                     case (uint)ItemTypes.BlueCoinDoor:
                     case (uint)ItemTypes.BlueCoinGate:
                     case (uint)ItemTypes.CoinGate:
@@ -1310,7 +1310,7 @@ namespace EverybodyEdits.Game
                         break;
                     }
 
-                        // Portals
+                    // Portals
                     case (int)ItemTypes.PortalInvisible:
                     case (uint)ItemTypes.Portal:
                     {
@@ -1319,7 +1319,7 @@ namespace EverybodyEdits.Game
                         m.Add(b.target);
                         break;
                     }
-                        // World Portals
+                    // World Portals
                     case (uint)ItemTypes.WorldPortal:
                     {
                         m.Add(b.targetworld);
@@ -1348,7 +1348,7 @@ namespace EverybodyEdits.Game
                         break;
                     }
 
-                        // Labels
+                    // Labels
                     case (uint)ItemTypes.Label:
                     {
                         m.Add(b.text);
@@ -1356,14 +1356,14 @@ namespace EverybodyEdits.Game
                         break;
                     }
 
-                        //Piano
+                    //Piano
                     case (uint)ItemTypes.Piano:
                     {
                         m.Add(b.id);
                         break;
                     }
 
-                        //Piano
+                    //Piano
                     case (uint)ItemTypes.Drums:
                     {
                         m.Add(b.id);

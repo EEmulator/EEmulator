@@ -45,7 +45,7 @@ namespace EverybodyEdits.Game.ChatCommands
                 }
             }
 
-            this._game.PlayerIO.BigDB.Load("usernames", reportedUserName, delegate(DatabaseObject o)
+            this._game.PlayerIO.BigDB.Load("usernames", reportedUserName, delegate (DatabaseObject o)
             {
                 if (o == null || o.GetString("owner", null) == null)
                 {

@@ -59,7 +59,7 @@ namespace EverybodyEdits.Game
     {
         public static string GetTutorialId(int num)
         {
-            String[] tutorial_ids = {"PWAIjKWOiLbEI", "PWHEwiIsmRbEI", "PWk0f5X-yVbEI"};
+            String[] tutorial_ids = { "PWAIjKWOiLbEI", "PWHEwiIsmRbEI", "PWk0f5X-yVbEI" };
             return tutorial_ids[num - 1];
         }
     }

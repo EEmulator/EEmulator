@@ -36,7 +36,7 @@ namespace EverybodyEdits.Guardian
                 case "latest":
                 {
                     this.PlayerIO.BigDB.LoadRange("AbuseReports", "Date", null, null, null, 100,
-                        delegate(DatabaseObject[] latest)
+                        delegate (DatabaseObject[] latest)
                         {
                             var rtnMessage = Message.Create("latest");
                             foreach (var report in latest)
@@ -49,122 +49,122 @@ namespace EverybodyEdits.Guardian
                     break;
                 }
 
-                    /*
+                /*
 
-                case "getPlayerBans":
+            case "getPlayerBans":
+                {
+
+
+                    string key = m.GetString(0);
+                    PlayerIO.BigDB.Load("GuardianBans", key, delegate(DatabaseObject ban)
+                    {
+                        if (ban != null)
+                        {
+                            Message rtnMessage = Message.Create("getPlayerBans");
+                            rtnMessage.Add(ban.Key);
+                            rtnMessage.Add(ban.GetString("Name"));
+                            AddUserBanToMessage(ban, rtnMessage);
+                            player.Send(rtnMessage);
+                        }
+                        else
+                        {
+                            player.Send(Message.Create("getSinglePlayerBanError","No user '" + key + "'"));
+                        }
+                    },
+                    delegate(PlayerIOError error)
                     {
 
-
-                        string key = m.GetString(0);
-                        PlayerIO.BigDB.Load("GuardianBans", key, delegate(DatabaseObject ban)
-                        {
-                            if (ban != null)
-                            {
-                                Message rtnMessage = Message.Create("getPlayerBans");
-                                rtnMessage.Add(ban.Key);
-                                rtnMessage.Add(ban.GetString("Name"));
-                                AddUserBanToMessage(ban, rtnMessage);
-                                player.Send(rtnMessage);
-                            }
-                            else
-                            {
-                                player.Send(Message.Create("getSinglePlayerBanError","No user '" + key + "'"));
-                            }
-                        },
-                        delegate(PlayerIOError error)
-                        {
-
-                        });
-                        
-                            
-
-                        break;
-                    }
+                    });
 
 
-                case "getWorldBans":
+
+                    break;
+                }
+
+
+            case "getWorldBans":
+                {
+
+
+                    string key = m.GetString(0);
+                    PlayerIO.BigDB.Load("WorldBans", key, delegate(DatabaseObject ban)
                     {
-
-
-                        string key = m.GetString(0);
-                        PlayerIO.BigDB.Load("WorldBans", key, delegate(DatabaseObject ban)
+                        if (ban != null)
                         {
-                            if (ban != null)
-                            {
-                                Message rtnMessage = Message.Create("getWorldBans");
-                                rtnMessage.Add(ban.Key);
-                                rtnMessage.Add(ban.GetString("Name"));
-                                AddUserBanToMessage(ban, rtnMessage);
-                                player.Send(rtnMessage);
-                            }
-                            else
-                            {
-                                player.Send(Message.Create("getWorldBansError", "No world with id  '" + key + "'"));
-                            }
-                        },
-                        delegate(PlayerIOError error)
+                            Message rtnMessage = Message.Create("getWorldBans");
+                            rtnMessage.Add(ban.Key);
+                            rtnMessage.Add(ban.GetString("Name"));
+                            AddUserBanToMessage(ban, rtnMessage);
+                            player.Send(rtnMessage);
+                        }
+                        else
                         {
-                            player.Send(Message.Create("getWorldBansError", "No world with id '" + key + "'"));
-                        });
-
-                        break;
-                    }
-
-                case "setWorldBan":
+                            player.Send(Message.Create("getWorldBansError", "No world with id  '" + key + "'"));
+                        }
+                    },
+                    delegate(PlayerIOError error)
                     {
-                        string key = m.GetString(0);
-                        string ticketid = m.GetString(0);
-                        bool status = m.GetBoolean(2);
+                        player.Send(Message.Create("getWorldBansError", "No world with id '" + key + "'"));
+                    });
 
-                        PlayerIO.BigDB.Load("WorldBans", key, delegate(DatabaseObject banObj)
+                    break;
+                }
+
+            case "setWorldBan":
+                {
+                    string key = m.GetString(0);
+                    string ticketid = m.GetString(0);
+                    bool status = m.GetBoolean(2);
+
+                    PlayerIO.BigDB.Load("WorldBans", key, delegate(DatabaseObject banObj)
+                    {
+                        if (banObj != null)
                         {
-                            if (banObj != null)
+                            DatabaseArray bans = banObj.GetArray("Bans");
+
+                            foreach (DatabaseObject ban in bans)
                             {
-                                DatabaseArray bans = banObj.GetArray("Bans");
-                                                                
-                                foreach (DatabaseObject ban in bans)
+                                if (ban.GetString("Id") == ticketid)
                                 {
-                                    if (ban.GetString("Id") == ticketid)
+                                    ban.Set("Active", status);
+                                    ban.Save(delegate()
                                     {
-                                        ban.Set("Active", status);
-                                        ban.Save(delegate()
-                                        {
-                                            Message rtnMessage = Message.Create("setWorldBan");
-                                            rtnMessage.Add(ban.Key);
-                                            rtnMessage.Add(ban.GetString("Name"));
-                                            AddUserBanToMessage(ban, rtnMessage);
-                                            player.Send(rtnMessage);
-                                        });
-                                        return;
-                                    }
+                                        Message rtnMessage = Message.Create("setWorldBan");
+                                        rtnMessage.Add(ban.Key);
+                                        rtnMessage.Add(ban.GetString("Name"));
+                                        AddUserBanToMessage(ban, rtnMessage);
+                                        player.Send(rtnMessage);
+                                    });
+                                    return;
                                 }
-                                player.Send(Message.Create("setWorldBanError", "No ban with id '" + ticketid + "'"));
                             }
-                            else
-                            {
-                                player.Send(Message.Create("setWorldBanError", "No world '" + key + "'"));
-                            }
-                        },
-                        delegate(PlayerIOError error)
+                            player.Send(Message.Create("setWorldBanError", "No ban with id '" + ticketid + "'"));
+                        }
+                        else
                         {
+                            player.Send(Message.Create("setWorldBanError", "No world '" + key + "'"));
+                        }
+                    },
+                    delegate(PlayerIOError error)
+                    {
 
-                        });
+                    });
 
-                        break;
-                    }
+                    break;
+                }
 
-                 */
+             */
                 case "setAbuseReportStatus":
                 {
                     var key = m.GetString(0);
 
-                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate(DatabaseObject report)
+                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate (DatabaseObject report)
                     {
                         var status = m.GetString(1);
                         report.Set("State", status);
                         report.Save(delegate { player.Send("setAbuseReportStatus", true); },
-                            delegate(PlayerIOError error) { player.Send("setAbuseReportStatus", false, error.Message); });
-                    }, delegate(PlayerIOError error) { player.Send("setAbuseReportStatusError", false, error.Message); });
+                            delegate (PlayerIOError error) { player.Send("setAbuseReportStatus", false, error.Message); });
+                    }, delegate (PlayerIOError error) { player.Send("setAbuseReportStatusError", false, error.Message); });
                     break;
                 }
             }

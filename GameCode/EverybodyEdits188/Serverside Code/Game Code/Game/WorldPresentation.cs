@@ -30,7 +30,7 @@ namespace EverybodyEdits.Game
 
         public void load(string id, Callback onSuccess)
         {
-            this._client.BigDB.LoadOrCreate("WorldPresentation", id, delegate(DatabaseObject o)
+            this._client.BigDB.LoadOrCreate("WorldPresentation", id, delegate (DatabaseObject o)
             {
                 this._presentationDbo = o;
                 onSuccess();

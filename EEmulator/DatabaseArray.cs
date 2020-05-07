@@ -28,7 +28,7 @@ namespace EEmulator
 
         /// <summary> Add the given uint value to the array. </summary>
         public DatabaseArray Add(uint value) => Set((uint)this.Properties.Count, value);
-            
+
         /// <summary> Add the given long value to the array. </summary>
         public DatabaseArray Add(long value) => Set((uint)this.Properties.Count, value);
 

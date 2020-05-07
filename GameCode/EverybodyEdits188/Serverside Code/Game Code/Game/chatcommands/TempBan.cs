@@ -28,7 +28,7 @@ namespace EverybodyEdits.Game.ChatCommands
                 player.Send("write", this._game.SystemName, "You must define a user to ban");
             }
 
-            this._game.PlayerIO.BigDB.Load("usernames", commandInput[1].ToLower(), delegate(DatabaseObject o)
+            this._game.PlayerIO.BigDB.Load("usernames", commandInput[1].ToLower(), delegate (DatabaseObject o)
             {
                 if (o == null || o.GetString("owner", null) == null)
                 {
@@ -37,7 +37,7 @@ namespace EverybodyEdits.Game.ChatCommands
                 }
 
                 this._game.PlayerIO.BigDB.Load("PlayerObjects", o.GetString("owner", "waggag"),
-                    delegate(DatabaseObject user)
+                    delegate (DatabaseObject user)
                     {
                         if (o == null)
                         {
@@ -66,7 +66,7 @@ namespace EverybodyEdits.Game.ChatCommands
 
         private void CommitBanToDatabase(Player player, int duration, string[] commandInput, DatabaseObject user)
         {
-            this._game.PlayerIO.BigDB.LoadOrCreate("TempBans", user.Key, delegate(DatabaseObject tempBans)
+            this._game.PlayerIO.BigDB.LoadOrCreate("TempBans", user.Key, delegate (DatabaseObject tempBans)
             {
                 tempBans.Set("Name", user.GetString("name", ""));
                 tempBans.Set("Latest", DateTime.Now);

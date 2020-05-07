@@ -25,7 +25,7 @@ namespace EverybodyEdits.QuickInviteHandler
 
         public override void UserJoined(BlockPlayer player)
         {
-            this.PlayerIO.BigDB.Load("Invitations", player.JoinData["inviteid"], delegate(DatabaseObject invitation)
+            this.PlayerIO.BigDB.Load("Invitations", player.JoinData["inviteid"], delegate (DatabaseObject invitation)
             {
                 Console.WriteLine("UserJoined. Loaded invitation: " + invitation);
                 if (invitation != null)
@@ -34,8 +34,8 @@ namespace EverybodyEdits.QuickInviteHandler
                     if (player.JoinData["block"] == "true")
                     {
                         var email = invitation.GetString("recipientEmail");
-                        this.PlayerIO.BigDB.LoadSingle("Ignores", "ignore", new[] {email},
-                            delegate(DatabaseObject ignore)
+                        this.PlayerIO.BigDB.LoadSingle("Ignores", "ignore", new[] { email },
+                            delegate (DatabaseObject ignore)
                             {
                                 var create = ignore == null;
                                 if (create)

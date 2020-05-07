@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Reflection;
 
 [assembly: AssemblyVersion("0.0.0.0")]
 [assembly: AssemblyFileVersion("0.0.0.0")]

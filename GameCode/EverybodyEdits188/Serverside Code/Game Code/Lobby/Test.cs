@@ -37,7 +37,7 @@ namespace EverybodyEdits.Auth
                         delegate
                         {
                             this.PlayerIO.BigDB.Load("PlayerObjects", player.ConnectUserId,
-                                delegate(DatabaseObject clone)
+                                delegate (DatabaseObject clone)
                                 {
                                     ready = this.compareObjects(player.PlayerObject, clone);
                                 });

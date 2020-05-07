@@ -17,7 +17,7 @@ namespace EverybodyEdits.Game.ChatCommands
             var xCoord = _player.x;
             var playerName = _player.name;
             if (commandInput.Length == 2)
-                // if we have a playername, we display that players coordinates otherwise we return the owners
+            // if we have a playername, we display that players coordinates otherwise we return the owners
             {
                 foreach (var p in this._game.Players)
                 {

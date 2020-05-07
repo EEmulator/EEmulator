@@ -279,7 +279,7 @@ namespace EverybodyEdits.Game
 
         private void checkStatus(Callback callback)
         {
-            this.client.BigDB.LoadOrCreate(WOOT_STATUS_TABLE, this.key, delegate(DatabaseObject latest)
+            this.client.BigDB.LoadOrCreate(WOOT_STATUS_TABLE, this.key, delegate (DatabaseObject latest)
             {
                 this.allowSave = latest.GetInt("loadcounter") == this.loadcounter;
                 callback.Invoke();
@@ -352,7 +352,7 @@ namespace EverybodyEdits.Game
             this.cleanRecieveList();
             this.status.Save(true,
                 delegate { if (successCallback != null) successCallback.Invoke(); },
-                delegate(PlayerIOError error)
+                delegate (PlayerIOError error)
                 {
                     if (error.ErrorCode == ErrorCode.StaleVersion)
                     {
@@ -367,7 +367,7 @@ namespace EverybodyEdits.Game
             bool enablesave = true)
         {
             c.BigDB.LoadOrCreate(WOOT_STATUS_TABLE, connectUserId,
-                delegate(DatabaseObject result) { new WootStatus(c, result, callback, enablesave); });
+                delegate (DatabaseObject result) { new WootStatus(c, result, callback, enablesave); });
         }
     }
 
@@ -431,13 +431,13 @@ namespace EverybodyEdits.Game
                 }
             };
 
-            client.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, connectUserId, delegate(DatabaseObject result)
+            client.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, connectUserId, delegate (DatabaseObject result)
             {
                 playerwootstatus = result;
                 checkLoad();
             }, delegate { successCallback(false); });
 
-            client.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, userIpAddress, delegate(DatabaseObject result)
+            client.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, userIpAddress, delegate (DatabaseObject result)
             {
                 ipwootstatus = result;
                 checkLoad();
@@ -482,7 +482,7 @@ namespace EverybodyEdits.Game
 
         public static void getWootStatusAmount(Client c, String connectUserId, Callback<int> callback, int timezone)
         {
-            c.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, connectUserId, delegate(DatabaseObject result)
+            c.BigDB.LoadOrCreate(WOOTUP_STATUS_TABLE, connectUserId, delegate (DatabaseObject result)
             {
                 removeExpiredWootUps(result, timezone);
                 callback(MAX_WOOTUPS - result.Count);
@@ -594,7 +594,7 @@ namespace EverybodyEdits.Game
             this.removeOldBuckets();
             this.status.Save(true,
                 delegate { if (successCallback != null) successCallback.Invoke(); },
-                delegate(PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
+                delegate (PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
         }
 
         public static void getWorldWootStatus(Client c, String worldid, Callback<WootWorldStatus> callback)

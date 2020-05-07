@@ -40,14 +40,14 @@ namespace EverybodyEdits.Game
         public void getNumPotentialFriends(string connectionUserId, Callback<int> callback)
         {
             var potentialfriends = 0;
-            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, connectionUserId, delegate(DatabaseObject friendsobj)
+            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, connectionUserId, delegate (DatabaseObject friendsobj)
             {
                 foreach (var key in friendsobj.Properties)
                 {
                     if (friendsobj.GetBool(key)) potentialfriends++;
                 }
-                this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] {connectionUserId}, null, null,
-                    100, delegate(DatabaseObject[] result)
+                this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] { connectionUserId }, null, null,
+                    100, delegate (DatabaseObject[] result)
                     {
                         foreach (var invite in result)
                         {
@@ -61,7 +61,7 @@ namespace EverybodyEdits.Game
         public void CreateInvitation(string connectionUserId, string senderName, string toMail, Callback successCallback,
             Callback<int> errorCallback)
         {
-            this.getNumPotentialFriends(connectionUserId, delegate(int numfriends)
+            this.getNumPotentialFriends(connectionUserId, delegate (int numfriends)
             {
                 /*
                 Console.WriteLine("Friends.cs, CreateInvitation -> " + getMaxFriendsAllowed());
@@ -69,8 +69,8 @@ namespace EverybodyEdits.Game
                 if (numfriends < /*MAX_FRIENDS*/ this.getMaxFriendsAllowed())
                 {
                     // Checking if player already send an invitation to this mail
-                    this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] {connectionUserId, toMail},
-                        null, null, 1000, delegate(DatabaseObject[] result)
+                    this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] { connectionUserId, toMail },
+                        null, null, 1000, delegate (DatabaseObject[] result)
                         {
                             var create_ok = true;
                             for (var i = 0; i < result.Length; i++)
@@ -89,9 +89,9 @@ namespace EverybodyEdits.Game
                                 invitation.Set("creationDate", DateTime.Now);
 
                                 this.client.BigDB.CreateObject(INVITATIONS_TABLE, null, invitation,
-                                    delegate(DatabaseObject newinvitation)
+                                    delegate (DatabaseObject newinvitation)
                                     {
-                                        this.IsBlocked(toMail, connectionUserId, delegate(bool blocked)
+                                        this.IsBlocked(toMail, connectionUserId, delegate (bool blocked)
                                         {
                                             if (!blocked)
                                             {
@@ -121,8 +121,8 @@ namespace EverybodyEdits.Game
 
         public void DeletePending(string connectionUserId, String recipientEmail, Callback<bool> successCallback)
         {
-            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] {connectionUserId, recipientEmail},
-                null, null, 1000, delegate(DatabaseObject[] result)
+            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] { connectionUserId, recipientEmail },
+                null, null, 1000, delegate (DatabaseObject[] result)
                 {
                     if (result != null && result.Length > 0)
                     {
@@ -141,23 +141,23 @@ namespace EverybodyEdits.Game
 
         public void IsBlocked(String email, String userid, Callback<bool> successCallback)
         {
-            this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] {email}, delegate(DatabaseObject ignore)
-            {
-                if (ignore != null)
-                {
-                    if (ignore.Contains("ignoreAll") && ignore.GetBool("ignoreAll"))
-                    {
-                        successCallback.Invoke(true);
-                        return;
-                    }
-                    if (ignore.Contains("ignore") && ignore.GetObject("ignore").Contains(userid))
-                    {
-                        successCallback.Invoke(true);
-                        return;
-                    }
-                }
-                successCallback.Invoke(false);
-            });
+            this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] { email }, delegate (DatabaseObject ignore)
+              {
+                  if (ignore != null)
+                  {
+                      if (ignore.Contains("ignoreAll") && ignore.GetBool("ignoreAll"))
+                      {
+                          successCallback.Invoke(true);
+                          return;
+                      }
+                      if (ignore.Contains("ignore") && ignore.GetObject("ignore").Contains(userid))
+                      {
+                          successCallback.Invoke(true);
+                          return;
+                      }
+                  }
+                  successCallback.Invoke(false);
+              });
         }
 
         public void SendInvitationEmail(String recipientemail, String sendername, String invitekey)
@@ -185,15 +185,15 @@ namespace EverybodyEdits.Game
             queryString = queryString.Remove(queryString.Length - 1);
 
             this.client.Web.Post("http://api.playerio.com/services/email/send?" + queryString, args,
-                delegate(HttpResponse reponse) { Console.WriteLine("Mail sendt: " + reponse); },
-                delegate(PlayerIOError error) { Console.WriteLine("Error: " + error.Message); });
+                delegate (HttpResponse reponse) { Console.WriteLine("Mail sendt: " + reponse); },
+                delegate (PlayerIOError error) { Console.WriteLine("Error: " + error.Message); });
         }
 
         public void ActivateMyInvitation(string connectionUserId, String invite_id, Callback successCallback,
             Callback<int> errorCallback)
         {
             this.client.BigDB.Load(INVITATIONS_TABLE, invite_id,
-                delegate(DatabaseObject invitation)
+                delegate (DatabaseObject invitation)
                 {
                     if (invitation != null)
                     {
@@ -225,13 +225,13 @@ namespace EverybodyEdits.Game
             Console.WriteLine("answerInvite from " + sender_name + ": " + accept);
             Console.WriteLine("Friends.cs, AnswerMyInvitation -> " + getMaxFriendsAllowed());
             */
-            this.getNumPotentialFriends(connectionUserId, delegate(int num)
+            this.getNumPotentialFriends(connectionUserId, delegate (int num)
             {
                 if (num < /*MAX_FRIENDS*/ this.getMaxFriendsAllowed() || !accept)
                 {
                     this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderName",
-                        new object[] {sender_name, connectionUserId}, null, null, 1000,
-                        delegate(DatabaseObject[] invitations)
+                        new object[] { sender_name, connectionUserId }, null, null, 1000,
+                        delegate (DatabaseObject[] invitations)
                         {
                             if (invitations != null && invitations.Length > 0)
                             {
@@ -277,7 +277,7 @@ namespace EverybodyEdits.Game
 
         public void GetFriendKeys(String userid, Callback<string[]> callback)
         {
-            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate(DatabaseObject friendsobj)
+            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate (DatabaseObject friendsobj)
             {
                 var keys = new ArrayList();
                 foreach (var key in friendsobj.Properties)
@@ -301,7 +301,7 @@ namespace EverybodyEdits.Game
 
         public void AddFriend(String userid, String friendid, Callback callback = null)
         {
-            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate(DatabaseObject friends)
+            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate (DatabaseObject friends)
             {
                 friends.Set(friendid, true);
                 friends.Save(delegate { if (callback != null) callback.Invoke(); });
@@ -312,16 +312,16 @@ namespace EverybodyEdits.Game
         public void RemoveFriends(String userid, String friendid, Callback<bool> callback = null)
         {
             this.RemoveFriend(userid, friendid,
-                delegate(bool success1)
+                delegate (bool success1)
                 {
                     this.RemoveFriend(friendid, userid,
-                        delegate(bool success2) { callback.Invoke(success1 && success2); });
+                        delegate (bool success2) { callback.Invoke(success1 && success2); });
                 });
         }
 
         public void RemoveFriend(String userid, String friendid, Callback<bool> callback = null)
         {
-            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate(DatabaseObject friends)
+            this.client.BigDB.LoadOrCreate(FRIENDS_TABLE, userid, delegate (DatabaseObject friends)
             {
                 if (friends != null)
                 {
@@ -335,14 +335,14 @@ namespace EverybodyEdits.Game
         public void BlockInvite(String userid, String invited_by, Callback successCallback,
             Callback<int> errorCallback = null)
         {
-            this.client.BigDB.LoadSingle(INVITATIONS_TABLE, "senderName", new object[] {invited_by, userid},
-                delegate(DatabaseObject invitation)
+            this.client.BigDB.LoadSingle(INVITATIONS_TABLE, "senderName", new object[] { invited_by, userid },
+                delegate (DatabaseObject invitation)
                 {
                     if (invitation != null)
                     {
                         var email = invitation.GetString("recipientEmail");
-                        this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] {email},
-                            delegate(DatabaseObject ignore)
+                        this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] { email },
+                            delegate (DatabaseObject ignore)
                             {
                                 var create = (ignore == null);
                                 if (create)
@@ -380,41 +380,41 @@ namespace EverybodyEdits.Game
         public void UnblockInvite(String id, String mail, String invited_by, Callback successCallback,
             Callback<int> errorCallback = null)
         {
-            this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] {mail}, delegate(DatabaseObject ignore)
-            {
-                if (ignore != null)
-                {
-                    if (invited_by == "all" && ignore.Contains("ignoreAll"))
-                    {
-                        ignore.Set("ignoreAll", false);
-                        ignore.Save(delegate { successCallback.Invoke(); },
-                            delegate { if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING); });
-                    }
-                    else if (ignore.Contains("ignore"))
-                    {
-                        foreach (var key in ignore.GetObject("ignore").Properties)
-                        {
-                            if (ignore.GetObject("ignore").GetString(key) == invited_by)
-                            {
-                                ignore.GetObject("ignore").Remove(key);
-                                ignore.Save(delegate { successCallback.Invoke(); },
-                                    delegate { if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING); });
-                                break;
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING);
-                }
-            });
+            this.client.BigDB.LoadSingle(BLOCKING_TABLE, "ignore", new[] { mail }, delegate (DatabaseObject ignore)
+              {
+                  if (ignore != null)
+                  {
+                      if (invited_by == "all" && ignore.Contains("ignoreAll"))
+                      {
+                          ignore.Set("ignoreAll", false);
+                          ignore.Save(delegate { successCallback.Invoke(); },
+                              delegate { if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING); });
+                      }
+                      else if (ignore.Contains("ignore"))
+                      {
+                          foreach (var key in ignore.GetObject("ignore").Properties)
+                          {
+                              if (ignore.GetObject("ignore").GetString(key) == invited_by)
+                              {
+                                  ignore.GetObject("ignore").Remove(key);
+                                  ignore.Save(delegate { successCallback.Invoke(); },
+                                      delegate { if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING); });
+                                  break;
+                              }
+                          }
+                      }
+                  }
+                  else
+                  {
+                      if (errorCallback != null) errorCallback.Invoke(ERROR_SAVING);
+                  }
+              });
         }
 
         public void GetPending(String userid, Callback<ArrayList> callback)
         {
-            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] {userid}, null, null, 100,
-                delegate(DatabaseObject[] invitelist)
+            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "senderId", new object[] { userid }, null, null, 100,
+                delegate (DatabaseObject[] invitelist)
                 {
                     var rtn = new ArrayList();
                     Console.WriteLine("invitelist length: " + invitelist.Length);
@@ -434,8 +434,8 @@ namespace EverybodyEdits.Game
 
         public void GetInvitesToMe(String userid, Callback<ArrayList> callback)
         {
-            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "recipientId", new object[] {userid}, null, null, 100,
-                delegate(DatabaseObject[] invitelist)
+            this.client.BigDB.LoadRange(INVITATIONS_TABLE, "recipientId", new object[] { userid }, null, null, 100,
+                delegate (DatabaseObject[] invitelist)
                 {
                     var rtn = new ArrayList();
                     for (var i = 0; i < invitelist.Length; i++)
@@ -454,8 +454,8 @@ namespace EverybodyEdits.Game
 
         public void GetBlockedUsers(String userid, Callback<ArrayList> callback)
         {
-            this.client.BigDB.LoadRange(BLOCKING_TABLE, "byOwner", new object[] {userid}, null, null, 100,
-                delegate(DatabaseObject[] ignorelist)
+            this.client.BigDB.LoadRange(BLOCKING_TABLE, "byOwner", new object[] { userid }, null, null, 100,
+                delegate (DatabaseObject[] ignorelist)
                 {
                     var rtn = new ArrayList();
                     for (var i = 0; i < ignorelist.Length; i++)

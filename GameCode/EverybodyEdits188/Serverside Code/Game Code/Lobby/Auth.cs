@@ -40,7 +40,7 @@ namespace EverybodyEdits.Auth
                               message.GetString(0) + "&auth_token=" + message.GetString(1) +
                               "&api_key=B84276AA-5397-4B89-A8BA-0F16FFB7566F";
 
-                    this.PlayerIO.Web.Get(url, delegate(HttpResponse response)
+                    this.PlayerIO.Web.Get(url, delegate (HttpResponse response)
                     {
                         Console.WriteLine("HTTP RESPONSE: " + response.StatusCode + " = " + response.Text);
 

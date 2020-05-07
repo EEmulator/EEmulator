@@ -6,10 +6,10 @@ namespace EverybodyEdits.Game
 {
     public class BlockMap
     {
-        protected int[] beta = {37, 38, 39, 40, 41, 42};
+        protected int[] beta = { 37, 38, 39, 40, 41, 42 };
         // Subset of all blocks, which are allowed in open worlds
 
-        protected int[] buildersclub = {200, 201 /*, (int)ItemTypes.TextSign*/};
+        protected int[] buildersclub = { 200, 201 /*, (int)ItemTypes.TextSign*/};
 
         protected int[] freeForAll =
         {

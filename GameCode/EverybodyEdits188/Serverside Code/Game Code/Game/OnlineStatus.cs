@@ -54,12 +54,12 @@ namespace EverybodyEdits.Game
                 this.status.Set("lastUpdate", this.lastUpdate);
 
                 this.status.Save(false, true, delegate { if (successCallback != null) successCallback.Invoke(); },
-                    delegate(PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
+                    delegate (PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
             }
             else
             {
                 this.client.BigDB.LoadOrCreate(ONLINE_STATUS_TABLE, this.key,
-                    delegate(DatabaseObject result)
+                    delegate (DatabaseObject result)
                     {
                         this.status = result;
 
@@ -71,8 +71,8 @@ namespace EverybodyEdits.Game
                         result.Set("lastUpdate", this.lastUpdate);
 
                         result.Save(false, delegate { if (successCallback != null) successCallback.Invoke(); },
-                            delegate(PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
-                    }, delegate(PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
+                            delegate (PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
+                    }, delegate (PlayerIOError error) { if (errorCallback != null) errorCallback.Invoke(error); });
             }
         }
 
@@ -106,12 +106,12 @@ namespace EverybodyEdits.Game
         public static void getOnlineStatus(Client c, String connectUserId, Callback<OnlineStatus> callback)
         {
             c.BigDB.LoadOrCreate(ONLINE_STATUS_TABLE, connectUserId,
-                delegate(DatabaseObject result) { callback.Invoke(new OnlineStatus(c, result)); });
+                delegate (DatabaseObject result) { callback.Invoke(new OnlineStatus(c, result)); });
         }
 
         public static void getOnlineStatus(Client c, String[] connectUserId, Callback<OnlineStatus[]> callback)
         {
-            c.BigDB.LoadKeysOrCreate(ONLINE_STATUS_TABLE, connectUserId, delegate(DatabaseObject[] result)
+            c.BigDB.LoadKeysOrCreate(ONLINE_STATUS_TABLE, connectUserId, delegate (DatabaseObject[] result)
             {
                 var rtn = new OnlineStatus[result.Length];
                 for (var i = 0; i < result.Length; i++)

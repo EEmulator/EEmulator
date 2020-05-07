@@ -313,7 +313,7 @@ namespace EverybodyEdits.Game
         protected virtual void checkWorldBanAndLoad(string roomid)
         {
             Console.WriteLine("checkWorldBanAndLoad " + roomid);
-            this.PlayerIO.BigDB.Load("WorldBans", roomid, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("WorldBans", roomid, delegate (DatabaseObject o)
             {
                 var isWorldBanned = false;
                 if (o != null && o.Contains("Bans"))
@@ -349,7 +349,7 @@ namespace EverybodyEdits.Game
             var t = this.getTime();
 
 
-            this.PlayerIO.BigDB.LoadOrCreate("Worlds", roomid, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.LoadOrCreate("Worlds", roomid, delegate (DatabaseObject o)
             {
                 //DateTime d = DateTime.Now;
 
@@ -379,7 +379,7 @@ namespace EverybodyEdits.Game
                 if (this.baseworld.ownerid != "")
                 {
                     Console.WriteLine("loading po");
-                    this.PlayerIO.BigDB.Load("PlayerObjects", this.baseworld.ownerid, delegate(DatabaseObject oo)
+                    this.PlayerIO.BigDB.Load("PlayerObjects", this.baseworld.ownerid, delegate (DatabaseObject oo)
                     {
                         if (oo.GetBool("banned", false) || oo.GetBool("tempbanned", false))
                         {
@@ -450,7 +450,7 @@ namespace EverybodyEdits.Game
 
         protected void checkVersion()
         {
-            this.PlayerIO.BigDB.Load("Config", "config", delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("Config", "config", delegate (DatabaseObject o)
             {
                 if (this.version < o.GetInt("version", this.version) ||
                     (this.isbetalevel && this.version < o.GetInt("betaversion", this.version)))
@@ -483,7 +483,7 @@ namespace EverybodyEdits.Game
 
         protected void checkOnlineStatus(Player p)
         {
-            OnlineStatus.getOnlineStatus(this.PlayerIO, p.ConnectUserId, delegate(OnlineStatus os)
+            OnlineStatus.getOnlineStatus(this.PlayerIO, p.ConnectUserId, delegate (OnlineStatus os)
             {
                 if (os.currentWorldName != "" && os.currentWorldId != "" && os.currentWorldId != this.RoomId &&
                     os.ipAddress != p.IPAddress.ToString())
@@ -637,7 +637,7 @@ namespace EverybodyEdits.Game
 
         private void CheckTempBanned(Player player)
         {
-            this.PlayerIO.BigDB.Load("TempBans", player.ConnectUserId, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("TempBans", player.ConnectUserId, delegate (DatabaseObject o)
             {
                 if (o == null)
                 {
@@ -945,7 +945,7 @@ namespace EverybodyEdits.Game
                         if (this.baseworld.ownerid != "")
                         {
                             this.PlayerIO.BigDB.Load("PlayerObjects", this.baseworld.ownerid,
-                                delegate(DatabaseObject oo)
+                                delegate (DatabaseObject oo)
                                 {
                                     if (!oo.Contains("myworldnames"))
                                     {
@@ -983,7 +983,7 @@ namespace EverybodyEdits.Game
                         if (this.baseworld.ownerid != "")
                         {
                             this.PlayerIO.BigDB.Load("PlayerObjects", this.baseworld.ownerid,
-                                delegate(DatabaseObject oo)
+                                delegate (DatabaseObject oo)
                                 {
                                     if (!oo.Contains("myworldnames"))
                                     {
@@ -1134,7 +1134,7 @@ namespace EverybodyEdits.Game
                     if (!this.baseworld.wootupbanned && !player.owner)
                     {
                         WootUpPlayer.giveWootUp(this.PlayerIO, player.ConnectUserId, player.IPAddress.ToString(),
-                            delegate(bool success)
+                            delegate (bool success)
                             {
                                 if (success)
                                 {
@@ -1281,7 +1281,7 @@ namespace EverybodyEdits.Game
                     // Send the previous 10 chat messages to the player (if she has chat or messages are from a friend) 
                     // for (int a = 0; a < chatmessages.Length; a++) {
                     for (var a = 10; a < this.chatmessages.Length; a++)
-                        // Chat messages length increased to 100, but we still only want to deliver the last 10 to the user
+                    // Chat messages length increased to 100, but we still only want to deliver the last 10 to the user
                     {
                         if (this.chatmessages[a] != null)
                         {
@@ -1301,7 +1301,7 @@ namespace EverybodyEdits.Game
                     break;
                 }
 
-                    // Player collect coin
+                // Player collect coin
                 case "c":
                 {
                     player.coins = m.GetInt(0);
@@ -1341,7 +1341,7 @@ namespace EverybodyEdits.Game
                         if ((this.baseworld.coinPercentage() * 2) * 100 < this.rd.Next(0, 100))
                         {
                             var playerlevel = player.level;
-                            player.doCoinCollect(delegate(bool success)
+                            player.doCoinCollect(delegate (bool success)
                             {
                                 if (success)
                                 {
@@ -1384,7 +1384,7 @@ namespace EverybodyEdits.Game
                                             "You found an extra magical coin! Upon touching the coin you found that you had a wizard hat and beard..."));
                                         this.Broadcast("write", "* MAGIC",
                                             player.name.ToUpper() + " just became a wizard!");
-                                        player.PayVault.Give(new[] {new BuyItemInfo("smileywizard")}, delegate { });
+                                        player.PayVault.Give(new[] { new BuyItemInfo("smileywizard") }, delegate { });
                                         player.lastCoin = DateTime.Now;
                                         player.canWinEnergy = false;
                                         player.face = 22;
@@ -1403,7 +1403,7 @@ namespace EverybodyEdits.Game
                                             player.lastCoin = DateTime.Now;
                                             player.canWinEnergy = false;
                                             player.PlayerObject.Set("maxEnergy", player.PlayerObject.GetInt("maxEnergy") + 15);
-                                            TimeSpan full = new TimeSpan(0,0,150*player.maxEnergy);
+                                            TimeSpan full = new TimeSpan(0, 0, 150 * player.maxEnergy);
                                             player.PlayerObject.Set("shopDate", DateTime.Now + full);
                                             player.PlayerObject.Save();
                                         }
@@ -1509,7 +1509,7 @@ namespace EverybodyEdits.Game
                     break;
                 }
 
-                    // Player move
+                // Player move
                 case "m":
                 {
                     player.x = m.GetDouble(0);
@@ -2125,57 +2125,57 @@ namespace EverybodyEdits.Game
             }
         }
 
-/*
-        protected void banUser(Player player, Message m) {
-            if (!player.canbemod) return;
+        /*
+                protected void banUser(Player player, Message m) {
+                    if (!player.canbemod) return;
 
-            string text = m.GetString(0);
-            string[] words = text.ToLower().Split(' ');
-
-
-            if (words.Length < 2) {
-                player.Send("write", "SYSTEM", "You must define a user to ban");
-            }
+                    string text = m.GetString(0);
+                    string[] words = text.ToLower().Split(' ');
 
 
-            PlayerIO.BigDB.Load("usernames", words[1], delegate(DatabaseObject o) {
-                if (o == null || o.GetString("owner", null) == null) {
-                    player.Send("write", "SYSTEM", "User " + words[1] + " not found");
-                    return;
-                }
-
-                PlayerIO.BigDB.Load("PlayerObjects", o.GetString("owner", "waggag"), delegate(DatabaseObject user) {
-                    if (o == null) {
-                        player.Send("write", "SYSTEM", "Crap, something went horriably wrong!... tell chris!");
-                        return;
+                    if (words.Length < 2) {
+                        player.Send("write", "SYSTEM", "You must define a user to ban");
                     }
 
-                    if (user.GetBool("isModerator", false)) {
-                        player.Send("write", "SYSTEM", "Dude, stop that!");
-                        return;
-                    } else {
-                        user.Set("banned", true);
-                        user.Set("ban_reason", "Banned from chat by " + player.name + " [" + text + "]");
-                        user.Save(delegate() {
-                            player.Send("write", "SYSTEM", "Player " + words[1] + " has been banned!");
+
+                    PlayerIO.BigDB.Load("usernames", words[1], delegate(DatabaseObject o) {
+                        if (o == null || o.GetString("owner", null) == null) {
+                            player.Send("write", "SYSTEM", "User " + words[1] + " not found");
+                            return;
+                        }
+
+                        PlayerIO.BigDB.Load("PlayerObjects", o.GetString("owner", "waggag"), delegate(DatabaseObject user) {
+                            if (o == null) {
+                                player.Send("write", "SYSTEM", "Crap, something went horriably wrong!... tell chris!");
+                                return;
+                            }
+
+                            if (user.GetBool("isModerator", false)) {
+                                player.Send("write", "SYSTEM", "Dude, stop that!");
+                                return;
+                            } else {
+                                user.Set("banned", true);
+                                user.Set("ban_reason", "Banned from chat by " + player.name + " [" + text + "]");
+                                user.Save(delegate() {
+                                    player.Send("write", "SYSTEM", "Player " + words[1] + " has been banned!");
+                                });
+                            }
                         });
-                    }
-                });
 
-            });
+                    });
 
-            
 
-        }
- */
+
+                }
+         */
 
         public void copyLevel(Player player)
         {
             this.getUniqueId(this.isbetalevel, player,
-                delegate(string key)
+                delegate (string key)
                 {
                     this.PlayerIO.BigDB.CreateObject("Worlds", key, this.baseworld.getDatabaseObject(),
-                        delegate(DatabaseObject o)
+                        delegate (DatabaseObject o)
                         {
                             player.SendMessage(Message.Create("write", "SYSTEM", "Room has been saved as: " + o.Key));
                         });
@@ -2227,7 +2227,7 @@ namespace EverybodyEdits.Game
                             .Replace("/", "-");
             }
 
-            this.PlayerIO.BigDB.Load("Worlds", newid, delegate(DatabaseObject o)
+            this.PlayerIO.BigDB.Load("Worlds", newid, delegate (DatabaseObject o)
             {
                 if (o != null)
                 {
@@ -2398,7 +2398,7 @@ namespace EverybodyEdits.Game
                         }
                         break;
                     }
-                        //Admin label
+                    //Admin label
                     case 1000:
                     {
                         if (this.owned && player.canbemod)
@@ -2520,7 +2520,7 @@ namespace EverybodyEdits.Game
                         if (this.owned && (player.owner || player.canbemod) &&
                             (player.getBrickPackCount("bricksign") > this.baseworld.textsignsCount() ||
                              this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TextSign))
-                            // if ( (owned && /*player.isClubMember*/ (player.owner || player.canbemod) && (player.getBrickPackCount("bricksign") > baseworld.textsignsCount()) // TODO: Make text sign purchable
+                        // if ( (owned && /*player.isClubMember*/ (player.owner || player.canbemod) && (player.getBrickPackCount("bricksign") > baseworld.textsignsCount()) // TODO: Make text sign purchable
                         {
                             var signText = this.removeBadChars(m.GetString(4));
                             this.setBrickTextSign(cx, cy, signText, (uint)player.Id);
@@ -2714,13 +2714,13 @@ namespace EverybodyEdits.Game
                         }
                         break;
                     }
-                        //case (uint)ItemTypes.GateClub:
-                        //case (uint)ItemTypes.DoorClub: {
-                        //        if (owned && (player.owner || player.canbemod) && player.isClubMember) {
-                        //            setBrick(layerNum, cx, cy, brick);
-                        //        }
-                        //        break;
-                        //    }
+                    //case (uint)ItemTypes.GateClub:
+                    //case (uint)ItemTypes.DoorClub: {
+                    //        if (owned && (player.owner || player.canbemod) && player.isClubMember) {
+                    //            setBrick(layerNum, cx, cy, brick);
+                    //        }
+                    //        break;
+                    //    }
 
                     default:
                     {
@@ -3117,13 +3117,13 @@ namespace EverybodyEdits.Game
                     var vaultpotion = vault.First(potion.payvatultid);
                     if (vaultpotion != null)
                     {
-                        vault.Consume(new[] {vaultpotion}, delegate { this.activatePotion(player, potion); }, delegate
-                        {
-                            this.sendPotionCountUpdate(player);
-                            player.SendMessage(Message.Create("info", "Potion Error",
-                                "There was an error using the potion."));
-                            this.PlayerIO.ErrorLog.WriteError("Error consuming potion");
-                        });
+                        vault.Consume(new[] { vaultpotion }, delegate { this.activatePotion(player, potion); }, delegate
+                          {
+                              this.sendPotionCountUpdate(player);
+                              player.SendMessage(Message.Create("info", "Potion Error",
+                                  "There was an error using the potion."));
+                              this.PlayerIO.ErrorLog.WriteError("Error consuming potion");
+                          });
                     }
                 });
             }
@@ -3135,7 +3135,7 @@ namespace EverybodyEdits.Game
 
         protected void activatePotion(Player player, Potion potion)
         {
-            player.activatePotion(potion, delegate(List<Potion> removed)
+            player.activatePotion(potion, delegate (List<Potion> removed)
             {
                 this.sendPotionCountUpdate(player);
                 for (var i = 0; i < removed.Count; i++)

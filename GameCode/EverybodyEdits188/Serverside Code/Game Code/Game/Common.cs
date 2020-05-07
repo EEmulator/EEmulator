@@ -59,12 +59,12 @@ namespace EverybodyEdits.Game
 
         public static int[] levelcap
         {
-            get { return new[] {0, 5, 12, 20, 30, 40, 55, 80, 115, 165, 230, 320, int.MaxValue}; }
+            get { return new[] { 0, 5, 12, 20, 30, 40, 55, 80, 115, 165, 230, 320, int.MaxValue }; }
         }
 
         public static int[] levelmaxenergy
         {
-            get { return new[] {200, 205, 212, 220, 230, 240, 255, 275, 300, 330, 360, 400}; }
+            get { return new[] { 200, 205, 212, 220, 230, 240, 255, 275, 300, 330, 360, 400 }; }
         }
 
         public static string[] leveltitles
@@ -220,34 +220,45 @@ namespace EverybodyEdits.Game
             get { return this.PayVault.Has("pro") || this.PlayerObject.GetBool("haveSmileyPackage", false); }
         }
 
-		public DateTime lastCoin {
-			get {
-				return PlayerObject.GetDateTime("lastcoin", DateTime.Now.AddHours(-24));
-			}
-			set {
-				if (PlayerObject != null) PlayerObject.Set("lastcoin", value);
-			}
-		}
+        public DateTime lastCoin
+        {
+            get
+            {
+                return PlayerObject.GetDateTime("lastcoin", DateTime.Now.AddHours(-24));
+            }
+            set
+            {
+                if (PlayerObject != null) PlayerObject.Set("lastcoin", value);
+            }
+        }
 
-		public int face {
-			get {
-				return temporary_face > -1 ? temporary_face : PlayerObject.GetInt("smiley", 0);
-			}
-			set {
+        public int face
+        {
+            get
+            {
+                return temporary_face > -1 ? temporary_face : PlayerObject.GetInt("smiley", 0);
+            }
+            set
+            {
                 Console.WriteLine("Setting face: " + value + " - " + allowSaveSmiley(value));
-				if (!allowSaveSmiley(value)) {
-					temporary_face = value;
-				} else {
-					temporary_face = -1;
-					if (PlayerObject != null) PlayerObject.Set("smiley", value);
-					if (OnlineStatusObject != null) OnlineStatusObject.smiley = value;
-				}
-			}
-		}
+                if (!allowSaveSmiley(value))
+                {
+                    temporary_face = value;
+                }
+                else
+                {
+                    temporary_face = -1;
+                    if (PlayerObject != null) PlayerObject.Set("smiley", value);
+                    if (OnlineStatusObject != null) OnlineStatusObject.smiley = value;
+                }
+            }
+        }
 
 
-		public int maxEnergy {
-			get {
+        public int maxEnergy
+        {
+            get
+            {
                 if (!PlayerObject.Contains("maxEnergy"))
                 {
                     PlayerObject.Set("maxEnergy", 200);
@@ -256,12 +267,13 @@ namespace EverybodyEdits.Game
 
                 return (Config.levelmaxenergy[level - 1] - 200) + PlayerObject.GetInt("maxEnergy");
                 //return Math.Max(PlayerObject.GetInt("maxEnergy", 200),200);
-			}
-			set {
-				if( (value - maxEnergy) >= 10) PlayerObject.Remove("shopDate");
-				if (PlayerObject != null) PlayerObject.Set("maxEnergy", value);
-			}
-		}
+            }
+            set
+            {
+                if ((value - maxEnergy) >= 10) PlayerObject.Remove("shopDate");
+                if (PlayerObject != null) PlayerObject.Set("maxEnergy", value);
+            }
+        }
 
         /**
          * "canbemod" means the player is able to switch to mod mode (only user with the isModerator property in the database can do this) 
@@ -464,7 +476,7 @@ namespace EverybodyEdits.Game
 
         public void doCoinCollect(Callback<bool> callback)
         {
-            this.WootStatusObject.doCoinCollect(delegate(bool success)
+            this.WootStatusObject.doCoinCollect(delegate (bool success)
             {
                 //if (success) {
                 //    PlayerObject.Set("Level", level);

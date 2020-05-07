@@ -16,7 +16,7 @@ namespace EverybodyEdits.Lobby
             this.client = c;
 
             this.client.BigDB.LoadRange("PayVaultItems", "PriceCoins", null, null, null, 1000,
-                delegate(DatabaseObject[] ob)
+                delegate (DatabaseObject[] ob)
                 {
                     for (var a = 0; a < ob.Length; a++)
                     {
