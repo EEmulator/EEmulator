@@ -14,10 +14,11 @@ namespace EEmulator.Modules
             {
                 var args = Serializer.Deserialize<ListRoomsArgs>(this.Request.Body);
                 var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
 
                 return PlayerIO.CreateResponse(token, true, new ListRoomsOutput()
                 {
-                    Rooms = new List<RoomInfo>() { } // TODO: collate list rooms with running rooms in game instance.
+                    Rooms = game.Rooms.Select(room => new RoomInfo() { Id = room.Id, OnlineUsers = 1, RoomData = new List<KeyValuePair>(), RoomType = room.RoomType }).ToList()
                 });
             });
         }

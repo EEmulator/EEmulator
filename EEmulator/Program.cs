@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using Nancy;
 using Nancy.Hosting.Self;
@@ -11,12 +12,16 @@ namespace EEmulator
         {
             Console.WriteLine(@"
                      _____ _____                _       _             
-   Version 0.1.1    |  ___|  ___|              | |     | |     ""thanks atilla""
+   Version 0.1.2    |  ___|  ___|              | |     | |     ""thanks atilla""
      written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
     miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
 ====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
                     \____/\____/_| |_| |_|\__,_|_|\__,_|\__\___/|_|" + "\n\n");
 
+            if (Debugger.IsAttached)
+            {
+                args = new string[] { "EverybodyEdits", "v0800" };
+            }
 
             if (args.Length < 2)
             {

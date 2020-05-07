@@ -14,7 +14,12 @@ namespace EEmulator.Modules
             {
                 var args = Serializer.Deserialize<UpdateRoomArgs>(this.Request.Body);
                 var token = this.Request.Headers["playertoken"].FirstOrDefault();
+                var game = GameManager.GetGameFromToken(token);
 
+                var roomType = args.ExtendedRoomId.Split('/')[1];
+                var roomId = args.ExtendedRoomId.Split('/')[2];
+
+                game.Rooms.Add(new RoomInfo() { Id = roomId, OnlineUsers = 1, RoomData = new List<KeyValuePair>(), RoomType = roomType });
                 return PlayerIO.CreateResponse(token, true, new UpdateRoomOutput() { });
             });
         }

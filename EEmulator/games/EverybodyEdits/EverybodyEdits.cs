@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using EEmulator.Messages;
 using PlayerIO.DevelopmentServer;
 
 namespace EEmulator
@@ -9,9 +11,11 @@ namespace EEmulator
     {
         public EverybodyEditsVersion Version { get; }
         public BigDB BigDB { get; }
+        public List<RoomInfo> Rooms { get; set; }
 
         public DevServer DevelopmentServer { get; private set; }
         public bool IsRunning { get; private set; }
+
 
         public GameAssembly GameAssembly =>
             this.Version == EverybodyEditsVersion.v0500 ? new GameAssembly("FlixelWalker.dll", "FlixelWalker.pdb") :
@@ -32,6 +36,7 @@ namespace EEmulator
         {
             this.Version = version;
             this.BigDB = new BigDB(this);
+            this.Rooms = new List<RoomInfo>();
         }
 
         public void Run()

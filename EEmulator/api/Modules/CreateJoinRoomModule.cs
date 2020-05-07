@@ -19,7 +19,6 @@ namespace EEmulator.Modules
                 if (string.IsNullOrEmpty(args.RoomId))
                     args.RoomId = "$service-room$";
 
-
                 string joinKey = null;
 
                 switch (game.GameId)
@@ -34,7 +33,7 @@ namespace EEmulator.Modules
                             serverType: args.RoomType,
                             roomId: args.RoomId,
                             roomData: new byte[] { },
-                            extendedRoomId: "extendedRoomId",
+                            extendedRoomId: game.GameId + "/" + args.RoomType + "/" + args.RoomId,
                             connectUserId: token.Split(':')[1],
                             playerIoToken: token,
                             visible: true,
