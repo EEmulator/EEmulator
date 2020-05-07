@@ -16,7 +16,7 @@ namespace EEmulator
         public GameAssembly GameAssembly =>
             this.Version == EverybodyEditsVersion.v0500 ? new GameAssembly("FlixelWalker.dll", "FlixelWalker.pdb") :
             this.Version == EverybodyEditsVersion.v0700 ? new GameAssembly("FlixelWalkerFX3.dll", "FlixelWalkerFX3.pdb") :
-            this.Version == EverybodyEditsVersion.v0800 ? new GameAssembly("FlixelWalkerFX19.dll", "FlixelWalkerFX19.pdb") :
+            this.Version == EverybodyEditsVersion.v0800 ? new GameAssembly("EverybodyEdits01.dll", "EverybodyEdits01.pdb") :
             this.Version == EverybodyEditsVersion.v89 ? new GameAssembly("EverybodyEdits89.dll", "EverybodyEdits89.pdb")
             : throw new NotImplementedException($"The version of game specified '{ this.Version }' does not have a game assembly associated with it.");
 

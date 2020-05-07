@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EEmulatorLauncher</RootNamespace>
     <AssemblyName>EEmulatorLauncher</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -109,6 +110,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\playv89.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EEmulator\EEmulator.csproj">
+      <Project>{8f029242-8413-41b8-9176-4d73b9f23f5f}</Project>
+      <Name>EEmulator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
