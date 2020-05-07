@@ -115,13 +115,35 @@
     <None Include="Resources\playv89.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="favicon.ico" />
+    <None Include="Resources\bg_188.png" />
+    <None Include="Resources\playv188.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\EEmulator\EEmulator.csproj">
       <Project>{8f029242-8413-41b8-9176-4d73b9f23f5f}</Project>
       <Name>EEmulator</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="favicon.ico" />
+    <ProjectReference Include="..\GameCode\EverybodyEdits01\EverybodyEdits01\EverybodyEdits01.csproj">
+      <Project>{e862bf1a-a7d0-4759-b265-0684eb79df66}</Project>
+      <Name>EverybodyEdits01</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\EverybodyEdits188\Serverside Code\Game Code\EverybodyEdits188.csproj">
+      <Project>{9d801530-a9af-4a0b-8639-b2deb7d9e333}</Project>
+      <Name>EverybodyEdits188</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\EverybodyEdits89\EverybodyEdits\EverybodyEdits89.csproj">
+      <Project>{cc02c1fe-24d2-4891-8552-31ce2e66ff63}</Project>
+      <Name>EverybodyEdits89</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\FlixelWalkerFX3\FlixelWalkerFX3\FlixelWalkerFX3.csproj">
+      <Project>{d936458f-5464-4a9d-a4de-149f0cf9eb49}</Project>
+      <Name>FlixelWalkerFX3</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\FlixelWalker\FlixelWalker\FlixelWalker.csproj">
+      <Project>{77bc4533-2681-4cdc-a21a-363f31c2a269}</Project>
+      <Name>FlixelWalker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

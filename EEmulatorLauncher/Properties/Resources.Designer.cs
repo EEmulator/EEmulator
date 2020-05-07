@@ -113,6 +113,16 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_188 {
+            get {
+                object obj = ResourceManager.GetObject("bg_188", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_89 {
             get {
                 object obj = ResourceManager.GetObject("bg_89", resourceCulture);
@@ -146,6 +156,16 @@ namespace EEmulatorLauncher.Properties {
         internal static System.Drawing.Bitmap play0700 {
             get {
                 object obj = ResourceManager.GetObject("play0700", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap playv188 {
+            get {
+                object obj = ResourceManager.GetObject("playv188", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

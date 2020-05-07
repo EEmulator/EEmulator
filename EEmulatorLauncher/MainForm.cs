@@ -44,6 +44,11 @@ namespace EEmulatorLauncher
             bottomPanel.BackgroundImage = Resources.bg_89;
         }
 
+        private void btnPlay188_MouseHover(object sender, EventArgs e)
+        {
+            bottomPanel.BackgroundImage = Resources.bg_188;
+        }
+
         private void btnPlay0500_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
@@ -66,6 +71,12 @@ namespace EEmulatorLauncher
         {
             MessageBox.Show("To use, log in with email as \"user\" without quotes, any password will work.", "Before you start.", MessageBoxButtons.OK);
             Process.Start("EEmulator.exe", "EverybodyEdits v89").WaitForExit();
+        }
+
+        private void btnPlay188_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("To gain edit, just press P - you will be granted moderator abilities, press it again to turn it off.", "Before you start.", MessageBoxButtons.OK);
+            Process.Start("EEmulator.exe", "EverybodyEdits v188").WaitForExit();
         }
     }
 }

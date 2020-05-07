@@ -39,6 +39,8 @@
             this.btnPlay0800 = new System.Windows.Forms.Button();
             this.secretLabel3 = new System.Windows.Forms.Label();
             this.btnPlay89 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnPlay188 = new System.Windows.Forms.Button();
             this.birb = new System.Windows.Forms.PictureBox();
             this.topPanel.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
@@ -79,6 +81,8 @@
             this.flowLayoutPanel.Controls.Add(this.btnPlay0800);
             this.flowLayoutPanel.Controls.Add(this.secretLabel3);
             this.flowLayoutPanel.Controls.Add(this.btnPlay89);
+            this.flowLayoutPanel.Controls.Add(this.label1);
+            this.flowLayoutPanel.Controls.Add(this.btnPlay188);
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -183,6 +187,32 @@
             this.btnPlay89.Click += new System.EventHandler(this.btnPlay89_Click);
             this.btnPlay89.MouseHover += new System.EventHandler(this.btnPlay89_MouseHover);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(253, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 8;
+            // 
+            // btnPlay188
+            // 
+            this.btnPlay188.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playv188;
+            this.btnPlay188.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlay188.FlatAppearance.BorderSize = 0;
+            this.btnPlay188.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay188.ForeColor = System.Drawing.Color.Black;
+            this.btnPlay188.Location = new System.Drawing.Point(256, 7);
+            this.btnPlay188.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPlay188.Name = "btnPlay188";
+            this.btnPlay188.Size = new System.Drawing.Size(56, 30);
+            this.btnPlay188.TabIndex = 9;
+            this.btnPlay188.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnPlay188.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPlay188.UseVisualStyleBackColor = true;
+            this.btnPlay188.Click += new System.EventHandler(this.btnPlay188_Click);
+            this.btnPlay188.MouseHover += new System.EventHandler(this.btnPlay188_MouseHover);
+            // 
             // birb
             // 
             this.birb.BackgroundImage = global::EEmulatorLauncher.Properties.Resources._196_LobbyState_twitter_LobbyState_twitter;
@@ -231,6 +261,8 @@
         private System.Windows.Forms.Button btnPlay0800;
         private System.Windows.Forms.Label secretLabel3;
         private System.Windows.Forms.Button btnPlay89;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnPlay188;
     }
 }
 
