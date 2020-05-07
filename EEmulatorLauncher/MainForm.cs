@@ -75,7 +75,6 @@ namespace EEmulatorLauncher
 
         private void btnPlay188_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To gain edit, just press P - you will be granted moderator abilities, press it again to turn it off.", "Before you start.", MessageBoxButtons.OK);
             Process.Start("EEmulator.exe", "EverybodyEdits v188").WaitForExit();
         }
     }
