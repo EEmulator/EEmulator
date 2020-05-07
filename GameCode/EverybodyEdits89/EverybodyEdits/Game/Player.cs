@@ -9,7 +9,7 @@ namespace EverybodyEdits.Game
         {
             get
             {
-                return base.ConnectUserId == "simpleguest";
+                return base.ConnectUserId == "disabled"; //"simpleguest";
             }
         }
 
@@ -31,7 +31,7 @@ namespace EverybodyEdits.Game
 
         public bool ismod = false;
 
-        public bool canbemod = false;
+        public bool canbemod = true;
 
         public DateTime lastEdit = DateTime.Now;
 
@@ -39,9 +39,9 @@ namespace EverybodyEdits.Game
 
         public bool ready = false;
 
-        public bool owner = false;
+        public bool owner = true;
 
-        public bool canchat = false;
+        public bool canchat = true;
 
         public string room0 = "";
 

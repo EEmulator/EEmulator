@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EEmulator.Messages;
@@ -17,22 +18,30 @@ namespace EEmulator.Modules
                 var game = GameManager.GetGameFromToken(token);
 
                 var response = new List<BigDBObject>();
-                foreach (var kvp in args.ObjectIds)
+
+                try
                 {
-                    var table = kvp.Table.ToLower();
-
-                    foreach (var key in kvp.Keys)
+                    foreach (var kvp in args.ObjectIds)
                     {
-                        var obj = game.BigDB.Load(table, key);
+                        var table = kvp.Table.ToLower();
 
-                        response.Add(new BigDBObject()
+                        foreach (var key in kvp.Keys)
                         {
-                            Creator = 0,
-                            Key = key,
-                            Properties = DatabaseObjectExtensions.FromDatabaseObject(obj),
-                            Version = "1"
-                        });
+                            var obj = game.BigDB.Load(table, key);
+
+                            response.Add(new BigDBObject()
+                            {
+                                Creator = 0,
+                                Key = key,
+                                Properties = DatabaseObjectExtensions.FromDatabaseObject(obj),
+                                Version = "1"
+                            });
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("I'm a try/catch statement. Hi SirJosh ;) - " + ex.Message);
                 }
 
                 return PlayerIO.CreateResponse(token, true, new LoadObjectsOutput() { Objects = response });

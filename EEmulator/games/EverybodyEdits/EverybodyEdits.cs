@@ -84,6 +84,15 @@ namespace EEmulator
                         .Set("chatbanned", false)
                         .Set("shopDate", DateTime.Now));
 
+                    this.BigDB.CreateObject("PlayerObjects", "user", new DatabaseObject()
+                        .Set("owner", "simpleTest")
+                        .Set("haveSmileyPackage", true)
+                        .Set("isModerator", true)
+                        .Set("canchat", true)
+                        .Set("name", "eemu")
+                        .Set("chatbanned", false)
+                        .Set("shopDate", DateTime.Now));
+
                     this.BigDB.CreateObject("Config", "config", new DatabaseObject()
                         .Set("version", 89)
                         .Set("betaversion", 89));

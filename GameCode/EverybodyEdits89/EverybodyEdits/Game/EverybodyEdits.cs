@@ -188,7 +188,6 @@ namespace EverybodyEdits.Game
         {
             try
             {
-                Console.WriteLine("try payvault refresh in allowuserjoin");
                 player.PayVault.Refresh(() => { });
 
                 player.haveSmileyPackage = (player.PlayerObject.GetBool("haveSmileyPackage", false) || player.PayVault.Has("pro"));
@@ -196,7 +195,7 @@ namespace EverybodyEdits.Game
                 player.room0 = player.PlayerObject.GetString("room0", "");
                 player.betaonlyroom = player.PlayerObject.GetString("betaonlyroom", "");
                 player.name = player.PlayerObject.GetString("name", "Guest-" + player.Id.ToString());
-                player.canchat = (player.PayVault.Has("canchat") && !player.PlayerObject.GetBool("chatbanned", false));
+                player.canchat = true; //(player.PayVault.Has("canchat") && !player.PlayerObject.GetBool("chatbanned", false));
                 player.lastCoin = player.PlayerObject.GetDateTime("lastcoin", DateTime.Now.AddHours(-24.0));
             }
             catch (Exception e)
@@ -501,7 +500,8 @@ namespace EverybodyEdits.Game
                     return;
                 }
                 case "god":
-                    if (this.lockedroom && player.canEdit)
+                    if (player.canEdit)
+                    //if (this.lockedroom && player.canEdit)
                     {
                         base.Broadcast("god", new object[]
                         {
