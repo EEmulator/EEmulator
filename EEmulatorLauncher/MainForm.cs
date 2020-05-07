@@ -46,22 +46,26 @@ namespace EEmulatorLauncher
 
         private void btnPlay0500_Click(object sender, EventArgs e)
         {
-            Process.Start("EEmulator.exe", "EverybodyEdits v0500");
+            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
+            Process.Start("EEmulator.exe", "EverybodyEdits v0500").WaitForExit();
         }
 
         private void btnPlay0700_Click(object sender, EventArgs e)
         {
-            Process.Start("EEmulator.exe", "EverybodyEdits v0700");
+            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
+            Process.Start("EEmulator.exe", "EverybodyEdits v0700").WaitForExit();
         }
 
         private void btnPlay0800_Click(object sender, EventArgs e)
         {
-            Process.Start("EEmulator.exe", "EverybodyEdits v0800");
+            MessageBox.Show("To use, log in with email as 'guest' without quotation marks, any password will work.", "Before you start.", MessageBoxButtons.OK);
+            Process.Start("EEmulator.exe", "EverybodyEdits v0800").WaitForExit();
         }
 
         private void btnPlay89_Click(object sender, EventArgs e)
         {
-            Process.Start("EEmulator.exe", "EverybodyEdits v89");
+            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
+            Process.Start("EEmulator.exe", "EverybodyEdits v89").WaitForExit();
         }
     }
 }
