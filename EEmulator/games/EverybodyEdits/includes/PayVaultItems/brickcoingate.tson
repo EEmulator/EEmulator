@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(50),
+    "Reusable": bool(true),
+    "PWOnly": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(30),
+    "Header": string("Coin Gates (+10)"),
+    "Body": string("Gates that close when X coins have been collected.")
+}

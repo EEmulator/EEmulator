@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(25),
+    "PriceEnergy": int(1250),
+    "EnergyPerClick": int(50),
+    "Header": string("Spy"),
+    "Body": string("Incognito behind enemy lines. Stay cool and keep an ear out for relevant intelligence."),
+    "BitmapSheetOffset": int(146),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(217),
+    "IsFeatured": bool(false)
+}

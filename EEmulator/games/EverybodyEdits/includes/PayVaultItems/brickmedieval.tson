@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(30),
+    "PriceEnergy": int(1500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "Header": string("Medieval Pack"),
+    "Body": string("Create your own historic kingdom with this huge decorative package! Includes a climbable chain."),
+    "BitmapSheetOffset": int(29)
+}

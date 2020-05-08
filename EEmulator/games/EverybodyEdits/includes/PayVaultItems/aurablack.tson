@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(45),
+    "PriceEnergy": int(2000),
+    "EnergyPerClick": int(100),
+    "Header": string("Black Aura Color"),
+    "Body": string("Get this to show off your cool black aura!"),
+    "BitmapSheetOffset": int(10),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(217),
+    "IsFeatured": bool(false)
+}

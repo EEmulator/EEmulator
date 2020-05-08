@@ -1,0 +1,11 @@
+{
+    "Enabled": bool(true),
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(68),
+    "Span": int(2),
+    "IsNew": bool(false),
+    "Header": string("Fly Effect"),
+    "Body": string("Players can levitate by holding space!")
+}

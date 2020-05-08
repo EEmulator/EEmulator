@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "Enabled": bool(true),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(132),
+    "Header": string("Goofy"),
+    "Body": string("A smiley simply designed to show silliness."),
+    "AvailableSince": int(209)
+}

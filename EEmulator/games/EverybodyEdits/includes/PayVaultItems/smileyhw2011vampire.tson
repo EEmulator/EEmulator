@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("Vampire"),
+    "BitmapSheetOffset": int(38),
+    "MinClass": int(5),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Exclusive smiley from Halloween 2011.\r")
+}

@@ -1,0 +1,8 @@
+{
+    "Enabled": bool(true),
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "Header": string("Team Effect"),
+    "Body": string("Sets player's team to the specified color and toggles specific doors and gates!")
+}

@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Span": int(3),
+    "BitmapSheetOffset": int(9),
+    "Header": string("Spring 2011 Decorations"),
+    "Body": string("Spring package from early 2011!"),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

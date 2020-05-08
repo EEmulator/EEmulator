@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Span": int(3),
+    "BitmapSheetOffset": int(3),
+    "Header": string("Halloween 2011 Pack"),
+    "Body": string("Make your own scary world!"),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

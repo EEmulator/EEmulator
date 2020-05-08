@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(100),
+    "Header": string("Hazmat Suit"),
+    "Body": string("Danger lurks around every corner. You can't be too cautious."),
+    "BitmapSheetOffset": int(156),
+    "Enabled": bool(true),
+    "AvailableSince": int(219),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false)
+}

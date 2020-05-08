@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Orange Switches"),
+    "Body": string("Global switches that trigger for everyone!"),
+    "IsFeatured": bool(false)
+}

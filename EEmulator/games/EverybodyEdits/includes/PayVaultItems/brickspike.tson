@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Header": string("Spikes"),
+    "Body": string("Rotatable hazard that kills smileys.")
+}

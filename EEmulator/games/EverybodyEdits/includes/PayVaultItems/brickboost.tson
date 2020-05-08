@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(25),
+    "Span": int(3),
+    "BitmapSheetOffset": int(19),
+    "Header": string("Boosts"),
+    "Body": string("Powerful gravity changers that shoot players at astonishing speeds!")
+}

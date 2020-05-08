@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(650),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "Reuseable": bool(false),
+    "BitmapSheetId": string("shopitem_227"),
+    "BitmapSheetOffset": int(51),
+    "Header": string("Sci-fi 2013"),
+    "Body": string("Use glowy lines to decorate your worlds")
+}

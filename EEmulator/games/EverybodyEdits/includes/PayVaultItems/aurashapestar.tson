@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(100),
+    "Header": string("Star Aura"),
+    "Body": string("Reach for the stars! Add a stellar shape to your aura collection."),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(219),
+    "IsFeatured": bool(false)
+}

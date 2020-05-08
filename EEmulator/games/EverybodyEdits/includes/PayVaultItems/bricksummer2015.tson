@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(74),
+    "Span": int(2),
+    "Header": string("Summer 2015 Decorations"),
+    "Body": string("Exclusive summer decorations from 2015!"),
+    "IsClassic": bool(true)
+}

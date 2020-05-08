@@ -1,0 +1,8 @@
+{
+    "Enabled": bool(true),
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "Header": string("Zombie Effect"),
+    "Body": string("Infects players with a horrible disease! Spreads on contact.")
+}

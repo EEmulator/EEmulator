@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(50),
+    "PriceEnergy": int(2500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Spiral Aura Shape"),
+    "Body": string("Want a cool rotating aura? Then this is for you.")
+}

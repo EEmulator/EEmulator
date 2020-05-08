@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(2),
+    "PriceEnergy": int(100),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(5),
+    "Header": string("Surprise"),
+    "BitmapSheetOffset": int(17),
+    "Body": string("Express your curiosity with this smiley!\r")
+}

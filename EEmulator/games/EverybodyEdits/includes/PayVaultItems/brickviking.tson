@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(23),
+    "Header": string("Viking Pack"),
+    "Body": string("From a happy time of rocks and weapons.")
+}

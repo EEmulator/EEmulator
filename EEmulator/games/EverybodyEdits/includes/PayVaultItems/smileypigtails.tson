@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(25),
+    "Header": string("Pigtails"),
+    "Body": string("Twin locks of golden hair."),
+    "BitmapSheetOffset": int(153),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(219),
+    "IsFeatured": bool(false)
+}

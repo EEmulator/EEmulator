@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(1000),
+    "Reusable": bool(true),
+    "Enabled": bool(true),
+    "Span": int(1),
+    "BitmapSheetOffset": int(1),
+    "Header": string("Diamond (+1)"),
+    "Body": string("A block that turns you into a diamond smiley. For those who REALLY want to support the game! ")
+}

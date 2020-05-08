@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(17),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "PriceEnergy": int(850),
+    "BitmapSheetOffset": int(90),
+    "EnergyPerClick": int(25),
+    "Header": string("Spartan"),
+    "Body": string("A warrior of brawn and bravery, with a helmet that gives an epical appearance to this smiley.\r")
+}

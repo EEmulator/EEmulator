@@ -1,0 +1,4 @@
+{
+    "PriceCoins": int(1000),
+    "enabled": bool(false)
+}

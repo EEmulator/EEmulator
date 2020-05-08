@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "Body": string("Bundle up for the cold outdoors with this limited time hooded smiley!"),
+    "BitmapSheetOffset": int(123),
+    "Header": string("Hooded"),
+    "IsClassic": bool(true)
+}

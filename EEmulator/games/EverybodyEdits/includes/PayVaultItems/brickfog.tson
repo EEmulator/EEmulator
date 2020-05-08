@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "Span": int(3),
+    "BitmapSheetOffset": int(20),
+    "Header": string("Fog Decorations"),
+    "Body": string("Thick fog foreground decorations to add an eerie aura to your map!")
+}

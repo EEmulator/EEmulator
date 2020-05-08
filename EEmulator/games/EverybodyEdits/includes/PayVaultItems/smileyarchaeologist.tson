@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(82),
+    "Header": string("Archaeologist"),
+    "IsFeatured": bool(false),
+    "MinClass": int(4),
+    "Body": string("A cool and studious smiley. \r")
+}

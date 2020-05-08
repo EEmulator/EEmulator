@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "PriceEnergy": int(500),
+    "MinClass": int(7),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(96),
+    "Header": string("Fox"),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Sly fox smiley in a vibrant shade of orange, designed by Cola1\r")
+}

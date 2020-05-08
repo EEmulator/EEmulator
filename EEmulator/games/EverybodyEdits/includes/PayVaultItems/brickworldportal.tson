@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Header": string("World Portal (+1)"),
+    "Body": string("Transport players between two worlds!"),
+    "Reusable": bool(true),
+    "PWOnly": bool(true)
+}

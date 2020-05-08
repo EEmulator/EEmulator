@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(30),
+    "Header": string("Clockwork Robot"),
+    "Body": string("Tick-tock! A wind-up toy filled with gears and springs!"),
+    "BitmapSheetOffset": int(148),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(218),
+    "IsFeatured": bool(false)
+}

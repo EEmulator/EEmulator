@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "PriceEnergy": int(500),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(92),
+    "MinClass": int(7),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Header": string("Cow"),
+    "Body": string("A classic farm creature for those who like animal smileys. \r")
+}

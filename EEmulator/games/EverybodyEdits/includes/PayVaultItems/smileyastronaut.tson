@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(40),
+    "Header": string("Astronaut"),
+    "BitmapSheetOffset": int(71),
+    "MinClass": int(5),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Explore the vast cosmos with this smiley!\r")
+}

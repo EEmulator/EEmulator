@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(220),
+    "PriceUSD": int(2200),
+    "Header": string("Gold Membership - 6 months"),
+    "Body": string("Earn yourself some metallic gold items by donating to the game! Membership includes gilded smileys, blocks, aura color, and more!"),
+    "BitmapSheetOffset": int(1),
+    "Enabled": bool(true)
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Ghoul"),
+    "Body": string("Exclusive smiley from Halloween 2015!"),
+    "BitmapSheetOffset": int(118),
+    "IsClassic": bool(true)
+}

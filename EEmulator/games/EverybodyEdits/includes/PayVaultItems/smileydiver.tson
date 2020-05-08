@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Header": string("Diver"),
+    "BitmapSheetOffset": int(59),
+    "MinClass": int(5),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Exclusive smiley from Summer 2012\r"),
+    "IsClassic": bool(true)
+}

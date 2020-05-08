@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "PriceEnergy": int(750),
+    "EnergyPerClick": int(25),
+    "Span": int(2),
+    "BitmapSheetOffset": int(4),
+    "Header": string("Carnival Backgrounds"),
+    "Body": string("Dress your world up with these vibrant backgrounds!")
+}

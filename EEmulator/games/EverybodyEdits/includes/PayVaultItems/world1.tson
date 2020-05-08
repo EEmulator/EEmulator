@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(5),
+    "PriceEnergy": int(250),
+    "Enabled": bool(true),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(25),
+    "Span": int(1),
+    "BitmapSheetOffset": int(1),
+    "Header": string("Medium World"),
+    "Body": string("This 50x50 sized world is great for small challenges and multiplayer building.")
+}

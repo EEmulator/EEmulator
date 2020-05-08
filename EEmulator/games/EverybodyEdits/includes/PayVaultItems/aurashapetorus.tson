@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Torus Aura Shape"),
+    "IsFeatured": bool(false),
+    "Body": string("A ring-like aura shape made possible by the user Xen90.")
+}

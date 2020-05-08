@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(10),
+    "Header": string("Big World"),
+    "Body": string("Not too big, not too small, perfect for humble building projects."),
+    "AvailableSince": int(221)
+}

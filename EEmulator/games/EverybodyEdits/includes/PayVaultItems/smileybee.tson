@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(16),
+    "Enabled": bool(true),
+    "Header": string("Bee"),
+    "Body": string("A cheerful springtime honeybee to celebrate the changing of seasons."),
+    "BitmapSheetOffset": int(134),
+    "IsClassic": bool(true)
+}

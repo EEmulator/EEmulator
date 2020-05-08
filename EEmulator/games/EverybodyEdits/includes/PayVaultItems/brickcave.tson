@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Cave Backgrounds"),
+    "Span": int(2),
+    "BitmapSheetOffset": int(73),
+    "Body": string("Super dark cave backgrounds in 8 awesome colors!")
+}

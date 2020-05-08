@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(50),
+    "Header": string("Headhunter"),
+    "BitmapSheetOffset": int(80),
+    "Enabled": bool(true),
+    "MinClass": int(2),
+    "Body": string("A fierce and painted tribal smiley.\r")
+}

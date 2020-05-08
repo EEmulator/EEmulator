@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(100),
+    "Header": string("Restaurant Decorations"),
+    "Body": string("Serve guests in your worlds an assortment of food and drinks! Includes three morphable dishes."),
+    "Enabled": bool(true),
+    "IsFeatured": bool(false),
+    "IsNew": bool(false)
+}

@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(16),
+    "Enabled": bool(true),
+    "Header": string("Butterfly"),
+    "Body": string("A pretty butterfly smiley dedicated to the spring season."),
+    "BitmapSheetOffset": int(135),
+    "IsClassic": bool(true)
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(12),
+    "EnergyPerClick": int(50),
+    "Body": string("A cheerful smiley with some classic limited time winter gear."),
+    "Enabled": bool(true),
+    "Header": string("Earmuffs"),
+    "IsClassic": bool(true),
+    "BitmapSheetOffset": int(124)
+}

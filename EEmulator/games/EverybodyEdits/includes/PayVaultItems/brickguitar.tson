@@ -1,0 +1,14 @@
+{
+    "PriceCoins": int(40),
+    "PriceEnergy": int(2000),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "Header": string("Guitar Pack"),
+    "Body": string("Hear the strum of a tuned guitar while passing through the notes. Includes a country singer smiley!"),
+    "AvailableSince": int(221),
+    "IsNew": bool(true),
+    "IsFeatured": bool(true),
+    "BetaOnly": bool(true),
+    "Label": string("Beta Only"),
+    "LabelColor": string("#FFBB00")
+}

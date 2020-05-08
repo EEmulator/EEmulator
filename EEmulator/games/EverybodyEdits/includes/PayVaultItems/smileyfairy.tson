@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(17),
+    "PriceEnergy": int(850),
+    "EnergyPerClick": int(50),
+    "Header": string("Fairy"),
+    "Body": string("Everything about this gentile creature is magical!"),
+    "IsNew": bool(false),
+    "BitmapSheetOffset": int(144),
+    "Enabled": bool(true),
+    "AvailableSince": int(217),
+    "IsFeatured": bool(false)
+}

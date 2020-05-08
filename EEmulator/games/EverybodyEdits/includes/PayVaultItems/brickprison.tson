@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "Enabled": bool(true),
+    "PriceEnergy": int(300),
+    "EnergyPerClick": int(50),
+    "Span": int(3),
+    "BitmapSheetOffset": int(7),
+    "Header": string("Prison Pack"),
+    "Body": string("Stone bricks and iron bars to lock up troublesome players.")
+}

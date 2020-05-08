@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(22),
+    "Header": string("Summer 2012 Decorations"),
+    "Body": string("Some great outdoor summer decorations from 2012!"),
+    "IsClassic": bool(true),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

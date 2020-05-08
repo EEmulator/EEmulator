@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(650),
+    "Enabled": bool(false),
+    "Span": int(2),
+    "BitmapSheetOffset": int(24),
+    "Header": string("Castle Package"),
+    "Body": string("Keeping the enemies out since the medieval times!"),
+    "EnergyPerClick": int(50)
+}

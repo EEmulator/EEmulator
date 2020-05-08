@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(80),
+    "PriceEnergy": int(4000),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(9),
+    "Header": string("Vertical Great World"),
+    "Body": string("This world always thought the normal Great World was too lazy to stand up.")
+}

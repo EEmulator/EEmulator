@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(75),
+    "Enabled": bool(true),
+    "IsFeatured": bool(true),
+    "BitmapSheetOffset": int(0),
+    "Header": string("Beta Access"),
+    "Body": string("Become a beta member to test exclusive content, get 6 unique smileys, and 10 exclusive blocks!"),
+    "PriceUSD": int(750)
+}

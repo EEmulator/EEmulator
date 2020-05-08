@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(220),
+    "Header": string("Gem Code - 220 Gems"),
+    "Body": string("Buy a gem code containing 220 Gems."),
+    "Enabled": bool(false),
+    "BitmapSheetOffset": int(3),
+    "Reusable": bool(true)
+}

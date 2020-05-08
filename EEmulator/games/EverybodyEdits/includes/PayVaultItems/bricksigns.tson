@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(25),
+    "Span": int(2),
+    "BitmapSheetOffset": int(20),
+    "Header": string("Warning Signs"),
+    "Body": string("Enter at your own risk!")
+}

@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(4),
+    "PriceEnergy": int(200),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(6),
+    "Header": string("Cyan Aura Color"),
+    "IsFeatured": bool(false),
+    "Body": string("This one is for the fans of cyan hue.")
+}

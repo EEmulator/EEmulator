@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Header": string("Death Doors and Gates"),
+    "Body": string("Doors and gates that toggle after you've died X times.")
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("Pilgrim"),
+    "BitmapSheetOffset": int(43),
+    "MinClass": int(3),
+    "Body": string("Exclusive smiley from Thanksgiving 2011.\r")
+}

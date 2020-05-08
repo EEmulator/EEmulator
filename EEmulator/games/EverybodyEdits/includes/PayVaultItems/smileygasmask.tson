@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(17),
+    "PriceEnergy": int(850),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(40),
+    "Header": string("Gas Mask"),
+    "BitmapSheetOffset": int(63),
+    "MinClass": int(6),
+    "Body": string("Perfect for hazardous environments, or just to look mean!\r")
+}

@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(30),
+    "PriceEnergy": int(1500),
+    "EnergyPerClick": int(100),
+    "Header": string("Crown Doors and Gates"),
+    "Body": string("Open and close gates carrying the golden crown."),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(217),
+    "IsFeatured": bool(false)
+}

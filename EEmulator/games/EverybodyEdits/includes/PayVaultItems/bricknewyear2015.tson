@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(25),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "Header": string("New Year 2015 Decorations"),
+    "Body": string("Celebrate the new year with morphing party decorations and holiday refreshments!"),
+    "IsClassic": bool(true)
+}

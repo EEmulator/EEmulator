@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("Santa"),
+    "BitmapSheetOffset": int(13),
+    "MinClass": int(2),
+    "Body": string("Exclusive smiley from Christmas 2010.")
+}

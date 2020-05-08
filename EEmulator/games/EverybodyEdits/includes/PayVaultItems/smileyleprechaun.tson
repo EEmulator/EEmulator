@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "Header": string("Leprechaun"),
+    "Body": string("Don't be fooled by his adorable face: this smiley is an elusive prankster!"),
+    "BitmapSheetOffset": int(157),
+    "Enabled": bool(true),
+    "AvailableSince": int(220),
+    "IsClassic": bool(true)
+}

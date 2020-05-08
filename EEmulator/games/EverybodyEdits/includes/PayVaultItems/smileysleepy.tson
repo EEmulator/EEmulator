@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(10),
+    "Header": string("Sleepy"),
+    "Body": string("Tired? Wear this cozy smiley made by SmittyW!"),
+    "BitmapSheetOffset": int(140)
+}

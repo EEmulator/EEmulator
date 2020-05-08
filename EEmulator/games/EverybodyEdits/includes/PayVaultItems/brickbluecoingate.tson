@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(false),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(58),
+    "Header": string("Blue Coin Gates (+10)"),
+    "Body": string("Collect X blue coins to close these doors!"),
+    "IsFeatured": bool(false)
+}

@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "Header": string("Crew"),
+    "Body": string("Rule the Everybody Edits world with your friends"),
+    "IsFeatured": bool(true),
+    "Reusable": bool(true),
+    "BitmapSheetOffset": int(4),
+    "MaxPurchases": int(3),
+    "EnergyPerClick": int(50)
+}

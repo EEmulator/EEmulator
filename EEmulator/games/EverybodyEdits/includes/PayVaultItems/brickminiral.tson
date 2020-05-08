@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(5),
+    "PriceEnergy": int(250),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(14),
+    "Header": string("Mineral Blocks"),
+    "Body": string("Minerals are almost 100% pure and so are their minimap colors.")
+}

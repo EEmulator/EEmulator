@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(5),
+    "PriceEnergy": int(250),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(10),
+    "Header": string("Extra Grin"),
+    "BitmapSheetOffset": int(25),
+    "Body": string("Show that you really enjoy the game!\r")
+}

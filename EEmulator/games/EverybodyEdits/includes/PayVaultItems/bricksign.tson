@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(30),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1500),
+    "EnergyPerClick": int(25),
+    "Header": string("Signs"),
+    "Body": string("A morphable sign that displays a message to players who stand on it. ")
+}

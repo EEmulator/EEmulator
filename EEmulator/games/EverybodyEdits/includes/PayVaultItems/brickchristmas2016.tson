@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Header": string("Christmas 2016"),
+    "Body": string("A gift for everyone! Decorative halfblock presents, holiday ornaments, and morphing stringed lights."),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(218),
+    "IsClassic": bool(true)
+}

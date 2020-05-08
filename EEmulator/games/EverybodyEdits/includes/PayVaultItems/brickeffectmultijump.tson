@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "IsFeatured": bool(true),
+    "Header": string("Multi-jump Effect"),
+    "Body": string("When touched, you can jump X many times without touching the ground, or have jumping disabled altogether!"),
+    "IsNew": bool(false)
+}

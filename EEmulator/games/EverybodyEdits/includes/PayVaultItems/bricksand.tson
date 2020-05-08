@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(17),
+    "Enabled": bool(true),
+    "PriceEnergy": int(850),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(18),
+    "Header": string("Sand Pack"),
+    "Body": string("6 unique blocks of sand! Each with their own corresponding decoration and background.")
+}

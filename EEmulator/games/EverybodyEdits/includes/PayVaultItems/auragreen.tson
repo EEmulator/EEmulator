@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(4),
+    "PriceEnergy": int(200),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(3),
+    "Header": string("Green Aura Color"),
+    "IsNew": bool(false),
+    "Body": string("Like green? Then this is the aura color for you!")
+}

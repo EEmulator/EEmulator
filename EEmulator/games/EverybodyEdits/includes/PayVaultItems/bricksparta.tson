@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(15),
+    "DevOnly": bool(false),
+    "Enabled": bool(true),
+    "PriceEnergy": int(750),
+    "Span": int(2),
+    "BitmapSheetOffset": int(54),
+    "Header": string("Marble Pack"),
+    "Body": string("Strong bricks and columns of ancient marble."),
+    "EnergyPerClick": int(50),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false)
+}

@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(17),
+    "Enabled": bool(true),
+    "PriceEnergy": int(850),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(27),
+    "Header": string("Commando"),
+    "MinClass": int(2),
+    "Body": string("Want to look fierce and fearless? Get this smiley!\r")
+}

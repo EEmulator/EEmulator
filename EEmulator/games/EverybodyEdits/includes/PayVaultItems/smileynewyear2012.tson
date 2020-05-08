@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "Header": string("New Year 2013"),
+    "BitmapSheetOffset": int(83),
+    "MinClass": int(2),
+    "Body": string("New Years smiley from 2013.\r"),
+    "IsClassic": bool(true)
+}

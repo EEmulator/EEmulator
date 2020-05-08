@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Ninja"),
+    "BitmapSheetOffset": int(12),
+    "MinClass": int(4),
+    "Body": string("A swift and stealthy smiley for your collection.")
+}

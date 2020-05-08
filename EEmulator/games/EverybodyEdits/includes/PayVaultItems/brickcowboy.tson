@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(30),
+    "PriceEnergy": int(1500),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "Span": int(3),
+    "BitmapSheetOffset": int(1),
+    "Header": string("Wild West Pack"),
+    "Body": string("Dusty, painted wooden structures, balconies and batwing doors for that classic western ambience!")
+}

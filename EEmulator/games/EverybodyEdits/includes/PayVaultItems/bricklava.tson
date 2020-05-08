@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "PriceEnergy": int(750),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(47),
+    "Header": string("Lava Pack"),
+    "Body": string("Lava textured blocks and backgrounds, and a deadly lava fluid that burns you!"),
+    "IsFeatured": bool(false)
+}

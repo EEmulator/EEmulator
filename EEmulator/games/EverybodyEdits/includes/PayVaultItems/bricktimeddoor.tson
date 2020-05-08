@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Timed Doors"),
+    "Body": string("Doors and gates that open and close after X seconds!")
+}

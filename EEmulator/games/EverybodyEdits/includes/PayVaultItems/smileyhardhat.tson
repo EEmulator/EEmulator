@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(40),
+    "Header": string("Hard Hat"),
+    "BitmapSheetOffset": int(62),
+    "MinClass": int(3),
+    "Body": string("For those who like heavy construction.\r")
+}

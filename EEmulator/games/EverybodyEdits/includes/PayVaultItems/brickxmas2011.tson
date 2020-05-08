@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("Christmas 2011 Pack"),
+    "Body": string("Five decorations and five package bricks for xmas 2011!"),
+    "Span": int(3),
+    "BitmapSheetOffset": int(12)
+}

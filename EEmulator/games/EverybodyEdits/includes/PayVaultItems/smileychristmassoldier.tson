@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Header": string("Christmas Soldier"),
+    "Body": string("Holiday fun in the form of a classical painted figurine!"),
+    "BitmapSheetOffset": int(150),
+    "Enabled": bool(true),
+    "AvailableSince": int(218),
+    "IsClassic": bool(true)
+}

@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(40),
+    "Enabled": bool(true),
+    "IsFeatured": bool(false),
+    "EnergyPerClick": int(100),
+    "PriceEnergy": int(2000),
+    "Span": int(3),
+    "Header": string("Drum Pack"),
+    "Body": string("Note blocks that emit drum beats when touched! Includes the DJ smiley!"),
+    "BitmapSheetOffset": int(0)
+}

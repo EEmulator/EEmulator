@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(10),
+    "Header": string("Aviator"),
+    "BitmapSheetOffset": int(139),
+    "Body": string("Journey to the skies with this ace smiley made by Kentiya!")
+}

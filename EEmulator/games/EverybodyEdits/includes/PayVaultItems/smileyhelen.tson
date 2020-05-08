@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(25),
+    "Header": string("Lady"),
+    "BitmapSheetOffset": int(91),
+    "MinClass": int(7),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("A smiley with feminine facial styling and hair.")
+}

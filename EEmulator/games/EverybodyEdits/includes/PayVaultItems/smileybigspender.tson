@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(500),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(15),
+    "Header": string("Big Spender"),
+    "Body": string("A monocle and a top hat for you good sir!\r")
+}

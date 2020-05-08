@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "EnergyPerClick": int(50),
+    "Header": string("Tile Pack"),
+    "Body": string("Smooth earth-toned blocks and backgrounds in 10 classic colors."),
+    "Enabled": bool(true),
+    "IsNew": bool(false),
+    "AvailableSince": int(219),
+    "IsFeatured": bool(false)
+}

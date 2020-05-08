@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(5),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "PriceEnergy": int(250),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(93),
+    "MinClass": int(9),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Header": string("Scarecrow"),
+    "Body": string("Want a cool smiley? Try this weathered straw scarecrow!\r")
+}

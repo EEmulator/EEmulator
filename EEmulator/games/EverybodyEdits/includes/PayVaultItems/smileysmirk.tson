@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(2),
+    "PriceEnergy": int(100),
+    "EnergyPerClick": int(10),
+    "Enabled": bool(true),
+    "Header": string("Smirk"),
+    "Body": string("A slight turn of the mouth for the smug."),
+    "BitmapSheetOffset": int(159),
+    "AvailableSince": int(221),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "BetaOnly": bool(false)
+}

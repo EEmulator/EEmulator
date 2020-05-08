@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(17),
+    "Header": string("Halloween 2016"),
+    "Body": string("Spooky dark forest! Build twisted branches with the rotating decoration, creepy peering eyes that morph color, and more!"),
+    "Enabled": bool(true),
+    "IsClassic": bool(true)
+}

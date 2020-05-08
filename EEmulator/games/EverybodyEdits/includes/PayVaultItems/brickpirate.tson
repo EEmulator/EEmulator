@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(16),
+    "Header": string("Pirate Pack"),
+    "Body": string("Set sail with these wooden blocks and pirate decorations!")
+}

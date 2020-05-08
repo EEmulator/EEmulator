@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1250),
+    "EnergyPerClick": int(50),
+    "Header": string("Fairytale Pack"),
+    "Body": string("Create your own mythical world with these fantasy themed blocks, decorations, and misty backgrounds. Includes gemstone half blocks and a climbable ladder!"),
+    "IsFeatured": bool(false),
+    "AvailableSince": int(209)
+}

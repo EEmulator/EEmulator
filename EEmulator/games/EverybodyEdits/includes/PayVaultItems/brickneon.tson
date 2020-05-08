@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(17),
+    "Header": string("Neon Backgrounds"),
+    "Body": string("Six vibrant backgrounds to color your worlds!")
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(61),
+    "Span": int(2),
+    "Header": string("Christmas 2014 Pack"),
+    "Body": string("Snow, icicles, and festive holiday decorations from 2014!"),
+    "IsClassic": bool(true)
+}

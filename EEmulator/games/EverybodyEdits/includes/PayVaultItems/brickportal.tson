@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(13),
+    "Enabled": bool(true),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "Header": string("Portal"),
+    "Body": string("Teleport players from one place to another!")
+}

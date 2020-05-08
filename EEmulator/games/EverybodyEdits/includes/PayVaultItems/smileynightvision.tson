@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "PriceEnergy": int(1000),
+    "MinClass": int(7),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(97),
+    "Header": string("Nightvision"),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Need some nifty headgear? Get some night vision goggles.\r")
+}

@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(5),
+    "PriceEnergy": int(250),
+    "EnergyPerClick": int(25),
+    "Header": string("Doctor"),
+    "Body": string("Professional, intelligent, and cool. I help people."),
+    "BitmapSheetOffset": int(154),
+    "Enabled": bool(true),
+    "IsNew": bool(false),
+    "AvailableSince": int(219),
+    "IsFeatured": bool(false)
+}

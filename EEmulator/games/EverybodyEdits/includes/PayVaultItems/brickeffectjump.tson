@@ -1,0 +1,12 @@
+{
+    "Enabled": bool(true),
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(66),
+    "Span": int(2),
+    "IsNew": bool(false),
+    "Header": string("Jump Effect"),
+    "Body": string("Players jump twice as high!"),
+    "OnSale": bool(false)
+}

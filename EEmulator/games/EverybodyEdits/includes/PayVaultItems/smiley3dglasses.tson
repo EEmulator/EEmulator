@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(5),
+    "PriceEnergy": int(250),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(40),
+    "BitmapSheetOffset": int(111),
+    "Header": string("3D Glasses"),
+    "IsNew": bool(false),
+    "Body": string("Homage to the retro movie junkies.\r")
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Mummy"),
+    "Body": string("Halloween smiley from 2015."),
+    "BitmapSheetOffset": int(119),
+    "IsClassic": bool(true)
+}

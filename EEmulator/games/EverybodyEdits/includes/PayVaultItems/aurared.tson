@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(4),
+    "PriceEnergy": int(200),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(0),
+    "Header": string("Red Aura Color"),
+    "IsNew": bool(false),
+    "Body": string("Add some red flare to your aura!")
+}

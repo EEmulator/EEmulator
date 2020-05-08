@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(10),
+    "Header": string("St.Patrick's Decorations"),
+    "Body": string("Five lucky items to celebrate this charming holiday."),
+    "IsClassic": bool(true),
+    "Enabled": bool(true),
+    "AvailableSince": int(220)
+}

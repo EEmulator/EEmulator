@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(600),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "IsFeatured": bool(false),
+    "Header": string("Ice"),
+    "Body": string("An icy slippery block that reduces friction!")
+}

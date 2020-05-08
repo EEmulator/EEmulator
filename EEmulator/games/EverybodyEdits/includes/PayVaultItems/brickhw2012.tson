@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(35),
+    "Header": string("Halloween 2012 Decorations"),
+    "Body": string("Sinister laboratory decorations from 2012!"),
+    "IsClassic": bool(true),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "Header": string("Spring 2016 Pack"),
+    "Body": string("Spring has sprung! Includes dirt and hedge blocks and morphable flowers, perfect for making gardens!"),
+    "IsClassic": bool(true)
+}

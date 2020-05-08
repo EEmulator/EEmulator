@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "PriceEnergy": int(500),
+    "EnergyPerClick": int(20),
+    "Header": string("Nurse"),
+    "BitmapSheetOffset": int(37),
+    "MinClass": int(3),
+    "Body": string("Like to help other people? Get this smiley!\r")
+}

@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(4),
+    "Enabled": bool(true),
+    "PriceEnergy": int(300),
+    "Span": int(2),
+    "BitmapSheetOffset": int(55),
+    "Header": string("Farm Pack"),
+    "Body": string("Peaceful countryside decorations and block."),
+    "EnergyPerClick": int(50)
+}

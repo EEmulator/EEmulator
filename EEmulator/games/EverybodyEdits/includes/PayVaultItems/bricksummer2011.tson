@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(21),
+    "Header": string("Summer 2011 Pack"),
+    "Body": string("Summer package from 2011."),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

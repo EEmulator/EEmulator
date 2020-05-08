@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(50),
+    "Header": string("Change Username"),
+    "Body": string("Don't like your username anymore or made an embarrassing choice in the past? Change your username!  Warning: you can change your name only once!"),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(2)
+}

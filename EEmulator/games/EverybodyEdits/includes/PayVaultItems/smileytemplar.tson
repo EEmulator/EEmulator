@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(20),
+    "Header": string("Templar"),
+    "BitmapSheetOffset": int(35),
+    "MinClass": int(5),
+    "Body": string("Metallic armor and unmatched courage.\r")
+}

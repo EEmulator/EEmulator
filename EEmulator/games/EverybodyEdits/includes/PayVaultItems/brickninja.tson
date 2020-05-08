@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(15),
+    "Header": string("Dojo Pack"),
+    "Body": string("Colorful terracotta shingles and plastered walls. Includes a climbable ladder too!")
+}

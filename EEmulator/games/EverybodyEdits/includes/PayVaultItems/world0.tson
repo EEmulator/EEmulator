@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(2),
+    "PriceEnergy": int(100),
+    "EnergyPerClick": int(25),
+    "Enabled": bool(true),
+    "Reusable": bool(true),
+    "IsFeatured": bool(false),
+    "Span": int(1),
+    "BitmapSheetOffset": int(0),
+    "Header": string("Small World"),
+    "Body": string("This 25x25 sized world is great for small boss levels and decorating.")
+}

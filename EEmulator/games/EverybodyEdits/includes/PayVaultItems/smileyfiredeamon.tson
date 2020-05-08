@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(6),
+    "PriceEnergy": int(300),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Fire Demon"),
+    "BitmapSheetOffset": int(85),
+    "IsFeatured": bool(false),
+    "MinClass": int(10),
+    "Body": string("An awesome fireball with a devilish smirk.\r")
+}

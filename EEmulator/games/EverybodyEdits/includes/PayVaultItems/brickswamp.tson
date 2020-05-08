@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(48),
+    "Header": string("Swamp Pack"),
+    "Body": string("Bayou decorations and bog fluid that you can sink in.")
+}

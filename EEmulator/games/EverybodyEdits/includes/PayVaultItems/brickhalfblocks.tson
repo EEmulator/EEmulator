@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Header": string("Half Blocks"),
+    "Body": string("Blocks with that take up half of a tile. Comes in ten bold colors!"),
+    "IsNew": bool(true),
+    "IsFeatured": bool(true),
+    "AvailableSince": int(221),
+    "Enabled": bool(true)
+}

@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(25),
+    "PriceEnergy": int(1250),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(3),
+    "BitmapSheetOffset": int(4),
+    "Header": string("Industrial Pack"),
+    "Body": string("Metal everywhere! Sheeny machinery blocks, iron plate backgrounds, and warning signs for dangerous levels!")
+}

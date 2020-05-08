@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Header": string("Skeleton"),
+    "BitmapSheetOffset": int(78),
+    "Enabled": bool(true),
+    "MinClass": int(2),
+    "Body": string("Smiley from Halloween 2012.\r"),
+    "IsClassic": bool(true)
+}

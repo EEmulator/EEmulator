@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(4),
+    "PriceEnergy": int(200),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(8),
+    "Header": string("Indigo Aura Color"),
+    "Body": string("A rich indigo color to add variety to your aura."),
+    "IsFeatured": bool(false)
+}

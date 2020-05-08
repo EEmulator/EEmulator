@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(17),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Sea Captain"),
+    "BitmapSheetOffset": int(136),
+    "Body": string("A fearless and seasoned skipper."),
+    "IsClassic": bool(true)
+}

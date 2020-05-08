@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("Kissing"),
+    "BitmapSheetOffset": int(28),
+    "OnSale": bool(false),
+    "Body": string("Exclusive smiley from Valentines 2011!\r")
+}

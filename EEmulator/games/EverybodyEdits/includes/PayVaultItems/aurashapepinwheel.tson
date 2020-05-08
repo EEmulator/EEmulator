@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(25),
+    "PriceEnergy": int(2500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Pinwheel Aura Shape"),
+    "Body": string("An animated pinwheel for your aura selection."),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false)
+}

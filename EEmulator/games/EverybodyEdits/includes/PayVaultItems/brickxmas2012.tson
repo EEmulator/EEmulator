@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Header": string("Christmas 2012 Pack"),
+    "Body": string("Gift wrapping paper backgrounds, and ribbon decorations to tie off this 2012 exclusive."),
+    "Span": int(3),
+    "BitmapSheetOffset": int(21),
+    "IsClassic": bool(true)
+}

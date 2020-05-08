@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(13),
+    "Enabled": bool(true),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(25),
+    "Header": string("Cake (+1)"),
+    "Body": string("When players touch the cake, they become party smileys!"),
+    "Reusable": bool(true),
+    "PWOnly": bool(true)
+}

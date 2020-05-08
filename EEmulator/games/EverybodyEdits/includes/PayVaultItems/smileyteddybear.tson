@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "EnergyPerClick": int(50),
+    "Header": string("Teddy Bear"),
+    "Body": string("What could be more adorable and comforting than this plush smiley?"),
+    "BitmapSheetOffset": int(149),
+    "IsNew": bool(false),
+    "Enabled": bool(true),
+    "AvailableSince": int(218),
+    "IsFeatured": bool(false)
+}

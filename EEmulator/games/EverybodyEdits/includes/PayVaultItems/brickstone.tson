@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(23),
+    "Header": string("Stone Pack"),
+    "Body": string("Some stone blocks and backgrounds for building!"),
+    "IsFeatured": bool(false)
+}

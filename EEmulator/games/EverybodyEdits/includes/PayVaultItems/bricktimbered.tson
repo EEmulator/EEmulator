@@ -1,0 +1,10 @@
+{
+    "PriceEnergy": int(650),
+    "PriceCoins": int(12),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(50),
+    "Span": int(3),
+    "BitmapSheetOffset": int(10),
+    "Header": string("Timbered Package"),
+    "Body": string("For that good old medieval feeling!")
+}

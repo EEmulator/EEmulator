@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(40),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(100),
+    "PriceEnergy": int(2000),
+    "Span": int(3),
+    "BitmapSheetOffset": int(5),
+    "Header": string("Piano Pack"),
+    "Body": string("Note blocks that emit piano tunes when touched! Includes the maestro smiley!")
+}

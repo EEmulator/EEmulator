@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(10),
+    "Header": string("Werewolf"),
+    "Body": string("Watch out for this ferocious beast! With sharp fangs and glinting eyes, it's sure to add a fright this halloween."),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(142),
+    "AvailableSince": int(216),
+    "IsClassic": bool(true)
+}

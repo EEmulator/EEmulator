@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Tourist"),
+    "BitmapSheetOffset": int(113),
+    "IsClassic": bool(true),
+    "Body": string("Smiley from summer 2015!")
+}

@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(50),
+    "PriceEnergy": int(2500),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(false),
+    "IsFeatured": bool(false),
+    "Header": string("Large Space World"),
+    "Body": string("A world with lower gravity. "),
+    "Span": int(2),
+    "BitmapSheetOffset": int(2)
+}

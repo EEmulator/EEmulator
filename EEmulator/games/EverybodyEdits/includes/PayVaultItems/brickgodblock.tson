@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(10),
+    "PriceEnergy": int(500),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "Header": string("Godmode Block"),
+    "Body": string("Use this tool to give god mode abilities to players in your worlds!"),
+    "BitmapSheetOffset": int(320),
+    "AvailableSince": int(221),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "BetaOnly": bool(false)
+}

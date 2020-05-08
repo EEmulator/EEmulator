@@ -1,0 +1,12 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(19),
+    "Header": string("Sci-Fi Pack"),
+    "Body": string("Buy the future today! Futuristic themed blocks and rotatable decorations."),
+    "OnSale": bool(false),
+    "IsFeatured": bool(false)
+}

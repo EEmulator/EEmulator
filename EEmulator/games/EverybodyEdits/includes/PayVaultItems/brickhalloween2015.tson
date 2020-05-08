@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Header": string("Halloween 2015 Pack"),
+    "Body": string("Build a haunted house with these dilapidated items! Includes morphing windows and lantern to light up this Halloween 2015 Exclusive!"),
+    "EnergyPerClick": int(50),
+    "IsClassic": bool(true)
+}

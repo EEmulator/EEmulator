@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(20),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(50),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "Header": string("One-Way Blocks"),
+    "Body": string("Rotatable one-way platforms in 9 bold colors!"),
+    "BitmapSheetOffset": int(64),
+    "IsNew": bool(false)
+}

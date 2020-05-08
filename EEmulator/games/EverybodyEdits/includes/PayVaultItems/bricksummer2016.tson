@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "Header": string("Summer 2016 Pack"),
+    "Body": string("Summertime blocks and decorations to build the perfect seaside resort!"),
+    "IsClassic": bool(true)
+}

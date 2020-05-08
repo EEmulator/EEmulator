@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(13),
+    "Enabled": bool(true),
+    "PriceEnergy": int(750),
+    "EnergyPerClick": int(50),
+    "Header": string("Hologram (+1)"),
+    "Body": string("Players become hologram smileys upon contact with these."),
+    "Reusable": bool(true),
+    "PWOnly": bool(true)
+}

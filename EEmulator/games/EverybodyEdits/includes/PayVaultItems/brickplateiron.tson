@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(650),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(50),
+    "Span": int(2),
+    "BitmapSheetOffset": int(17),
+    "Header": string("Plate Iron Package"),
+    "Body": string("Nifty iron for the robustest of worlds!")
+}

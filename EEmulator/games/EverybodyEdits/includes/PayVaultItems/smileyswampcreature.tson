@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(10),
+    "Header": string("Swamp Creature"),
+    "Body": string("From the murky depths of a mire, this bulging-eyed monster roams the swamp, watching you from just beyond the treeline..."),
+    "Enabled": bool(true),
+    "BitmapSheetOffset": int(143),
+    "AvailableSince": int(216),
+    "IsClassic": bool(true)
+}

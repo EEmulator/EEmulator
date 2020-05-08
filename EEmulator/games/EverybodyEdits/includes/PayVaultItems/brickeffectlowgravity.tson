@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(13),
+    "Enabled": bool(true),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(66),
+    "Span": int(2),
+    "Header": string("Low Gravity Effect"),
+    "Body": string("Reduces the gravity of players who touch it!"),
+    "IsFeatured": bool(false)
+}

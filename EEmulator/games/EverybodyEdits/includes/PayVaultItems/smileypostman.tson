@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "PriceEnergy": int(1000),
+    "EnergyPerClick": int(20),
+    "Header": string("Postman"),
+    "BitmapSheetOffset": int(34),
+    "Body": string("Special delivery for you!\r")
+}

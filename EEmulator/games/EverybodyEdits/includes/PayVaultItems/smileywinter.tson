@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Winter Hat"),
+    "BitmapSheetOffset": int(84),
+    "Body": string("Winter smiley from winter 2013.\r"),
+    "IsClassic": bool(true)
+}

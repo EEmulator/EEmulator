@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(30),
+    "PriceEnergy": int(1500),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "Header": string("Domestic Pack"),
+    "Body": string("An assortment of homely textures, perfect for interior design! Includes tile, carpet, wallpaper, half blocks and more! "),
+    "IsFeatured": bool(false)
+}

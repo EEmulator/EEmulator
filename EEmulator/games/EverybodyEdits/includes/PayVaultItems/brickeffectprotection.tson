@@ -1,0 +1,11 @@
+{
+    "Enabled": bool(true),
+    "PriceCoins": int(13),
+    "PriceEnergy": int(650),
+    "EnergyPerClick": int(50),
+    "BitmapSheetOffset": int(69),
+    "Span": int(2),
+    "IsNew": bool(false),
+    "Header": string("Protection Effect"),
+    "Body": string("Players can't die and are cured of curse and zombie.")
+}

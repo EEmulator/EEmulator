@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "PriceEnergy": int(500),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(2),
+    "Span": int(2),
+    "Header": string("Canvas Backgrounds"),
+    "Body": string("Canvas with oil painted in 9 fresh colors.")
+}

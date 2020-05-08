@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(17),
+    "PriceEnergy": int(850),
+    "EnergyPerClick": int(50),
+    "Header": string("Mine Pack"),
+    "Body": string("Explore underground! Cavernous rocks, pretty crystals that morph into 6 distinct colors, and an animated torch decoration!"),
+    "Enabled": bool(true)
+}

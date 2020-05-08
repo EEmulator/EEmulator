@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "PriceEnergy": int(750),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Sombrero"),
+    "BitmapSheetOffset": int(115),
+    "Body": string("Ready for a fiesta? Get this smiley in a traditional wide brimmed hat!")
+}

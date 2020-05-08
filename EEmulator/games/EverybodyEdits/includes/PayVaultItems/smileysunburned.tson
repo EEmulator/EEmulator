@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(15),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Sunburned"),
+    "BitmapSheetOffset": int(112),
+    "Body": string("Exclusive summertime smiley from 2015."),
+    "IsClassic": bool(true)
+}

@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(40),
+    "PriceEnergy": int(2000),
+    "Reusable": bool(true),
+    "EnergyPerClick": int(100),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "BitmapSheetOffset": int(5),
+    "Header": string("Tall World"),
+    "Body": string("Need a tall world for your creations? Well here it is!")
+}

@@ -1,0 +1,7 @@
+{
+    "PriceCoins": int(5000),
+    "PriceEnergy": int(1000),
+    "Enabled": bool(false),
+    "EnergyPerClick": int(10),
+    "Reusable": bool(true)
+}

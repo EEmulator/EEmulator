@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(25),
+    "Enabled": bool(true),
+    "IsClassic": bool(true),
+    "Header": string("New Year 2010 Pack"),
+    "Body": string("Decorative lights from new year 2010! Includes a festive smiley in a hat."),
+    "Span": int(2),
+    "BitmapSheetOffset": int(26)
+}

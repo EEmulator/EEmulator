@@ -1,0 +1,11 @@
+{
+    "PriceCoins": int(25),
+    "IsNew": bool(false),
+    "Header": string("Valentines 2015 Pack"),
+    "Body": string("Valentines package from 2015! Includes a blushing smiley!"),
+    "BitmapSheetOffset": int(62),
+    "Enabled": bool(true),
+    "Span": int(2),
+    "IsGridFeatured": bool(false),
+    "IsClassic": bool(true)
+}

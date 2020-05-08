@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(10),
+    "Enabled": bool(true),
+    "Header": string("Soda Clerk"),
+    "BitmapSheetOffset": int(137),
+    "Body": string("A helpful vendor of summertime sweets!"),
+    "IsClassic": bool(true)
+}

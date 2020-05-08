@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(15),
+    "EnergyPerClick": int(25),
+    "Header": string("Monster"),
+    "BitmapSheetOffset": int(77),
+    "Enabled": bool(true),
+    "MinClass": int(4),
+    "Body": string("Smiley from Halloween 2012.\r"),
+    "IsClassic": bool(true)
+}

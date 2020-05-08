@@ -1,0 +1,8 @@
+{
+    "PriceCoins": int(6),
+    "Enabled": bool(true),
+    "Header": string("Lifeguard"),
+    "BitmapSheetOffset": int(138),
+    "Body": string("Safety first!"),
+    "IsClassic": bool(true)
+}

@@ -1,0 +1,9 @@
+{
+    "PriceCoins": int(20),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Header": string("Elf"),
+    "BitmapSheetOffset": int(103),
+    "Body": string("Exclusive smiley from Christmas 2014.\r"),
+    "IsClassic": bool(true)
+}

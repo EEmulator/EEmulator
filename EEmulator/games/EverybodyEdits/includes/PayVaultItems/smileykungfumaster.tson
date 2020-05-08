@@ -1,0 +1,13 @@
+{
+    "PriceCoins": int(5),
+    "Enabled": bool(true),
+    "DevOnly": bool(false),
+    "PriceEnergy": int(250),
+    "MinClass": int(7),
+    "EnergyPerClick": int(25),
+    "BitmapSheetOffset": int(95),
+    "Header": string("Kung Fu Master"),
+    "IsNew": bool(false),
+    "IsFeatured": bool(false),
+    "Body": string("Wise and seasoned fighter smiley, designed by Tiken.\r")
+}

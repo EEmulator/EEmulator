@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(650),
+    "Enabled": bool(false),
+    "Span": int(2),
+    "BitmapSheetOffset": int(39),
+    "Header": string("Jungle Ruins"),
+    "Body": string("A great starting point for an adventure!"),
+    "EnergyPerClick": int(50)
+}

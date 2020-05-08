@@ -1,0 +1,10 @@
+{
+    "PriceCoins": int(12),
+    "PriceEnergy": int(650),
+    "Enabled": bool(true),
+    "EnergyPerClick": int(50),
+    "Span": int(3),
+    "BitmapSheetOffset": int(6),
+    "Header": string("Plastic Blocks"),
+    "Body": string("8 colorful blocks with a solid plastic texture! Great for an arcade feel.")
+}
