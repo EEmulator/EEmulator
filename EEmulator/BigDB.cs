@@ -151,6 +151,7 @@ namespace EEmulator
                     return output;
 
                 var dbo = DatabaseObject.LoadFromString(File.ReadAllText(file));
+                dbo.Key = Path.GetFileNameWithoutExtension(file);
                 output.Add(dbo);
             }
 

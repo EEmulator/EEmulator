@@ -66,7 +66,21 @@ namespace EEmulator
             Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "accounts", this.GameId));
 
             this.BigDB.CreateTable("PlayerObjects");
+            this.BigDB.CreateTable("Worlds");
             this.BigDB.CreateTable("PayVaultItems");
+
+            // A default world.
+            var PW01_DESTINATION = Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "Worlds", "PW01.tson");
+            if (!File.Exists(PW01_DESTINATION))
+                File.Copy(Path.Combine("games", "EverybodyEdits", "includes", "PW01.tson"), PW01_DESTINATION);
+
+            // A default collection of PayVaultItems
+            foreach (var item in Directory.GetFiles(Path.Combine("games", "EverybodyEdits", "includes", "PayVaultItems"), "*.tson"))
+            {
+                var destination = Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "PayVaultItems", Path.GetFileName(item));
+                if (!File.Exists(destination))
+                    File.Copy(item, destination);
+            }
 
             switch (this.Version)
             {
@@ -127,10 +141,6 @@ namespace EEmulator
                     this.BigDB.CreateTable("ClubMembers");
                     this.BigDB.CreateTable("TempBans");
                     this.BigDB.CreateTable("OnlineStatus");
-
-                    var PW01_DESTINATION = Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "Worlds", "PW01.tson");
-                    if (!File.Exists(PW01_DESTINATION))
-                        File.Copy(Path.Combine("games", "EverybodyEdits", "includes", "PW01.tson"), PW01_DESTINATION);
 
                     this.BigDB.CreateObject("PlayerObjects", "user", new DatabaseObject()
                         .Set("owner", "simpleTest")

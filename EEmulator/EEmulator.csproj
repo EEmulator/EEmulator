@@ -179,6 +179,762 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurablack.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurablue.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\auracyan.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\auragreen.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\auraindigo.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\auralime.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\auraorange.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurapink.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurapurple.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurared.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurashapepinwheel.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurashapespiral.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurashapestar.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurashapetorus.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\aurayellow.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickautumn2014.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickbgcanvas.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickbgcarnival.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickbluecoingate.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickboost.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcake.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcandy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcastle.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcave.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickchristmas2010.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickchristmas2014.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickchristmas2016.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcoingate.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcowboy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickcrowndoor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickdeathdoor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickdiamond.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickdomestic.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickdrums.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeaster2012.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectcurse.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectfly.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectgravity.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectjump.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectlowgravity.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectmultijump.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectprotection.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectspeed.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectteam.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickeffectzombie.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickfairytale.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickfarm.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickfire.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickfog.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickgodblock.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickguitar.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhalfblocks.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhalloween2015.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhalloween2016.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhologram.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhw2011.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhw2012.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickhwtrophy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickice2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickindustrial.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickinvisibleportal.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickjungleruins.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricklava.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmagic.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmagic2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmagic3.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmagic4.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmagic5.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmars.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmedieval.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmine.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickminiral.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickmonster.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickneon.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricknewyear2015.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickninja.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricknode.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickoneway.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickpirate.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickplastic.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickplateiron.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickportal.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickprison.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickrestaurant.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksand.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickscifi.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickscifi2013.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksign.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksigns.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksparta.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspike.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspring2011.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspring2016.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspringtrophybronze.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspringtrophygold.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickspringtrophysilver.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickstone.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickstpatricks2017.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummer2011.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummer2012.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummer2015.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummer2016.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummertrophybronze.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummertrophygold.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricksummertrophysilver.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickswamp.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickswitchorange.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickswitchpurple.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricktextile.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricktiles.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricktimbered.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricktimeddoor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\bricktimedoor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickvalentines2015.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickviking.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickwood.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickworldportal.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickxmas2011.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickxmas2012.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\brickzombiedoor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\changeusername.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\crew.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gemcode105.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gemcode220.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gemcode50.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gold1.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gold12.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gold3.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\gold6.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\hidden.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\infiniteportalsdoors.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\mixednewyear2010.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\pro.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smiley3dglasses.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyalien.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyangry.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyarchaeologist.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyartist.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyastronaut.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyaviator.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybat.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybee.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybigspender.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybird.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybishop.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybully.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybunni.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileybutterfly.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileycaroler.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileychristmassoldier.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyclockwork.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileycommando.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileycow.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileydarkwizard.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileydevilskull.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileydiver.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileydoctor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyearmuffs.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyelf.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyeyeball.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfairy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfanboy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfanboy2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfiredeamon.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfirefighter.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyfox.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileygasmask.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyghoul.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileygingerbread.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileygoofy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileygraduate.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhardhat.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhazmatsuit.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyheadhunter.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhelen.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhooded.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhw2011frankenstein.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhw2011ghost.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyhw2011vampire.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileykungfumaster.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyleprechaun.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileylifeguard.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileylightwizard.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileymadscientist.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileymonster.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileymummy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileynewyear2012.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileynightvision.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyninja.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyninjared.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileynurse.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileynutcracker.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypenguin.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypigtails.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypostman.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypumpkin1.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypumpkin2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileypurpleghost.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyraindrop.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysafari.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysanta.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyscarecrow.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyscrooge.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyseacaptain.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyseagull.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyskeleton.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysleepy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysmirk.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysodaclerk.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysombrero.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyspartan.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyspy.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysummergirl.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysunburned.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysuper.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysupprice.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyswampcreature.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileysweat.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileytanned.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyteddybear.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileytemplar.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileytg2011indian.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileytg2011pilgrim.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileythor.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileytourist.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyturban.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyunit.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyvalentines2011.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileywerewolf.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileywinter.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileywitch.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileywizard.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileywizard2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyxd.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyxdp.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyxmasgrinch.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyxmasreindeer.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyxmassnowman.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\smileyzombieslayer.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\unobtainable.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world0.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world1.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world11.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world12.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world13.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world2.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world3.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world4.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world5.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world6.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world7.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="games\EverybodyEdits\includes\PayVaultItems\world8.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="games\EverybodyEdits\includes\PW01.tson">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
