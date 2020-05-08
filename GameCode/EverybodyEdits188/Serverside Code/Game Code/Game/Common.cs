@@ -471,7 +471,8 @@ namespace EverybodyEdits.Game
 
         public bool hasActivePotion(Potion potion)
         {
-            return this.PotionStatusObject.hasActivePotion(potion);
+            return false;
+            //return this.PotionStatusObject.hasActivePotion(potion);
         }
 
         public void doCoinCollect(Callback<bool> callback)
