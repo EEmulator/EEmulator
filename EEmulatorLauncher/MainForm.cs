@@ -48,36 +48,39 @@ namespace EEmulatorLauncher
 
         private void btnPlay0500_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
-            Process.Start("EEmulator.exe", "EverybodyEdits v0500").WaitForExit();
+            Process.Start("EEmulator.exe", "EverybodyEdits v0500 localhost:8184").WaitForExit();
         }
 
         private void btnPlay0700_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To use, log in with guest.", "Before you start.", MessageBoxButtons.OK);
-            Process.Start("EEmulator.exe", "EverybodyEdits v0700").WaitForExit();
+            Process.Start("EEmulator.exe", "EverybodyEdits v0700 localhost:8184").WaitForExit();
         }
 
         private void btnPlay0800_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To use, log in with email as 'guest' without quotation marks, any password will work.", "Before you start.", MessageBoxButtons.OK);
-            Process.Start("EEmulator.exe", "EverybodyEdits v0800").WaitForExit();
+            Process.Start("EEmulator.exe", "EverybodyEdits v0800 localhost:8184").WaitForExit();
         }
 
         private void btnPlay89_Click(object sender, EventArgs e)
         {
             MessageBox.Show("To use, log in with email as \"user\" without quotes, any password will work.", "Before you start.", MessageBoxButtons.OK);
-            Process.Start("EEmulator.exe", "EverybodyEdits v89").WaitForExit();
+            Process.Start("EEmulator.exe", "EverybodyEdits v89 localhost:8184").WaitForExit();
         }
 
         private void btnPlay188_Click(object sender, EventArgs e)
         {
-            Process.Start("EEmulator.exe", "EverybodyEdits v188").WaitForExit();
+            Process.Start("EEmulator.exe", "EverybodyEdits v188 localhost:8184").WaitForExit();
         }
 
         private void btnNetwork_Click(object sender, EventArgs e)
         {
             serverForm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

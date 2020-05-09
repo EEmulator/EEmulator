@@ -261,6 +261,7 @@
             this.MinimumSize = new System.Drawing.Size(655, 560);
             this.Name = "MainForm";
             this.Text = "Everybody Edits Emulator";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.topPanel.ResumeLayout(false);
             this.flowLayoutPanel.ResumeLayout(false);
             this.flowLayoutPanel.PerformLayout();
