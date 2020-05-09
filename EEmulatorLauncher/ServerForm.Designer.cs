@@ -34,10 +34,10 @@
             this.selectionPanel = new DarkUI.Controls.DarkSectionPanel();
             this.lbServerSelect = new DarkUI.Controls.DarkGroupBox();
             this.ddServers = new DarkUI.Controls.DarkDropdownList();
-            this.btnPlayNow = new System.Windows.Forms.Button();
             this.lbDescription = new DarkUI.Controls.DarkGroupBox();
             this.textDescription = new DarkUI.Controls.DarkTextBox();
             this.btnAddServer = new System.Windows.Forms.Button();
+            this.btnPlayNow = new System.Windows.Forms.Button();
             this.selectionPanel.SuspendLayout();
             this.lbServerSelect.SuspendLayout();
             this.lbDescription.SuspendLayout();
@@ -67,6 +67,7 @@
             this.lbServerName.Size = new System.Drawing.Size(84, 16);
             this.lbServerName.TabIndex = 5;
             this.lbServerName.Text = "Local Server";
+            this.lbServerName.Visible = false;
             // 
             // lbServerLocation
             // 
@@ -79,6 +80,7 @@
             this.lbServerLocation.Size = new System.Drawing.Size(62, 16);
             this.lbServerLocation.TabIndex = 6;
             this.lbServerLocation.Text = "localhost";
+            this.lbServerLocation.Visible = false;
             // 
             // selectionPanel
             // 
@@ -110,24 +112,6 @@
             this.ddServers.Name = "ddServers";
             this.ddServers.Size = new System.Drawing.Size(175, 26);
             this.ddServers.TabIndex = 0;
-            // 
-            // btnPlayNow
-            // 
-            this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayNow.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playNowButton;
-            this.btnPlayNow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPlayNow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnPlayNow.FlatAppearance.BorderSize = 0;
-            this.btnPlayNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayNow.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayNow.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPlayNow.Location = new System.Drawing.Point(98, 52);
-            this.btnPlayNow.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPlayNow.Name = "btnPlayNow";
-            this.btnPlayNow.Size = new System.Drawing.Size(84, 30);
-            this.btnPlayNow.TabIndex = 4;
-            this.btnPlayNow.UseVisualStyleBackColor = false;
-            this.btnPlayNow.Click += new System.EventHandler(this.btnPlayNow_Click);
             // 
             // lbDescription
             // 
@@ -170,6 +154,24 @@
             this.btnAddServer.TabIndex = 3;
             this.btnAddServer.UseVisualStyleBackColor = false;
             this.btnAddServer.Click += new System.EventHandler(this.btnAddServer_Click);
+            // 
+            // btnPlayNow
+            // 
+            this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayNow.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playNowButton;
+            this.btnPlayNow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlayNow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPlayNow.FlatAppearance.BorderSize = 0;
+            this.btnPlayNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayNow.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayNow.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPlayNow.Location = new System.Drawing.Point(98, 52);
+            this.btnPlayNow.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPlayNow.Name = "btnPlayNow";
+            this.btnPlayNow.Size = new System.Drawing.Size(84, 30);
+            this.btnPlayNow.TabIndex = 4;
+            this.btnPlayNow.UseVisualStyleBackColor = false;
+            this.btnPlayNow.Click += new System.EventHandler(this.btnPlayNow_Click);
             // 
             // ServerForm
             // 
