@@ -121,9 +121,6 @@
   <data name="play0080" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play0080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playv188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playv188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bg_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,6 +133,9 @@
   <data name="bg_0800" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_0800.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="play0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="playv89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playv89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,13 +145,16 @@
   <data name="play0500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play0500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bg_188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg_0500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_0500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="playv188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playv188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="networkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

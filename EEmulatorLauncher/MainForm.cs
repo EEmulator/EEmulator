@@ -7,8 +7,12 @@ namespace EEmulatorLauncher
 {
     public partial class MainForm : Form
     {
+        private ServerForm serverForm;
+
         public MainForm()
         {
+            serverForm = new ServerForm();
+
             InitializeComponent();
         }
 
@@ -69,6 +73,11 @@ namespace EEmulatorLauncher
         private void btnPlay188_Click(object sender, EventArgs e)
         {
             Process.Start("EEmulator.exe", "EverybodyEdits v188").WaitForExit();
+        }
+
+        private void btnNetwork_Click(object sender, EventArgs e)
+        {
+            serverForm.ShowDialog();
         }
     }
 }

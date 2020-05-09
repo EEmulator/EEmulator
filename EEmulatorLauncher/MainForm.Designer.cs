@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.btnNetwork = new System.Windows.Forms.Button();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPlay0500 = new System.Windows.Forms.Button();
             this.secretLabel = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             this.topPanel.BackColor = System.Drawing.Color.Transparent;
             this.topPanel.BackgroundImage = global::EEmulatorLauncher.Properties.Resources._113;
             this.topPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.topPanel.Controls.Add(this.btnNetwork);
             this.topPanel.Controls.Add(this.flowLayoutPanel);
             this.topPanel.Controls.Add(this.birb);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -71,6 +73,23 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(639, 40);
             this.topPanel.TabIndex = 0;
+            // 
+            // btnNetwork
+            // 
+            this.btnNetwork.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.networkButton;
+            this.btnNetwork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnNetwork.FlatAppearance.BorderSize = 0;
+            this.btnNetwork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNetwork.ForeColor = System.Drawing.Color.Black;
+            this.btnNetwork.Location = new System.Drawing.Point(521, 7);
+            this.btnNetwork.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNetwork.Name = "btnNetwork";
+            this.btnNetwork.Size = new System.Drawing.Size(84, 30);
+            this.btnNetwork.TabIndex = 10;
+            this.btnNetwork.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnNetwork.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnNetwork.UseVisualStyleBackColor = true;
+            this.btnNetwork.Click += new System.EventHandler(this.btnNetwork_Click);
             // 
             // flowLayoutPanel
             // 
@@ -83,12 +102,12 @@
             this.flowLayoutPanel.Controls.Add(this.btnPlay89);
             this.flowLayoutPanel.Controls.Add(this.label1);
             this.flowLayoutPanel.Controls.Add(this.btnPlay188);
-            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Padding = new System.Windows.Forms.Padding(8, 7, 0, 0);
-            this.flowLayoutPanel.Size = new System.Drawing.Size(608, 40);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(511, 40);
             this.flowLayoutPanel.TabIndex = 2;
             // 
             // btnPlay0500
@@ -265,6 +284,7 @@
         private System.Windows.Forms.Button btnPlay89;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPlay188;
+        private System.Windows.Forms.Button btnNetwork;
     }
 }
 

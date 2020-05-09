@@ -133,6 +133,16 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap networkButton {
+            get {
+                object obj = ResourceManager.GetObject("networkButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap play0080 {
             get {
                 object obj = ResourceManager.GetObject("play0080", resourceCulture);

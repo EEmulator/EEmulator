@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 using DarkUI.Controls;
+using EEmulatorLauncher.Properties;
 using Flurl.Http;
 using Newtonsoft.Json;
 
@@ -72,10 +75,6 @@ namespace EEmulatorLauncher
             {
                 var endpoint = ddServers.SelectedItem.Text;
                 var statusResponse = $"http://{endpoint.Split(':')[0]}:80/status".GetAsync().ReceiveString().Result;
-
-                if (!this.Descriptions.ContainsKey(endpoint))
-                    Descriptions.Add(endpoint, statusResponse);
-
                 this.UpdateDescription();
             }
             catch
