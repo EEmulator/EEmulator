@@ -2862,12 +2862,11 @@ namespace EverybodyEdits.Game
             player.y = d.y * 16;
             //player.WootStatusObject.setWorldCoinCount(baseworld.coinCount());
 
-            if (player.ConnectUserId == this.baseworld.ownerid)
-            {
+            //if (player.ConnectUserId == this.baseworld.ownerid)
+            //{
                 player.canEdit = true;
                 player.owner = true;
-            }
-
+            //}
 
             var count = 0;
             foreach (var p in this.Players)
@@ -2875,48 +2874,48 @@ namespace EverybodyEdits.Game
                 if (p.ConnectUserId == player.ConnectUserId && !player.isguest) count++;
             }
 
-            if (!this.Visible && !player.owner && !player.canbemod && !player.CanBeGuardian)
-            {
-                player.SendMessage(Message.Create("info", "World not available",
-                    "The requested world is not set to visible."));
-                player.Disconnect();
-                return;
-            }
+            //if (!this.Visible && !player.owner && !player.canbemod && !player.CanBeGuardian)
+            //{
+            //    player.SendMessage(Message.Create("info", "World not available",
+            //        "The requested world is not set to visible."));
+            //    player.Disconnect();
+            //    return;
+            //}
 
-            if (this.worldBanned)
-            {
-                if (player.owner || player.canbemod || player.CanBeGuardian)
-                {
-                    player.SendMessage(Message.Create("info", "World Banned",
-                        "This world is banned.\n" + this.worldBannedReason));
-                }
-                else
-                {
-                    player.SendMessage(Message.Create("info", "World Banned", "The requested world is banned."));
-                    player.Disconnect();
-                }
-            }
+            //if (this.worldBanned)
+            //{
+            //    if (player.owner || player.canbemod || player.CanBeGuardian)
+            //    {
+            //        player.SendMessage(Message.Create("info", "World Banned",
+            //            "This world is banned.\n" + this.worldBannedReason));
+            //    }
+            //    else
+            //    {
+            //        player.SendMessage(Message.Create("info", "World Banned", "The requested world is banned."));
+            //        player.Disconnect();
+            //    }
+            //}
 
-            if (count >= 2)
-            {
-                if (player.owner)
-                {
-                    if (count >= 3)
-                    {
-                        player.SendMessage(Message.Create("info", "Limit reached",
-                            "To prevent abuse you can only be connected to your own world twice."));
-                        player.Disconnect();
-                        return;
-                    }
-                }
-                else
-                {
-                    player.SendMessage(Message.Create("info", "Limit reached",
-                        "To prevent abuse you can only be connected to the same world once."));
-                    player.Disconnect();
-                    return;
-                }
-            }
+            //if (count >= 2)
+            //{
+            //    if (player.owner)
+            //    {
+            //        if (count >= 3)
+            //        {
+            //            player.SendMessage(Message.Create("info", "Limit reached",
+            //                "To prevent abuse you can only be connected to your own world twice."));
+            //            player.Disconnect();
+            //            return;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        player.SendMessage(Message.Create("info", "Limit reached",
+            //            "To prevent abuse you can only be connected to the same world once."));
+            //        player.Disconnect();
+            //        return;
+            //    }
+            //}
 
             // Tell all connected clients to add the new player			
 
