@@ -203,99 +203,105 @@ namespace EverybodyEdits.Game
                 base.PlayerIO.ErrorLog.WriteError("In block #1", e);
                 return false;
             }
-            bool result;
-            if (this.PlayerCount > 50 && !player.canbemod)
-            {
-                player.Send("Info", new object[]
-                {
-                    "Room is full",
-                    "Sorry this room is full, please try again later :)"
-                });
-                result = false;
-            }
-            else
-            {
-                try
-                {
-                    if (player.PlayerObject.GetBool("banned", false))
-                    {
-                        player.Send("info", new object[]
-                        {
-                            "You are banned",
-                            "This account is banned due to abuse or fraud."
-                        });
-                        return false;
-                    }
-                }
-                catch (Exception e)
-                {
-                    base.PlayerIO.ErrorLog.WriteError("In block #2", e);
-                    return false;
-                }
-                try
-                {
-                    if (player.isguest)
-                    {
-                        player.canWinEnergy = false;
-                    }
-                    if (this.editkey == "" || (player.JoinData.ContainsKey("editkey") && player.JoinData["editkey"] == this.editkey))
-                    {
-                        player.canEdit = true;
-                    }
-                }
-                catch (Exception e)
-                {
-                    base.PlayerIO.ErrorLog.WriteError("In block #3", e);
-                    return false;
-                }
-                try
-                {
-                    if (this.owned && (base.RoomId == player.room0 || player.betaonlyroom == base.RoomId) && player.haveSmileyPackage)
-                    {
-                        player.canEdit = true;
-                        player.owner = true;
-                        try
-                        {
-                            if (this.ownedWorld != null)
-                            {
-                                this.ownedWorld.Set("owner", player.ConnectUserId);
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            base.PlayerIO.ErrorLog.WriteError("In block #4", e);
-                            return false;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    base.PlayerIO.ErrorLog.WriteError("In block #5", e);
-                    return false;
-                }
-                try
-                {
-                    foreach (var b in this.bans)
-                    {
-                        if (b.userid == player.ConnectUserId && !player.owner && !player.canbemod)
-                        {
-                            player.Send("info", new object[]
-                            {
-                                "You are banned",
-                                "You have been banned from this world"
-                            });
-                            return false;
-                        }
-                    }
-                }
-                catch (Exception e)
-                {
-                    base.PlayerIO.ErrorLog.WriteError("In block #6", e);
-                    return false;
-                }
-                result = true;
-            }
-            return result;
+
+            player.canEdit = true;
+            player.owner = true;
+
+            return true;
+
+            //bool result;
+            //if (this.PlayerCount > 50 && !player.canbemod)
+            //{
+            //    player.Send("Info", new object[]
+            //    {
+            //        "Room is full",
+            //        "Sorry this room is full, please try again later :)"
+            //    });
+            //    result = false;
+            //}
+            //else
+            //{
+            //    try
+            //    {
+            //        if (player.PlayerObject.GetBool("banned", false))
+            //        {
+            //            player.Send("info", new object[]
+            //            {
+            //                "You are banned",
+            //                "This account is banned due to abuse or fraud."
+            //            });
+            //            return false;
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        base.PlayerIO.ErrorLog.WriteError("In block #2", e);
+            //        return false;
+            //    }
+            //    try
+            //    {
+            //        if (player.isguest)
+            //        {
+            //            player.canWinEnergy = false;
+            //        }
+            //        if (this.editkey == "" || (player.JoinData.ContainsKey("editkey") && player.JoinData["editkey"] == this.editkey))
+            //        {
+            //            player.canEdit = true;
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        base.PlayerIO.ErrorLog.WriteError("In block #3", e);
+            //        return false;
+            //    }
+            //    try
+            //    {
+            //        if (this.owned && (base.RoomId == player.room0 || player.betaonlyroom == base.RoomId) && player.haveSmileyPackage)
+            //        {
+            //            player.canEdit = true;
+            //            player.owner = true;
+            //            try
+            //            {
+            //                if (this.ownedWorld != null)
+            //                {
+            //                    this.ownedWorld.Set("owner", player.ConnectUserId);
+            //                }
+            //            }
+            //            catch (Exception e)
+            //            {
+            //                base.PlayerIO.ErrorLog.WriteError("In block #4", e);
+            //                return false;
+            //            }
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        base.PlayerIO.ErrorLog.WriteError("In block #5", e);
+            //        return false;
+            //    }
+            //    try
+            //    {
+            //        foreach (var b in this.bans)
+            //        {
+            //            if (b.userid == player.ConnectUserId && !player.owner && !player.canbemod)
+            //            {
+            //                player.Send("info", new object[]
+            //                {
+            //                    "You are banned",
+            //                    "You have been banned from this world"
+            //                });
+            //                return false;
+            //            }
+            //        }
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        base.PlayerIO.ErrorLog.WriteError("In block #6", e);
+            //        return false;
+            //    }
+            //    result = true;
+            //}
+            //return result;
         }
 
         public override void UserJoined(Player player)
