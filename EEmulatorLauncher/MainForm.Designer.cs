@@ -238,6 +238,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(655, 560);
+            this.MinimumSize = new System.Drawing.Size(655, 560);
             this.Name = "MainForm";
             this.Text = "Everybody Edits Emulator";
             this.topPanel.ResumeLayout(false);

@@ -16,7 +16,7 @@ namespace EEmulator.api.Modules
         public NetworkModule()
         {
             this.Get("/rooms", x => this.Response.AsJson(GameManager.Games.Select(game => new GameInfo() { GameId = game.GameId, Rooms = game.Rooms }).ToList()));
-            this.Get("/status", x => this.Response.AsText("Online!"));
+            this.Get("/status", x => this.Response.AsText("Online!\r\n" + string.Join("\r\n", GameManager.Games.Select(game => game.Description))));
         }
     }
 }

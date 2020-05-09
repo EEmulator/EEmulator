@@ -12,10 +12,10 @@ namespace EEmulator
         public EverybodyEditsVersion Version { get; }
         public BigDB BigDB { get; }
         public List<RoomInfo> Rooms { get; set; }
+        public string Description { get; set; } = "No description set.";
 
         public DevServer DevelopmentServer { get; private set; }
         public bool IsRunning { get; private set; }
-
 
         public GameAssembly GameAssembly =>
             this.Version == EverybodyEditsVersion.v0500 ? new GameAssembly("FlixelWalker.dll", "FlixelWalker.pdb") :
@@ -64,10 +64,15 @@ namespace EEmulator
         private void CreateDefault()
         {
             Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "accounts", this.GameId));
+            Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "config", this.GameId));
 
             this.BigDB.CreateTable("PlayerObjects");
             this.BigDB.CreateTable("Worlds");
             this.BigDB.CreateTable("PayVaultItems");
+
+            // Server description
+            if (File.Exists(Path.Combine("games", "EverybodyEdits", "config", this.GameId, "description.txt")))
+                this.Description = File.ReadAllText(Path.Combine("games", "EverybodyEdits", "config", this.GameId, "description.txt"));
 
             // A default world.
             var PW01_DESTINATION = Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "Worlds", "PW01.tson");
