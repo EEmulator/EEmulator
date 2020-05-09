@@ -263,7 +263,7 @@ namespace EverybodyEdits.Lobby
             foreach (var p in this.Players)
             {
                 //p.Send("info","Woops", "You cannot be logged in multiple times with the same user. You have therefore been disconnected.");
-                p.Disconnect();
+                //p.Disconnect();
             }
 
             if (this.RoomId != player.ConnectUserId)
