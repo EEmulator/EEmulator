@@ -120,6 +120,7 @@
     <Compile Include="api\Modules\LoadMyPlayerObjectModule.cs" />
     <Compile Include="api\Modules\LoadObjectsModule.cs" />
     <Compile Include="api\Messages\LockType.cs" />
+    <Compile Include="api\Modules\NetworkModule.cs" />
     <Compile Include="api\Modules\NotificationsDeleteEndpointsModule.cs" />
     <Compile Include="api\Modules\NotificationsRefreshModule.cs" />
     <Compile Include="api\Modules\NotificationsRegisterEndpointsModule.cs" />

@@ -49,7 +49,7 @@ namespace EEmulator.Modules
                 return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
                 {
                     RoomId = args.RoomId,
-                    Endpoints = new List<ServerEndpoint>() { new ServerEndpoint() { Address = "localhost", Port = 8184 } },
+                    Endpoints = new List<ServerEndpoint>() { GameManager.GameServerEndPoint },
                     JoinKey = joinKey
                 });
             });

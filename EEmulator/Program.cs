@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using EEmulator.Messages;
 using Nancy;
 using Nancy.Hosting.Self;
 
@@ -20,17 +21,20 @@ namespace EEmulator
 
             if (Debugger.IsAttached)
             {
-                args = new string[] { "EverybodyEdits", "v188" };
+                args = new string[] { "EverybodyEdits", "v188", "localhost:8184" };
             }
 
-            if (args.Length < 2)
+            if (args.Length < 3)
             {
-                Console.WriteLine("ERROR: You must specify a game and a version.");
+                Console.WriteLine("ERROR: You must specify a game, a version and an endpoint (in that order)");
                 return;
             }
 
             var game = args[0];
             var version = args[1];
+            var use_endpoint = args[2];
+
+            GameManager.GameServerEndPoint = new ServerEndpoint() { Address = use_endpoint.Split(':')[0], Port = int.Parse(use_endpoint.Split(':')[1]) };
 
             GameManager.WebAPI = new NancyHost(new Uri("http://localhost:80/"), new DefaultNancyBootstrapper(), new HostConfiguration
             {
