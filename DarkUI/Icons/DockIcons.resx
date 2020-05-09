@@ -118,49 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="play0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="active_inactive_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\active-inactive-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play0500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play0500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="play0080" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play0080.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playv89" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playv89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close-selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_0800" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_0800.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inactive_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inactive-close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inactive_close_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inactive-close-selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tw_active_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tw_active_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_0500" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_0500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tw_active_close_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tw_active_close_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playv188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playv188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tw_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tw_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addServerButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addServerButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="networkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\networkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="113" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="196_LobbyState_twitter_LobbyState_twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\196_LobbyState_twitter_LobbyState_twitter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bg_188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="playNowButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playNowButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tw_close_selected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tw_close_selected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

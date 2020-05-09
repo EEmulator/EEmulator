@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EEmulatorLauncher.Properties {
+namespace DarkUI {
     using System;
     
     
@@ -19,17 +19,17 @@ namespace EEmulatorLauncher.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    internal class DockIcons {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal DockIcons() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EEmulatorLauncher.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EEmulatorLauncher.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DarkUI.Icons.DockIcons", typeof(DockIcons).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _113 {
+        internal static System.Drawing.Bitmap active_inactive_close {
             get {
-                object obj = ResourceManager.GetObject("113", resourceCulture);
+                object obj = ResourceManager.GetObject("active_inactive_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _196_LobbyState_twitter_LobbyState_twitter {
+        internal static System.Drawing.Bitmap arrow {
             get {
-                object obj = ResourceManager.GetObject("196_LobbyState_twitter_LobbyState_twitter", resourceCulture);
+                object obj = ResourceManager.GetObject("arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap addServerButton {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("addServerButton", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_0500 {
+        internal static System.Drawing.Bitmap close_selected {
             get {
-                object obj = ResourceManager.GetObject("bg_0500", resourceCulture);
+                object obj = ResourceManager.GetObject("close_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_0700 {
+        internal static System.Drawing.Bitmap inactive_close {
             get {
-                object obj = ResourceManager.GetObject("bg_0700", resourceCulture);
+                object obj = ResourceManager.GetObject("inactive_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_0800 {
+        internal static System.Drawing.Bitmap inactive_close_selected {
             get {
-                object obj = ResourceManager.GetObject("bg_0800", resourceCulture);
+                object obj = ResourceManager.GetObject("inactive_close_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_188 {
+        internal static System.Drawing.Bitmap tw_active_close {
             get {
-                object obj = ResourceManager.GetObject("bg_188", resourceCulture);
+                object obj = ResourceManager.GetObject("tw_active_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bg_89 {
+        internal static System.Drawing.Bitmap tw_active_close_selected {
             get {
-                object obj = ResourceManager.GetObject("bg_89", resourceCulture);
+                object obj = ResourceManager.GetObject("tw_active_close_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap networkButton {
+        internal static System.Drawing.Bitmap tw_close {
             get {
-                object obj = ResourceManager.GetObject("networkButton", resourceCulture);
+                object obj = ResourceManager.GetObject("tw_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,59 +153,9 @@ namespace EEmulatorLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play0080 {
+        internal static System.Drawing.Bitmap tw_close_selected {
             get {
-                object obj = ResourceManager.GetObject("play0080", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap play0500 {
-            get {
-                object obj = ResourceManager.GetObject("play0500", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap play0700 {
-            get {
-                object obj = ResourceManager.GetObject("play0700", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap playNowButton {
-            get {
-                object obj = ResourceManager.GetObject("playNowButton", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap playv188 {
-            get {
-                object obj = ResourceManager.GetObject("playv188", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap playv89 {
-            get {
-                object obj = ResourceManager.GetObject("playv89", resourceCulture);
+                object obj = ResourceManager.GetObject("tw_close_selected", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

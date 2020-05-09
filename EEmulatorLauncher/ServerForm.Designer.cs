@@ -34,10 +34,10 @@
             this.selectionPanel = new DarkUI.Controls.DarkSectionPanel();
             this.lbServerSelect = new DarkUI.Controls.DarkGroupBox();
             this.ddServers = new DarkUI.Controls.DarkDropdownList();
-            this.btnAddServer = new System.Windows.Forms.Button();
             this.btnPlayNow = new System.Windows.Forms.Button();
             this.lbDescription = new DarkUI.Controls.DarkGroupBox();
             this.textDescription = new DarkUI.Controls.DarkTextBox();
+            this.btnAddServer = new System.Windows.Forms.Button();
             this.selectionPanel.SuspendLayout();
             this.lbServerSelect.SuspendLayout();
             this.lbDescription.SuspendLayout();
@@ -111,24 +111,6 @@
             this.ddServers.Size = new System.Drawing.Size(175, 26);
             this.ddServers.TabIndex = 0;
             // 
-            // btnAddServer
-            // 
-            this.btnAddServer.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddServer.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.addServerButton;
-            this.btnAddServer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAddServer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnAddServer.FlatAppearance.BorderSize = 0;
-            this.btnAddServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddServer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddServer.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAddServer.Location = new System.Drawing.Point(8, 52);
-            this.btnAddServer.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddServer.Name = "btnAddServer";
-            this.btnAddServer.Size = new System.Drawing.Size(84, 30);
-            this.btnAddServer.TabIndex = 3;
-            this.btnAddServer.UseVisualStyleBackColor = false;
-            this.btnAddServer.Click += new System.EventHandler(this.btnAddServer_Click);
-            // 
             // btnPlayNow
             // 
             this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
@@ -170,6 +152,24 @@
             this.textDescription.ReadOnly = true;
             this.textDescription.Size = new System.Drawing.Size(183, 76);
             this.textDescription.TabIndex = 0;
+            // 
+            // btnAddServer
+            // 
+            this.btnAddServer.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddServer.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.addServerButton;
+            this.btnAddServer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAddServer.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAddServer.FlatAppearance.BorderSize = 0;
+            this.btnAddServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddServer.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddServer.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddServer.Location = new System.Drawing.Point(8, 52);
+            this.btnAddServer.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddServer.Name = "btnAddServer";
+            this.btnAddServer.Size = new System.Drawing.Size(84, 30);
+            this.btnAddServer.TabIndex = 3;
+            this.btnAddServer.UseVisualStyleBackColor = false;
+            this.btnAddServer.Click += new System.EventHandler(this.btnAddServer_Click);
             // 
             // ServerForm
             // 
