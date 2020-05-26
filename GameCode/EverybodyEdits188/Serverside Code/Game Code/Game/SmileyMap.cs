@@ -56,7 +56,7 @@ namespace EverybodyEdits.Game
 
             if (shopItem == null) return false;
 
-            if (shopItem.MinClass <= player.level && player.PayVault.Has(smileyNameInVault))
+            if (player.PayVault.Has(smileyNameInVault))
             {
                 return true;
             }

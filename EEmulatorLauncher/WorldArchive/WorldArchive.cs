@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 using EEmulator;
 using FastBitmapLibrary;
 using Newtonsoft.Json.Linq;
@@ -42,7 +45,7 @@ namespace EEWorldArchive
                 entry.Extract(stream);
                 stream.Position = 0;
 
-                var world_id = entry.FileName.Substring($@"worlds\{connectUserId}".Length, entry.FileName.Length - $@"worlds\{connectUserId}".Length - ".tson".Length);
+                var world_id = entry.FileName.Split('\\').Last().Split('.').First();
 
                 yield return new World(world_id, new StreamReader(stream).ReadToEnd());
             }
@@ -54,25 +57,39 @@ namespace EEWorldArchive
             public string Tson { get; private set; }
             public DatabaseObject Object { get; private set; }
             public Bitmap Minimap { get; private set; }
+            public List<int> BlockTypes { get; private set; }
 
             internal World(string world_id, string tson)
             {
                 this.WorldId = world_id;
                 this.Tson = tson;
                 this.Object = DatabaseObject.LoadFromString(this.Tson);
-                this.Minimap = this.Object.GenerateMinimap();
+                this.Minimap = new Bitmap(200, 200);
+
+                try
+                {
+                    this.Minimap = this.Object.GenerateMinimap(out var types);
+                    this.BlockTypes = types;
+                }
+                catch (Exception ex)
+                {
+                    if (Debugger.IsAttached)
+                        Debug.Fail("Unable to load minimap for world: " + world_id + "\n" + ex.Message);
+                }
             }
         }
     }
 
     public static class MinimapUtility
     {
-        public static Bitmap GenerateMinimap(this DatabaseObject world)
+        public static Bitmap GenerateMinimap(this DatabaseObject world, out List<int> blockTypes)
         {
+            blockTypes = new List<int>();
+
             if (world == null)
                 throw new ArgumentNullException(nameof(world));
 
-            var colors = JObject.Parse(File.ReadAllText("includes//colors.json"));
+            var colors = JObject.Parse(File.ReadAllText(@"inc/colors.json"));
             var width = world.GetInt("width", 200);
             var height = world.GetInt("height", 200);
 
@@ -148,6 +165,9 @@ namespace EEWorldArchive
 
                     foreach (var (x, y, type) in background)
                     {
+                        if (blockTypes.Contains(type))
+                            blockTypes.Add(type);
+
                         var color = GetColor(type);
 
                         if (color.A != 255)
@@ -158,6 +178,9 @@ namespace EEWorldArchive
 
                     foreach (var (x, y, type) in foreground)
                     {
+                        if (blockTypes.Contains(type))
+                            blockTypes.Add(type);
+
                         var color = GetColor(type);
 
                         if (color.A != 255)
@@ -196,7 +219,12 @@ namespace EEWorldArchive
                         {
                             for (var x = 0U; x < height; x++)
                             {
-                                var color = GetColor(world_bytes[y * width + x]);
+                                var type = world_bytes[y * width + x];
+
+                                if (blockTypes.Contains(type))
+                                    blockTypes.Add(type);
+
+                                var color = GetColor(type);
 
                                 if (color.A != 255)
                                     continue;

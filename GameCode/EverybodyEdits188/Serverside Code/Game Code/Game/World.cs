@@ -626,13 +626,6 @@ namespace EverybodyEdits.Game
 
             if (this.dbo != null)
             {
-                //saving a "cached" woots/totalwoots count
-                if (this.wootstatus != null)
-                {
-                    this.dbo.Set("woots", this.wootstatus.getWoots(true));
-                    this.dbo.Set("totalwoots", this.wootstatus.getTotalWoots());
-                    this.wootstatus.save();
-                }
                 this.dbo.Save(callback);
             }
         }

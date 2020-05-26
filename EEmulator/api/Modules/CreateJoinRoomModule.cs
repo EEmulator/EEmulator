@@ -20,38 +20,63 @@ namespace EEmulator.Modules
                     args.RoomId = "$service-room$";
 
                 args.RoomId.Replace(" ", "-");
-
                 string joinKey = null;
 
-                switch (game.GameId)
+                // PW01 is the override room.
+                if (args.RoomId == "PW01")
                 {
-                    default:
-                        joinKey = JoinInfo.Create(
-                            encryptionKey: GameManager.EncryptionKey,
-                            serverId: "serverId",
-                            gameId: 128,
-                            gameConnectId: game.GameId,
-                            gameCodeId: "gameCodeId",
-                            serverType: args.RoomType,
-                            roomId: args.RoomId,
-                            roomData: new byte[] { },
-                            extendedRoomId: game.GameId + "/" + args.RoomType + "/" + args.RoomId,
-                            connectUserId: token.Split(':')[1],
-                            playerIoToken: token,
-                            visible: true,
-                            roomFlags: 0,
-                            partnerId: "",
-                            userId: 1234,
-                            gameCodeVersion: 1);
-                        break;
-                }
+                    joinKey = JoinInfo.Create(
+                        encryptionKey: GameManager.EncryptionKey,
+                        serverId: "serverId",
+                        gameId: 128,
+                        gameConnectId: game.GameId,
+                        gameCodeId: "gameCodeId",
+                        serverType: args.RoomType,
+                        roomId: GameManager.ForceWorldId ?? args.RoomId,
+                        roomData: new byte[] { },
+                        extendedRoomId: game.GameId + "/" + args.RoomType + "/" + GameManager.ForceWorldId ?? args.RoomId,
+                        connectUserId: token.Split(':')[1],
+                        playerIoToken: token,
+                        visible: true,
+                        roomFlags: 0,
+                        partnerId: "",
+                        userId: 1234,
+                        gameCodeVersion: 1);
 
-                return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
+                    return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
+                    {
+                        RoomId = GameManager.ForceWorldId ?? args.RoomId,
+                        Endpoints = new List<ServerEndpoint>() { GameManager.GameServerEndPoint },
+                        JoinKey = joinKey
+                    });
+                }
+                else
                 {
-                    RoomId = args.RoomId,
-                    Endpoints = new List<ServerEndpoint>() { GameManager.GameServerEndPoint },
-                    JoinKey = joinKey
-                });
+                    joinKey = JoinInfo.Create(
+                        encryptionKey: GameManager.EncryptionKey,
+                        serverId: "serverId",
+                        gameId: 128,
+                        gameConnectId: game.GameId,
+                        gameCodeId: "gameCodeId",
+                        serverType: args.RoomType,
+                        roomId: args.RoomId,
+                        roomData: new byte[] { },
+                        extendedRoomId: game.GameId + "/" + args.RoomType + "/" + args.RoomId,
+                        connectUserId: token.Split(':')[1],
+                        playerIoToken: token,
+                        visible: true,
+                        roomFlags: 0,
+                        partnerId: "",
+                        userId: 1234,
+                        gameCodeVersion: 1);
+
+                    return PlayerIO.CreateResponse(token, true, new CreateJoinRoomOutput()
+                    {
+                        RoomId = args.RoomId,
+                        Endpoints = new List<ServerEndpoint>() { GameManager.GameServerEndPoint },
+                        JoinKey = joinKey
+                    });
+                }
             });
         }
     }

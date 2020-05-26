@@ -136,17 +136,20 @@
   <data name="bg_89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addServerButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addServerButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_0500" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_0500.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="playNowButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\playNowButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="playv188" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\playv188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addServerButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addServerButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_0700" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_0700.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="networkButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\networkButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +163,7 @@
   <data name="bg_188" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="playNowButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\playNowButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="worldGalleryButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\worldGalleryButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

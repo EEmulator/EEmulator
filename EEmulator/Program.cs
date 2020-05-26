@@ -13,7 +13,7 @@ namespace EEmulator
         {
             Console.WriteLine(@"
                      _____ _____                _       _             
-   Version 0.1.5    |  ___|  ___|              | |     | |     ""thanks atilla""
+   Version 0.2.0    |  ___|  ___|              | |     | |     ""thanks atilla""
      written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
     miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
 ====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
@@ -21,19 +21,23 @@ namespace EEmulator
 
             if (Debugger.IsAttached)
             {
-                args = new string[] { "EverybodyEdits", "v188", "localhost:8184" };
+                Console.WriteLine("WARNING: Debug Mode is enabled.");
+
+                args = new string[] { "EverybodyEdits", "v188", "localhost:8184", "PW01" };
             }
 
             if (args.Length < 3)
             {
-                Console.WriteLine("ERROR: You must specify a game, a version and an endpoint (in that order)");
+                Console.WriteLine("ERROR: You must specify a game, a version, an endpoint, and a world ID (in that order)");
                 return;
             }
 
             var game = args[0];
             var version = args[1];
             var use_endpoint = args[2];
+            var force_world_id = args[3];
 
+            GameManager.ForceWorldId = force_world_id != "null" ? force_world_id : null;
             GameManager.GameServerEndPoint = new ServerEndpoint() { Address = use_endpoint.Split(':')[0], Port = int.Parse(use_endpoint.Split(':')[1]) };
 
             GameManager.WebAPI = new NancyHost(new Uri("http://localhost:80/"), new DefaultNancyBootstrapper(), new HostConfiguration

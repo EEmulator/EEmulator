@@ -87,6 +87,12 @@
     </Compile>
     <Compile Include="WorldArchive\FastBitmap.cs" />
     <Compile Include="WorldArchive\WorldArchive.cs" />
+    <Compile Include="WorldSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorldSelectionDialog.Designer.cs">
+      <DependentUpon>WorldSelectionDialog.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +109,12 @@
     <EmbeddedResource Include="ServerForm.resx">
       <DependentUpon>ServerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WorldSelectionDialog.resx">
+      <DependentUpon>WorldSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="inc\colors.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -149,7 +161,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <Content Include="includes\usernames.txt" />
+    <Content Include="inc\usernames.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\worldGalleryButton.png" />
     <None Include="Resources\playNowButton.png" />
     <None Include="Resources\addServerButton.png" />
     <None Include="Resources\networkButton.png" />

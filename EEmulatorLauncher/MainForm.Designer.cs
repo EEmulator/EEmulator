@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.btnWorldGallery = new System.Windows.Forms.Button();
             this.btnNetwork = new System.Windows.Forms.Button();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnPlay0500 = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             this.topPanel.BackColor = System.Drawing.Color.Transparent;
             this.topPanel.BackgroundImage = global::EEmulatorLauncher.Properties.Resources._113;
             this.topPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.topPanel.Controls.Add(this.btnWorldGallery);
             this.topPanel.Controls.Add(this.btnNetwork);
             this.topPanel.Controls.Add(this.flowLayoutPanel);
             this.topPanel.Controls.Add(this.birb);
@@ -73,6 +75,23 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(639, 40);
             this.topPanel.TabIndex = 0;
+            // 
+            // btnWorldGallery
+            // 
+            this.btnWorldGallery.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.worldGalleryButton;
+            this.btnWorldGallery.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnWorldGallery.FlatAppearance.BorderSize = 0;
+            this.btnWorldGallery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWorldGallery.ForeColor = System.Drawing.Color.Black;
+            this.btnWorldGallery.Location = new System.Drawing.Point(460, 7);
+            this.btnWorldGallery.Margin = new System.Windows.Forms.Padding(0);
+            this.btnWorldGallery.Name = "btnWorldGallery";
+            this.btnWorldGallery.Size = new System.Drawing.Size(56, 30);
+            this.btnWorldGallery.TabIndex = 11;
+            this.btnWorldGallery.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnWorldGallery.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnWorldGallery.UseVisualStyleBackColor = true;
+            this.btnWorldGallery.Click += new System.EventHandler(this.btnWorldGallery_Click);
             // 
             // btnNetwork
             // 
@@ -107,7 +126,7 @@
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Padding = new System.Windows.Forms.Padding(8, 7, 0, 0);
-            this.flowLayoutPanel.Size = new System.Drawing.Size(511, 40);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(450, 40);
             this.flowLayoutPanel.TabIndex = 2;
             // 
             // btnPlay0500
@@ -286,6 +305,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPlay188;
         private System.Windows.Forms.Button btnNetwork;
+        private System.Windows.Forms.Button btnWorldGallery;
     }
 }
 
