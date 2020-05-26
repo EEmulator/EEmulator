@@ -552,7 +552,7 @@ namespace EverybodyEdits.Game
         public override bool AllowUserJoin(Player player)
         {
             Console.WriteLine("Users joining");
-            return true;
+            return true; // allow infinite amount of players in a world.
 
             // To prevent people joining anonymously 
             if (!player.PlayerObject.GetBool("created", false) || player.PlayerObject.GetString("name", "") == "")
@@ -1133,24 +1133,24 @@ namespace EverybodyEdits.Game
                 {
                     if (!this.baseworld.wootupbanned && !player.owner)
                     {
-                        WootUpPlayer.giveWootUp(this.PlayerIO, player.ConnectUserId, player.IPAddress.ToString(),
-                            delegate (bool success)
-                            {
-                                if (success)
-                                {
-                                    this.addWootToWorld();
-                                    this.BroadcastMetaData(player);
-                                    this.BroadcastMessage(Message.Create("wu", player.Id));
-                                    this.BroadcastMessage(Message.Create("write", "* WORLD",
-                                        player.name.ToUpper() + " gave a woot."));
-                                }
-                                else
-                                {
-                                    player.SendMessage(Message.Create("wu", player.Id));
-                                    player.SendMessage(Message.Create("write", "* WORLD",
-                                        player.name.ToUpper() + " gave a woot."));
-                                }
-                            }, player.timezoneoffset);
+                        //WootUpPlayer.giveWootUp(this.PlayerIO, player.ConnectUserId, player.IPAddress.ToString(),
+                        //    delegate (bool success)
+                        //    {
+                        //        if (success)
+                        //        {
+                        //            this.addWootToWorld();
+                        //            this.BroadcastMetaData(player);
+                        //            this.BroadcastMessage(Message.Create("wu", player.Id));
+                        //            this.BroadcastMessage(Message.Create("write", "* WORLD",
+                        //                player.name.ToUpper() + " gave a woot."));
+                        //        }
+                        //        else
+                        //        {
+                        //            player.SendMessage(Message.Create("wu", player.Id));
+                        //            player.SendMessage(Message.Create("write", "* WORLD",
+                        //                player.name.ToUpper() + " gave a woot."));
+                        //        }
+                        //    }, player.timezoneoffset);
                     }
                     break;
                 }
@@ -1261,7 +1261,7 @@ namespace EverybodyEdits.Game
                         {
                             var friends = player.hasFriend(p.ConnectUserId);
                             player.SendMessage(Message.Create("add", p.Id, p.name, p.face, p.x, p.y, p.isgod, p.ismod,
-                                p.canchat, p.coins, p.bcoins, friends, false, p.level, p.isClubMember,
+                                p.canchat, p.coins, p.bcoins, friends, false, 1 /* woot level */, p.isClubMember,
                                 p.isInGuardianMode));
                             player.SendMessage(Message.Create("face", p.Id, p.face));
 
@@ -1340,17 +1340,18 @@ namespace EverybodyEdits.Game
                         // Check against percentage of world that is coins
                         if ((this.baseworld.coinPercentage() * 2) * 100 < this.rd.Next(0, 100))
                         {
-                            var playerlevel = player.level;
+                            //var playerlevel = player.level;
                             player.doCoinCollect(delegate (bool success)
                             {
                                 if (success)
                                 {
                                     this.magiccollected++;
                                     this.BroadcastMessage(Message.Create("w", player.Id));
-                                    if (player.level > playerlevel)
-                                    {
-                                        this.BroadcastMessage(Message.Create("levelup", player.Id, player.level));
-                                    }
+
+                                    //if (player.level > playerlevel)
+                                    //{
+                                    //    this.BroadcastMessage(Message.Create("levelup", player.Id, 1 /* woot level */));
+                                    //}
                                 }
                             });
                         }
@@ -2864,8 +2865,8 @@ namespace EverybodyEdits.Game
 
             //if (player.ConnectUserId == this.baseworld.ownerid)
             //{
-                player.canEdit = true;
-                player.owner = true;
+            player.canEdit = true;
+            player.owner = true;
             //}
 
             var count = 0;
@@ -2926,7 +2927,7 @@ namespace EverybodyEdits.Game
                     var friend = p.hasFriend(player.ConnectUserId);
                     p.SendMessage(Message.Create("add", player.Id, player.name, player.face, player.x, player.y,
                         player.isgod, player.ismod, player.canchat, player.coins, player.bcoins, friend, false,
-                        player.level, player.isClubMember, player.isInGuardianMode));
+                        1 /* woot level */, player.isClubMember, player.isInGuardianMode));
                 }
             }
 
@@ -3256,7 +3257,7 @@ namespace EverybodyEdits.Game
         {
             foreach (var p in this.Players)
             {
-                this.BroadcastMessage(Message.Create("levelup", p.Id, p.level + 1));
+                this.BroadcastMessage(Message.Create("levelup", p.Id, 1 /* woot level */ + 1));
                 break;
             }
         }

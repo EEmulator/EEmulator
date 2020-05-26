@@ -39,8 +39,6 @@ namespace EverybodyEdits.Game
         private List<Item> spikes = new List<Item>();
         private List<Item> textsigns = new List<Item>();
         private List<Item> timedoors = new List<Item>();
-        private int wootque;
-        private WootWorldStatus wootstatus;
         private List<Item> worldportals = new List<Item>();
         private List<Item> zombiedoors = new List<Item>();
 
@@ -123,7 +121,6 @@ namespace EverybodyEdits.Game
         {
             get
             {
-                if (this.wootstatus != null) return this.wootstatus.getWoots();
                 if (this.dbo != null) return this.dbo.GetInt("woots", 0);
                 return 0;
             }
@@ -133,7 +130,6 @@ namespace EverybodyEdits.Game
         {
             get
             {
-                if (this.wootstatus != null) return this.wootstatus.getTotalWoots();
                 if (this.dbo != null) return this.dbo.GetInt("totalwoots", 0);
                 return 0;
             }

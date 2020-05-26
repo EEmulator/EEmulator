@@ -722,7 +722,7 @@ namespace EverybodyEdits.Lobby
 
                                             rtn.Add(p.PlayerObject.GetInt("termsVersion", 0));
 
-                                            var wootup = -1;
+                                            //var wootup = -1;
                                             //WootStatus wootstatus = null;
 
                                             //Callback ondataloaded = delegate
@@ -1757,8 +1757,8 @@ namespace EverybodyEdits.Lobby
                   rtn.Add(po.GetInt("smiley", 0));
                   rtn.Add(po.GetBool("haveSmileyPackage", false));
                   rtn.Add(po.GetBool("isModerator", false));
-                // is club MemberAccessException?
-                rtn.Add(po.Contains("club_expire") && po.GetDateTime("club_expire") > DateTime.Now);
+                  // is club MemberAccessException?
+                  rtn.Add(po.Contains("club_expire") && po.GetDateTime("club_expire") > DateTime.Now);
                   rtn.Add((po.GetDateTime("club_expire", DateTime.Now) - DateTime.Now).TotalMilliseconds);
                   rtn.Add((po.GetDateTime("club_join", DateTime.Now) - DateTime.Now).TotalMilliseconds);
                   rtn.Add(po.GetString("club_membernumber", "0"));
@@ -1775,52 +1775,52 @@ namespace EverybodyEdits.Lobby
                       {
                           worldkeys.Add(key);
                           worlds.Add(po[key]);
-                        //Console.WriteLine(po[key] + " - " + mwn.GetString((string)po[key], ""));
-                        worldnames.Add((mwn != null ? mwn.GetString((string)po[key], "") : ""));
+                          //Console.WriteLine(po[key] + " - " + mwn.GetString((string)po[key], ""));
+                          worldnames.Add((mwn != null ? mwn.GetString((string)po[key], "") : ""));
                       }
                   }
                   rtn.Add(string.Join(",", worldkeys.ToArray(typeof(string)) as string[]));
                   rtn.Add(string.Join(",", worlds.ToArray(typeof(string)) as string[]));
                   rtn.Add(string.Join(",", worldnames.ToArray(typeof(string)) as string[]));
 
-                  var wootup = -1;
-                //WootStatus wootstatus = null;
+                  //var wootup = -1;
+                  //WootStatus wootstatus = null;
 
-                //Callback ondataloaded = delegate
-                //{
-                //    if (wootup >= 0 && wootstatus != null)
-                //    {
-                var level = 0;//wootstatus.level;
-                rtn.Add(0);//(wootstatus.current);
-                rtn.Add(level);
-                // levelcap prev
-                rtn.Add(0);//level == 0 ? 0 : Config.levelcap[level - 1]);
-                           // levelcap next
-                rtn.Add(0); //Config.levelcap[level]);
-                rtn.Add(0); //Config.leveltitles[level - 1].ToUpper());
-                rtn.Add(0); //wootstatus.total);
+                  //Callback ondataloaded = delegate
+                  //{
+                  //    if (wootup >= 0 && wootstatus != null)
+                  //    {
+                  var level = 0;//wootstatus.level;
+                  rtn.Add(0);//(wootstatus.current);
+                  rtn.Add(level);
+                  // levelcap prev
+                  rtn.Add(0);//level == 0 ? 0 : Config.levelcap[level - 1]);
+                             // levelcap next
+                  rtn.Add(0); //Config.levelcap[level]);
+                  rtn.Add(0); //Config.leveltitles[level - 1].ToUpper());
+                  rtn.Add(0); //wootstatus.total);
 
-                callback(rtn);
-                //    }
-                //};
+                  callback(rtn);
+                  //    }
+                  //};
 
-                //WootUpPlayer.getWootStatusAmount(client, po.Key, delegate(int amount)
-                //{
-                //    wootup = amount;
-                //    ondataloaded();
-                //}, po.GetInt("timezone", 0));
+                  //WootUpPlayer.getWootStatusAmount(client, po.Key, delegate(int amount)
+                  //{
+                  //    wootup = amount;
+                  //    ondataloaded();
+                  //}, po.GetInt("timezone", 0));
 
-                //WootStatus.getWootStatus(client, po.Key, delegate(WootStatus status)
-                //{
-                //    wootstatus = status;
-                //    ondataloaded();
-                //}, false);
-            }, delegate
-            {
-                var rtn = Message.Create("getProfileObject");
-                rtn.Add("error");
-                callback(rtn);
-            });
+                  //WootStatus.getWootStatus(client, po.Key, delegate(WootStatus status)
+                  //{
+                  //    wootstatus = status;
+                  //    ondataloaded();
+                  //}, false);
+              }, delegate
+              {
+                  var rtn = Message.Create("getProfileObject");
+                  rtn.Add("error");
+                  callback(rtn);
+              });
         }
     }
 }

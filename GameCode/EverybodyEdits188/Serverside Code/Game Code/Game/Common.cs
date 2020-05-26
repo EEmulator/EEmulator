@@ -97,7 +97,6 @@ namespace EverybodyEdits.Game
         public PotionStatus PotionStatusObject;
 
         public int Timestamp = 0;
-        public WootStatus WootStatusObject;
         public int bcoins = 0;
         //public int face = 0;
         // Used for smileys that are not saved
@@ -265,7 +264,7 @@ namespace EverybodyEdits.Game
                     PlayerObject.Save();
                 }
 
-                return (Config.levelmaxenergy[level - 1] - 200) + PlayerObject.GetInt("maxEnergy");
+                return PlayerObject.GetInt("maxEnergy", 200);
                 //return Math.Max(PlayerObject.GetInt("maxEnergy", 200),200);
             }
             set
@@ -302,20 +301,6 @@ namespace EverybodyEdits.Game
         public int timezoneoffset
         {
             get { return this.PlayerObject.GetInt("timezone", 0); }
-        }
-
-        public int woot
-        {
-            get
-            {
-                if (this.WootStatusObject == null) return 0;
-                return this.WootStatusObject.current;
-            }
-        }
-
-        public int level
-        {
-            get { return Level.GetLevel(this.woot); }
         }
 
         public bool isClubMember
@@ -477,14 +462,7 @@ namespace EverybodyEdits.Game
 
         public void doCoinCollect(Callback<bool> callback)
         {
-            this.WootStatusObject.doCoinCollect(delegate (bool success)
-            {
-                //if (success) {
-                //    PlayerObject.Set("Level", level);
-                //}
-
-                callback(success);
-            });
+            callback(true);
         }
 
         public void Init(Client c, Callback successCallback)
@@ -559,7 +537,6 @@ namespace EverybodyEdits.Game
             {
                 this.SaveOnlineStatus();
                 this.SavePotionStatus();
-                this.SaveWootStatus();
                 lock (this)
                 {
                     if (this.PlayerObject != null)
@@ -587,17 +564,6 @@ namespace EverybodyEdits.Game
                 lock (this)
                 {
                     this.PotionStatusObject.Save();
-                }
-            }
-        }
-
-        public void SaveWootStatus()
-        {
-            if (this.WootStatusObject != null)
-            {
-                lock (this)
-                {
-                    this.WootStatusObject.Save();
                 }
             }
         }

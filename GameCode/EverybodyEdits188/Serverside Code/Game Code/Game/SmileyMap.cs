@@ -37,7 +37,7 @@ namespace EverybodyEdits.Game
 
         public bool smileyIsLegit(Player player, int smileyId, Shop shop)
         {
-            return true;
+            return true; // don't bother checking smiley legitimacy
 
             if (this.freeForAll.Contains(smileyId))
             {
