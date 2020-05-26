@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using EEmulator.Messages;
-using Tson.NET;
+using Tson;
 
 namespace EEmulator
 {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using EEmulator.helpers;
 using EEmulator.Messages;
-using Tson.NET;
+using Tson;
 
 namespace EEmulator
 {
