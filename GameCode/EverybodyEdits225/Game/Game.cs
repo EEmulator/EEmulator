@@ -1544,6 +1544,11 @@ namespace EverybodyEdits.Game
                     if (this.BaseWorld.IsArtContest)
                         this.BroadcastContestItems(this.Crew.Id);
 
+                    if (player.IsAdmin)
+                    {
+                        this.TrySetEditRights(player, true);
+                    }
+
                     // Adding the existing players to the new player screen
                     foreach (var p in (player.IsAdmin || player.IsModerator) ? this.Players : this.FilteredPlayers)
                     {
