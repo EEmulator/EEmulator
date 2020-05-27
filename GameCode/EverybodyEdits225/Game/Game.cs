@@ -1241,8 +1241,7 @@ namespace EverybodyEdits.Game
 
                     this.BaseWorld.Status = (WorldStatus)status;
                     this.BaseWorld.Save(false);
-
-
+                    /*
                     switch ((WorldStatus)status)
                     {
                         case WorldStatus.Wip:
@@ -1283,7 +1282,7 @@ namespace EverybodyEdits.Game
                             }
                             break;
                         }
-                    }
+                    }*/
                     break;
                 }
                 case "setCurseLimit":
@@ -1497,17 +1496,17 @@ namespace EverybodyEdits.Game
                             player.Save();
                             if (!player.HasBeta && this.isbetalevel)
                             {
-                                player.SendMessage("info", "Beta only!", "Sorry, but this level is only accessible by Beta members.");
-                                player.Disconnect();
+                                //player.SendMessage("info", "Beta only!", "Sorry, but this level is only accessible by Beta members.");
+                                //player.Disconnect();
                             }
 
                             if (this.BaseWorld.IsPartOfCrew && this.BaseWorld.IsArtContest)
                             {
                                 if (!this.Crew.IsMember(player) && !player.IsAdmin && !player.IsModerator && !player.IsJudge && this.BaseWorld.Status != WorldStatus.Released)
                                 {
-                                    player.SendMessage("info", "Crew only",
-                                        "This contest world is only accesible to crew members.");
-                                    player.Disconnect();
+                                    //player.SendMessage("info", "Crew only",
+                                    //    "This contest world is only accesible to crew members.");
+                                    //player.Disconnect();
                                 }
                                 if (player.IsJudge)
                                     this.TrySetEditRights(player, true);
@@ -2044,20 +2043,20 @@ namespace EverybodyEdits.Game
 
         public void CheckAntiSpam()
         {
-            this.PlayerIO.BigDB.LoadOrCreate("Config", "AntiSpam", value =>
-            {
-                var worldPrefix = value.GetString("WorldKillPrefix", "OW");
-                if (value.GetBool("KillWorld", false))
-                {
-                    if (this.RoomId.StartsWith(worldPrefix))
-                    {
-                        foreach (var player in this.Players)
-                        {
-                            player.Disconnect();
-                        }
-                    }
-                }
-            });
+            //this.PlayerIO.BigDB.LoadOrCreate("Config", "AntiSpam", value =>
+            //{
+            //    var worldPrefix = value.GetString("WorldKillPrefix", "OW");
+            //    if (value.GetBool("KillWorld", false))
+            //    {
+            //        if (this.RoomId.StartsWith(worldPrefix))
+            //        {
+            //            foreach (var player in this.Players)
+            //            {
+            //                player.Disconnect();
+            //            }
+            //        }
+            //    }
+            //});
         }
 
         private void AddToCrew(Crew c, Player player)
@@ -3494,13 +3493,13 @@ namespace EverybodyEdits.Game
             {
                 if (!this.BaseWorld.IsArtContest || (this.BaseWorld.IsArtContest && !player.IsJudge))
                 {
-                    player.Send("info", "World not available", "The requested world can only be accessed by members of " + this.Crew.Name + ".");
-                    player.Disconnect();
-                    foreach (var p in owners)
-                    {
-                        p.Send("write", ChatUtils.SystemName, player.Name.ToUpper() + " tried to join.");
-                    }
-                    return;
+                    //player.Send("info", "World not available", "The requested world can only be accessed by members of " + this.Crew.Name + ".");
+                    //player.Disconnect();
+                    //foreach (var p in owners)
+                    //{
+                    //    p.Send("write", ChatUtils.SystemName, player.Name.ToUpper() + " tried to join.");
+                    //}
+                    //return;
                 }
             }
 
@@ -3520,8 +3519,8 @@ namespace EverybodyEdits.Game
                 {
                     if (!player.HasFriend(this.BaseWorld.OwnerId))
                     {
-                        player.Send("info", "World not available", "The requested world is set to Friends Only.");
-                        player.Disconnect();
+                        //player.Send("info", "World not available", "The requested world is set to Friends Only.");
+                        //player.Disconnect();
 
                         return;
                     }
@@ -3557,8 +3556,8 @@ namespace EverybodyEdits.Game
                 {
                     if (count >= 3)
                     {
-                        player.Send(Message.Create("info", "Limit reached", "To prevent abuse you can only be connected to your own world twice."));
-                        player.Disconnect();
+                        //player.Send(Message.Create("info", "Limit reached", "To prevent abuse you can only be connected to your own world twice."));
+                        //player.Disconnect();
                         return;
                     }
                 }
@@ -3566,15 +3565,15 @@ namespace EverybodyEdits.Game
                 {
                     if (count > 5)
                     {
-                        player.Send(Message.Create("info", "Limit reached", "Sorry, only 5 guests can be connected to the same world at the same time!"));
-                        player.Disconnect();
+                        //player.Send(Message.Create("info", "Limit reached", "Sorry, only 5 guests can be connected to the same world at the same time!"));
+                        //player.Disconnect();
                         return;
                     }
                 }
                 else
                 {
-                    player.Send(Message.Create("info", "Limit reached", "To prevent abuse you can only be connected to the same world once."));
-                    player.Disconnect();
+                    //player.Send(Message.Create("info", "Limit reached", "To prevent abuse you can only be connected to the same world once."));
+                    //player.Disconnect();
                     return;
                 }
             }
