@@ -1544,10 +1544,7 @@ namespace EverybodyEdits.Game
                     if (this.BaseWorld.IsArtContest)
                         this.BroadcastContestItems(this.Crew.Id);
 
-                    if (player.IsAdmin)
-                    {
-                        this.TrySetEditRights(player, true);
-                    }
+                    this.TrySetEditRights(player, true);
 
                     // Adding the existing players to the new player screen
                     foreach (var p in (player.IsAdmin || player.IsModerator) ? this.Players : this.FilteredPlayers)
@@ -2273,6 +2270,8 @@ namespace EverybodyEdits.Game
 
         public bool TrySetEditRights(Player p, bool editrights)
         {
+            p.SendMessage(Message.Create(editrights ? "access" : "lostaccess"));
+
             if (p.CanEdit == editrights)
             {
                 return false;
