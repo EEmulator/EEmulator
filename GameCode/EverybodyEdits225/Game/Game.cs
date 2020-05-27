@@ -492,11 +492,11 @@ namespace EverybodyEdits.Game
                 player.Owner = true;
             }
 
-            if (this.PlayerCount > 45 && !(player.IsAdmin || player.IsModerator || player.Owner))
-            {
-                player.SendMessage("Info", "Room is full", "Sorry this room is full, please try again later :)");
-                return false;
-            }
+            //if (this.PlayerCount > 45 && !(player.IsAdmin || player.IsModerator || player.Owner))
+            //{
+            //    player.SendMessage("Info", "Room is full", "Sorry this room is full, please try again later :)");
+            //    return false;
+            //}
 
             if (this.joinBans.Any(b => b.UserId == player.ConnectUserId && !player.Owner && !player.IsAdmin && !player.IsModerator && !this.Crew.IsMember(player)))
             {
@@ -504,19 +504,19 @@ namespace EverybodyEdits.Game
                 return false;
             }
 
-            if (this.GetPlayersWithIp(player.IPAddress).Count > 5 && (!player.IsAdmin || !player.IsModerator))
-            {
-                player.SendMessage("info", "Too many connections",
-                    "You have been kicked from this world because you are connected more than 5 times.");
-                return false;
-            }
+            //if (this.GetPlayersWithIp(player.IPAddress).Count > 5 && (!player.IsAdmin || !player.IsModerator))
+            //{
+            //    player.SendMessage("info", "Too many connections",
+            //        "You have been kicked from this world because you are connected more than 5 times.");
+            //    return false;
+            //}
 
-            if (this.FilteredPlayers.Count(pl => pl.ConnectUserId == player.ConnectUserId) > 2 && !player.IsAdmin)
-            {
-                player.SendMessage("info", "Limit reached",
-                    "To prevent abuse you can only be connected to the same world once.");
-                return false;
-            }
+            //if (this.FilteredPlayers.Count(pl => pl.ConnectUserId == player.ConnectUserId) > 2 && !player.IsAdmin)
+            //{
+            //    player.SendMessage("info", "Limit reached",
+            //        "To prevent abuse you can only be connected to the same world once.");
+            //    return false;
+            //}
 
             if (player.PlayerObject.Contains("ChatColor"))
             {
