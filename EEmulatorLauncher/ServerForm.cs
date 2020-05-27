@@ -159,6 +159,10 @@ namespace EEmulatorLauncher
                             version = "v188";
                             break;
 
+                        case "everybody-edits-v225":
+                            version = "v225";
+                            break;
+
                         default:
                             MessageBox.Show("The server is not running an instance of an Everybody Edits game.");
                             return;

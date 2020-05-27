@@ -73,6 +73,11 @@ namespace EEmulatorLauncher
             Process.Start("EEmulator.exe", "EverybodyEdits v188 localhost:8184 PW01").WaitForExit();
         }
 
+        private void btnPlay225_Click(object sender, EventArgs e)
+        {
+            Process.Start("EEmulator.exe", "EverybodyEdits v225 localhost:8184 PW01").WaitForExit();
+        }
+
         private void btnNetwork_Click(object sender, EventArgs e)
         {
             serverForm.ShowDialog();

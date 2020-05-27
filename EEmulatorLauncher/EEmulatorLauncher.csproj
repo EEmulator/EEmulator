@@ -93,6 +93,7 @@
     <Compile Include="WorldSelectionDialog.Designer.cs">
       <DependentUpon>WorldSelectionDialog.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\playv225.png" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +188,10 @@
     <ProjectReference Include="..\GameCode\EverybodyEdits188\Serverside Code\Game Code\EverybodyEdits188.csproj">
       <Project>{9d801530-a9af-4a0b-8639-b2deb7d9e333}</Project>
       <Name>EverybodyEdits188</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GameCode\EverybodyEdits225\EverybodyEdits225.csproj">
+      <Project>{41579d9e-d224-429f-8cf6-617b50ee0a5a}</Project>
+      <Name>EverybodyEdits225</Name>
     </ProjectReference>
     <ProjectReference Include="..\GameCode\EverybodyEdits89\EverybodyEdits\EverybodyEdits89.csproj">
       <Project>{cc02c1fe-24d2-4891-8552-31ce2e66ff63}</Project>

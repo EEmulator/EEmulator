@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EEmulator.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +14,13 @@ namespace EEmulator.Modules
             this.Post("/api/271", ctx =>
             {
                 var args = Serializer.Deserialize<AchievementsRefreshArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(AchievementsRefreshModule)} (/api/271) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                return PlayerIO.CreateResponse(token, true, new AchievementsRefreshOutput()
+                {
+                    Version = "1",
+                    Achievements = new List<Achievement>()
+                });
             });
         }
     }

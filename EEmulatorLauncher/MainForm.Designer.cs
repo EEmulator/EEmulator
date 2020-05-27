@@ -43,6 +43,7 @@
             this.btnPlay89 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnPlay188 = new System.Windows.Forms.Button();
+            this.btnPlay225 = new System.Windows.Forms.Button();
             this.birb = new System.Windows.Forms.PictureBox();
             this.topPanel.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
@@ -121,6 +122,7 @@
             this.flowLayoutPanel.Controls.Add(this.btnPlay89);
             this.flowLayoutPanel.Controls.Add(this.label1);
             this.flowLayoutPanel.Controls.Add(this.btnPlay188);
+            this.flowLayoutPanel.Controls.Add(this.btnPlay225);
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -251,6 +253,23 @@
             this.btnPlay188.Click += new System.EventHandler(this.btnPlay188_Click);
             this.btnPlay188.MouseHover += new System.EventHandler(this.btnPlay188_MouseHover);
             // 
+            // btnPlay225
+            // 
+            this.btnPlay225.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playv225;
+            this.btnPlay225.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlay225.FlatAppearance.BorderSize = 0;
+            this.btnPlay225.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay225.ForeColor = System.Drawing.Color.Black;
+            this.btnPlay225.Location = new System.Drawing.Point(312, 7);
+            this.btnPlay225.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPlay225.Name = "btnPlay225";
+            this.btnPlay225.Size = new System.Drawing.Size(56, 30);
+            this.btnPlay225.TabIndex = 10;
+            this.btnPlay225.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnPlay225.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPlay225.UseVisualStyleBackColor = true;
+            this.btnPlay225.Click += new System.EventHandler(this.btnPlay225_Click);
+            // 
             // birb
             // 
             this.birb.BackgroundImage = global::EEmulatorLauncher.Properties.Resources._196_LobbyState_twitter_LobbyState_twitter;
@@ -306,6 +325,7 @@
         private System.Windows.Forms.Button btnPlay188;
         private System.Windows.Forms.Button btnNetwork;
         private System.Windows.Forms.Button btnWorldGallery;
+        private System.Windows.Forms.Button btnPlay225;
     }
 }
 

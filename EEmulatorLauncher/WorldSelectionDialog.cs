@@ -37,12 +37,17 @@ namespace EEmulatorLauncher
             if (!this.HasEnumeratedArchive)
             {
                 MessageBox.Show("Please note that the archive is quite large, so it may take a minute or two the first time you load a user. After that, it should be considerably fast as it is loaded into memory.");
-                this.HasEnumeratedArchive = true;
             }
 
             this.Worlds = Program.WorldArchive.Retrieve(Program.UsernameToConnectUserId[txtUsername.Text.ToLower()]).ToList();
             comboWorlds.Items.Clear();
             comboWorlds.Items.AddRange(this.Worlds.Select(world => new ComboWorldItem() { Text = world.Object.GetString("name", "Untitled World") + " (" + world.WorldId + ")", WorldId = world.WorldId }).ToArray());
+        
+            if (!this.HasEnumeratedArchive)
+            {
+                MessageBox.Show("The worlds have been loaded!");
+                this.HasEnumeratedArchive = true;
+            }
         }
 
         private void comboWorlds_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,6 +85,18 @@ namespace EEmulatorLauncher
 
             switch ((string)comboSelectedVersion.SelectedItem)
             {
+                case "Everybody Edits v225":
+                {
+                    var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v225).GameId;
+                    var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
+
+                    if (!File.Exists(destination))
+                        File.WriteAllText(destination, this.SelectedWorld.Tson);
+
+                    Process.Start("EEmulator.exe", "EverybodyEdits v225 localhost:8184 " + this.SelectedWorld.WorldId);
+                    break;
+                }
+
                 case "Everybody Edits v188":
                 {
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v188).GameId;

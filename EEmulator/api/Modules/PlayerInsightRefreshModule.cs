@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using EEmulator.Messages;
 using Nancy;
 using ProtoBuf;
@@ -12,7 +13,11 @@ namespace EEmulator.Modules
             this.Post("/api/301", ctx =>
             {
                 var args = Serializer.Deserialize<PlayerInsightRefreshArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(PlayerInsightRefreshModule)} (/api/301) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                return PlayerIO.CreateResponse(token, true, new PlayerInsightRefreshOutput() { 
+                    State = new PlayerInsightState() { PlayersOnline = 1, Segments = new System.Collections.Generic.List<KeyValuePair>() }
+                });
             });
         }
     }

@@ -13,7 +13,7 @@ namespace EEmulator
         {
             Console.WriteLine(@"
                      _____ _____                _       _             
-   Version 0.2.0    |  ___|  ___|              | |     | |     ""thanks atilla""
+   Version 0.2.1    |  ___|  ___|              | |     | |     ""thanks atilla""
      written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
     miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
 ====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
@@ -23,7 +23,7 @@ namespace EEmulator
             {
                 Console.WriteLine("WARNING: Debug Mode is enabled.");
 
-                args = new string[] { "EverybodyEdits", "v188", "localhost:8184", "PW01" };
+                args = new string[] { "EverybodyEdits", "v225", "localhost:8184", "PW01" };
             }
 
             if (args.Length < 3)
@@ -72,6 +72,11 @@ namespace EEmulator
 
                     case "v188":
                         GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v188));
+                        break;
+
+                    case "v225":
+                        GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v225));
+                        break;
                         break;
 
                     default:

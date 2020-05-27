@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using EEmulator.Messages;
 using Nancy;
 using ProtoBuf;
@@ -13,7 +15,11 @@ namespace EEmulator.Modules
             this.Post("/api/50", ctx =>
             {
                 var args = Serializer.Deserialize<WriteErrorArgs>(this.Request.Body);
-                throw new NotImplementedException($"The module {nameof(WriteErrorModule)} (/api/50) has not been implemented yet.");
+                var token = this.Request.Headers["playertoken"].FirstOrDefault();
+
+                Console.WriteLine("WriteError API called: " + string.Join("\n", args.Source, args.Error, args.Details, args.Stacktrace));
+
+                return PlayerIO.CreateResponse(token, true, new WriteErrorOutput());
             });
         }
     }

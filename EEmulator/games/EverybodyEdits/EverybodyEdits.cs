@@ -22,7 +22,8 @@ namespace EEmulator
             this.Version == EverybodyEditsVersion.v0700 ? new GameAssembly("FlixelWalkerFX3.dll", "FlixelWalkerFX3.pdb") :
             this.Version == EverybodyEditsVersion.v0800 ? new GameAssembly("EverybodyEdits01.dll", "EverybodyEdits01.pdb") :
             this.Version == EverybodyEditsVersion.v89 ? new GameAssembly("EverybodyEdits89.dll", "EverybodyEdits89.pdb") :
-            this.Version == EverybodyEditsVersion.v188 ? new GameAssembly("EverybodyEdits188.dll", "EverybodyEdits188.pdb")
+            this.Version == EverybodyEditsVersion.v188 ? new GameAssembly("EverybodyEdits188.dll", "EverybodyEdits188.pdb") :
+            this.Version == EverybodyEditsVersion.v225 ? new GameAssembly("EverybodyEdits225.dll", "EverybodyEdits225.pdb")
             : throw new NotImplementedException($"The version of game specified '{ this.Version }' does not have a game assembly associated with it.");
 
         public string GameId =>
@@ -30,7 +31,8 @@ namespace EEmulator
             this.Version == EverybodyEditsVersion.v0700 ? "everybody-edits-v7" :
             this.Version == EverybodyEditsVersion.v0800 ? "everybody-edits-v8" :
             this.Version == EverybodyEditsVersion.v89 ? "everybody-edits-v89" :
-            this.Version == EverybodyEditsVersion.v188 ? "everybody-edits-v188"
+            this.Version == EverybodyEditsVersion.v188 ? "everybody-edits-v188" :
+            this.Version == EverybodyEditsVersion.v225 ? "everybody-edits-v225"
             : throw new NotImplementedException($"The version of game specified '{ this.Version }' does not have a game id associated with it.");
 
 
@@ -89,6 +91,7 @@ namespace EEmulator
 
             switch (this.Version)
             {
+                #region v0800
                 case EverybodyEditsVersion.v0800:
                     this.BigDB.CreateTable("Config");
                     this.BigDB.CreateTable("Worlds");
@@ -105,7 +108,8 @@ namespace EEmulator
                         .Set("chatbanned", false)
                         .Set("shopDate", DateTime.Now));
                     break;
-
+                #endregion
+                #region v89
                 case EverybodyEditsVersion.v89:
                     this.BigDB.CreateTable("Config");
                     this.BigDB.CreateTable("Worlds");
@@ -138,7 +142,9 @@ namespace EEmulator
                     this.BigDB.CreateObject("PayVaultItems", "pro", new DatabaseObject()
                         .Set("PriceCoins", 1));
                     break;
+                #endregion
 
+                #region v188
                 case EverybodyEditsVersion.v188:
                     this.BigDB.CreateTable("Config");
                     this.BigDB.CreateTable("Worlds");
@@ -180,11 +186,71 @@ namespace EEmulator
                     this.BigDB.CreateObject("Config", "config", new DatabaseObject()
                         .Set("version", 188)
                         .Set("betaversion", 188));
-
-                    // base world
+                    
+                    // base worlds (home worlds)
+                    this.BigDB.CreateObject("Worlds", "PWTXSVWxb3cUI", new DatabaseObject());
                     this.BigDB.CreateObject("Worlds", "PWQe-HH_N2bUI", new DatabaseObject());
                     this.BigDB.CreateObject("ClubMembers", "membernumber", new DatabaseObject().Set("latest_trial", 0));
+                    break;
+                #endregion
+
+                case EverybodyEditsVersion.v225:
+                    this.BigDB.CreateTable("Config");
+                    this.BigDB.CreateTable("Worlds");
+                    this.BigDB.CreateTable("Usernames");
+                    this.BigDB.CreateTable("ClubMembers");
+                    this.BigDB.CreateTable("TempBans");
+                    this.BigDB.CreateTable("OnlineStatus");
+                    this.BigDB.CreateTable("Campaigns");
+                    this.BigDB.CreateTable("Coupons");
+                    this.BigDB.CreateTable("Friends");
+                    this.BigDB.CreateTable("IPBans");
+
+                    this.BigDB.CreateObject("PlayerObjects", "user", new DatabaseObject()
+                        .Set("owner", "simpleTest")
+                        .Set("haveSmileyPackage", true)
+                        .Set("isModerator", true)
+                        .Set("canchat", true)
+                        .Set("name", "eemu")
+                        .Set("chatbanned", false)
+                        .Set("maxEnergy", 200)
+                        .Set("shopDate", DateTime.Now));
+
+                    this.BigDB.CreateObject("PlayerObjects", "guest", new DatabaseObject()
+                        .Set("owner", "simpleTest")
+                        .Set("haveSmileyPackage", true)
+                        .Set("isModerator", true)
+                        .Set("canchat", true)
+                        .Set("name", "eemu")
+                        .Set("chatbanned", false)
+                        .Set("maxEnergy", 200)
+                        .Set("shopDate", DateTime.Now));
+
+                    this.BigDB.CreateObject("PlayerObjects", "simpleguest", new DatabaseObject()
+                        .Set("owner", "simpleTest")
+                        .Set("haveSmileyPackage", true)
+                        .Set("isModerator", true)
+                        .Set("canchat", true)
+                        .Set("name", "eemu")
+                        .Set("chatbanned", false)
+                        .Set("maxEnergy", 200)
+                        .Set("shopDate", DateTime.Now));
+
+                    this.BigDB.CreateObject("Config", "config", new DatabaseObject()
+                        .Set("version", 188)
+                        .Set("betaversion", 188));
+
+                    this.BigDB.CreateObject("Config", "staff", new DatabaseObject()
+                        .Set("eemu", "Admin"));
+
+                    // base worlds (home worlds)
+                    this.BigDB.CreateObject("Worlds", "PWQe-HH_N2bUI", new DatabaseObject());
                     this.BigDB.CreateObject("Worlds", "PWTXSVWxb3cUI", new DatabaseObject());
+
+                    // use PW01 as home world template
+                    if (!File.Exists(Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "Worlds", "PWvmGW1Jl3bUI.tson")))
+                        File.Copy(Path.Combine("games", "EverybodyEdits", "includes", "PW01.tson"), Path.Combine("games", "EverybodyEdits", "bigdb", this.GameId, "Worlds", "PWvmGW1Jl3bUI.tson"));
+
                     break;
             }
         }
