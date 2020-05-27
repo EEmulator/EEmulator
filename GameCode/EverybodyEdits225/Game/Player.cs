@@ -79,84 +79,110 @@ namespace EverybodyEdits.Game
         public int TotalMovements = 0;
         public Item Checkpoint { get; set; }
 
-        public TimeSpan TimeSinceReset {
-            get {
+        public TimeSpan TimeSinceReset
+        {
+            get
+            {
                 return DateTime.UtcNow - ResetTime;
             }
         }
 
-        public string CurrentWorldName {
-            set {
-                if (this.onlineStatusObject != null) {
+        public string CurrentWorldName
+        {
+            set
+            {
+                if (this.onlineStatusObject != null)
+                {
                     this.onlineStatusObject.CurrentWorldName = value;
                 }
             }
         }
 
-        public string CurrentWorldId {
-            set {
-                if (this.onlineStatusObject != null) {
+        public string CurrentWorldId
+        {
+            set
+            {
+                if (this.onlineStatusObject != null)
+                {
                     this.onlineStatusObject.CurrentWorldId = value;
                 }
             }
         }
 
-        public string Room0 {
+        public string Room0
+        {
             get { return this.PlayerObject.GetString("room0", ""); }
         }
 
-        public string Betaonlyroom {
+        public string Betaonlyroom
+        {
             get { return this.PlayerObject.GetString("betaonlyroom", ""); }
         }
 
-        public DateTime LastMagic {
+        public DateTime LastMagic
+        {
             get { return PlayerObject.GetDateTime("lastcoin", DateTime.UtcNow.AddHours(-24)); }
-            set {
-                if (PlayerObject != null) {
+            set
+            {
+                if (PlayerObject != null)
+                {
                     PlayerObject.Set("lastcoin", value);
                 }
             }
         }
 
-        public bool CanChangeWorldOptions {
+        public bool CanChangeWorldOptions
+        {
             get { return this.Owner || this.canChangeWorldOptions; }
             set { this.canChangeWorldOptions = value; }
         }
 
-        public bool CanToggleGodMode {
+        public bool CanToggleGodMode
+        {
             get { return this.CanEdit || this.canToggleGodMode; }
             set { this.canToggleGodMode = value; }
         }
 
-        public override string Name {
+        public override string Name
+        {
             get { return this.PlayerObject.GetString("name", "Guest-" + this.Id); }
         }
 
-        public override int Smiley {
+        public override int Smiley
+        {
             get { return temporaryFace > -1 ? temporaryFace : base.Smiley; }
-            set {
-                if (!AllowSaveSmiley(value)) {
+            set
+            {
+                if (!AllowSaveSmiley(value))
+                {
                     temporaryFace = value;
                 }
-                else {
+                else
+                {
                     temporaryFace = -1;
-                    if (PlayerObject != null) {
+                    if (PlayerObject != null)
+                    {
                         base.Smiley = value;
                     }
-                    if (onlineStatusObject != null) {
+                    if (onlineStatusObject != null)
+                    {
                         onlineStatusObject.Smiley = value;
                     }
                 }
             }
         }
 
-        public override bool SmileyGoldBorder {
-            get {
+        public override bool SmileyGoldBorder
+        {
+            get
+            {
                 return base.SmileyGoldBorder;
             }
-            set {
+            set
+            {
                 base.SmileyGoldBorder = value;
-                if (onlineStatusObject != null) {
+                if (onlineStatusObject != null)
+                {
                     onlineStatusObject.HasGoldBorder = value;
                 }
             }
@@ -171,7 +197,8 @@ namespace EverybodyEdits.Game
             return true;
         }
 
-        public bool HasSmileyPackage {
+        public bool HasSmileyPackage
+        {
             get { return this.HasBeta; }
         }
 
@@ -196,10 +223,12 @@ namespace EverybodyEdits.Game
         public int RepeatChatCount(string chat, string channel)
         {
             if (this.lastChatMessages.ContainsKey(channel) &&
-                chat == this.lastChatMessages[channel]) {
+                chat == this.lastChatMessages[channel])
+            {
                 this.lastChatRepeat[channel]++;
             }
-            else {
+            else
+            {
                 this.lastChatRepeat[channel] = 0;
                 this.lastChatMessages[channel] = chat;
             }
@@ -208,22 +237,26 @@ namespace EverybodyEdits.Game
 
         public bool AllowMessage(string messageType)
         {
-            if (this.Owner && !this.InCampaign) {
+            if (this.Owner && !this.InCampaign)
+            {
                 return true;
             }
 
-            if ((DateTime.Now - this.lastMessageTimer).TotalSeconds > 1) {
+            if ((DateTime.Now - this.lastMessageTimer).TotalSeconds > 1)
+            {
                 this.totalMessageCounter = 0;
                 this.messageCounter.Clear();
                 this.lastMessageTimer = DateTime.Now;
             }
 
-            if (!this.messageCounter.ContainsKey(messageType)) {
+            if (!this.messageCounter.ContainsKey(messageType))
+            {
                 this.messageCounter.Add(messageType, 0);
             }
             this.totalMessageCounter += 1;
             this.messageCounter[messageType] = this.messageCounter[messageType] + 1;
-            if (this.messageCounter[messageType] > MessageLimit || this.totalMessageCounter > TotalMessageLimit) {
+            if (this.messageCounter[messageType] > MessageLimit || this.totalMessageCounter > TotalMessageLimit)
+            {
                 return false;
             }
             return true;
@@ -240,7 +273,8 @@ namespace EverybodyEdits.Game
                 msg.Type == "init" ||
                 msg.Type == "info" ||
                 msg.Type == "banned" ||
-                msg.Type == "unfavorited") {
+                msg.Type == "unfavorited")
+            {
                 base.Send(msg);
             }
         }
@@ -269,7 +303,8 @@ namespace EverybodyEdits.Game
 
         public bool HasBrickPack(string payvaultid)
         {
-            if (this.IsAdmin) {
+            if (this.IsAdmin)
+            {
                 return true;
             }
             return this.PayVault.Has(payvaultid);
@@ -282,8 +317,10 @@ namespace EverybodyEdits.Game
 
         public void AddEffect(Effect effect)
         {
-            if (effect.Id == EffectId.Gravity) {
-                if (effect.Duration == 0) {
+            if (effect.Id == EffectId.Gravity)
+            {
+                if (effect.Duration == 0)
+                {
                     activeEffects.Remove(effect.Id);
                     return;
                 }
@@ -319,29 +356,36 @@ namespace EverybodyEdits.Game
 
         public void Init(Client c, Callback successCallback)
         {
-            if (this.IsInitializing) {
+            if (this.IsInitializing)
+            {
                 return;
             }
             this.IsInitializing = true;
 
-            OnlineStatus.GetOnlineStatus(c, this.ConnectUserId, delegate (OnlineStatus os) {
+            OnlineStatus.GetOnlineStatus(c, this.ConnectUserId, delegate (OnlineStatus os)
+            {
                 this.onlineStatusObject = os;
                 this.onlineStatusObject.Name = this.Name;
                 this.onlineStatusObject.IpAddress = this.IPAddress.ToString();
                 this.onlineStatusObject.LastUpdate = DateTime.Now;
 
-                c.BigDB.LoadOrCreate("friends", this.ConnectUserId, delegate (DatabaseObject friendslist) {
+                c.BigDB.LoadOrCreate("friends", this.ConnectUserId, delegate (DatabaseObject friendslist)
+                {
                     this.friends = new Hashtable();
-                    foreach (var key in friendslist.Properties) {
-                        if (friendslist.GetBool(key)) {
+                    foreach (var key in friendslist.Properties)
+                    {
+                        if (friendslist.GetBool(key))
+                        {
                             this.friends.Add(key, true);
                         }
                     }
 
                     Console.WriteLine("check player init: " + (this.onlineStatusObject != null) + ", " +
                                       (this.friends != null));
-                    if (this.onlineStatusObject != null && this.friends != null) {
-                        if (!this.AllowSaveSmiley(this.Smiley)) {
+                    if (this.onlineStatusObject != null && this.friends != null)
+                    {
+                        if (!this.AllowSaveSmiley(this.Smiley))
+                        {
                             this.Smiley = 0;
                         }
 
@@ -356,9 +400,12 @@ namespace EverybodyEdits.Game
         public void Save()
         {
             this.SaveOnlineStatus();
-            if (!this.IsGuest && !this.Disconnected) {
-                lock (this) {
-                    if (this.PlayerObject != null) {
+            if (!this.IsGuest && !this.Disconnected)
+            {
+                lock (this)
+                {
+                    if (this.PlayerObject != null)
+                    {
                         this.PlayerObject.Save(delegate { Console.WriteLine("PlayerObject saved"); });
                     }
                 }
@@ -367,9 +414,11 @@ namespace EverybodyEdits.Game
 
         public void SaveOnlineStatus()
         {
-            if (this.onlineStatusObject != null) {
+            if (this.onlineStatusObject != null)
+            {
                 this.onlineStatusObject.LastUpdate = DateTime.Now;
-                lock (this) {
+                lock (this)
+                {
                     this.onlineStatusObject.Save();
                 }
             }
@@ -377,7 +426,8 @@ namespace EverybodyEdits.Game
 
         private bool AllowSaveSmiley(int face)
         {
-            if (this.IsAdmin) {
+            if (this.IsAdmin)
+            {
                 return true;
             }
 
@@ -437,41 +487,50 @@ namespace EverybodyEdits.Game
 
         private const double Mult = 7.752;
 
-        public double X {
+        public double X
+        {
             get { return this.x; }
             set { x = double.IsNaN(value) ? 0 : value; }
         }
 
-        public double Y {
+        public double Y
+        {
             get { return this.y; }
             set { y = double.IsNaN(value) ? 0 : value; }
         }
 
-        public double SpeedX {
+        public double SpeedX
+        {
             get { return speedX * Mult; }
             set { speedX = double.IsNaN(value) ? 0 : value / Mult; }
         }
 
-        public double SpeedY {
+        public double SpeedY
+        {
             get { return speedY * Mult; }
             set { speedY = double.IsNaN(value) ? 0 : value / Mult; }
         }
 
-        public double ModifierX {
+        public double ModifierX
+        {
             get { return modifierX * Mult; }
             set { modifierX = double.IsNaN(value) ? 0 : value / Mult; }
         }
 
-        public double ModifierY {
+        public double ModifierY
+        {
             get { return modifierY * Mult; }
             set { modifierY = double.IsNaN(value) ? 0 : value / Mult; }
         }
 
-        public bool Stealthy {
-            get {
+        public bool Stealthy
+        {
+            get
+            {
                 return this.onlineStatusObject != null && this.onlineStatusObject.Stealthy;
             }
-            set {
+            set
+            {
                 this.onlineStatusObject.Stealthy = value;
                 this.onlineStatusObject.Save();
             }

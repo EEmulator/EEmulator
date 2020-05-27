@@ -33,8 +33,8 @@ namespace EverybodyEdits.Lobby.Invitations
 
         public InvitationStatus Status
         {
-            get { return (InvitationStatus) this.dbo.GetInt("Status", (int) InvitationStatus.Unknown); }
-            set { this.dbo.Set("Status", (int) value); }
+            get { return (InvitationStatus)this.dbo.GetInt("Status", (int)InvitationStatus.Unknown); }
+            set { this.dbo.Set("Status", (int)value); }
         }
 
         public void Save(Callback callback = null)

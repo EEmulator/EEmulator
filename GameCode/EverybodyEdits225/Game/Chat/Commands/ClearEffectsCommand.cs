@@ -23,7 +23,7 @@
                 foreach (var ef in playerEffects)
                 {
                     pl.RemoveEffect(ef.Id);
-                    this.Game.BroadcastMessage("effect", pl.Id, (int) ef.Id, false);
+                    this.Game.BroadcastMessage("effect", pl.Id, (int)ef.Id, false);
                 }
 
                 this.SendSystemMessage(player, "All effects were removed from " + username.ToUpper());

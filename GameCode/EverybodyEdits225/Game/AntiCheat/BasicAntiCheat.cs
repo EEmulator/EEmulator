@@ -42,10 +42,12 @@ namespace EverybodyEdits.Game.AntiCheat
 
         private bool IsPassable(int blockId)
         {
-            if (blockId == 77 || blockId == 83) {
+            if (blockId == 77 || blockId == 83)
+            {
                 return true;
             }
-            if (sometimesPassableBlocks.Contains(blockId)) {
+            if (sometimesPassableBlocks.Contains(blockId))
+            {
                 return true;
             }
 
@@ -101,10 +103,13 @@ namespace EverybodyEdits.Game.AntiCheat
             var bXMax = Math.Min(Math.Ceiling(bX) + range, this.game.BaseWorld.Width - 1);
             var bYMin = Math.Max(0, Math.Floor(bY) - range);
             var bYMax = Math.Min(Math.Ceiling(bY) + range, this.game.BaseWorld.Height - 1);
-            for (var cX = bXMin; cX <= bXMax; cX++) {
-                for (var cY = bYMin; cY <= bYMax; cY++) {
+            for (var cX = bXMin; cX <= bXMax; cX++)
+            {
+                for (var cY = bYMin; cY <= bYMax; cY++)
+                {
                     var b = game.BaseWorld.GetBrickType(0, (uint)cX, (uint)cY);
-                    if (selector((int)b)) {
+                    if (selector((int)b))
+                    {
                         return true;
                     }
                 }
@@ -114,35 +119,41 @@ namespace EverybodyEdits.Game.AntiCheat
 
         public void OnFace(Player p)
         {
-            if (p.IsBot == null) {
+            if (p.IsBot == null)
+            {
                 p.IsBot = false;
             }
         }
 
         public bool OnTrophy(Player p)
         {
-            if (p.IsBot ?? true) {
+            if (p.IsBot ?? true)
+            {
                 // Bot!
                 this.game.LogCheatingUser(p, "Bot");
                 return false;
             }
 
             var antiCheatData = this.game.BaseWorld.AntiCheatData;
-            if (p.TotalMovements < antiCheatData.MinMoves) {
+            if (p.TotalMovements < antiCheatData.MinMoves)
+            {
                 this.game.KickAndLogCheatingUser(p, "TooFewMovements");
                 return true;
             }
 
-            if (p.Coins < antiCheatData.MinCoins) {
+            if (p.Coins < antiCheatData.MinCoins)
+            {
                 this.game.KickAndLogCheatingUser(p, "TooFewCoins");
                 return true;
             }
 
-            if (p.BlueCoins < antiCheatData.MinBlueCoins) {
+            if (p.BlueCoins < antiCheatData.MinBlueCoins)
+            {
                 this.game.KickAndLogCheatingUser(p, "TooFewBlueCoins");
                 return true;
             }
-            if (p.IsCheater) {
+            if (p.IsCheater)
+            {
                 this.game.KickAndLogCheatingUser(p, "TrophyAfterCheating");
                 return true;
             }
@@ -152,28 +163,34 @@ namespace EverybodyEdits.Game.AntiCheat
 
         public void OnMove(Player p)
         {
-            if (p.IsInGodMode || p.IsInModeratorMode || p.IsInAdminMode) {
+            if (p.IsInGodMode || p.IsInModeratorMode || p.IsInAdminMode)
+            {
                 // Flying players are exempt of anticheat
                 return;
             }
 
-            if (TouchesSolid(p.X, p.Y, 0)) {
+            if (TouchesSolid(p.X, p.Y, 0))
+            {
                 // Cheater | Dont log when players get stuck at 0,0
-                if (p.X != 0 || p.Y != 0) {
+                if (p.X != 0 || p.Y != 0)
+                {
                     this.LogMovementCheatingUser(p, "MovingInsideBlocks");
                 }
 
                 p.IsCheater = true;
                 return;
             }
-            if (p.FlipGravity == 0) { 
+            if (p.FlipGravity == 0)
+            {
                 //Who really cares about anticheat anymore lets only check these if gravity is downwards....
                 var blockX = (uint)((int)p.X + 8) >> 4;
                 var blockY = (uint)((int)p.Y + 8) >> 4;
 
                 var range = Math.Max(p.SpeedX, p.SpeedY) > 0.5 || Math.Min(p.SpeedX, p.SpeedY) < 0.5 ? 1 : 0;
-                if (!TouchesClimbable(p.X, p.Y, range) && !TouchesFluid(p.X, p.Y, range) && !TouchesSpawn(p.X, p.Y, range)) {
-                    if (!(p.SpeedX > 1) && !(p.SpeedY > 1) && !(p.SpeedX < -1) && !(p.SpeedY < -1)) {
+                if (!TouchesClimbable(p.X, p.Y, range) && !TouchesFluid(p.X, p.Y, range) && !TouchesSpawn(p.X, p.Y, range))
+                {
+                    if (!(p.SpeedX > 1) && !(p.SpeedY > 1) && !(p.SpeedX < -1) && !(p.SpeedY < -1))
+                    {
                         var gravMultiplayer = p.HasActiveEffect(EffectId.LowGravity)
                             ? .15
                             : game.BaseWorld.GravityMultiplier;
@@ -181,38 +198,45 @@ namespace EverybodyEdits.Game.AntiCheat
                         var modX = p.ModifierX / gravMultiplayer;
                         var modY = p.ModifierY / gravMultiplayer;
 
-                        if (modX != -2 && modX != 2 && modY != -2 && modY != 2) {
+                        if (modX != -2 && modX != 2 && modY != -2 && modY != 2)
+                        {
                             p.AntiFlightHeat++;
 
-                            if (p.AntiFlightHeat > 4) {
+                            if (p.AntiFlightHeat > 4)
+                            {
                                 // Cheater
                                 this.LogMovementCheatingUser(p, "Flight");
 
                                 p.IsCheater = true;
                             }
                         }
-                        else if (p.AntiFlightHeat > 0) {
+                        else if (p.AntiFlightHeat > 0)
+                        {
                             p.AntiFlightHeat--;
                         }
                     }
                 }
 
-                if (p.SpaceDown) {
+                if (p.SpaceDown)
+                {
                     var jumpHeight = p.HasActiveEffect(EffectId.Jump) ? 67.7 : 52;
                     if (p.SpeedX < -jumpHeight && this.IsSolid(blockX + 1u, blockY) ||
                         p.SpeedX > jumpHeight && this.IsSolid(blockX - 1u, blockY) ||
                         p.SpeedY < -jumpHeight && this.IsSolid(blockX, blockY + 1) ||
-                        p.SpeedY > jumpHeight && this.IsSolid(blockX, blockY - 1)) {
+                        p.SpeedY > jumpHeight && this.IsSolid(blockX, blockY - 1))
+                    {
                         p.AntiJumpHeat++;
 
-                        if (p.AntiJumpHeat > 4) {
+                        if (p.AntiJumpHeat > 4)
+                        {
                             // Cheater
                             this.LogMovementCheatingUser(p, "JumpingTooHigh");
 
                             p.IsCheater = true;
                         }
                     }
-                    else if (p.AntiJumpHeat > 0) {
+                    else if (p.AntiJumpHeat > 0)
+                    {
                         p.AntiJumpHeat--;
                     }
                 }

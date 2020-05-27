@@ -5,7 +5,8 @@
         public ResetProgressCommand(EverybodyEdits game) : base(game, CommandAccess.Public, "resetprogress", "resetp") { }
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            if (!this.Game.IsCampaign) {
+            if (!this.Game.IsCampaign)
+            {
                 this.SendSystemMessage(player, "You cannot use this command outside campaign worlds.");
                 return;
             }

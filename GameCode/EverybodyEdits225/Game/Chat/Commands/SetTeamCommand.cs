@@ -24,7 +24,7 @@ namespace EverybodyEdits.Game.Chat.Commands
                 this.SendSystemMessage(player, "Oops! Looks like you do not own team blocks.");
                 return;
             }
-            
+
             int teamId;
             if (!int.TryParse(team, out teamId))
             {

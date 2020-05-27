@@ -42,7 +42,7 @@ namespace EverybodyEdits.Game.CountWorld
             this.args = new ColorTextArgs(text, color, wrapLength);
             this.argsType = BlockArgsType.ColorText;
             this.type = type;
-            
+
         }
 
         public ForegroundBlock(uint type, string text, uint signType)
@@ -52,54 +52,69 @@ namespace EverybodyEdits.Game.CountWorld
             this.type = type;
         }
 
-        public uint Type {
+        public uint Type
+        {
             get { return this.type; }
         }
 
-        public uint SignType {
+        public uint SignType
+        {
             get { return ((SignArgs)this.args).SignType; }
         }
 
-        public BlockArgsType ArgsType {
+        public BlockArgsType ArgsType
+        {
             get { return this.argsType; }
         }
 
-        public string Text {
-            get {
-                if (this.ArgsType == BlockArgsType.ColorText) {
+        public string Text
+        {
+            get
+            {
+                if (this.ArgsType == BlockArgsType.ColorText)
+                {
                     return ((ColorTextArgs)this.args).Text;
                 }
-                else if (this.ArgsType == BlockArgsType.Sign) {
+                else if (this.ArgsType == BlockArgsType.Sign)
+                {
                     return ((SignArgs)this.args).Text;
                 }
                 return (string)this.args;
             }
         }
 
-        public string Color {
+        public string Color
+        {
             get { return ((ColorTextArgs)this.args).Color; }
         }
-        
-        public uint WrapLength {
+
+        public uint WrapLength
+        {
             get { return ((ColorTextArgs)this.args).WrapLength; }
         }
 
-        public uint PortalId {
+        public uint PortalId
+        {
             get { return this.GetPortalArgs().PortalId; }
         }
 
-        public uint PortalTarget {
+        public uint PortalTarget
+        {
             get { return this.GetPortalArgs().PortalTarget; }
         }
 
-        public uint PortalRotation {
+        public uint PortalRotation
+        {
             get { return this.GetPortalArgs().PortalRotation; }
         }
 
-        public uint Number {
-            get {
+        public uint Number
+        {
+            get
+            {
                 if (this.type >= 1101 && this.type <= 1105) return 1u;
-                if (this.args is uint) {
+                if (this.args is uint)
+                {
                     return (uint)this.args;
                 }
                 return 0;
@@ -153,7 +168,8 @@ namespace EverybodyEdits.Game.CountWorld
 
         public object[] GetArgs()
         {
-            switch (this.ArgsType) {
+            switch (this.ArgsType)
+            {
                 case BlockArgsType.None:
                     return new object[0];
                 case BlockArgsType.Portal:

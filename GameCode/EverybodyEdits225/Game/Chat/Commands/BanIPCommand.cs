@@ -1,6 +1,6 @@
-﻿using PlayerIO.GameLibrary;
+﻿using System;
 using System.Linq;
-using System;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game.Chat.Commands
 {
@@ -10,40 +10,51 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            this.Game.PlayerIO.BigDB.LoadSingle("OnlineStatus", "name", new object[] { commandInput[1].ToLower() }, onlineStatusObj => {
-                if (onlineStatusObj == null) {
+            this.Game.PlayerIO.BigDB.LoadSingle("OnlineStatus", "name", new object[] { commandInput[1].ToLower() }, onlineStatusObj =>
+            {
+                if (onlineStatusObj == null)
+                {
                     this.SendSystemMessage(player, "User {0} not found.", commandInput[1]);
                     return;
                 }
                 string ipAddress = onlineStatusObj.GetString("ipAddress", "");
-                if (ipAddress == "") {
+                if (ipAddress == "")
+                {
                     this.SendSystemMessage(player, "User {0} does not have an IpAddress o_O", commandInput[1]);
                     return;
                 }
 
-                this.Game.PlayerIO.BigDB.LoadOrCreate("IPBans", ipAddress, value => {
+                this.Game.PlayerIO.BigDB.LoadOrCreate("IPBans", ipAddress, value =>
+                {
                     value.Set("ID", player.Name.ToUpper() + Guid.NewGuid().ToString("N").ToUpper().Substring(0, 8));
                     value.Set("BannedAt", DateTime.UtcNow);
 
                     int duration;
-                    if (int.TryParse(commandInput[2], out duration)) {
+                    if (int.TryParse(commandInput[2], out duration))
+                    {
                         var expDate = DateTime.UtcNow + new TimeSpan(duration, 0, 0, 0, 0);
                         value.Set("ExpirationDate", expDate);
 
                         this.SendSystemMessage(player, "User {0} banned with IP address {1}. It will expire on {2}.", commandInput[1], ipAddress, expDate.ToShortDateString());
                     }
-                    else {
-                        if (commandInput[2] == "eliminate!") {
+                    else
+                    {
+                        if (commandInput[2] == "eliminate!")
+                        {
                             value.Set("ExpirationDate", DateTime.UtcNow.AddDays(90));
                             value.Set("isEliminated", true);
 
-                            this.Game.PlayerIO.BigDB.LoadRange("OnlineStatus", "ipAddress", null, ipAddress, ipAddress, 1000, accounts => {
-                                foreach (var account in accounts.Where(o => DateTime.UtcNow.Subtract(o.GetDateTime("lastUpdate", DateTime.UtcNow)).TotalHours <= 2)) {
-                                    if (account.Key == "simpleguest") {
+                            this.Game.PlayerIO.BigDB.LoadRange("OnlineStatus", "ipAddress", null, ipAddress, ipAddress, 1000, accounts =>
+                            {
+                                foreach (var account in accounts.Where(o => DateTime.UtcNow.Subtract(o.GetDateTime("lastUpdate", DateTime.UtcNow)).TotalHours <= 2))
+                                {
+                                    if (account.Key == "simpleguest")
+                                    {
                                         continue;
                                     }
 
-                                    this.Game.PlayerIO.BigDB.Load("PlayerObjects", account.Key, playerObject => {
+                                    this.Game.PlayerIO.BigDB.Load("PlayerObjects", account.Key, playerObject =>
+                                    {
                                         playerObject.Set("banned", true);
                                         playerObject.Set("ban_reason", "Eliminated.");
 
@@ -54,7 +65,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                                 this.SendSystemMessage(player, "User {0} banned with IP address {1}.\nEliminated {2} other accounts", commandInput[1], ipAddress, accounts.Length);
                             });
                         }
-                        else {
+                        else
+                        {
                             this.SendSystemMessage(player, "Durations are in days... not anything else.");
 
                             return;
@@ -63,7 +75,8 @@ namespace EverybodyEdits.Game.Chat.Commands
 
                     value.Save();
                     var target = this.Game.FilteredPlayers.FirstOrDefault(p => p.Name.ToLower() == commandInput[1].ToLower());
-                    if (target != null) {
+                    if (target != null)
+                    {
                         target.SendMessage("banned");
                         target.SendMessage("info", "Account Banned", "Your IP Address has been banned for " + duration + " day" + (duration != 1 ? "s" : "") + "!");
                         target.Disconnect();
@@ -74,20 +87,26 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         public static void CheckIpBanned(Client client, BasePlayer player, Callback<bool> callback)
         {
-            client.BigDB.Load("IPBans", player.IPAddress.ToString(), o => {
-                if (o == null) {
+            client.BigDB.Load("IPBans", player.IPAddress.ToString(), o =>
+            {
+                if (o == null)
+                {
                     callback(false);
                     return;
                 }
 
-                if (o.Contains("ExpirationDate")) {
+                if (o.Contains("ExpirationDate"))
+                {
                     var expiration = o.GetDateTime("ExpirationDate");
 
                     var ipBanned = expiration > DateTime.Now;
-                    player.PlayerObject.Save(() => {
-                        if (ipBanned) {
+                    player.PlayerObject.Save(() =>
+                    {
+                        if (ipBanned)
+                        {
                             var timeleft = expiration - DateTime.Now;
-                            if (o.GetBool("isEliminated", false) && player.ConnectUserId!= "simpleguest" && o.Key != "simpleguest") {
+                            if (o.GetBool("isEliminated", false) && player.ConnectUserId != "simpleguest" && o.Key != "simpleguest")
+                            {
                                 player.PlayerObject.Set("banned", true);
                                 player.PlayerObject.Set("ban_reason", "Auto Eliminated.");
                                 player.PlayerObject.Save();

@@ -1,6 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
 using System.Text;
-using System;
+using System.Text.RegularExpressions;
 
 namespace EverybodyEdits.Common
 {

@@ -40,15 +40,15 @@ namespace EverybodyEdits.Game.CountWorld
         {
             switch (b.Type)
             {
-                case (int) ItemTypes.Coin:
+                case (int)ItemTypes.Coin:
                     this.CoinCount += change;
                     break;
 
-                case (int) ItemTypes.BlueCoin:
+                case (int)ItemTypes.BlueCoin:
                     this.BlueCoinCount += change;
                     break;
 
-                case (int) ItemTypes.SpawnPoint:
+                case (int)ItemTypes.SpawnPoint:
                     lock (this.Spawns)
                     {
                         if (change == 1)
@@ -62,7 +62,7 @@ namespace EverybodyEdits.Game.CountWorld
                     }
                     break;
 
-                case (int) ItemTypes.Portal:
+                case (int)ItemTypes.Portal:
                     lock (this.Portals)
                     {
                         if (change == 1)
@@ -76,7 +76,7 @@ namespace EverybodyEdits.Game.CountWorld
                     }
                     break;
 
-                case (int) ItemTypes.PortalInvisible:
+                case (int)ItemTypes.PortalInvisible:
                     lock (this.InvisiblePortals)
                     {
                         if (change == 1)
@@ -90,15 +90,15 @@ namespace EverybodyEdits.Game.CountWorld
                     }
                     break;
 
-                case (int) ItemTypes.Diamond:
+                case (int)ItemTypes.Diamond:
                     this.DiamondCounts += change;
                     break;
 
-                case (int) ItemTypes.Hologram:
+                case (int)ItemTypes.Hologram:
                     this.HologramCounts += change;
                     break;
 
-                case (int) ItemTypes.Cake:
+                case (int)ItemTypes.Cake:
                     this.CakeCounts += change;
                     break;
 

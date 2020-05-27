@@ -21,7 +21,7 @@ namespace EverybodyEdits.Game.Chat.Commands
                 }
 
                 this.Game.PlayerIO.BigDB.Load("PlayerObjects", o.GetString("owner", "waggag"),
-                    delegate(DatabaseObject user)
+                    delegate (DatabaseObject user)
                     {
                         if (user == null)
                         {

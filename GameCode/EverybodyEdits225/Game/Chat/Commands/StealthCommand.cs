@@ -15,22 +15,27 @@ namespace EverybodyEdits.Game.Chat.Commands
             player.Save();
 
             player.ChatColor = player.Stealthy ? 1337420 : 0u;
-            foreach (var p in this.Game.Players.Where(p => p.Id != player.Id)) {
+            foreach (var p in this.Game.Players.Where(p => p.Id != player.Id))
+            {
                 if (player.Stealthy && !outStealth)
                     p.SendMessage("left", player.Id);
 
-                if (p.IsAdmin || p.IsModerator) {
+                if (p.IsAdmin || p.IsModerator)
+                {
                     p.SendMessage("write", ChatUtils.SystemName, player.Name.ToUpper() + " is " + (player.Stealthy ? "now" : "no longer") + " stealthy!");
                     this.Game.SendAddMessage(player, p);
 
                     continue;
                 }
 
-                if (!player.Stealthy) {
+                if (!player.Stealthy)
+                {
                     this.Game.SendAddMessage(player, p);
                 }
-                else {
-                    if (this.Game.CrownId == player.Id) {
+                else
+                {
+                    if (this.Game.CrownId == player.Id)
+                    {
                         this.Game.CrownId = -1;
                     }
                 }

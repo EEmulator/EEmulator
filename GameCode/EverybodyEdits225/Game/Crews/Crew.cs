@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using EverybodyEdits.Game.Mail;
 using PlayerIO.GameLibrary;
@@ -166,8 +165,9 @@ namespace EverybodyEdits.Game.Crews
             }
         }
 
-        public bool isContest {
-            get { return this.DatabaseObject != null ? this.DatabaseObject.GetBool("Contest",false) : false; }
+        public bool isContest
+        {
+            get { return this.DatabaseObject != null ? this.DatabaseObject.GetBool("Contest", false) : false; }
         }
 
         public void Load(string crew, Callback callback = null)
@@ -230,7 +230,7 @@ namespace EverybodyEdits.Game.Crews
             if (faceplatesObj != null)
             {
                 var faceplates =
-                    (from faceplate in faceplatesObj where (bool) faceplate.Value select faceplate.Key).ToArray();
+                    (from faceplate in faceplatesObj where (bool)faceplate.Value select faceplate.Key).ToArray();
                 rtn.Add(faceplates.Length);
                 foreach (var faceplate in faceplates)
                 {
@@ -353,10 +353,10 @@ namespace EverybodyEdits.Game.Crews
             this.client.BigDB.LoadKeys("PlayerObjects", membersObject.Properties.ToArray(), playerObjects =>
             {
                 members.AddRange(from player in playerObjects
-                    where player != null
-                    select
-                        new CrewMember(player.Key, player.GetString("name", ""), player.GetInt("smiley", 0),
-                            player.GetBool("smileyGoldBorder", false), this, membersObject.GetObject(player.Key)));
+                                 where player != null
+                                 select
+                                     new CrewMember(player.Key, player.GetString("name", ""), player.GetInt("smiley", 0),
+                                         player.GetBool("smileyGoldBorder", false), this, membersObject.GetObject(player.Key)));
 
                 callback(members);
             });
@@ -400,11 +400,11 @@ namespace EverybodyEdits.Game.Crews
 
         private void GetWorlds(Callback<List<string>> callback)
         {
-            this.client.BigDB.LoadRange("Worlds", "ByCrew", new object[] {this.Id}, null, null, 1000, worlds =>
-            {
-                callback(worlds.Where(world => world != null && !world.GetBool("IsCrewLogo", false))
-                    .Select(world => world.Key).ToList());
-            });
+            this.client.BigDB.LoadRange("Worlds", "ByCrew", new object[] { this.Id }, null, null, 1000, worlds =>
+              {
+                  callback(worlds.Where(world => world != null && !world.GetBool("IsCrewLogo", false))
+                      .Select(world => world.Key).ToList());
+              });
         }
 
         public int GetRankId(BasePlayer player)

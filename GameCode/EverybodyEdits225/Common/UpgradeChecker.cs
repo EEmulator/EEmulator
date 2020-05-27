@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using PlayerIO.GameLibrary;
-using PlayerIO.GameLibrary.Internal;
 
 namespace EverybodyEdits.Common
 {
@@ -23,7 +22,7 @@ namespace EverybodyEdits.Common
 
         public void CheckVersion()
         {
-            this.game.PlayerIO.BigDB.Load("Config", "config", delegate(DatabaseObject o)
+            this.game.PlayerIO.BigDB.Load("Config", "config", delegate (DatabaseObject o)
             {
                 if (Config.Version < o.GetInt("version", Config.Version))
                 {

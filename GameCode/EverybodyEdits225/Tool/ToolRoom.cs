@@ -62,7 +62,7 @@ namespace EverybodyEdits.Tool
                 {
                     var key = m.GetString(0);
 
-                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate(DatabaseObject report)
+                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate (DatabaseObject report)
                     {
                         var action = m.GetString(1);
                         report.Set("ActionUndertaken", action);
@@ -76,7 +76,7 @@ namespace EverybodyEdits.Tool
                 {
                     var key = m.GetString(0);
 
-                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate(DatabaseObject report)
+                    this.PlayerIO.BigDB.Load("AbuseReports", key, delegate (DatabaseObject report)
                     {
                         var status = m.GetString(1);
                         report.Set("State", status);

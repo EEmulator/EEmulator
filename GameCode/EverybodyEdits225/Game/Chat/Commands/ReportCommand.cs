@@ -14,7 +14,7 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            if(player.IsGuest)
+            if (player.IsGuest)
             {
                 player.SendMessage("info", "Sorry", "Please register or sign in to report."); // someone make this better
                 return;
@@ -49,7 +49,7 @@ namespace EverybodyEdits.Game.Chat.Commands
                 }
             }
 
-            this.Game.PlayerIO.BigDB.Load("usernames", reportedUserName, delegate(DatabaseObject o)
+            this.Game.PlayerIO.BigDB.Load("usernames", reportedUserName, delegate (DatabaseObject o)
             {
                 if (o == null || o.GetString("owner", null) == null)
                 {

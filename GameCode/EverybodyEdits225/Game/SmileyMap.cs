@@ -10,7 +10,7 @@ namespace EverybodyEdits.Game
     {
         private readonly Dictionary<int, string> auraColorVaultEnabled = new Dictionary<int, string>();
         private readonly Dictionary<int, string> auraShapeVaultEnabled = new Dictionary<int, string>();
-        private readonly int[] beta = {6, 7, 8, 9, 10, 11};
+        private readonly int[] beta = { 6, 7, 8, 9, 10, 11 };
 
         private readonly int[] freeForAll =
         {

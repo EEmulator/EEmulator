@@ -16,7 +16,7 @@ namespace EverybodyEdits.Game
             {
                 return false;
             }
-            return obj is Item && Equals((Item) obj);
+            return obj is Item && Equals((Item)obj);
         }
 
         public override int GetHashCode()
@@ -24,8 +24,8 @@ namespace EverybodyEdits.Game
             unchecked
             {
                 var hashCode = this.Block.GetHashCode();
-                hashCode = (hashCode*397) ^ (int) this.X;
-                hashCode = (hashCode*397) ^ (int) this.Y;
+                hashCode = (hashCode * 397) ^ (int)this.X;
+                hashCode = (hashCode * 397) ^ (int)this.Y;
                 return hashCode;
             }
         }

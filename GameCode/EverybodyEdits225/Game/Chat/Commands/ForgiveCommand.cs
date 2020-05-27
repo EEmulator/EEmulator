@@ -7,14 +7,18 @@
         {
             var target = commandInput[1].ToLower();
 
-            if (target == player.Name) {
+            if (target == player.Name)
+            {
                 this.SendSystemMessage(player, "You cannot forgive yourself.");
             }
-            else {
-                if (this.Game.ForgiveUser(target)) {
+            else
+            {
+                if (this.Game.ForgiveUser(target))
+                {
                     this.SendSystemMessage(player, "The player has been forgiven");
                 }
-                else {
+                else
+                {
                     this.SendSystemMessage(player, "You cannot forgive a player who had not been kicked.");
                 }
             }

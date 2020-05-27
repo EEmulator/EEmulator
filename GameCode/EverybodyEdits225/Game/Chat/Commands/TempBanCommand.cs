@@ -15,15 +15,19 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            this.Game.PlayerIO.BigDB.Load("usernames", commandInput[1].ToLower(), delegate (DatabaseObject o) {
-                if (o == null || o.GetString("owner", null) == null) {
+            this.Game.PlayerIO.BigDB.Load("usernames", commandInput[1].ToLower(), delegate (DatabaseObject o)
+            {
+                if (o == null || o.GetString("owner", null) == null)
+                {
                     this.SendSystemMessage(player, "User " + commandInput[1].ToUpper() + " not found.");
                     return;
                 }
 
                 this.Game.PlayerIO.BigDB.Load("PlayerObjects", o.GetString("owner"),
-                    delegate (DatabaseObject user) {
-                        if (commandInput.Length <= 2) {
+                    delegate (DatabaseObject user)
+                    {
+                        if (commandInput.Length <= 2)
+                        {
                             this.SendSystemMessage(player, "You must specify the duration parameter. The format is '0d0h0m0s' - for example, 5 minutes 30 seconds would be 5m30s.");
                             return;
                         }
@@ -31,12 +35,14 @@ namespace EverybodyEdits.Game.Chat.Commands
                         var duration = new SimpleTimeParser().ParseSimpleTimeSpan(commandInput[2]);
                         var reason = commandInput.Length >= 3 ? string.Join(" ", commandInput.Skip(3)) : "";
 
-                        if (duration == TimeSpan.Zero) {
+                        if (duration == TimeSpan.Zero)
+                        {
                             this.SendSystemMessage(player, "You specified an invalid duration format. The format is '0d0h0m0s' - for example, 5 minutes 30 seconds would be 5m30s.");
                             return;
                         }
 
-                        if (user.GetBool("isAdministrator", false) || user.GetBool("isModerator", false)) {
+                        if (user.GetBool("isAdministrator", false) || user.GetBool("isModerator", false))
+                        {
                             this.SendSystemMessage(player, "No thanks.");
                             return;
                         }
@@ -49,13 +55,15 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         private void CommitBanToDatabase(Player player, DatabaseObject user, TimeSpan duration, string reason, string[] commandInput)
         {
-            this.Game.PlayerIO.BigDB.LoadOrCreate("TempBans", user.Key, delegate (DatabaseObject tempBan) {
+            this.Game.PlayerIO.BigDB.LoadOrCreate("TempBans", user.Key, delegate (DatabaseObject tempBan)
+            {
                 var currentDate = DateTime.Now;
 
                 tempBan.Set("Name", user.GetString("name", ""));
                 tempBan.Set("Latest", currentDate);
 
-                if (!tempBan.Contains("Bans")) {
+                if (!tempBan.Contains("Bans"))
+                {
                     tempBan.Set("Bans", new DatabaseArray());
                 }
 
@@ -74,7 +82,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                 tempBan.Save();
 
                 // disconnect the culprit
-                foreach (var p in this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower())) {
+                foreach (var p in this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower()))
+                {
                     p.SendMessage("info", "Banned", "You are banned for the next: " + duration.ToPrettyFormat() + ".\nReason: \"" + reason + "\"");
                     p.PlayerObject.Set("tempbanned", true);
                     p.PlayerObject.Save(delegate { p.Disconnect(); });
@@ -87,41 +96,50 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         public static void CheckTempBanned(Client client, BasePlayer player, Callback<bool> callback)
         {
-            client.BigDB.Load("TempBans", player.ConnectUserId, delegate (DatabaseObject o) {
-                if (o == null) {
+            client.BigDB.Load("TempBans", player.ConnectUserId, delegate (DatabaseObject o)
+            {
+                if (o == null)
+                {
                     callback(false);
                     return;
                 }
 
-                if (o.Contains("Bans")) {
+                if (o.Contains("Bans"))
+                {
                     var tempBans = o.GetArray("Bans");
 
                     var orderedBans = tempBans.OrderByDescending(x => ((DatabaseObject)x).GetDateTime("Date")).ToArray();
                     var lastExpiration = orderedBans[0] as DatabaseObject;
 
-                    if (lastExpiration == null) {
+                    if (lastExpiration == null)
+                    {
                         Console.WriteLine("No 'lastExpiration' object: " + player.ConnectUserId);
                         callback(false);
                         return;
                     }
 
                     // deprecated
-                    if (lastExpiration.Contains("Expires")) {
+                    if (lastExpiration.Contains("Expires"))
+                    {
                         Console.WriteLine("Last ban expires: " + lastExpiration.GetDateTime("Expires") + " (" +
                                       (lastExpiration.GetDateTime("Expires") > DateTime.Now) + ")");
                     }
-                    else {
+                    else
+                    {
                         Console.WriteLine("Last ban expires: " + lastExpiration.GetDateTime("Date").AddSeconds(lastExpiration.GetDouble("ExpiryDuration")) + " (" +
                                           (lastExpiration.GetDateTime("Date").AddSeconds(lastExpiration.GetDouble("ExpiryDuration")) > DateTime.Now) + ")");
                     }
 
                     // deprecated
                     var tempBanned = false;
-                    if (lastExpiration.Contains("Expires")) {
+                    if (lastExpiration.Contains("Expires"))
+                    {
                         tempBanned = lastExpiration.GetDateTime("Expires") > DateTime.Now;
                     }
-                    else {
-                        if (lastExpiration.GetBool("Active", false) == false) {
+                    else
+                    {
+                        if (lastExpiration.GetBool("Active", false) == false)
+                        {
                             var currentDate = DateTime.Now;
 
                             lastExpiration.Set("Date", currentDate);
@@ -130,16 +148,20 @@ namespace EverybodyEdits.Game.Chat.Commands
 
                             tempBanned = currentDate.AddSeconds(lastExpiration.GetDouble("ExpiryDuration")) > DateTime.Now;
                         }
-                        else {
+                        else
+                        {
                             tempBanned = lastExpiration.GetDateTime("Date").AddSeconds(lastExpiration.GetDouble("ExpiryDuration")) > DateTime.Now;
                         }
                     }
 
                     player.PlayerObject.Set("tempbanned", tempBanned);
 
-                    player.PlayerObject.Save(() => {
-                        if (tempBanned) {
-                            if (lastExpiration.Contains("Expires")) {
+                    player.PlayerObject.Save(() =>
+                    {
+                        if (tempBanned)
+                        {
+                            if (lastExpiration.Contains("Expires"))
+                            {
                                 var timeleft = (lastExpiration.GetDateTime("Expires") - DateTime.Now);
 
                                 player.Send("info", "Banned",
@@ -149,7 +171,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                                     timeleft.Minutes + " minute" + (timeleft.Minutes != 1 ? "s" : "") + ". " +
                                     "\n\nReason: \"" + lastExpiration.GetString("Reason", "No reason given.") + "\"");
                             }
-                            else {
+                            else
+                            {
                                 player.Send("info", "Banned",
                                     "You have been temporarily banned. Ban will be lifted in " + lastExpiration.GetDateTime("Date").AddSeconds(lastExpiration.GetDouble("ExpiryDuration", 0)).Subtract(DateTime.Now).ToPrettyFormat() + ".\n" +
                                     "Reason: \"" + lastExpiration.GetString("Reason", "No reason provided.") + "\"");
@@ -159,7 +182,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                         callback(tempBanned);
                     });
                 }
-                else {
+                else
+                {
                     Console.WriteLine("No 'Bans' object: " + player.ConnectUserId);
                     callback(false);
                 }

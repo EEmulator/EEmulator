@@ -66,7 +66,7 @@ namespace EverybodyEdits.Game
                 return;
             }
 
-            var minSinceLastMagic = (int) (DateTime.UtcNow - player.LastMagic).TotalMinutes;
+            var minSinceLastMagic = (int)(DateTime.UtcNow - player.LastMagic).TotalMinutes;
             // Need to wait at least 1 hour after getting magic
             if (minSinceLastMagic < 60)
             {
@@ -186,12 +186,12 @@ namespace EverybodyEdits.Game
                     continue;
                 }
 
-                player.PayVault.Give(new[] {new BuyItemInfo(brickId)}, () =>
-                {
-                    this.SendInfo(player,
-                        "You found an extra magical coin! Upon touching the coin you found that you got yourself a neat magic brick...",
-                        player.Name.ToUpper() + " just got a magic brick!");
-                });
+                player.PayVault.Give(new[] { new BuyItemInfo(brickId) }, () =>
+                  {
+                      this.SendInfo(player,
+                          "You found an extra magical coin! Upon touching the coin you found that you got yourself a neat magic brick...",
+                          player.Name.ToUpper() + " just got a magic brick!");
+                  });
 
                 this.DisableRewarding(player);
                 player.SendMessage("givemagicbrickpackage", "magic");
@@ -276,7 +276,7 @@ namespace EverybodyEdits.Game
         {
             this.DisableRewarding(player);
 
-            player.PayVault.Give(new[] {new BuyItemInfo(smileyPayVaultId)}, callback);
+            player.PayVault.Give(new[] { new BuyItemInfo(smileyPayVaultId) }, callback);
             this.game.SetPlayerFace(player, smileyId);
             player.SendMessage("givemagicsmiley", smileyPayVaultId);
         }
@@ -295,7 +295,7 @@ namespace EverybodyEdits.Game
 
         private bool IsLucky(int chance, double multiplier)
         {
-            return this.game.Random.Next(0, (int) (chance*multiplier)) <= 5;
+            return this.game.Random.Next(0, (int)(chance * multiplier)) <= 5;
         }
 
         private int CalculateChance(int minSinceLastMagic, int goldCoins, int blueCoins, int maxEnergy = 0)
@@ -308,18 +308,18 @@ namespace EverybodyEdits.Game
             // If there are at least 15 gold or blue coins chance gets much lower
             if (goldCoins >= 15 || blueCoins >= 15)
             {
-                chance += goldCoins*5;
-                chance += blueCoins*5;
+                chance += goldCoins * 5;
+                chance += blueCoins * 5;
             }
 
             // Time since last magic also has impact on chance
             if (minSinceLastMagic < 1000)
             {
-                chance += (1000 - minSinceLastMagic)*2;
+                chance += (1000 - minSinceLastMagic) * 2;
             }
             if (minSinceLastMagic < 500)
             {
-                chance += (500 - minSinceLastMagic)*3;
+                chance += (500 - minSinceLastMagic) * 3;
             }
 
             return chance;
@@ -341,7 +341,7 @@ namespace EverybodyEdits.Game
             }
             else
             {
-                player.CoinTimer -= TimeSpan.FromSeconds(difference.TotalSeconds/20);
+                player.CoinTimer -= TimeSpan.FromSeconds(difference.TotalSeconds / 20);
             }
 
             return difference;

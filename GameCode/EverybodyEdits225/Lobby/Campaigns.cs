@@ -64,7 +64,7 @@ namespace EverybodyEdits.Lobby
                     m.Add(level.Difficulty);
                     m.Add(level.Tier + 1);
 
-                    m.Add((int) campaignPlayer.GetStatus(level.Tier));
+                    m.Add((int)campaignPlayer.GetStatus(level.Tier));
 
                     var rewards = level.Rewards;
                     m.Add(rewards.Count);

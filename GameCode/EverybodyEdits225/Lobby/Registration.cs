@@ -139,7 +139,7 @@ namespace EverybodyEdits.Lobby
                                     delegate
                                     {
                                         this.playerIo.BigDB.Load("Usernames", username,
-                                            delegate(DatabaseObject o)
+                                            delegate (DatabaseObject o)
                                             {
                                                 o.Set("oldowner", player.ConnectUserId);
                                                 o.Set("owner", "none");

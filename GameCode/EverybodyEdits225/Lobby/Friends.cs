@@ -117,7 +117,7 @@ namespace EverybodyEdits.Lobby
                                                 var newInvitation = new DatabaseObject();
                                                 newInvitation.Set("Sender", this.name);
                                                 newInvitation.Set("Recipient", recipientName);
-                                                newInvitation.Set("Status", (int) InvitationStatus.Pending);
+                                                newInvitation.Set("Status", (int)InvitationStatus.Pending);
 
                                                 InvitationHelper.CreateInvitation(this.client.BigDB,
                                                     InvitationType.Friend,
@@ -250,7 +250,7 @@ namespace EverybodyEdits.Lobby
                             foreach (var invite in invites)
                             {
                                 rtn.Add(invite.Recipient);
-                                rtn.Add((int) invite.Status);
+                                rtn.Add((int)invite.Status);
                             }
                             player.Send(rtn);
                         });

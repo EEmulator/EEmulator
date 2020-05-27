@@ -1,9 +1,9 @@
-﻿using EverybodyEdits.Game.Chat.Commands;
-using PlayerIO.GameLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using EverybodyEdits.Game.Chat.Commands;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game.Chat
 {
@@ -33,7 +33,8 @@ namespace EverybodyEdits.Game.Chat
             this.CreateChatCommands();
         }
 
-        public List<ChatMessage> LastChatMessages {
+        public List<ChatMessage> LastChatMessages
+        {
             get { return this.chatMessages.ToList(); }
         }
 
@@ -91,32 +92,39 @@ namespace EverybodyEdits.Game.Chat
 
             var text = ChatUtils.RemoveBadCharacters(m.GetString(0));
 
-            if (text.Length > 13 && Regex.Matches(text, @"\p{Lu}").Count > text.Length / 2 + 7) {
+            if (text.Length > 13 && Regex.Matches(text, @"\p{Lu}").Count > text.Length / 2 + 7)
+            {
                 text = text.Substring(0, 1).ToUpper() + text.Substring(1).ToLower();
-                }
+            }
 
-            if (text.Trim() == "" || text.Length > 140 && !player.IsAdmin) {
+            if (text.Trim() == "" || text.Length > 140 && !player.IsAdmin)
+            {
                 return;
             }
 
-            if (text.StartsWith("/")) {
-                if (!this.HandleCommand(player, text)) {
+            if (text.StartsWith("/"))
+            {
+                if (!this.HandleCommand(player, text))
+                {
                     player.SendMessage("info2", "System Message", "Unknown command or you don't have command access.");
                 }
 
                 return;
             }
 
-            if (player.Stealthy) {
+            if (player.Stealthy)
+            {
                 return;
             }
 
-            if (player.IsGuest) {
+            if (player.IsGuest)
+            {
                 player.SendMessage("info", "Info", "Sorry, you need to be a registered user to chat.");
                 return;
             }
 
-            if (ChatUtils.IsSpam(player, text, string.Empty)) {
+            if (ChatUtils.IsSpam(player, text, string.Empty))
+            {
                 return;
             }
 
@@ -125,37 +133,45 @@ namespace EverybodyEdits.Game.Chat
             var modOnline = false;
 
             // Handle all other players chat roles
-            foreach (var p in this.game.Players) {
+            foreach (var p in this.game.Players)
+            {
                 var isFriend = p.HasFriend(player.ConnectUserId);
                 friendsonline = friendsonline || isFriend;
                 adminOnline = adminOnline || p.IsAdmin;
                 modOnline = modOnline || p.IsModerator;
 
-                if (p.Id == player.Id) {
+                if (p.Id == player.Id)
+                {
                     continue;
                 }
 
                 if ((player.CanChat && p.CanChat) || isFriend || p.IsAdmin || player.IsAdmin || p.IsModerator ||
-                    player.IsModerator) {
+                    player.IsModerator)
+                {
                     // Check if player is in muted list of p, if he is we dont want to send the message
-                    if (!p.MutedUsers.Contains(player.ConnectUserId)) {
+                    if (!p.MutedUsers.Contains(player.ConnectUserId))
+                    {
                         p.SendMessage("say", player.Id, text);
                     }
                 }
-                else if (!p.CanChat) {
+                else if (!p.CanChat)
+                {
                     // The empty string is sent so that the UI can display a small bubble indicating that the user says something, but not what he is saying
                     p.SendMessage("say", player.Id, string.Empty);
                 }
             }
 
             // Handle current players chat roles
-            if (!player.CanChat && !friendsonline && !adminOnline && !modOnline) {
+            if (!player.CanChat && !friendsonline && !adminOnline && !modOnline)
+            {
                 player.SendMessage("info", "Sorry, this account is not verified for chatting.");
             }
-            else {
+            else
+            {
                 player.SendMessage("say", player.Id, text);
 
-                if (this.chatMessages.Count >= 40) {
+                if (this.chatMessages.Count >= 40)
+                {
                     this.chatMessages.Dequeue();
                 }
 
@@ -167,19 +183,23 @@ namespace EverybodyEdits.Game.Chat
         public void HandleAutoSay(Player player, Message m)
         {
             var offset = 1;
-            try {
+            try
+            {
                 offset = m.GetInt(0);
             }
-            catch (PlayerIOError error) {
+            catch (PlayerIOError error)
+            {
                 this.game.PlayerIO.ErrorLog.WriteError(error.ToString(),
                     "HandleAutoSay did not recieve int. Got: " + m.GetString(0), "", new Dictionary<string, string>());
             }
 
-            if (offset < 0 || offset >= autoTexts.Length) {
+            if (offset < 0 || offset >= autoTexts.Length)
+            {
                 return;
             }
 
-            if (DateTime.UtcNow.Subtract(player.LastChat).TotalMilliseconds < 500) {
+            if (DateTime.UtcNow.Subtract(player.LastChat).TotalMilliseconds < 500)
+            {
                 player.SendMessage("write", ChatUtils.SystemName,
                     "You are trying to chat too fast, spamming the chat is not nice!");
                 return;
@@ -197,7 +217,8 @@ namespace EverybodyEdits.Game.Chat
                 player.HasFriend(message.SenderConnectUserId) ||
                 (player.CanChat && message.SenderCanChat))).Skip(Math.Max(0, chatMessages.Count - 10));
 
-            foreach (var message in messages) {
+            foreach (var message in messages)
+            {
                 player.SendMessage("say_old", message.SenderName,
                     message.Text, player.HasFriend(message.SenderConnectUserId),
                     message.SenderChatColor);

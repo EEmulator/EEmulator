@@ -1,5 +1,5 @@
-﻿using PlayerIO.GameLibrary;
-using System;
+﻿using System;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game
 {
@@ -13,7 +13,8 @@ namespace EverybodyEdits.Game
             "worldId", "worldName"
         };
 
-        private bool IsOnline {
+        private bool IsOnline
+        {
             get { return (DateTime.Now - this.LastUpdate).TotalSeconds < 60; }
         }
 
@@ -52,11 +53,13 @@ namespace EverybodyEdits.Game
             this.IpAddress = existing.GetString("ipAddress", "");
             this.Stealthy = existing.GetBool("stealth", false);
 
-            if (existing.Contains("lastUpdate")) {
+            if (existing.Contains("lastUpdate"))
+            {
                 this.LastUpdate = existing.GetDateTime("lastUpdate");
             }
 
-            if (!this.IsOnline) {
+            if (!this.IsOnline)
+            {
                 this.CurrentWorldName = "";
                 this.CurrentWorldId = "";
             }
@@ -65,7 +68,8 @@ namespace EverybodyEdits.Game
 
         public void Save(Callback successCallback = null, Callback<PlayerIOError> errorCallback = null)
         {
-            if (this.status != null) {
+            if (this.status != null)
+            {
                 this.status.Set("name", this.Name);
                 this.status.Set("currentWorldName", this.CurrentWorldName);
                 this.status.Set("currentWorldId", this.CurrentWorldId);
@@ -75,19 +79,25 @@ namespace EverybodyEdits.Game
                 this.status.Set("lastUpdate", this.LastUpdate);
                 this.status.Set("stealth", this.Stealthy);
 
-                this.status.Save(false, true, () => {
-                    if (successCallback != null) {
+                this.status.Save(false, true, () =>
+                {
+                    if (successCallback != null)
+                    {
                         successCallback.Invoke();
                     }
-                }, error => {
-                    if (errorCallback != null) {
+                }, error =>
+                {
+                    if (errorCallback != null)
+                    {
                         errorCallback.Invoke(error);
                     }
                 });
             }
-            else {
+            else
+            {
                 this.client.BigDB.LoadOrCreate(OnlineStatusTable, this.key,
-                    delegate (DatabaseObject result) {
+                    delegate (DatabaseObject result)
+                    {
                         this.status = result;
 
                         result.Set("name", this.Name);
@@ -99,17 +109,23 @@ namespace EverybodyEdits.Game
                         result.Set("lastUpdate", this.LastUpdate);
                         this.status.Set("stealth", this.Stealthy);
 
-                        result.Save(false, () => {
-                            if (successCallback != null) {
+                        result.Save(false, () =>
+                        {
+                            if (successCallback != null)
+                            {
                                 successCallback.Invoke();
                             }
-                        }, error => {
-                            if (errorCallback != null) {
+                        }, error =>
+                        {
+                            if (errorCallback != null)
+                            {
                                 errorCallback.Invoke(error);
                             }
                         });
-                    }, error => {
-                        if (errorCallback != null) {
+                    }, error =>
+                    {
+                        if (errorCallback != null)
+                        {
                             errorCallback.Invoke(error);
                         }
                     });
@@ -150,17 +166,21 @@ namespace EverybodyEdits.Game
 
         public static void GetOnlineStatus(Client c, string connectUserId, Callback<OnlineStatus> callback)
         {
-            c.BigDB.LoadOrCreate(OnlineStatusTable, connectUserId, delegate (DatabaseObject result) {
+            c.BigDB.LoadOrCreate(OnlineStatusTable, connectUserId, delegate (DatabaseObject result)
+            {
                 callback.Invoke(new OnlineStatus(c, result));
             });
         }
 
         public static void GetOnlineStatus(Client c, string[] connectUserId, Callback<OnlineStatus[]> callback)
         {
-            c.BigDB.LoadKeysOrCreate(OnlineStatusTable, connectUserId, delegate (DatabaseObject[] result) {
+            c.BigDB.LoadKeysOrCreate(OnlineStatusTable, connectUserId, delegate (DatabaseObject[] result)
+            {
                 var rtn = new OnlineStatus[result.Length];
-                for (var i = 0; i < result.Length; i++) {
-                    if (result[i].GetString("name", "") != "") {
+                for (var i = 0; i < result.Length; i++)
+                {
+                    if (result[i].GetString("name", "") != "")
+                    {
                         rtn[i] = new OnlineStatus(c, result[i]);
                     }
                     else rtn[i] = new OnlineStatus();
@@ -173,14 +193,17 @@ namespace EverybodyEdits.Game
         {
             var deprecated = false;
 
-            foreach (var deprecatedValue in DeprecatedOnlineStatusValues) {
-                if (onlineStatus.Contains(deprecatedValue)) {
+            foreach (var deprecatedValue in DeprecatedOnlineStatusValues)
+            {
+                if (onlineStatus.Contains(deprecatedValue))
+                {
                     onlineStatus.Remove(deprecatedValue);
                     deprecated = true;
                 }
             }
 
-            if (deprecated) {
+            if (deprecated)
+            {
                 onlineStatus.Save();
             }
         }

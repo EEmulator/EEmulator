@@ -120,7 +120,7 @@ namespace EverybodyEdits.Lobby
 
         private void GetMyCrews(Message rtn, BasePlayer player)
         {
-            this.client.BigDB.LoadRange("Crews", "ByCreator", new object[] {player.ConnectUserId}, null, null, 100,
+            this.client.BigDB.LoadRange("Crews", "ByCreator", new object[] { player.ConnectUserId }, null, null, 100,
                 ownedCrews =>
                 {
                     player.PayVault.Refresh(() =>
@@ -149,7 +149,7 @@ namespace EverybodyEdits.Lobby
         {
             player.PayVault.Refresh(() =>
             {
-                this.client.BigDB.LoadRange("Crews", "ByCreator", new object[] {player.ConnectUserId}, null, null, 100,
+                this.client.BigDB.LoadRange("Crews", "ByCreator", new object[] { player.ConnectUserId }, null, null, 100,
                     ownedCrews =>
                     {
                         var canCreateNewCrew = player.PayVault.Count("crew") >
@@ -189,7 +189,7 @@ namespace EverybodyEdits.Lobby
                             var dbo = new DatabaseObject()
                                 .Set("Creator", player.ConnectUserId)
                                 .Set("Name", crewName)
-                                .Set("Subscribers", (uint) 1)
+                                .Set("Subscribers", (uint)1)
                                 .Set("Ranks", new DatabaseArray()
                                     .Add(new DatabaseObject()
                                         .Set("Name", "Owner"))

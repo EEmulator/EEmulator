@@ -15,28 +15,36 @@ namespace EverybodyEdits.Game.Chat.Commands
             var wereKicked = false;
             var kickTime = 5;
 
-            this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower()).ToList().ForEach(target => {
+            this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower()).ToList().ForEach(target =>
+            {
                 if (this.Game.BaseWorld.IsPartOfCrew && this.Game.Crew.IsMember(target) &&
-                    !player.Owner && player.Name != target.Name) {
+                    !player.Owner && player.Name != target.Name)
+                {
                     this.SendSystemMessage(player, "You can not kick another crew member.");
                     return;
                 }
-                else {
+                else
+                {
                     if (target.IsModerator && !player.IsAdmin && !player.IsModerator ||
-                        target.IsAdmin && !player.IsAdmin) {
+                        target.IsAdmin && !player.IsAdmin)
+                    {
                         var role = target.IsAdmin ? "an Administrator" : "a Moderator";
                         this.SendSystemMessage(player, "You can not kick {0}.", role);
                         return;
                     }
-                    else {
-                        if (!wereKicked) {
-                            if (player.Name == target.Name) {
+                    else
+                    {
+                        if (!wereKicked)
+                        {
+                            if (player.Name == target.Name)
+                            {
                                 this.BroadcastSystemMessage("{0} is no more{1}", player.Name,
                                     reason.Trim() == "" ? "" : " - " + reason);
 
                                 kickTime = 0;
                             }
-                            else {
+                            else
+                            {
                                 this.BroadcastSystemMessage("{0} kicked {1}{2}", player.Name, target.Name,
                                     reason == "" ? "" : " - " + reason);
                             }
@@ -56,7 +64,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                 wereKicked = true;
             });
 
-            if (!wereKicked) {
+            if (!wereKicked)
+            {
                 this.SendSystemMessage(player, "Unknown user {0}", commandInput[1]);
             }
         }

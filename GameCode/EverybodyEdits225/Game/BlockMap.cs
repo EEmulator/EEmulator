@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace EverybodyEdits.Game
 {
@@ -8,7 +8,7 @@ namespace EverybodyEdits.Game
     {
         private readonly int[] _beta = { 37, 38, 1019, 39, 40, 1020, 41, 42, 1021, 1089, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752 };
 
-        private readonly int[] _goldmembers = {1065, 1066, 1067, 1068, 1069, 709, 710, 711, 200, 201};
+        private readonly int[] _goldmembers = { 1065, 1066, 1067, 1068, 1069, 709, 710, 711, 200, 201 };
 
         private readonly int[] _freeForAll =
         {
@@ -405,12 +405,12 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(593, "brickmedieval");
             this._vaultEnabled.Add(599, "brickmedieval");
             this._vaultEnabled.Add(600, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalAxe, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalBanner, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalCoatOfArms, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalShield, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalSword, "brickmedieval");
-            this._vaultEnabled.Add((int) ItemTypes.MedievalTimber, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalAxe, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalBanner, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalCoatOfArms, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalShield, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalSword, "brickmedieval");
+            this._vaultEnabled.Add((int)ItemTypes.MedievalTimber, "brickmedieval");
 
             this._vaultEnabled.Add(114, "brickboost");
             this._vaultEnabled.Add(115, "brickboost");
@@ -514,7 +514,7 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(207, "brickzombiedoor");
             this._vaultEnabled.Add(374, "brickworldportal");
 
-            this._vaultEnabled.Add((int) ItemTypes.PortalInvisible, "brickinvisibleportal");
+            this._vaultEnabled.Add((int)ItemTypes.PortalInvisible, "brickinvisibleportal");
 
             this._vaultEnabled.Add(382, "bricksparta");
             this._vaultEnabled.Add(383, "bricksparta");
@@ -534,7 +534,7 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(212, "brickfarm");
             this._vaultEnabled.Add(1531, "brickfarm");
 
-            this._vaultEnabled.Add((int) ItemTypes.TextSign, "bricksign");
+            this._vaultEnabled.Add((int)ItemTypes.TextSign, "bricksign");
 
             this._vaultEnabled.Add(390, "brickautumn2014");
             this._vaultEnabled.Add(391, "brickautumn2014");
@@ -547,7 +547,7 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(642, "brickautumn2014");
             this._vaultEnabled.Add(643, "brickautumn2014");
 
-            this._vaultEnabled.Add((int) ItemTypes.Hologram, "brickhologram");
+            this._vaultEnabled.Add((int)ItemTypes.Hologram, "brickhologram");
 
             this._vaultEnabled.Add(215, "brickchristmas2014");
             this._vaultEnabled.Add(216, "brickchristmas2014");
@@ -631,17 +631,17 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(686, "brickdomestic");
             this._vaultEnabled.Add(687, "brickdomestic");
             this._vaultEnabled.Add(446, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticLightBulb, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticTap, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticPainting, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticVase, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticTv, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticWindow, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.HalfBlockDomesticYellow, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.HalfBlockDomesticBrown, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.HalfBlockDomesticWhite, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticPipeStraight, "brickdomestic");
-            this._vaultEnabled.Add((int) ItemTypes.DomesticPipeT, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticLightBulb, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticTap, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticPainting, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticVase, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticTv, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticWindow, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.HalfBlockDomesticYellow, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.HalfBlockDomesticBrown, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.HalfBlockDomesticWhite, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticPipeStraight, "brickdomestic");
+            this._vaultEnabled.Add((int)ItemTypes.DomesticPipeT, "brickdomestic");
             this._vaultEnabled.Add((int)ItemTypes.DomesticFrameBorder, "brickdomestic");
             this._vaultEnabled.Add(1539, "brickdomestic");
 
@@ -654,16 +654,16 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(696, "brickhalloween2015");
             this._vaultEnabled.Add(454, "brickhalloween2015");
             this._vaultEnabled.Add(455, "brickhalloween2015");
-            this._vaultEnabled.Add((int) ItemTypes.Halloween2015WindowRect, "brickhalloween2015");
-            this._vaultEnabled.Add((int) ItemTypes.Halloween2015WindowCircle, "brickhalloween2015");
-            this._vaultEnabled.Add((int) ItemTypes.Halloween2015Lamp, "brickhalloween2015");
+            this._vaultEnabled.Add((int)ItemTypes.Halloween2015WindowRect, "brickhalloween2015");
+            this._vaultEnabled.Add((int)ItemTypes.Halloween2015WindowCircle, "brickhalloween2015");
+            this._vaultEnabled.Add((int)ItemTypes.Halloween2015Lamp, "brickhalloween2015");
 
-            this._vaultEnabled.Add((int) ItemTypes.Ice, "brickice2");
+            this._vaultEnabled.Add((int)ItemTypes.Ice, "brickice2");
 
             this._vaultEnabled.Add(462, "bricknewyear2015");
             this._vaultEnabled.Add(463, "bricknewyear2015");
-            this._vaultEnabled.Add((int) ItemTypes.NewYear2015Balloon, "bricknewyear2015");
-            this._vaultEnabled.Add((int) ItemTypes.NewYear2015Streamer, "bricknewyear2015");
+            this._vaultEnabled.Add((int)ItemTypes.NewYear2015Balloon, "bricknewyear2015");
+            this._vaultEnabled.Add((int)ItemTypes.NewYear2015Streamer, "bricknewyear2015");
 
             this._vaultEnabled.Add(1070, "brickfairytale");
             this._vaultEnabled.Add(1071, "brickfairytale");
@@ -677,7 +677,7 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(705, "brickfairytale");
             this._vaultEnabled.Add(706, "brickfairytale");
             this._vaultEnabled.Add(707, "brickfairytale");
-            this._vaultEnabled.Add((int) ItemTypes.FairytaleLadder, "brickfairytale");
+            this._vaultEnabled.Add((int)ItemTypes.FairytaleLadder, "brickfairytale");
             this._vaultEnabled.Add((int)ItemTypes.FairytaleFlowers, "brickfairytale");
             this._vaultEnabled.Add((int)ItemTypes.HalfBlockFairytaleOrange, "brickfairytale");
             this._vaultEnabled.Add((int)ItemTypes.HalfBlockFairytaleGreen, "brickfairytale");
@@ -688,9 +688,9 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(1082, "brickspring2016");
             this._vaultEnabled.Add(473, "brickspring2016");
             this._vaultEnabled.Add(474, "brickspring2016");
-            this._vaultEnabled.Add((int) ItemTypes.SpringDaisy, "brickspring2016");
-            this._vaultEnabled.Add((int) ItemTypes.SpringTulip, "brickspring2016");
-            this._vaultEnabled.Add((int) ItemTypes.SpringDaffodil, "brickspring2016");
+            this._vaultEnabled.Add((int)ItemTypes.SpringDaisy, "brickspring2016");
+            this._vaultEnabled.Add((int)ItemTypes.SpringTulip, "brickspring2016");
+            this._vaultEnabled.Add((int)ItemTypes.SpringDaffodil, "brickspring2016");
 
             this._vaultEnabled.Add(478, "brickspringtrophybronze");
             this._vaultEnabled.Add(479, "brickspringtrophysilver");
@@ -709,9 +709,9 @@ namespace EverybodyEdits.Game
             this._vaultEnabled.Add(712, "bricksummer2016");
             this._vaultEnabled.Add(713, "bricksummer2016");
             this._vaultEnabled.Add(714, "bricksummer2016");
-            this._vaultEnabled.Add((int) ItemTypes.SummerFlag, "bricksummer2016");
-            this._vaultEnabled.Add((int) ItemTypes.SummerAwning, "bricksummer2016");
-            this._vaultEnabled.Add((int) ItemTypes.SummerIceCream, "bricksummer2016");
+            this._vaultEnabled.Add((int)ItemTypes.SummerFlag, "bricksummer2016");
+            this._vaultEnabled.Add((int)ItemTypes.SummerAwning, "bricksummer2016");
+            this._vaultEnabled.Add((int)ItemTypes.SummerIceCream, "bricksummer2016");
 
             this._vaultEnabled.Add(721, "bricktextile");
             this._vaultEnabled.Add(722, "bricktextile");

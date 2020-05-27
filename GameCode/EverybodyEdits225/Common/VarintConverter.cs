@@ -28,7 +28,7 @@ namespace EverybodyEdits.Common
 
                 if ((byteValue & 0x80) != 0x80)
                 {
-                    results.Add((int) result);
+                    results.Add((int)result);
                     result = 0;
                     shift = 0;
                     continue;
@@ -43,21 +43,21 @@ namespace EverybodyEdits.Common
         public static byte[] GetVarintBytes(int value)
         {
             const int moreData = 128;
-            var uValue = (uint) value;
+            var uValue = (uint)value;
 
             if (uValue < 0x80)
             {
-                return new[] {(byte) uValue};
+                return new[] { (byte)uValue };
             }
 
             if (uValue < 0x4000)
             {
-                return new[] {(byte) (uValue | moreData), (byte) (uValue >> 7)};
+                return new[] { (byte)(uValue | moreData), (byte)(uValue >> 7) };
             }
 
             if (uValue < 0x200000)
             {
-                return new[] {(byte) (uValue | moreData), (byte) ((uValue >> 7) | moreData), (byte) (uValue >> 14)};
+                return new[] { (byte)(uValue | moreData), (byte)((uValue >> 7) | moreData), (byte)(uValue >> 14) };
             }
 
             if (uValue < 0x10000000)

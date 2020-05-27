@@ -52,7 +52,7 @@ namespace EverybodyEdits.Game.Campaigns
         public static void Load(Client client, string connectUserId, string campaignId,
             Callback<CampaignPlayer> callback)
         {
-            client.BigDB.LoadOrCreate(TableName, connectUserId, delegate(DatabaseObject o)
+            client.BigDB.LoadOrCreate(TableName, connectUserId, delegate (DatabaseObject o)
             {
                 var campaignStatus = o.GetObject(campaignId);
                 if (campaignStatus == null)

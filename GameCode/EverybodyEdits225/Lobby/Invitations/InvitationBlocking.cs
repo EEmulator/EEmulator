@@ -146,7 +146,7 @@ namespace EverybodyEdits.Lobby.Invitations
                     return;
                 }
 
-                rtn.AddRange(from blockedUser in blockingObject where (bool) blockedUser.Value select blockedUser.Key);
+                rtn.AddRange(from blockedUser in blockingObject where (bool)blockedUser.Value select blockedUser.Key);
 
                 callback(rtn);
             });

@@ -97,7 +97,7 @@ namespace EverybodyEdits.Game.Campaigns
                                 this.AwardBadge(player, badge => { });
                             }
 
-                            rtn.Add((int) status,
+                            rtn.Add((int)status,
                                 campaignWorld.Difficulty,
                                 campaignWorld.Tier,
                                 this.Data.Tiers);
@@ -115,7 +115,7 @@ namespace EverybodyEdits.Game.Campaigns
                 player.IsInCampaignMode &&
                 !(player.IsBot ?? true))
             {
-                CampaignPlayer.Load(this.client, player.ConnectUserId, this.Data.Id, delegate(CampaignPlayer campPlayer)
+                CampaignPlayer.Load(this.client, player.ConnectUserId, this.Data.Id, delegate (CampaignPlayer campPlayer)
                 {
                     if (campPlayer.GetStatus(campWorld.Tier) == CampaignStatus.Unlocked)
                     {
@@ -181,11 +181,11 @@ namespace EverybodyEdits.Game.Campaigns
                 switch (reward.Key)
                 {
                     case "maxEnergy":
-                        player.MaxEnergy += (int) reward.Value;
+                        player.MaxEnergy += (int)reward.Value;
                         Console.WriteLine("Rewarded {0} with +{1} maximum energy.", player.Name, reward.Value);
                         break;
                     case "energy":
-                        player.AddEnergy((int) reward.Value);
+                        player.AddEnergy((int)reward.Value);
                         Console.WriteLine("Rewarded {0} with +{1} energy.", player.Name, reward.Value);
                         break;
                     case "energyRefill":
@@ -234,7 +234,7 @@ namespace EverybodyEdits.Game.Campaigns
                     return;
                 }
 
-                player.Achievements.ProgressComplete(this.Data.Badge, delegate(Achievement a2)
+                player.Achievements.ProgressComplete(this.Data.Badge, delegate (Achievement a2)
                 {
                     callback(a2);
                     Console.WriteLine("Rewarded {0} with {1} badge.", player.Name, this.Data.Badge);

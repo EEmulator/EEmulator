@@ -131,7 +131,7 @@ namespace EverybodyEdits.Crews
 
                 case "subscribe":
                 {
-                    if(crew.isContest)
+                    if (crew.isContest)
                     {
                         this.SendErrorReply(Message.Create(message.Type), player, "Subscribing to contest crews is disabled.");
                         return;
@@ -180,7 +180,7 @@ namespace EverybodyEdits.Crews
 
                 case "answerInvite":
                 {
-                    if(crew.isContest)
+                    if (crew.isContest)
                     {
                         this.SendErrorReply(Message.Create(message.Type), player, "Joining is disabled for contest crews.");
                         return;
@@ -272,7 +272,8 @@ namespace EverybodyEdits.Crews
                 }
                 case "removeMember":
                 {
-                    if (crew.isContest) {
+                    if (crew.isContest)
+                    {
                         this.SendErrorReply(Message.Create(message.Type), player, "Removing members is disabled for contest crews.");
                         return;
                     }
@@ -283,7 +284,8 @@ namespace EverybodyEdits.Crews
                 }
                 case "leaveCrew":
                 {
-                    if (crew.isContest) {
+                    if (crew.isContest)
+                    {
                         this.SendErrorReply(Message.Create(message.Type), player, "Leaving the crew is disabled for contest crews.");
                         return;
                     }
@@ -305,7 +307,8 @@ namespace EverybodyEdits.Crews
 
                 case "inviteMember":
                 {
-                    if (crew.isContest) {
+                    if (crew.isContest)
+                    {
                         this.SendErrorReply(Message.Create(message.Type), player, "Inviting members is disabled for contest crews.");
                         return;
                     }
@@ -407,7 +410,7 @@ namespace EverybodyEdits.Crews
                                 foreach (var invite in invites)
                                 {
                                     rtn.Add(invite.Recipient);
-                                    rtn.Add((int) invite.Status);
+                                    rtn.Add((int)invite.Status);
                                 }
                                 player.Send(rtn);
                             });
@@ -483,7 +486,8 @@ namespace EverybodyEdits.Crews
                 }
                 case "disband":
                 {
-                    if (crew.isContest) {
+                    if (crew.isContest)
+                    {
                         this.SendErrorReply(Message.Create(message.Type), player, "Disbanding the crew is disabled for contest crews.");
                         return;
                     }
@@ -514,7 +518,7 @@ namespace EverybodyEdits.Crews
                         var crewItem = player.PayVault.First("crew");
                         if (crewItem != null)
                         {
-                            player.PayVault.Consume(new[] {crewItem}, this.SetAsInvalid,
+                            player.PayVault.Consume(new[] { crewItem }, this.SetAsInvalid,
                                 error => { this.SetAsInvalid(); });
                         }
                         else
@@ -660,7 +664,7 @@ namespace EverybodyEdits.Crews
                             int p;
                             if (int.TryParse(power, out p))
                             {
-                                if (p >= 0 && p < (int) CrewPower.Count)
+                                if (p >= 0 && p < (int)CrewPower.Count)
                                 {
                                     continue;
                                 }
@@ -767,7 +771,7 @@ namespace EverybodyEdits.Crews
                                 var newInvitation = new DatabaseObject();
                                 newInvitation.Set("Sender", this.crewId);
                                 newInvitation.Set("Recipient", username);
-                                newInvitation.Set("Status", (int) InvitationStatus.Pending);
+                                newInvitation.Set("Status", (int)InvitationStatus.Pending);
 
                                 InvitationHelper.CreateInvitation(this.PlayerIO.BigDB, InvitationType.Crew,
                                     this.crewId, username,

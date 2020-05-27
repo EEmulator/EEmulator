@@ -9,7 +9,8 @@
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            switch (commandInput[0]) {
+            switch (commandInput[0])
+            {
                 case "markcontest":
                     var maximumBlockAssets = commandInput.Length > 1 ? int.Parse(commandInput[1]) : 21;
 

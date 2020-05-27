@@ -1,5 +1,5 @@
-﻿using System.Globalization;
-using System;
+﻿using System;
+using System.Globalization;
 
 namespace EverybodyEdits.Game.Chat.Commands
 {
@@ -12,7 +12,7 @@ namespace EverybodyEdits.Game.Chat.Commands
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            var color = (uint) ((0 << 24) | (0 << 16) | (0 << 8) | (0 << 0));
+            var color = (uint)((0 << 24) | (0 << 16) | (0 << 8) | (0 << 0));
 
             if (commandInput.Length >= 2 && commandInput[1].ToLower() != "none" && commandInput[1].ToLower() != "remove")
             {
@@ -35,7 +35,7 @@ namespace EverybodyEdits.Game.Chat.Commands
                     var r = int.Parse(colorString.Substring(1, 2), NumberStyles.AllowHexSpecifier);
                     var g = int.Parse(colorString.Substring(3, 2), NumberStyles.AllowHexSpecifier);
                     var b = int.Parse(colorString.Substring(5, 2), NumberStyles.AllowHexSpecifier);
-                    color = (uint) ((255 << 24) | (r << 16) | (g << 8) | (b << 0));
+                    color = (uint)((255 << 24) | (r << 16) | (g << 8) | (b << 0));
                 }
                 catch (Exception exception)
                 {

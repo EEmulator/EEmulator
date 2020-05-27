@@ -106,11 +106,11 @@ namespace EverybodyEdits.Lobby
             if (sales.IsBlackFridayItem(this.Key))
             {
                 if (this.PriceGems > 0)
-                    this.PriceGems = (int) Math.Ceiling((double) this.PriceGems/2);
+                    this.PriceGems = (int)Math.Ceiling((double)this.PriceGems / 2);
                 if (this.PriceUsd > 0)
-                    this.PriceUsd = (int) Math.Ceiling((double) this.PriceUsd/2);
+                    this.PriceUsd = (int)Math.Ceiling((double)this.PriceUsd / 2);
                 if (this.PriceEnergy > 0)
-                    this.PriceEnergy = (int) Math.Ceiling((double) this.PriceEnergy/2);
+                    this.PriceEnergy = (int)Math.Ceiling((double)this.PriceEnergy / 2);
                 this.EnergyPerClick = sales.FixEnergyPerClick(this.EnergyPerClick, this.PriceEnergy);
                 this.Label = "blackfriday";
             }

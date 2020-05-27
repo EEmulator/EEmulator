@@ -147,10 +147,10 @@ namespace EverybodyEdits.Crews
                             }
                             else
                             {
-                                var energyMultiplier = player.Energy/item.EnergyPerClick;
+                                var energyMultiplier = player.Energy / item.EnergyPerClick;
                                 if (energyMultiplier > 0)
                                 {
-                                    var energyToUse = item.EnergyPerClick*energyMultiplier;
+                                    var energyToUse = item.EnergyPerClick * energyMultiplier;
                                     if (player.UseEnergy(energyToUse))
                                     {
                                         this.UpdateEnergyStatus(item.Key, energyToUse);

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using PlayerIO.GameLibrary;
 using EverybodyEdits.Common;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Lobby
 {
@@ -88,13 +87,13 @@ namespace EverybodyEdits.Lobby
                 case "brickeffectteam":
                 case "brickeffectzombie":
                 {
-                    return count*10;
+                    return count * 10;
                 }
 
                 case "brickportal":
                 case "brickinvisibleportal":
                 {
-                    return count*5;
+                    return count * 5;
                 }
 
                 default:

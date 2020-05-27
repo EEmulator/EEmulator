@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using PlayerIO.GameLibrary;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game.Chat.Commands
 {
@@ -22,13 +22,16 @@ namespace EverybodyEdits.Game.Chat.Commands
             var username = commandInput[1];
 
             EffectId effect;
-            if (Enum.TryParse(effectname, true, out effect)) {
-                if (!Enum.IsDefined(effect.GetType(), effect)) {
+            if (Enum.TryParse(effectname, true, out effect))
+            {
+                if (!Enum.IsDefined(effect.GetType(), effect))
+                {
                     this.SendSystemMessage(player, "Unknown effect id.");
                     return;
                 }
 
-                if (this.blacklistEffects.Contains(effect)) {
+                if (this.blacklistEffects.Contains(effect))
+                {
                     this.SendSystemMessage(player, "Please use the command 'setteam' instead.");
                     return;
                 }
@@ -39,12 +42,15 @@ namespace EverybodyEdits.Game.Chat.Commands
                 var effectId = Convert.ToInt32(effect);
                 var textMessage = effect + " Effect was " + (take ? "taken from" : "given to") + " " + target.Name.ToUpper();
 
-                if (take) {
+                if (take)
+                {
                     target.RemoveEffect(effect);
                     this.Game.BroadcastMessage("effect", target.Id, effectId, false);
                 }
-                else {
-                    if (!this.CanGiveEffect(player, effect)) {
+                else
+                {
+                    if (!this.CanGiveEffect(player, effect))
+                    {
                         this.SendSystemMessage(player, "You do not own this effect.");
                         return;
                     }
@@ -54,18 +60,23 @@ namespace EverybodyEdits.Game.Chat.Commands
                     this.Game.CheckEffects();
 
                     var effectToGive = new Effect(effectId);
-                    if (this.argumentEffects.Contains(effect)) {
+                    if (this.argumentEffects.Contains(effect))
+                    {
                         int value;
-                        if (commandInput.Length > 3) {
+                        if (commandInput.Length > 3)
+                        {
                             int.TryParse(commandInput[3], out value);
                         }
-                        else {
+                        else
+                        {
                             this.SendSystemMessage(player, "You must give {0} for this effect!", effect == EffectId.Multijump ? "an amount" : effect == EffectId.Gravity ? "a direction" : "a duration");
                             return;
                         }
 
-                        if (effect == EffectId.Multijump) {
-                            if (value == 1) {
+                        if (effect == EffectId.Multijump)
+                        {
+                            if (value == 1)
+                            {
                                 player.RemoveEffect(effect);
                                 this.Game.BroadcastMessage("effect", target.Id, effectId, false);
                                 this.SendSystemMessage(player, "{0} Effect was given to {1} with 1 jump", effect, username.ToUpper());
@@ -75,30 +86,35 @@ namespace EverybodyEdits.Game.Chat.Commands
                             message.Add(jumpsToGive);
                             textMessage += " with " + (jumpsToGive == 1000 ? "inf" : jumpsToGive.ToString()) + " jumps";
                         }
-                        else if (effect == EffectId.Gravity) {
+                        else if (effect == EffectId.Gravity)
+                        {
                             GravityDirection direction;
-                            if (Enum.TryParse(commandInput[3], true, out direction)) {
+                            if (Enum.TryParse(commandInput[3], true, out direction))
+                            {
                                 if (direction < GravityDirection.Down)
                                     direction = GravityDirection.Down;
 
                                 if (direction > GravityDirection.None)
                                     direction = GravityDirection.None;
 
-                                if (direction == GravityDirection.Down) {
+                                if (direction == GravityDirection.Down)
+                                {
                                     target.RemoveEffect(effect);
                                     this.Game.BroadcastMessage("effect", target.Id, effectId, false);
                                     this.SendSystemMessage(player, "Gravity Effect was taken from " + target.Name.ToUpper());
                                     return;
                                 }
 
-                                effectToGive = new Effect(effectId, (int)direction) {
+                                effectToGive = new Effect(effectId, (int)direction)
+                                {
                                     CanExpire = false
                                 };
 
                                 textMessage = direction + " Gravity Effect was given to " + target.Name.ToUpper();
                                 message.Add((int)direction);
                             }
-                            else {
+                            else
+                            {
                                 this.SendSystemMessage(player, "Failed parsing Direction.");
                                 return;
                             }
@@ -106,8 +122,10 @@ namespace EverybodyEdits.Game.Chat.Commands
                         else effectToGive = new Effect(effectId, value <= 0 || value > 999 ? 10 : value);
                     }
 
-                    if (effectToGive.CanExpire) {
-                        if (target.HasActiveEffect(EffectId.Protection)) {
+                    if (effectToGive.CanExpire)
+                    {
+                        if (target.HasActiveEffect(EffectId.Protection))
+                        {
                             player.RemoveEffect(EffectId.Protection);
                             this.Game.BroadcastMessage("effect", target.Id, 3, false);
                         }
@@ -133,7 +151,8 @@ namespace EverybodyEdits.Game.Chat.Commands
         {
             var brick = "brickeffect" + effect.ToString().ToLower();
 
-            switch (effect) {
+            switch (effect)
+            {
                 case EffectId.Fire: brick = "bricklava"; break;
                 case EffectId.Run: brick = "brickeffectspeed"; break;
             }

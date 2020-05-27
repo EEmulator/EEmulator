@@ -44,7 +44,7 @@ namespace EverybodyEdits.Game.AntiCheat
         public static void GetAntiCheatData(Client c, string connectUserId, Callback<AntiCheatData> callback)
         {
             c.BigDB.Load(Table, connectUserId,
-                delegate(DatabaseObject result)
+                delegate (DatabaseObject result)
                 {
                     callback.Invoke(result != null ? new AntiCheatData(result) : new AntiCheatData());
                 });

@@ -22,7 +22,7 @@ namespace EverybodyEdits.Game.CountWorld
 
         public T[,] Clone()
         {
-            return (T[,]) this.blocks.Clone();
+            return (T[,])this.blocks.Clone();
         }
     }
 }

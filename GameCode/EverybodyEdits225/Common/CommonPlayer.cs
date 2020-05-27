@@ -9,10 +9,10 @@ namespace EverybodyEdits.Common
         {
             get
             {
-                var time = (DateTime.Now - this.ShopDate).TotalSeconds/EnergyDelay;
+                var time = (DateTime.Now - this.ShopDate).TotalSeconds / EnergyDelay;
                 var reminder = time - Math.Floor(time);
 
-                var timeLeftInSecs = (int) (EnergyDelay - reminder*EnergyDelay);
+                var timeLeftInSecs = (int)(EnergyDelay - reminder * EnergyDelay);
                 return timeLeftInSecs;
             }
         }
@@ -62,11 +62,13 @@ namespace EverybodyEdits.Common
             get { return this.PlayerObject.GetBool("isModerator", false); }
         }
 
-        public bool IsStaff {
+        public bool IsStaff
+        {
             get { return this.PlayerObject.GetBool("isStaff", false); }
         }
 
-        public bool IsJudge {
+        public bool IsJudge
+        {
             get { return this.PlayerObject.GetBool("isJudge", false); }
         }
 
@@ -120,7 +122,7 @@ namespace EverybodyEdits.Common
             get
             {
                 return this.PlayerObject.GetDateTime("shopDate",
-                    DateTime.Now.AddSeconds(-EnergyDelay*this.MaxEnergy));
+                    DateTime.Now.AddSeconds(-EnergyDelay * this.MaxEnergy));
             }
             set { this.PlayerObject.Set("shopDate", value); }
         }
@@ -145,13 +147,13 @@ namespace EverybodyEdits.Common
             get
             {
                 return Math.Min(this.MaxEnergy,
-                    (int) ((DateTime.Now - this.ShopDate).TotalSeconds/this.EnergyDelay));
+                    (int)((DateTime.Now - this.ShopDate).TotalSeconds / this.EnergyDelay));
             }
         }
 
         public void AddEnergy(int amount)
         {
-            this.ShopDate = this.ShopDate.AddSeconds(-amount*this.EnergyDelay);
+            this.ShopDate = this.ShopDate.AddSeconds(-amount * this.EnergyDelay);
         }
 
         public bool UseEnergy(int amount)
@@ -164,12 +166,12 @@ namespace EverybodyEdits.Common
             if (this.Energy == this.MaxEnergy)
             {
                 this.ShopDate =
-                    DateTime.Now.AddSeconds(-this.MaxEnergy*this.EnergyDelay +
-                                            this.EnergyDelay*amount);
+                    DateTime.Now.AddSeconds(-this.MaxEnergy * this.EnergyDelay +
+                                            this.EnergyDelay * amount);
             }
             else
             {
-                this.ShopDate = this.ShopDate.AddSeconds(amount*this.EnergyDelay);
+                this.ShopDate = this.ShopDate.AddSeconds(amount * this.EnergyDelay);
             }
             return true;
         }

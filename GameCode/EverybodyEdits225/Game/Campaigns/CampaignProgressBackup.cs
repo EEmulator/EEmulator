@@ -34,23 +34,25 @@ namespace EverybodyEdits.Game.Campaigns
                 {
                     this.player.Checkpoint =
                         world.GetBrickType(0, this.player.Checkpoint.X, this.player.Checkpoint.Y) ==
-                        (uint) ItemTypes.Checkpoint
+                        (uint)ItemTypes.Checkpoint
                             ? this.player.Checkpoint
                             : world.GetSpawn();
 
-                    this.player.X = this.player.Checkpoint.X*16;
-                    this.player.Y = this.player.Checkpoint.Y*16;
+                    this.player.X = this.player.Checkpoint.X * 16;
+                    this.player.Y = this.player.Checkpoint.Y * 16;
                     this.player.SpeedX = 0;
                     this.player.SpeedY = 0;
                     this.player.Deaths += 1;
                 }
                 else
                 {
-                    var effectObject = new DatabaseObject().Set("Id", (int) effect.Id);
+                    var effectObject = new DatabaseObject().Set("Id", (int)effect.Id);
                     if (effect.Id == EffectId.Multijump)
                     {
                         effectObject.Set("Arg", effect.Duration);
-                    } else if (effect.Id == EffectId.Gravity) {
+                    }
+                    else if (effect.Id == EffectId.Gravity)
+                    {
                         effectObject.Set("Arg", effect.Duration);
                     }
                     effects.Add(effectObject);
@@ -165,7 +167,7 @@ namespace EverybodyEdits.Game.Campaigns
             foreach (DatabaseObject effectObject in effects)
             {
                 var id = effectObject.GetInt("Id");
-                if (id == (int) EffectId.Multijump)
+                if (id == (int)EffectId.Multijump)
                 {
                     var arg = effectObject.GetInt("Arg");
                     var effect = new Effect(id, arg);
@@ -173,7 +175,8 @@ namespace EverybodyEdits.Game.Campaigns
                     this.player.AddEffect(effect);
                     broadcast(Message.Create("effect", this.player.Id, id, true, arg));
                 }
-                else if (id == (int)EffectId.Gravity) {
+                else if (id == (int)EffectId.Gravity)
+                {
                     var arg = effectObject.GetInt("Arg");
                     var effect = new Effect(id, arg);
                     effect.CanExpire = false;
@@ -216,10 +219,10 @@ namespace EverybodyEdits.Game.Campaigns
 
             for (var i = 0; i < xs.Length; i += 2)
             {
-                var x = (uint) ((xs[i] << 8) + xs[i + 1]);
-                var y = (uint) ((ys[i] << 8) + ys[i + 1]);
+                var x = (uint)((xs[i] << 8) + xs[i + 1]);
+                var y = (uint)((ys[i] << 8) + ys[i + 1]);
 
-                this.player.Coinmap.Add(new Item(new ForegroundBlock((uint) (isBlue ? 101 : 100)), x, y));
+                this.player.Coinmap.Add(new Item(new ForegroundBlock((uint)(isBlue ? 101 : 100)), x, y));
             }
         }
 
@@ -227,18 +230,18 @@ namespace EverybodyEdits.Game.Campaigns
         {
             var count = items.Count;
 
-            var xs = new byte[count*2];
-            var ys = new byte[count*2];
+            var xs = new byte[count * 2];
+            var ys = new byte[count * 2];
 
             for (var i = 0; i < count; i++)
             {
                 var item = items[i];
 
-                xs[i*2] = (byte) ((item.X & 0x0000ff00) >> 8);
-                xs[i*2 + 1] = (byte) (item.X & 0x000000ff);
+                xs[i * 2] = (byte)((item.X & 0x0000ff00) >> 8);
+                xs[i * 2 + 1] = (byte)(item.X & 0x000000ff);
 
-                ys[i*2] = (byte) ((item.Y & 0x0000ff00) >> 8);
-                ys[i*2 + 1] = (byte) (item.Y & 0x000000ff);
+                ys[i * 2] = (byte)((item.Y & 0x0000ff00) >> 8);
+                ys[i * 2 + 1] = (byte)(item.Y & 0x000000ff);
             }
 
             return new Tuple<byte[], byte[]>(xs, ys);

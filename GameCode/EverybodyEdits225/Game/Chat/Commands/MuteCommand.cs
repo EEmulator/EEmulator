@@ -13,14 +13,17 @@ namespace EverybodyEdits.Game.Chat.Commands
         {
             var playerNameToMute = commandInput[1].Trim().ToLower();
 
-            if (playerNameToMute.ToLower().Equals(player.Name)) {
+            if (playerNameToMute.ToLower().Equals(player.Name))
+            {
                 this.SendSystemMessage(player, "You can not mute yourself.");
                 return;
             }
 
-            if (playerNameToMute == "*") {
+            if (playerNameToMute == "*")
+            {
                 var playersToMute = this.Game.FilteredPlayers.Where(p => !p.IsAdmin && !p.IsModerator && !p.Name.Equals(player.Name)).ToList();
-                foreach (var p in playersToMute) {
+                foreach (var p in playersToMute)
+                {
                     player.MutedUsers.Remove(p.ConnectUserId);
                     player.SendMessage("muted", p.Id, true);
                 }
@@ -32,13 +35,16 @@ namespace EverybodyEdits.Game.Chat.Commands
 
             var target = this.Game.FilteredPlayers.FirstOrDefault(p => p.Name.ToLower().Equals(playerNameToMute));
 
-            if (target != null) {
-                if (target.IsAdmin || target.IsModerator) {
+            if (target != null)
+            {
+                if (target.IsAdmin || target.IsModerator)
+                {
                     this.SendSystemMessage(player, "Nice try, but you cannot mute staff.");
                     return;
                 }
 
-                if (player.MutedUsers.Contains(target.ConnectUserId)) {
+                if (player.MutedUsers.Contains(target.ConnectUserId))
+                {
                     this.SendSystemMessage(player, "Player is already muted.");
                     return;
                 }
@@ -47,7 +53,8 @@ namespace EverybodyEdits.Game.Chat.Commands
                 player.SendMessage("muted", target.Id, true);
                 this.SendSystemMessage(player, "{0} is now muted.", playerNameToMute);
             }
-            else {
+            else
+            {
                 this.SendSystemMessage(player, "Player with name {0} was not found.", playerNameToMute);
             }
         }

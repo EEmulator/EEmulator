@@ -1,7 +1,7 @@
-﻿using EverybodyEdits.Common;
+﻿using System;
 using System.Globalization;
 using System.Linq;
-using System;
+using EverybodyEdits.Common;
 
 namespace EverybodyEdits.Game.Chat.Commands
 {
@@ -17,11 +17,13 @@ namespace EverybodyEdits.Game.Chat.Commands
         {
             double x, y;
 
-            try {
+            try
+            {
                 x = (double.Parse(commandInput[2], new CultureInfo("en-GB"))) * Config.TileWidth;
                 y = (double.Parse(commandInput[3], new CultureInfo("en-GB"))) * Config.TileHeight;
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex);
                 this.SendSystemMessage(player, "Couldn't determine target coordinates.");
                 return;
@@ -29,14 +31,18 @@ namespace EverybodyEdits.Game.Chat.Commands
 
             if (x < 0 || y < 0 ||
                 x > (this.Game.BaseWorld.Width - 1) * Config.TileWidth ||
-                y > (this.Game.BaseWorld.Height - 1) * Config.TileHeight) {
+                y > (this.Game.BaseWorld.Height - 1) * Config.TileHeight)
+            {
                 this.SendSystemMessage(player, "You cannot teleport players outside of the world.");
                 return;
             }
 
-            foreach (var p in this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower())) {
-                if (!player.IsAdmin) {
-                    if (p.IsInAdminMode || p.IsInModeratorMode) {
+            foreach (var p in this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower()))
+            {
+                if (!player.IsAdmin)
+                {
+                    if (p.IsInAdminMode || p.IsInModeratorMode)
+                    {
                         return;
                     }
                 }

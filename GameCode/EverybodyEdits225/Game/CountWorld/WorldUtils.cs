@@ -7,8 +7,8 @@
             var world = new CountWorld(width, height);
 
             // Border drawing
-            var maxX = (uint) (width - 1);
-            var maxY = (uint) (height - 1);
+            var maxX = (uint)(width - 1);
+            var maxY = (uint)(height - 1);
             var block = new ForegroundBlock(borderBlock);
             for (uint y = 0; y <= maxY; y++)
             {

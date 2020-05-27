@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using PlayerIO.GameLibrary;
 using System.Linq;
+using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game.Contest
 {
@@ -20,9 +20,12 @@ namespace EverybodyEdits.Game.Contest
 
         public string CrewId { get; private set; }
 
-        public List<BlockAsset> BlockAssets {
-            get {
-                return this.dbo.GetArray("BlockAssets").Select(o => (DatabaseObject)o).Select(asset => new BlockAsset() {
+        public List<BlockAsset> BlockAssets
+        {
+            get
+            {
+                return this.dbo.GetArray("BlockAssets").Select(o => (DatabaseObject)o).Select(asset => new BlockAsset()
+                {
                     Bitmap = asset.GetBytes("Bitmap"),
                     Layer = asset.GetUInt("Layer"),
                     HasShadow = asset.GetBool("HasShadow"),
@@ -31,8 +34,10 @@ namespace EverybodyEdits.Game.Contest
             }
         }
 
-        public int MaximumBlockAssets {
-            get {
+        public int MaximumBlockAssets
+        {
+            get
+            {
                 return this.dbo != null ? this.dbo.GetInt("MaximumBlockAssets", 0) : 0;
             }
         }
@@ -42,7 +47,8 @@ namespace EverybodyEdits.Game.Contest
             this.client = client;
             this.CrewId = crewId;
 
-            if (string.IsNullOrEmpty(crewId)) {
+            if (string.IsNullOrEmpty(crewId))
+            {
                 return;
             }
 

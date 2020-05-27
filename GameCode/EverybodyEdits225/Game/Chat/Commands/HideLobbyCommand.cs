@@ -10,7 +10,8 @@
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            if (this.Game.BaseWorld.IsArtContest) {
+            if (this.Game.BaseWorld.IsArtContest)
+            {
                 this.SendSystemMessage(player, "This option cannot be changed in a contest world.");
                 return;
             }

@@ -13,7 +13,8 @@ namespace EverybodyEdits.Game.Chat.Commands
         {
             var wereKicked = false;
 
-            this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower() && !p.IsAdmin).ToList().ForEach(target => {
+            this.Game.FilteredPlayers.Where(p => p.Name.ToLower() == commandInput[1].ToLower() && !p.IsAdmin).ToList().ForEach(target =>
+            {
                 target.HasBeenKicked = true;
                 target.Disconnect();
                 wereKicked = true;

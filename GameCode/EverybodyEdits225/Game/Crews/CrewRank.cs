@@ -50,7 +50,7 @@ namespace EverybodyEdits.Game.Crews
                     int p;
                     if (int.TryParse(power, out p))
                     {
-                        powers.Add((CrewPower) p);
+                        powers.Add((CrewPower)p);
                     }
                 }
                 return powers;

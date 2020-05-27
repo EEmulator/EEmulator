@@ -10,18 +10,18 @@ namespace EverybodyEdits.Game.Mail
 
         public static void GetMail(BigDB bigDb, string connectUserId, Callback<EEMail[]> callback)
         {
-            bigDb.LoadRange("Mails", "MyMails", new object[] {connectUserId}, null, null, 1000, objs =>
-            {
-                callback(DeleteMails(bigDb, objs.Select(obj => new EEMail
-                {
-                    Key = obj.Key,
-                    From = obj.GetString("From"),
-                    To = obj.GetString("To"),
-                    Date = obj.GetDateTime("Date", default(DateTime)),
-                    Subject = obj.GetString("Subject", ""),
-                    Body = obj.GetString("Body", "")
-                }).ToArray()));
-            });
+            bigDb.LoadRange("Mails", "MyMails", new object[] { connectUserId }, null, null, 1000, objs =>
+              {
+                  callback(DeleteMails(bigDb, objs.Select(obj => new EEMail
+                  {
+                      Key = obj.Key,
+                      From = obj.GetString("From"),
+                      To = obj.GetString("To"),
+                      Date = obj.GetDateTime("Date", default(DateTime)),
+                      Subject = obj.GetString("Subject", ""),
+                      Body = obj.GetString("Body", "")
+                  }).ToArray()));
+              });
         }
 
         public static void SendMail(BigDB bigDb, string from, string to, string subject, string body)

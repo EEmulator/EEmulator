@@ -13,14 +13,14 @@ namespace EverybodyEdits.Game.Mail
         {
             bigDb.Load("Subscriptions", connectUserId, obj =>
             {
-                var defaultChannels = new[] {"news", "creweverybodyeditsstaff"};
+                var defaultChannels = new[] { "news", "creweverybodyeditsstaff" };
                 if (obj == null)
                 {
                     callback(defaultChannels);
                 }
                 else
                 {
-                    var subs = (from sub in obj where (bool) sub.Value select sub.Key).Concat(defaultChannels).ToArray();
+                    var subs = (from sub in obj where (bool)sub.Value select sub.Key).Concat(defaultChannels).ToArray();
                     callback(subs);
                 }
             });
@@ -81,7 +81,7 @@ namespace EverybodyEdits.Game.Mail
             {
                 if (obj == null)
                 {
-                    callback(new string[] {});
+                    callback(new string[] { });
                 }
                 else
                 {
@@ -126,19 +126,19 @@ namespace EverybodyEdits.Game.Mail
 
         private static void GetNotifications(BigDB bigDb, string channel, Callback<EENotification[]> callback)
         {
-            bigDb.LoadRange("Notifications", "ByChannel", new object[] {channel}, null, null, 1000, items =>
-            {
-                callback(DeleteNotifications(bigDb, items.Select(i => new EENotification
-                {
-                    Key = i.Key,
-                    Channel = i.GetString("Channel"),
-                    PublishDate = i.GetDateTime("PublishDate"),
-                    Title = i.GetString("Title", ""),
-                    RoomId = i.GetString("RoomId", ""),
-                    ImageUrl = i.GetString("ImageUrl", ""),
-                    Body = i.GetString("Body")
-                }).ToArray()));
-            });
+            bigDb.LoadRange("Notifications", "ByChannel", new object[] { channel }, null, null, 1000, items =>
+              {
+                  callback(DeleteNotifications(bigDb, items.Select(i => new EENotification
+                  {
+                      Key = i.Key,
+                      Channel = i.GetString("Channel"),
+                      PublishDate = i.GetDateTime("PublishDate"),
+                      Title = i.GetString("Title", ""),
+                      RoomId = i.GetString("RoomId", ""),
+                      ImageUrl = i.GetString("ImageUrl", ""),
+                      Body = i.GetString("Body")
+                  }).ToArray()));
+              });
         }
 
         public static void GetNotifications(BigDB bigDb, string[] channels, Callback<EENotification[]> callback)

@@ -9,7 +9,8 @@
 
         protected override void OnExecute(Player player, string[] commandInput)
         {
-            if (this.Game.BaseWorld.IsArtContest) {
+            if (this.Game.BaseWorld.IsArtContest)
+            {
                 this.SendSystemMessage(player, "This option cannot be changed in a contest world.");
                 return;
             }
@@ -22,11 +23,11 @@
             switch (visibility)
             {
                 case "friends":
-                    {
-                        this.Game.BaseWorld.FriendsOnly = true;
-                        this.Game.BaseWorld.Visible = true;
-                    }
-                    break;
+                {
+                    this.Game.BaseWorld.FriendsOnly = true;
+                    this.Game.BaseWorld.Visible = true;
+                }
+                break;
 
                 case "all":
                 case "true":

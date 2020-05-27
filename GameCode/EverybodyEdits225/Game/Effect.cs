@@ -11,7 +11,7 @@ namespace EverybodyEdits.Game
 
         public Effect(int id, int duration = 0)
         {
-            this.Id = (EffectId) id;
+            this.Id = (EffectId)id;
             this.Duration = duration;
             this.CanExpire = duration > 0;
         }

@@ -20,12 +20,14 @@ namespace EverybodyEdits.Game.Chat.Commands
                 return;
             }
 
-            if (playerNameToUnMute == "*") {
-                foreach (var p in this.Game.FilteredPlayers.Where(p => player.MutedUsers.Contains(p.ConnectUserId))) {
+            if (playerNameToUnMute == "*")
+            {
+                foreach (var p in this.Game.FilteredPlayers.Where(p => player.MutedUsers.Contains(p.ConnectUserId)))
+                {
                     player.SendMessage("muted", p.Id, false);
                 }
 
-                this.SendSystemMessage(player, "unmuted {0} player{1}.", player.MutedUsers.Count, player.MutedUsers.Count!= 1 ? "s" : "");
+                this.SendSystemMessage(player, "unmuted {0} player{1}.", player.MutedUsers.Count, player.MutedUsers.Count != 1 ? "s" : "");
                 player.MutedUsers.Clear();
                 return;
             }

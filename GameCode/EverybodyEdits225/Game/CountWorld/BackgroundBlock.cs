@@ -22,7 +22,7 @@ namespace EverybodyEdits.Game.CountWorld
 
         public uint Number
         {
-            get { return (uint) this.arg; }
+            get { return (uint)this.arg; }
         }
 
         public uint Type
