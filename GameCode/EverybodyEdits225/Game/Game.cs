@@ -2742,9 +2742,7 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.WorldPortal:
                     {
-                        if (this.Owned && (player.Owner || player.IsAdmin) &&
-                        (player.GetBrickPackCount("brickworldportal") > this.BaseWorld.WorldPortalCount ||
-                         this.BaseWorld.GetBrickType(0, cx, cy) == (int)ItemTypes.WorldPortal))
+                        if (this.Owned && (player.Owner || player.IsAdmin))
                         {
                             var target = m.GetString(4);
                             this.SetBrickWorldPortal(cx, cy, brick, target, (uint)player.Id);
@@ -2787,8 +2785,7 @@ namespace EverybodyEdits.Game
 
                     case 241:
                     {
-                        if (this.Owned && (player.Owner || player.IsAdmin) &&
-                            player.GetBrickPackCount("brickdiamond") > this.BaseWorld.DiamondCount)
+                        if (this.Owned && (player.Owner || player.IsAdmin))
                         {
                             this.SetBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2797,8 +2794,7 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.Cake:
                     {
-                        if (this.Owned && (player.Owner || player.IsAdmin) &&
-                            player.GetBrickPackCount("brickcake") > this.BaseWorld.CakesCount)
+                        if (this.Owned && (player.Owner || player.IsAdmin))
                         {
                             this.SetBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2808,8 +2804,7 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.Hologram:
                     {
-                        if (this.Owned && (player.Owner || player.IsAdmin) &&
-                            player.GetBrickPackCount("brickhologram") > this.BaseWorld.HologramsCount)
+                        if (this.Owned && (player.Owner || player.IsAdmin))
                         {
                             this.SetBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
