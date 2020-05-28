@@ -1694,7 +1694,7 @@ namespace EverybodyEdits.Game
                     var id = m.GetInt(3);
                     var enabled = m.GetBoolean(4);
 
-                    if (id > 999 || switchType > 1)
+                    if (id > int.MaxValue || switchType > 1)
                     {
                         break;
                     }
@@ -3428,13 +3428,11 @@ namespace EverybodyEdits.Game
 
         private void SendInitMessage(Player player)
         {
-            Console.WriteLine("sendInitMessage 1 ");
             if (player.Disconnected)
             {
                 return;
             }
 
-            Console.WriteLine("sendInitMessage 2");
             Console.WriteLine("player is stealth: " + player.Stealthy);
             var d = this.BaseWorld.GetSpawn();
             player.X = d.X * 16;
