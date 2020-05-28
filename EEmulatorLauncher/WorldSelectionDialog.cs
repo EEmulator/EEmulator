@@ -90,6 +90,8 @@ namespace EEmulatorLauncher
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v225).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
 
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
+
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
 
@@ -101,6 +103,8 @@ namespace EEmulatorLauncher
                 {
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v188).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
+
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
 
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
@@ -114,6 +118,8 @@ namespace EEmulatorLauncher
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v89).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
 
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
+
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
 
@@ -125,6 +131,8 @@ namespace EEmulatorLauncher
                 {
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v0800).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
+
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
 
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
@@ -138,6 +146,8 @@ namespace EEmulatorLauncher
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v0700).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
 
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
+
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
 
@@ -149,6 +159,8 @@ namespace EEmulatorLauncher
                 {
                     var gameId = new EEmulator.EverybodyEdits(EverybodyEditsVersion.v0500).GameId;
                     var destination = Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds", this.SelectedWorld.WorldId + ".tson");
+                    
+                    Directory.CreateDirectory(Path.Combine("games", "EverybodyEdits", "bigdb", gameId, "Worlds"));
 
                     if (!File.Exists(destination))
                         File.WriteAllText(destination, this.SelectedWorld.Tson);
@@ -162,13 +174,16 @@ namespace EEmulatorLauncher
         public EverybodyEditsVersion EstimateVersionFromBlocks()
         {
             if (this.SelectedWorld == null)
-                return EverybodyEditsVersion.v188; // default to latest
+                return EverybodyEditsVersion.v225; // default to latest
+
+            if (this.SelectedWorld.BlockTypes == null)
+                return EverybodyEditsVersion.v225;
 
             if (this.SelectedWorld.BlockTypes.Count() == 0)
-                return EverybodyEditsVersion.v188; // default to latest
+                return EverybodyEditsVersion.v225; // default to latest
 
             var largest_type = this.SelectedWorld.BlockTypes.Max(); // TODO: recommend from largest block type.
-            return EverybodyEditsVersion.v188;
+            return EverybodyEditsVersion.v225;
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
