@@ -18,7 +18,7 @@ namespace EverybodyEdits.Common
             if (energyPerClick > 0)
             {
                 energyPerClick = 1;
-                for (int i = Math.Min(energy, 125); i > 0; --i)
+                for (var i = Math.Min(energy, 125); i > 0; --i)
                 {
                     if (energy % i == 0)
                     {

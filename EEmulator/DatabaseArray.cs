@@ -59,7 +59,7 @@ namespace EEmulator
         [EditorBrowsable(EditorBrowsableState.Never)]
         public override DatabaseObject SetProperty(string index, object value)
         {
-            if (!int.TryParse(index, out int i))
+            if (!int.TryParse(index, out var i))
                 throw new Exception("You must specify the index as an integer.");
 
             for (var j = this.Properties.Count; j < i; j++)

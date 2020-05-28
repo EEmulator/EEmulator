@@ -17,7 +17,7 @@ namespace EverybodyEdits.Game.Chat.Commands
                     this.SendSystemMessage(player, "User {0} not found.", commandInput[1]);
                     return;
                 }
-                string ipAddress = onlineStatusObj.GetString("ipAddress", "");
+                var ipAddress = onlineStatusObj.GetString("ipAddress", "");
                 if (ipAddress == "")
                 {
                     this.SendSystemMessage(player, "User {0} does not have an IpAddress o_O", commandInput[1]);

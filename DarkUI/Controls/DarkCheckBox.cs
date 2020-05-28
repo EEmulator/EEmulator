@@ -327,7 +327,7 @@ namespace DarkUI.Controls
             {
                 using (var b = new SolidBrush(fillColor))
                 {
-                    Rectangle boxRect = new Rectangle(2, (rect.Height / 2) - ((size - 4) / 2), size - 3, size - 3);
+                    var boxRect = new Rectangle(2, (rect.Height / 2) - ((size - 4) / 2), size - 3, size - 3);
                     g.FillRectangle(b, boxRect);
                 }
             }

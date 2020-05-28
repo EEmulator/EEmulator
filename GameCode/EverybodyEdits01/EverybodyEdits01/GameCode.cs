@@ -12,10 +12,10 @@ namespace MyGame
         {
             base.PreloadPlayerObjects = true;
             base.PreloadPayVaults = true;
-            string text = "acdefghijnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ";
-            Random random = new Random();
+            var text = "acdefghijnopqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ";
+            var random = new Random();
             this.editchar = ".";
-            for (int i = 0; i < random.Next(1, 3); i++)
+            for (var i = 0; i < random.Next(1, 3); i++)
             {
                 this.editchar += text[random.Next(0, text.Length)].ToString();
             }
@@ -53,7 +53,7 @@ namespace MyGame
                             base.RoomData.Save();
                         }
                         this.ready = true;
-                        foreach (Player player in base.Players)
+                        foreach (var player in base.Players)
                         {
                             if (player.ready)
                             {
@@ -63,7 +63,7 @@ namespace MyGame
                     }
                 });
             }
-            for (int i = 0; i < 200; i++)
+            for (var i = 0; i < 200; i++)
             {
                 this.world[i, 0] = 9;
                 this.world[i, 199] = 9;
@@ -96,7 +96,7 @@ namespace MyGame
                     });
                     this.blue = false;
                 }
-                foreach (Player player in base.Players)
+                foreach (var player in base.Players)
                 {
                     if (player.cheat > 0)
                     {
@@ -105,7 +105,7 @@ namespace MyGame
                 }
                 if (this.die)
                 {
-                    foreach (Player player in base.Players)
+                    foreach (var player in base.Players)
                     {
                         player.Disconnect();
                     }
@@ -129,7 +129,7 @@ namespace MyGame
                 player.canEdit = true;
                 player.owner = true;
             }
-            foreach (Player player2 in base.Players)
+            foreach (var player2 in base.Players)
             {
                 if (player2 != player)
                 {
@@ -188,7 +188,7 @@ namespace MyGame
 
         public override void GotMessage(Player player, Message m)
         {
-            string type = m.Type;
+            var type = m.Type;
             switch (type)
             {
                 case "save":
@@ -219,7 +219,7 @@ namespace MyGame
                     if (this.owned && player.owner && this.ownedWorld != null)
                     {
                         this.editkey = m.GetString(0U);
-                        foreach (Player player2 in base.Players)
+                        foreach (var player2 in base.Players)
                         {
                             if (player2.canEdit)
                             {
@@ -252,12 +252,12 @@ namespace MyGame
                     return;
                 case "rate":
                 {
-                    int @int = m.GetInt(0U);
+                    var @int = m.GetInt(0U);
                     if (@int >= 0 && @int <= 5)
                     {
                         //this.ips[player.IPAddress.Address] = @int;
-                        decimal d = 0m;
-                        foreach (long key in this.ips.Keys)
+                        var d = 0m;
+                        foreach (var key in this.ips.Keys)
                         {
                             //	d += this.ips[key];
                         }
@@ -303,7 +303,7 @@ namespace MyGame
                     }
                     return;
                 case "init2":
-                    foreach (Player player2 in base.Players)
+                    foreach (var player2 in base.Players)
                     {
                         if (player2 != player)
                         {
@@ -327,8 +327,8 @@ namespace MyGame
                 {
                     player.x = m.GetDouble(0U);
                     player.y = m.GetDouble(1U);
-                    int num2 = (int)(player.x + 8.0) >> 4;
-                    int num3 = (int)(player.y + 8.0) >> 4;
+                    var num2 = (int)(player.x + 8.0) >> 4;
+                    var num3 = (int)(player.y + 8.0) >> 4;
                     if (num2 < 0 || num3 < 0 || num2 > 199 || num3 > 199)
                     {
                         player.Disconnect();
@@ -336,7 +336,7 @@ namespace MyGame
                     }
                     if (!player.canEdit && !player.ismod)
                     {
-                        int num4 = this.world[num3, num2];
+                        var num4 = this.world[num3, num2];
                         if (num4 > 8 && num4 < 100)
                         {
                             if (num4 != 23 && num4 != 24 && num4 != 25 && num4 != 26 && num4 != 27 && num4 != 28)
@@ -394,7 +394,7 @@ namespace MyGame
                 else
                 {
                     player.lastEdit = DateTime.Now;
-                    int int2 = m.GetInt(2U);
+                    var int2 = m.GetInt(2U);
                     if (int2 >= 0 && int2 <= 255)
                     {
                         if (int2 < 37 || int2 > 42 || player.haveSmileyPackage)
@@ -465,7 +465,7 @@ namespace MyGame
             }
             else if (m.Type == this.editchar + "f")
             {
-                int int3 = m.GetInt(0U);
+                var int3 = m.GetInt(0U);
                 if (int3 >= 0 && (int3 <= 5 || player.haveSmileyPackage) && int3 <= 11)
                 {
                     player.face = int3;
@@ -480,17 +480,17 @@ namespace MyGame
 
         private void sendInitMessage(Player player)
         {
-            Message message = Message.Create("init", new object[]
+            var message = Message.Create("init", new object[]
             {
                 this.Rot13(this.editchar),
                 player.Id,
                 player.canEdit,
                 player.owner
             });
-            StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 0; i < 200; i++)
+            var stringBuilder = new StringBuilder();
+            for (var i = 0; i < 200; i++)
             {
-                for (int j = 0; j < 200; j++)
+                for (var j = 0; j < 200; j++)
                 {
                     message.Add(this.world[i, j]);
                 }
@@ -500,10 +500,10 @@ namespace MyGame
 
         private byte[] serializeWorld()
         {
-            byte[] array = new byte[40000];
-            for (int i = 0; i < 200; i++)
+            var array = new byte[40000];
+            for (var i = 0; i < 200; i++)
             {
-                for (int j = 0; j < 200; j++)
+                for (var j = 0; j < 200; j++)
                 {
                     array[i * 200 + j] = (byte)this.world[i, j];
                 }
@@ -513,9 +513,9 @@ namespace MyGame
 
         private void unserializeWorld(byte[] wd)
         {
-            for (int i = 0; i < 200; i++)
+            for (var i = 0; i < 200; i++)
             {
-                for (int j = 0; j < 200; j++)
+                for (var j = 0; j < 200; j++)
                 {
                     this.world[i, j] = (int)wd[i * 200 + j];
                 }
@@ -524,10 +524,10 @@ namespace MyGame
 
         private string Rot13(string value)
         {
-            char[] array = value.ToCharArray();
-            for (int i = 0; i < array.Length; i++)
+            var array = value.ToCharArray();
+            for (var i = 0; i < array.Length; i++)
             {
-                int num = (int)array[i];
+                var num = (int)array[i];
                 if (num >= 97 && num <= 122)
                 {
                     if (num > 109)

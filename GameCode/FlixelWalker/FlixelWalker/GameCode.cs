@@ -10,7 +10,7 @@ namespace MyGame
         public override void GameStarted()
         {
             Console.WriteLine("Game is started: " + base.RoomId);
-            for (int i = 0; i < 200; i++)
+            for (var i = 0; i < 200; i++)
             {
                 this.world[i, 0] = 5;
                 this.world[i, 199] = 5;
@@ -38,7 +38,7 @@ namespace MyGame
 
         public override void GotMessage(Player player, Message m)
         {
-            string type = m.Type;
+            var type = m.Type;
             if (type != null)
             {
                 if (!(type == "time"))
@@ -85,14 +85,14 @@ namespace MyGame
                     }
                     else
                     {
-                        StringBuilder stringBuilder = new StringBuilder();
-                        for (int i = 0; i < 200; i++)
+                        var stringBuilder = new StringBuilder();
+                        for (var i = 0; i < 200; i++)
                         {
                             if (i != 0)
                             {
                                 stringBuilder.Append("\n");
                             }
-                            for (int j = 0; j < 200; j++)
+                            for (var j = 0; j < 200; j++)
                             {
                                 if (j != 0)
                                 {
@@ -106,7 +106,7 @@ namespace MyGame
                             stringBuilder.ToString(),
                             player.Id
                         });
-                        foreach (Player player2 in base.Players)
+                        foreach (var player2 in base.Players)
                         {
                             if (player2 != player)
                             {

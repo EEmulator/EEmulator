@@ -380,8 +380,8 @@ namespace EverybodyEdits.Game.Crews
         {
             var membersObject = this.DatabaseObject.GetObject("Members");
 
-            DatabaseObject obj1 = membersObject.GetObject(userId1);
-            DatabaseObject obj2 = membersObject.GetObject(userId2);
+            var obj1 = membersObject.GetObject(userId1);
+            var obj2 = membersObject.GetObject(userId2);
             membersObject.Remove(userId1).Remove(userId2);
             if (obj2 != null) membersObject.Set(userId1, obj2);
             if (obj1 != null) membersObject.Set(userId2, obj1);

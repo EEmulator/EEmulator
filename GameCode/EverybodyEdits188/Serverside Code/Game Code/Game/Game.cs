@@ -1395,7 +1395,7 @@ namespace EverybodyEdits.Game
                                     else if (!player.PayVault.Has("smileywizard2"))
                                     {
                                         // Energy Coins
-                                        int rand = rd.Next(0, 100);
+                                        var rand = rd.Next(0, 100);
 
                                         if (rand <= 5)
                                         {
@@ -1404,7 +1404,7 @@ namespace EverybodyEdits.Game
                                             player.lastCoin = DateTime.Now;
                                             player.canWinEnergy = false;
                                             player.PlayerObject.Set("maxEnergy", player.PlayerObject.GetInt("maxEnergy") + 15);
-                                            TimeSpan full = new TimeSpan(0, 0, 150 * player.maxEnergy);
+                                            var full = new TimeSpan(0, 0, 150 * player.maxEnergy);
                                             player.PlayerObject.Set("shopDate", DateTime.Now + full);
                                             player.PlayerObject.Save();
                                         }
@@ -1415,7 +1415,7 @@ namespace EverybodyEdits.Game
                                             player.lastCoin = DateTime.Now;
                                             player.canWinEnergy = false;
                                             player.PlayerObject.Set("maxEnergy", player.PlayerObject.GetInt("maxEnergy") + 10);
-                                            TimeSpan full = new TimeSpan(0, 0, 150 * player.maxEnergy);
+                                            var full = new TimeSpan(0, 0, 150 * player.maxEnergy);
                                             player.PlayerObject.Set("shopDate", DateTime.Now + full);
                                             player.PlayerObject.Save();
                                         }
@@ -1761,7 +1761,7 @@ namespace EverybodyEdits.Game
 
                 if (words[0] == "/refillmyenergy" && player.canbemod)
                 {
-                    TimeSpan full = new TimeSpan(0, 0, 150 * player.maxEnergy);
+                    var full = new TimeSpan(0, 0, 150 * player.maxEnergy);
                     player.PlayerObject.Set("shopDate", DateTime.Now - full);
                     return;
                 }

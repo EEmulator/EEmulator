@@ -151,7 +151,7 @@ namespace EverybodyEdits.Game
             var isowned = this.isbetalevel || this.RoomId.Substring(0, 2) == "PW" || this.RoomId.Substring(0, 2) == "CW";
             this.open = this.RoomId.Substring(0, 2) == "OW";
 
-            Dictionary<string, string> userRoomData = this.RoomData.ToDictionary(entry => entry.Key, entry => entry.Value);
+            var userRoomData = this.RoomData.ToDictionary(entry => entry.Key, entry => entry.Value);
             this.RoomData.Clear();
             if (this.isbetalevel)
             {

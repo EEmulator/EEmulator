@@ -18,7 +18,7 @@ namespace EEmulatorLauncher
 
         private void OnBirbClick(object sender, EventArgs e)
         {
-            MessageBox.Show("Chirp!\nEverybody Edits Emulator was made by atillabyte (miou) and EEJesse.\nYou can find it at: https://github.com/EEmulator");
+            new AboutDialog().ShowDialog();
         }
 
         private void btnPlay0500_MouseHover(object sender, EventArgs e)

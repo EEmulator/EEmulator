@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddServerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,8 +99,13 @@
     <Compile Include="WorldSelectionDialog.Designer.cs">
       <DependentUpon>WorldSelectionDialog.cs</DependentUpon>
     </Compile>
+    <Content Include="Resources\38.png" />
+    <None Include="Resources\confetti.gif" />
     <None Include="Resources\bg_225.png" />
     <None Include="Resources\playv225.png" />
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

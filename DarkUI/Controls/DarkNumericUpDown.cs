@@ -34,9 +34,9 @@ namespace DarkUI.Controls
             try
             {
                 // Prevent flickering, only if our assembly has reflection permission
-                Type type = Controls[0].GetType();
-                BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;
-                MethodInfo method = type.GetMethod("SetStyle", flags);
+                var type = Controls[0].GetType();
+                var flags = BindingFlags.NonPublic | BindingFlags.Instance;
+                var method = type.GetMethod("SetStyle", flags);
 
                 if (method != null)
                 {

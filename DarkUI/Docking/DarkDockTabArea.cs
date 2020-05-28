@@ -67,7 +67,7 @@ namespace DarkUI.Docking
         public ToolStripMenuItem GetMenuItem(DarkDockContent content)
         {
             ToolStripMenuItem menuItem = null;
-            foreach (ToolStripMenuItem item in _menuItems)
+            foreach (var item in _menuItems)
             {
                 var menuContent = item.Tag as DarkDockContent;
                 if (menuContent == null)
