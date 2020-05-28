@@ -68,8 +68,13 @@ namespace EEWorldArchive
 
                 try
                 {
-                    this.Minimap = this.Object.GenerateMinimap(out var types);
+                    this.Minimap = this.Object.GenerateMinimap(out var types, out var generation_had_errors);
                     this.BlockTypes = types;
+
+                    if (generation_had_errors)
+                    {
+                        MessageBox.Show($"Note: The minimap of '{world_id}' contained blocks which had no colour value associated with them. This may lead to an inaccurate minimap representation.");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -82,8 +87,9 @@ namespace EEWorldArchive
 
     public static class MinimapUtility
     {
-        public static Bitmap GenerateMinimap(this DatabaseObject world, out List<int> blockTypes)
+        public static Bitmap GenerateMinimap(this DatabaseObject world, out List<int> blockTypes, out bool generation_had_errors)
         {
+            generation_had_errors = false;
             blockTypes = new List<int>();
 
             if (world == null)
@@ -93,11 +99,23 @@ namespace EEWorldArchive
             var width = world.GetInt("width", 200);
             var height = world.GetInt("height", 200);
 
-            Color GetColor(int bid) => Color.FromArgb(
-                colors[bid.ToString()].SelectToken("a").Value<int>(),
-                colors[bid.ToString()].SelectToken("r").Value<int>(),
-                colors[bid.ToString()].SelectToken("g").Value<int>(),
-                colors[bid.ToString()].SelectToken("b").Value<int>());
+            Color GetColor(int bid, out bool success)
+            {
+                success = false;
+
+                if (colors.ContainsKey(bid.ToString()))
+                {
+                    success = true;
+
+                    return Color.FromArgb(
+                        colors[bid.ToString()].SelectToken("a").Value<int>(),
+                        colors[bid.ToString()].SelectToken("r").Value<int>(),
+                        colors[bid.ToString()].SelectToken("g").Value<int>(),
+                        colors[bid.ToString()].SelectToken("b").Value<int>());
+                }
+
+                return Color.Black;
+            }
 
             Color GetColorFromARGB(uint color) =>
                 Color.FromArgb((byte)(color >> 24),
@@ -168,7 +186,13 @@ namespace EEWorldArchive
                         if (blockTypes.Contains(type))
                             blockTypes.Add(type);
 
-                        var color = GetColor(type);
+                        var color = GetColor(type, out var success);
+
+                        if (!success)
+                        {
+                            generation_had_errors = true;
+                            continue;
+                        }
 
                         if (color.A != 255)
                             continue;
@@ -181,7 +205,13 @@ namespace EEWorldArchive
                         if (blockTypes.Contains(type))
                             blockTypes.Add(type);
 
-                        var color = GetColor(type);
+                        var color = GetColor(type, out var success);
+
+                        if (!success)
+                        {
+                            generation_had_errors = true;
+                            continue;
+                        }
 
                         if (color.A != 255)
                             continue;
@@ -198,7 +228,14 @@ namespace EEWorldArchive
                         // draw border
                         var maxX = (uint)(width - 1);
                         var maxY = (uint)(height - 1);
-                        var color = GetColor(world.GetInt("BorderType", 9));
+                        var color = GetColor(world.GetInt("BorderType", 9), out var success);
+
+                        if (!success)
+                        {
+                            generation_had_errors = true;
+                            goto world_data;
+                        }
+
                         for (uint y = 0; y <= maxY; y++)
                         {
                             fb.SetPixel(0, (int)y, color);
@@ -210,6 +247,8 @@ namespace EEWorldArchive
                             fb.SetPixel((int)x, (int)maxY, color);
                         }
                     }
+
+                    world_data:
 
                     var world_bytes = world.GetBytes("world", null);
 
@@ -224,7 +263,13 @@ namespace EEWorldArchive
                                 if (blockTypes.Contains(type))
                                     blockTypes.Add(type);
 
-                                var color = GetColor(type);
+                                var color = GetColor(type, out var success);
+
+                                if (!success)
+                                {
+                                    generation_had_errors = true;
+                                    continue;
+                                }
 
                                 if (color.A != 255)
                                     continue;
