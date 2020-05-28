@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldSelectionDialog));
             this.lbSelectVersion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pbMinimap = new System.Windows.Forms.PictureBox();
+            this.btnPlayNow = new System.Windows.Forms.Button();
             this.comboSelectedVersion = new DarkUI.Controls.DarkComboBox();
             this.gbDetails = new DarkUI.Controls.DarkGroupBox();
             this.txtDetails = new DarkUI.Controls.DarkTextBox();
@@ -38,10 +40,9 @@
             this.btnLoad = new DarkUI.Controls.DarkButton();
             this.txtUsername = new DarkUI.Controls.DarkTextBox();
             this.dockPanel = new DarkUI.Docking.DarkDockPanel();
-            this.pbMinimap = new System.Windows.Forms.PictureBox();
-            this.btnPlayNow = new System.Windows.Forms.Button();
-            this.gbDetails.SuspendLayout();
+            this.btnCopy = new DarkUI.Controls.DarkButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinimap)).BeginInit();
+            this.gbDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbSelectVersion
@@ -65,6 +66,33 @@
             this.label1.Size = new System.Drawing.Size(333, 65);
             this.label1.TabIndex = 12;
             this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // pbMinimap
+            // 
+            this.pbMinimap.BackColor = System.Drawing.Color.Black;
+            this.pbMinimap.Location = new System.Drawing.Point(348, 12);
+            this.pbMinimap.Name = "pbMinimap";
+            this.pbMinimap.Size = new System.Drawing.Size(400, 200);
+            this.pbMinimap.TabIndex = 6;
+            this.pbMinimap.TabStop = false;
+            // 
+            // btnPlayNow
+            // 
+            this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
+            this.btnPlayNow.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playNowButton;
+            this.btnPlayNow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlayNow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPlayNow.FlatAppearance.BorderSize = 0;
+            this.btnPlayNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayNow.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayNow.ForeColor = System.Drawing.Color.Transparent;
+            this.btnPlayNow.Location = new System.Drawing.Point(235, 264);
+            this.btnPlayNow.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPlayNow.Name = "btnPlayNow";
+            this.btnPlayNow.Size = new System.Drawing.Size(84, 30);
+            this.btnPlayNow.TabIndex = 5;
+            this.btnPlayNow.UseVisualStyleBackColor = false;
+            this.btnPlayNow.Click += new System.EventHandler(this.btnPlayNow_Click);
             // 
             // comboSelectedVersion
             // 
@@ -112,7 +140,7 @@
             this.comboWorlds.FormattingEnabled = true;
             this.comboWorlds.Location = new System.Drawing.Point(12, 38);
             this.comboWorlds.Name = "comboWorlds";
-            this.comboWorlds.Size = new System.Drawing.Size(310, 21);
+            this.comboWorlds.Size = new System.Drawing.Size(229, 21);
             this.comboWorlds.TabIndex = 3;
             this.comboWorlds.SelectedIndexChanged += new System.EventHandler(this.comboWorlds_SelectedIndexChanged);
             // 
@@ -147,38 +175,22 @@
             this.dockPanel.Size = new System.Drawing.Size(765, 370);
             this.dockPanel.TabIndex = 0;
             // 
-            // pbMinimap
+            // btnCopy
             // 
-            this.pbMinimap.BackColor = System.Drawing.Color.Black;
-            this.pbMinimap.Location = new System.Drawing.Point(348, 12);
-            this.pbMinimap.Name = "pbMinimap";
-            this.pbMinimap.Size = new System.Drawing.Size(400, 200);
-            this.pbMinimap.TabIndex = 6;
-            this.pbMinimap.TabStop = false;
-            // 
-            // btnPlayNow
-            // 
-            this.btnPlayNow.BackColor = System.Drawing.Color.Transparent;
-            this.btnPlayNow.BackgroundImage = global::EEmulatorLauncher.Properties.Resources.playNowButton;
-            this.btnPlayNow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnPlayNow.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnPlayNow.FlatAppearance.BorderSize = 0;
-            this.btnPlayNow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlayNow.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlayNow.ForeColor = System.Drawing.Color.Transparent;
-            this.btnPlayNow.Location = new System.Drawing.Point(235, 264);
-            this.btnPlayNow.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPlayNow.Name = "btnPlayNow";
-            this.btnPlayNow.Size = new System.Drawing.Size(84, 30);
-            this.btnPlayNow.TabIndex = 5;
-            this.btnPlayNow.UseVisualStyleBackColor = false;
-            this.btnPlayNow.Click += new System.EventHandler(this.btnPlayNow_Click);
+            this.btnCopy.Location = new System.Drawing.Point(247, 38);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Padding = new System.Windows.Forms.Padding(5);
+            this.btnCopy.Size = new System.Drawing.Size(75, 21);
+            this.btnCopy.TabIndex = 13;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // WorldSelectionDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 370);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbSelectVersion);
             this.Controls.Add(this.comboSelectedVersion);
@@ -193,9 +205,9 @@
             this.ShowIcon = false;
             this.Text = "Select a World";
             this.TopMost = true;
+            ((System.ComponentModel.ISupportInitialize)(this.pbMinimap)).EndInit();
             this.gbDetails.ResumeLayout(false);
             this.gbDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMinimap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +226,6 @@
         private DarkUI.Controls.DarkComboBox comboSelectedVersion;
         private System.Windows.Forms.Label lbSelectVersion;
         private System.Windows.Forms.Label label1;
+        private DarkUI.Controls.DarkButton btnCopy;
     }
 }

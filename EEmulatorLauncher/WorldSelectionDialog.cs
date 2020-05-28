@@ -170,6 +170,26 @@ namespace EEmulatorLauncher
             var largest_type = this.SelectedWorld.BlockTypes.Max(); // TODO: recommend from largest block type.
             return EverybodyEditsVersion.v188;
         }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (this.Worlds == null)
+                return;
+
+            if (comboWorlds.Items.Count >= 1)
+            {
+                if (comboWorlds.SelectedIndex >= 0 && comboWorlds.SelectedIndex <= comboWorlds.Items.Count)
+                {
+                    if (comboWorlds.SelectedItem == null)
+                        return;
+
+                    var selectedItem = (ComboWorldItem)comboWorlds.SelectedItem;
+                    var world = this.Worlds.Find(w => w.WorldId == selectedItem.WorldId);
+
+                    Clipboard.SetText(world.WorldId);
+                }
+            }
+        }
     }
 
     public class ComboWorldItem
