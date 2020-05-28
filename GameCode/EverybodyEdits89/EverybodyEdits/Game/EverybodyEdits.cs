@@ -1563,13 +1563,13 @@ namespace EverybodyEdits.Game
                                                 switch (num)
                                                 {
                                                     case 241U:
-                                                        if (this.owned && (player.owner || player.canbemod) && player.PayVault.Count("brickdiamond") > this.baseworld.diamondCoint())
+                                                        if (this.owned && (player.owner || player.canbemod))
                                                         {
                                                             this.setBrick(layerNum, cx, cy, brick);
                                                         }
                                                         goto IL_9CE;
                                                     case 242U:
-                                                        if (this.owned && (player.owner || player.canbemod) && (player.PayVault.Count("brickportal") + 1 > this.baseworld.portalCoint() || this.baseworld.getBrickType(0, (int)cx, (int)cy) == 242U))
+                                                        if (this.owned && (player.owner || player.canbemod))
                                                         {
                                                             var rotation = (uint)m.GetInt(4U);
                                                             var id = (uint)m.GetInt(5U);
@@ -1606,7 +1606,7 @@ namespace EverybodyEdits.Game
                             }
                             if (num == 255U)
                             {
-                                if (this.owned && (player.owner || player.canbemod) && player.PayVault.Count("brickspawn") > this.baseworld.spawnCount())
+                                if (this.owned && (player.owner || player.canbemod))
                                 {
                                     this.setBrick(layerNum, cx, cy, brick);
                                 }
@@ -1691,7 +1691,7 @@ namespace EverybodyEdits.Game
                                 {
                                     count = 99U;
                                 }
-                                if (this.owned && (player.owner || player.canbemod) && player.PayVault.Count("brickcoindoor") * 10 > this.baseworld.coindoorCount())
+                                if (this.owned && (player.owner || player.canbemod))
                                 {
                                     this.setBrick(cx, cy, brick, count);
                                 }
