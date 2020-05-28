@@ -269,6 +269,7 @@
             this.btnPlay225.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnPlay225.UseVisualStyleBackColor = true;
             this.btnPlay225.Click += new System.EventHandler(this.btnPlay225_Click);
+            this.btnPlay225.MouseHover += new System.EventHandler(this.btnPlay225_MouseHover);
             // 
             // birb
             // 

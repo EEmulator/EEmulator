@@ -46,6 +46,11 @@ namespace EEmulatorLauncher
             bottomPanel.BackgroundImage = Resources.bg_188;
         }
 
+        private void btnPlay225_MouseHover(object sender, EventArgs e)
+        {
+            bottomPanel.BackgroundImage = Resources.bg_225;
+        }
+
         private void btnPlay0500_Click(object sender, EventArgs e)
         {
             Process.Start("EEmulator.exe", "EverybodyEdits v0500 localhost:8184 null").WaitForExit();

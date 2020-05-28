@@ -93,6 +93,7 @@
     <Compile Include="WorldSelectionDialog.Designer.cs">
       <DependentUpon>WorldSelectionDialog.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\bg_225.png" />
     <None Include="Resources\playv225.png" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
