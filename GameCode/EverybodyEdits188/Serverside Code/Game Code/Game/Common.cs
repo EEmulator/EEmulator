@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using PlayerIO.GameLibrary;
 
 namespace EverybodyEdits.Game
@@ -150,6 +151,8 @@ namespace EverybodyEdits.Game
         public double x = 16;
         public double y = 16;
 
+        public List<Potion> ActivePotions { get; private set; }
+            = new List<Potion>();
         //public void addUpdateMessage(Message msg, string type = null)
         //{
         //    string t = type != null? type: msg.Type;
@@ -431,32 +434,40 @@ namespace EverybodyEdits.Game
 
         public void activatePotion(Potion potion, Callback<List<Potion>> callback)
         {
-            potion.activate();
-            this.addPotion(potion, callback);
+            //potion.activate();
+            //this.addPotion(potion, callback);
         }
 
         public void addPotion(Potion potion, Callback<List<Potion>> callback)
         {
-            this.PotionStatusObject.addPotion(potion, callback);
+            this.ActivePotions.Add(potion);
+            callback(this.ActivePotions);
+
+            //this.PotionStatusObject.addPotion(potion, callback);
             //SavePotionStatus("add");
         }
 
         public Potion removePotion(Potion potion)
         {
-            var removed = this.PotionStatusObject.removePotion(potion);
+            this.getActivePotions().RemoveAll(x => x.payvatultid == potion.payvatultid);
+
+            //var removed = this.PotionStatusObject.removePotion(potion);
             //SavePotionStatus("remove");
-            return removed;
+            //return removed;
+            return null;
         }
 
         public List<Potion> getActivePotions()
         {
-            return new List<Potion>();
+            return this.ActivePotions;
             //return this.PotionStatusObject.getPotions();
         }
 
         public bool hasActivePotion(Potion potion)
         {
-            return false;
+            return this.getActivePotions().Any(x => x.payvatultid == potion.payvatultid);
+
+            //return false;
             //return this.PotionStatusObject.hasActivePotion(potion);
         }
 
@@ -535,8 +546,9 @@ namespace EverybodyEdits.Game
         {
             if (!this.isguest && !this.disconnected)
             {
-                this.SaveOnlineStatus();
-                this.SavePotionStatus();
+                //this.SaveOnlineStatus();
+                //this.SavePotionStatus();
+                
                 lock (this)
                 {
                     if (this.PlayerObject != null)

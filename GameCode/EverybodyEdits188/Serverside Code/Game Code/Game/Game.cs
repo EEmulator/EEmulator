@@ -1043,8 +1043,10 @@ namespace EverybodyEdits.Game
                                 }
                                 else
                                 {
-                                    p.activatePotion(potion,
-                                        delegate { this.Broadcast("p", p.Id, potion.id, true, potion.timeleft); });
+                                    this.Broadcast("p", p.Id, potion.id, true, potion.timeleft);
+
+                                    //p.activatePotion(potion,
+                                    //    delegate { this.Broadcast("p", p.Id, potion.id, true, potion.timeleft); });
                                 }
                             }
                             break;

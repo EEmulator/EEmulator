@@ -583,6 +583,48 @@
     <None Include="games\EverybodyEdits\includes\PayVaultItems\mixednewyear2010.tson">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionaurablue.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionauragreen.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionaurared.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionaurayellow.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potioncurse.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionfire.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionflaunt.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionjump.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionlevitation.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionprotection.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionrespawn.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionsolitude.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionspeed.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="games\EverybodyEdits\includes\PayVaultItems\potionzombie.tson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="games\EverybodyEdits\includes\PayVaultItems\pro.tson">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
