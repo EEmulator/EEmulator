@@ -41,8 +41,13 @@ namespace EEmulatorLauncher
 
             this.Worlds = Program.WorldArchive.Retrieve(Program.UsernameToConnectUserId[txtUsername.Text.ToLower()]).ToList();
             comboWorlds.Items.Clear();
-            comboWorlds.Items.AddRange(this.Worlds.Select(world => new ComboWorldItem() { Text = world.Object.GetString("name", "Untitled World") + " (" + world.WorldId + ")", WorldId = world.WorldId }).ToArray());
-        
+
+            comboWorlds.Items.AddRange(this.Worlds.Select(world => new ComboWorldItem()
+            {
+                Text = world.Object.GetString("name", "Untitled World") + " (" + world.WorldId + ")",
+                WorldId = world.WorldId
+            }).OrderBy(x => x.Text).ToArray());
+            
             if (!this.HasEnumeratedArchive)
             {
                 MessageBox.Show("The worlds have been loaded!");
