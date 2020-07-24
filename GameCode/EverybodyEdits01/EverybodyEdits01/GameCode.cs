@@ -252,8 +252,8 @@ namespace MyGame
                     return;
                 case "rate":
                 {
-                    var @int = m.GetInt(0U);
-                    if (@int >= 0 && @int <= 5)
+                    var rating = m.GetInt(0U);
+                    if (rating >= 0 && rating <= 5)
                     {
                         //this.ips[player.IPAddress.Address] = @int;
                         var d = 0m;
@@ -394,23 +394,23 @@ namespace MyGame
                 else
                 {
                     player.lastEdit = DateTime.Now;
-                    var int2 = m.GetInt(2U);
-                    if (int2 >= 0 && int2 <= 255)
+                    var bid = m.GetInt(2U);
+                    if (bid >= 0 && bid <= 255)
                     {
-                        if (int2 < 37 || int2 > 42 || player.haveSmileyPackage)
+                        if (bid < 37 || bid > 42 || player.haveSmileyPackage)
                         {
                             if (player.canEdit)
                             {
                                 if (m.GetInt(0U) >= 1 && m.GetInt(0U) <= 198 && m.GetInt(1U) <= 198 && ((this.editkey != "") ? (m.GetInt(1U) >= 1) : (m.GetInt(1U) >= 5)))
                                 {
-                                    if (this.world[m.GetInt(1U), m.GetInt(0U)] != int2)
+                                    if (this.world[m.GetInt(1U), m.GetInt(0U)] != bid)
                                     {
-                                        this.world[m.GetInt(1U), m.GetInt(0U)] = int2;
+                                        this.world[m.GetInt(1U), m.GetInt(0U)] = bid;
                                         base.Broadcast(Message.Create("b", new object[]
                                         {
                                             m.GetInt(0U),
                                             m.GetInt(1U),
-                                            int2
+                                            bid
                                         }));
                                     }
                                 }
@@ -465,10 +465,10 @@ namespace MyGame
             }
             else if (m.Type == this.editchar + "f")
             {
-                var int3 = m.GetInt(0U);
-                if (int3 >= 0 && (int3 <= 5 || player.haveSmileyPackage) && int3 <= 11)
+                var face = m.GetInt(0U);
+                if (face >= 0 && (face <= 5 || player.haveSmileyPackage) && face <= 19)
                 {
-                    player.face = int3;
+                    player.face = face;
                     base.Broadcast("face", new object[]
                     {
                         player.Id,
