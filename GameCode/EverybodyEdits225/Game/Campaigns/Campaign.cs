@@ -24,6 +24,15 @@ namespace EverybodyEdits.Game.Campaigns
 
         public void Load(string campaignId, Callback callback = null)
         {
+            // TODO: Campaigns are disabled here, perhaps there'd be a reason for adding support.
+
+            if (callback != null)
+            {
+                callback.Invoke();
+                return;
+            }
+
+            /*
             if (campaignId == "")
             {
                 if (callback != null)
@@ -32,7 +41,9 @@ namespace EverybodyEdits.Game.Campaigns
                 }
                 return;
             }
+            */
 
+            /*
             this.client.BigDB.Load("Campaigns", campaignId, dbo =>
             {
                 this.Data = new CampaignData(dbo);
@@ -40,7 +51,7 @@ namespace EverybodyEdits.Game.Campaigns
                 {
                     callback.Invoke();
                 }
-            });
+            });*/
         }
 
         public CampaignWorld GetWorld(string worldId)
