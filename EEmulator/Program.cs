@@ -13,7 +13,7 @@ namespace EEmulator
         {
             Console.WriteLine(@"
                      _____ _____                _       _             
-   Version 0.2.3    |  ___|  ___|              | |     | |     ""thanks atilla""
+   Version 0.2.4    |  ___|  ___|              | |     | |     ""thanks atilla""
      written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
     miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
 ====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
