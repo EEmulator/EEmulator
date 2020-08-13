@@ -42,11 +42,15 @@ namespace EEmulatorLauncher
             this.Worlds = Program.WorldArchive.Retrieve(Program.UsernameToConnectUserId[txtUsername.Text.ToLower()]).ToList();
             comboWorlds.Items.Clear();
 
-            comboWorlds.Items.AddRange(this.Worlds.Select(world => new ComboWorldItem()
-            {
-                Text = world.Object.GetString("name", "Untitled World") + " (" + world.WorldId + ")",
-                WorldId = world.WorldId
-            }).OrderBy(x => x.Text).ToArray());
+            comboWorlds.Items.AddRange(
+                this.Worlds.Select(world => new ComboWorldItem() {
+                    Text = world.Object.GetString("name", "Untitled World") + " (" + world.WorldId + ")" + (world.From2014 ? " (2014)" : ""),
+                    WorldId = world.WorldId,
+                    From2014 = world.From2014,
+                })
+                .OrderBy(x => x.Text)
+                .OrderBy(x => x.From2014)
+                .ToArray());
             
             if (!this.HasEnumeratedArchive)
             {
@@ -74,11 +78,6 @@ namespace EEmulatorLauncher
                     pbMinimap.Size = world.Minimap.Size;
                     txtDetails.Text = world.Tson;
                     pbMinimap.Image = world.Minimap;
-
-                    // TODO: Show estimated version and make default in combo box.
-                    switch (this.EstimateVersionFromBlocks())
-                    {
-                    }
                 }
             }
         }
@@ -216,6 +215,7 @@ namespace EEmulatorLauncher
     {
         public string Text { get; set; }
         public string WorldId { get; set; }
+        public bool From2014 { get; set; }
 
         public override string ToString()
         {

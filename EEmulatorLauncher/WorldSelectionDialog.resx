@@ -118,10 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Please note that the selected world may not load if the selected client
-does not support all of the blocks in the world.
-
-It is recommended that you use the latest client to load worlds unless
-you know it will load on older client versions.</value>
+    <value>Please note that the world may not load if the selected client doesn't support all of the blocks in the world.
+It's recommended to use the latest client to load worlds unless you know it will load on older client versions.</value>
   </data>
 </root>

@@ -46,8 +46,9 @@ namespace EEWorldArchive
                 stream.Position = 0;
 
                 var world_id = entry.FileName.Split('\\').Last().Split('.').First();
+                var from_2014 = entry.FileName.Split('\\').Last().Split('.').Skip(1).Any(t => t == "2014");
 
-                yield return new World(world_id, new StreamReader(stream).ReadToEnd());
+                yield return new World(world_id, from_2014, new StreamReader(stream).ReadToEnd());
             }
         }
 
@@ -58,13 +59,15 @@ namespace EEWorldArchive
             public DatabaseObject Object { get; private set; }
             public Bitmap Minimap { get; private set; }
             public List<int> BlockTypes { get; private set; }
+            public bool From2014 { get; private set; }
 
-            internal World(string world_id, string tson)
+            internal World(string world_id, bool from_2014, string tson)
             {
                 this.WorldId = world_id;
                 this.Tson = tson;
                 this.Object = DatabaseObject.LoadFromString(this.Tson);
                 this.Minimap = new Bitmap(200, 200);
+                this.From2014 = from_2014;
 
                 try
                 {
