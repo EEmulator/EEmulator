@@ -82,7 +82,7 @@ namespace EverybodyEdits.Game
             var smileyNameInVault = this.GetSmileyVaultIdById(smileyId);
             var shopItem = shop.GetShopItem(smileyNameInVault);
 
-            return shopItem != null && player.PayVault.Has(smileyNameInVault);
+            return shopItem != null; /* && player.PayVault.Has(smileyNameInVault); */
         }
 
         public bool AuraIsLegit(CommonPlayer player, int auraId, int colorId, Shop shop)
