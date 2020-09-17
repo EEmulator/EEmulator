@@ -1786,7 +1786,7 @@ namespace EverybodyEdits.Game
                     if (player.AddToCrewRequests++ > 2)
                     {
                         player.SendMessage("crewAddRequestFailed",
-                            "The owner has already rejected your request twice. Maybe it's time to stop annoying him.");
+                            "The owner has already rejected your request twice. Maybe it's time to stop annoying them.");
                         break;
                     }
 
