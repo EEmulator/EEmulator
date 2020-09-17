@@ -13,7 +13,7 @@ namespace EEmulator
         {
             Console.WriteLine(@"
                      _____ _____                _       _             
-   Version 0.2.4    |  ___|  ___|              | |     | |     ""thanks atilla""
+   Version 0.2.6    |  ___|  ___|              | |     | |     ""thanks atilla""
      written by     | |__ | |__ _ __ ___  _   _| | __ _| |_ ___  _ __ 
     miou & jesse    |  __||  __| '_ ` _ \| | | | |/ _` | __/ _ \| '__|
 ====================| |___| |__| | | | | | |_| | | (_| | || (_) | |============
@@ -28,7 +28,7 @@ namespace EEmulator
 
             if (args.Length < 3)
             {
-                Console.WriteLine("ERROR: You must specify a game, a version, an endpoint, and a world ID (in that order)");
+                Console.WriteLine("ERROR: You must specify a game, a version, an endpoint, and a default join world ID (in that order)");
                 return;
             }
 
@@ -76,7 +76,6 @@ namespace EEmulator
 
                     case "v225":
                         GameManager.Run(new EverybodyEdits(EverybodyEditsVersion.v225));
-                        break;
                         break;
 
                     default:
