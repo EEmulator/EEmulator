@@ -69,7 +69,7 @@ namespace EverybodyEdits.Game
                 return true;
             }
 
-            if (this.GetSmileyVaultIdById(smileyId) == "goldmember" && player.HasGoldMembership)
+            if (this.GetSmileyVaultIdById(smileyId) == "goldmember" /*&& player.HasGoldMembership*/)
             {
                 return true;
             }
