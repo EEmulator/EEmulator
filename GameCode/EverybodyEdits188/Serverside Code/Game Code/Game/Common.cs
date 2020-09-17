@@ -399,6 +399,8 @@ namespace EverybodyEdits.Game
 
         public bool hasBrickPack(String payvaultid)
         {
+            return true;
+
             switch (payvaultid)
             {
                 case "brickhwtrophy":
@@ -414,6 +416,8 @@ namespace EverybodyEdits.Game
 
         public int getBrickPackCount(String payvaultid)
         {
+            return int.MaxValue;
+
             switch (payvaultid)
             {
                 case "brickdiamond":
