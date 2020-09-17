@@ -136,20 +136,26 @@ namespace EverybodyEdits.Game
             {
                 return true;
             }
-            if (this._beta.Contains(blockid) && player.HasSmileyPackage)
+            if (this._beta.Contains(blockid) /* && player.HasSmileyPackage */)
             {
                 return true;
             }
-            if (this._goldmembers.Contains(blockid) && player.HasGoldMembership)
+            if (this._goldmembers.Contains(blockid) /* && player.HasGoldMembership */)
             {
                 return true;
             }
             var blockNameInVault = this.GetBlockVaultIdById(blockid);
 
-            if (player.HasBrickPack(blockNameInVault))
+            /*if (player.HasBrickPack(blockNameInVault))
+            {
+                return true;
+            }*/
+
+            if (blockNameInVault != string.Empty)
             {
                 return true;
             }
+
             if (blockNameInVault != string.Empty)
             {
                 Console.WriteLine("Not available to user: " + blockid);

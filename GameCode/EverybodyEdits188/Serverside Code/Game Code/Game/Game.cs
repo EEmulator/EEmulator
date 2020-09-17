@@ -1658,7 +1658,6 @@ namespace EverybodyEdits.Game
                     {
                         var face = m.GetInt(0);
 
-
                         if (this.smileyMap.smileyIsLegit(player, face, this.shop))
                         {
                             this.setPlayerFace(player, face);
