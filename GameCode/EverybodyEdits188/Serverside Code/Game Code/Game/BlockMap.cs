@@ -94,11 +94,11 @@ namespace EverybodyEdits.Game
             {
                 return true;
             }
-            if (this.beta.Contains(blockid) && player.haveSmileyPackage)
+            if (this.beta.Contains(blockid)/*&& player.haveSmileyPackage*/)
             {
                 return true;
             }
-            if (this.buildersclub.Contains(blockid) && player.isClubMember)
+            if (this.buildersclub.Contains(blockid)/* && player.isClubMember*/)
             {
                 return true;
             }
@@ -109,6 +109,7 @@ namespace EverybodyEdits.Game
             {
                 return true;
             }
+
             if (blockNameInVault != String.Empty) Console.WriteLine("Not available to user: " + blockid);
 
             return false;

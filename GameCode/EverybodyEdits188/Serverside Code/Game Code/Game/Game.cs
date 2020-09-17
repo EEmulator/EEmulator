@@ -2488,9 +2488,9 @@ namespace EverybodyEdits.Game
                     case (int)ItemTypes.Portal:
                     {
                         // Portal
-                        if (this.owned && (player.owner || player.canbemod) &&
+                        if (this.owned /* && (player.owner || player.canbemod) &&
                             (player.getBrickPackCount("brickportal") + 1 > this.baseworld.portalCount() ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Portal))
+                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Portal)*/)
                         {
                             var rotation = (uint)m.GetInt(4);
                             var id = (uint)m.GetInt(5);
@@ -2519,10 +2519,13 @@ namespace EverybodyEdits.Game
                         Console.WriteLine(">> TextSign added, player has: " + player.getBrickPackCount("bricksign") +
                                           " bricksign items in vault. Total added in world: " +
                                           this.baseworld.textsignsCount());
+                        /*
                         if (this.owned && (player.owner || player.canbemod) &&
                             (player.getBrickPackCount("bricksign") > this.baseworld.textsignsCount() ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TextSign))
+                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TextSign))*/
                         // if ( (owned && /*player.isClubMember*/ (player.owner || player.canbemod) && (player.getBrickPackCount("bricksign") > baseworld.textsignsCount()) // TODO: Make text sign purchable
+                        
+                        if (this.owned)
                         {
                             var signText = this.removeBadChars(m.GetString(4));
                             this.setBrickTextSign(cx, cy, signText, (uint)player.Id);
@@ -2532,10 +2535,11 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.PortalInvisible:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
+                        /*if (this.owned && (player.owner || player.canbemod) &&
                             (player.getBrickPackCount("brickinvisibleportal") + 1 >
                              this.baseworld.invisibleportalsCount() ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.PortalInvisible))
+                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.PortalInvisible))*/
+                        if (this.owned)
                         {
                             var rotation = (uint)m.GetInt(4);
                             var id = (uint)m.GetInt(5);
