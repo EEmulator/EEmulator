@@ -95,11 +95,11 @@ namespace EverybodyEdits.Game
         {
             if (payVaultId == null)
                 return false;
-            if (payVaultId == "" || payVaultId == "goldmember" && player.HasGoldMembership)
+            if (payVaultId == "" || payVaultId == "goldmember"/* && player.HasGoldMembership*/)
                 return true;
 
             var shopItem = shop.GetShopItem(payVaultId);
-            return shopItem != null && player.PayVault.Has(payVaultId);
+            return shopItem != null; /*&& player.PayVault.Has(payVaultId);*/
         }
 
         private void PopulateVaultEnabled()
