@@ -2270,6 +2270,13 @@ namespace EverybodyEdits.Game
                 p.isgod = false;
                 this.Broadcast("god", p.Id, false);
             }
+
+            if (p.ismod)
+            {
+                editrights = true;
+                p.canEdit = true;
+            }
+
             p.SendMessage(Message.Create(editrights ? "access" : "lostaccess"));
         }
 
@@ -2488,9 +2495,10 @@ namespace EverybodyEdits.Game
                     case (int)ItemTypes.Portal:
                     {
                         // Portal
-                        if (this.owned /* && (player.owner || player.canbemod) &&
-                            (player.getBrickPackCount("brickportal") + 1 > this.baseworld.portalCount() ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Portal)*/)
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    (player.getBrickPackCount("brickportal") + 1 > this.baseworld.portalCount() ||
+                        //     this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Portal))
+                        if (this.owned)
                         {
                             var rotation = (uint)m.GetInt(4);
                             var id = (uint)m.GetInt(5);
@@ -2504,9 +2512,10 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.WorldPortal:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            (player.getBrickPackCount("brickworldportal") > this.baseworld.worldportalsCount() ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.WorldPortal))
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    (player.getBrickPackCount("brickworldportal") > this.baseworld.worldportalsCount() ||
+                        //     this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.WorldPortal))
+                        if (this.owned)
                         {
                             var target = m.GetString(4);
                             this.setBrickWorldPortal(cx, cy, brick, target, (uint)player.Id);
@@ -2555,8 +2564,9 @@ namespace EverybodyEdits.Game
 
                     case 241:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickdiamond") > this.baseworld.diamondCount())
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickdiamond") > this.baseworld.diamondCount())
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2565,8 +2575,9 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.Cake:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickcake") > this.baseworld.cakesCount())
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickcake") > this.baseworld.cakesCount())
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2576,21 +2587,22 @@ namespace EverybodyEdits.Game
 
                     case (int)ItemTypes.Hologram:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickhologram") > this.baseworld.hologramsCount())
-                        {
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickhologram") > this.baseworld.hologramsCount())
+                        //{
+                        if (this.owned)
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
-                        }
 
                         break;
                     }
 
                     case 243:
                     {
-                        if (this.owned && (player.owner || player.canbemod) && player.hasBrickPack("bricksecret"))
-                        {
+                        //if (this.owned && (player.owner || player.canbemod) && player.hasBrickPack("bricksecret"))
+                        //{
+                        if (this.owned)
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
-                        }
+
                         break;
                     }
 
@@ -2599,8 +2611,9 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickcoindoor") * 10 > this.baseworld.coindoorCount())
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickcoindoor") * 10 > this.baseworld.coindoorCount())
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
@@ -2611,8 +2624,9 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickbluecoindoor") * 10 > this.baseworld.bluecoindoorCount())
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickbluecoindoor") * 10 > this.baseworld.bluecoindoorCount())
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
@@ -2624,8 +2638,10 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickcoingate") * 10 > this.baseworld.coingateCount())
+
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickcoingate") * 10 > this.baseworld.coingateCount())
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
@@ -2636,8 +2652,9 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickbluecoingate") * 10 > this.baseworld.bluecoingateCount())
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickbluecoingate") * 10 > this.baseworld.bluecoingateCount())
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
@@ -2650,8 +2667,9 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickdeathdoor") * 10 > this.baseworld.deathDoorsGatesCount())
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickdeathdoor") * 10 > this.baseworld.deathDoorsGatesCount())
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
@@ -2661,9 +2679,10 @@ namespace EverybodyEdits.Game
 
                     case (uint)ItemTypes.Complete:
                     {
-                        if (this.owned && (player.owner || player.canbemod) && player.hasBrickPack("brickcomplete") &&
-                            (this.baseworld.completeCount() < 1 ||
-                             this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Complete))
+                        //if (this.owned && (player.owner || player.canbemod) && player.hasBrickPack("brickcomplete") &&
+                        //    (this.baseworld.completeCount() < 1 ||
+                        //    this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Complete))
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2672,10 +2691,10 @@ namespace EverybodyEdits.Game
                     case (uint)ItemTypes.TimeGate:
                     case (uint)ItemTypes.TimeDoor:
                     {
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("bricktimeddoor") * 10 > this.baseworld.timedoorCount() ||
-                            ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TimeGate) ||
-                             (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TimeDoor)))
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("bricktimeddoor") * 10 > this.baseworld.timedoorCount() ||
+                        //    ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TimeGate) ||
+                        //     (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.TimeDoor)))
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2684,10 +2703,11 @@ namespace EverybodyEdits.Game
                     case (uint)ItemTypes.ZombieGate:
                     case (uint)ItemTypes.ZombieDoor:
                     {
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickzombiedoor") * 10 > this.baseworld.zombiedoorCount() ||
-                            ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.ZombieGate) ||
-                             (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.ZombieDoor)))
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickzombiedoor") * 10 > this.baseworld.zombiedoorCount() ||
+                        //    ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.ZombieGate) ||
+                        //     (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.ZombieDoor)))
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2698,11 +2718,11 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.hasBrickPack("brickswitchpurple"))
-                        {
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.hasBrickPack("brickswitchpurple"))
+                        //{
+                        if (this.owned)
                             setBrick(cx, cy, brick, count, (uint)player.Id);
-                        }
                         break;
                     }
                     case (uint)ItemTypes.GatePurple:
@@ -2711,10 +2731,11 @@ namespace EverybodyEdits.Game
                         var count = (uint)m.GetInt(4);
                         if (count > 99)
                             count = 99;
-                        if (this.owned && ((player.owner || player.canbemod)) &&
-                            player.getBrickPackCount("brickswitchpurple") * 10 > this.baseworld.purpleDoorGateCount() ||
-                            ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.DoorPurple) ||
-                             (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.GatePurple)))
+                        //if (this.owned && ((player.owner || player.canbemod)) &&
+                        //    player.getBrickPackCount("brickswitchpurple") * 10 > this.baseworld.purpleDoorGateCount() ||
+                        //    ((this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.DoorPurple) ||
+                        //     (this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.GatePurple)))
+                        if (this.owned)
                         {
                             setBrick(cx, cy, brick, count, (uint)player.Id);
                         }
