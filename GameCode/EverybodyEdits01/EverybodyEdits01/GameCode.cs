@@ -115,6 +115,9 @@ namespace MyGame
 
         public override void UserJoined(Player player)
         {
+            player.owner = true;
+            player.canEdit = true;
+
             player.PlayerObject.Set("Online", true);
             player.PlayerObject.Save();
             if (this.editkey == "" || (player.JoinData.ContainsKey("editkey") && player.JoinData["editkey"] == this.editkey))

@@ -2421,8 +2421,9 @@ namespace EverybodyEdits.Game
                     case 255:
                     {
                         // Spawn point
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickspawn") > this.baseworld.spawnCount())
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickspawn") > this.baseworld.spawnCount())
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2432,8 +2433,9 @@ namespace EverybodyEdits.Game
                     case (int)ItemTypes.Checkpoint:
                     {
                         // Spawn point
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickcheckpoint") > this.baseworld.checkpointCount())
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickcheckpoint") > this.baseworld.checkpointCount())
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }
@@ -2441,8 +2443,9 @@ namespace EverybodyEdits.Game
                     }
                     case (int)ItemTypes.Fire:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickfire") * 10 > this.baseworld.fireHazardCount())
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickfire") * 10 > this.baseworld.fireHazardCount())
+                        if (this.owned)
                         {
                             setBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }

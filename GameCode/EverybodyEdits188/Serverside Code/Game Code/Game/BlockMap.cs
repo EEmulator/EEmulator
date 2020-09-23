@@ -110,7 +110,7 @@ namespace EverybodyEdits.Game
                 return true;
             }
 
-            if (blockNameInVault != String.Empty) Console.WriteLine("Not available to user: " + blockid);
+            Console.WriteLine("Not available to user: " + blockid + " blockNameInVault: " + blockNameInVault ?? "N/A");
 
             return false;
         }

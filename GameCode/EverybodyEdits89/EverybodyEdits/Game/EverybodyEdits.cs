@@ -507,21 +507,21 @@ namespace EverybodyEdits.Game
                 }
                 case "god":
                     if (player.canEdit)
-                    //if (this.lockedroom && player.canEdit)
                     {
                         base.Broadcast("god", new object[]
                         {
-                        player.Id,
-                        m.GetBoolean(0U)
+                            player.Id,
+                            m.GetBoolean(0U)
                         });
+
                         player.isgod = m.GetBoolean(0U);
                     }
                     return;
                 case "time":
                     player.Send("time", new object[]
                     {
-                    m.GetDouble(0U),
-                    this.getTime()
+                        m.GetDouble(0U),
+                        this.getTime()
                     });
                     return;
                 case "access":
