@@ -57,7 +57,7 @@ namespace EEmulator
             this.DevelopmentServer.SetDll(this.GameId, this.GameAssembly.Dll);
             this.CreateDefault();
 
-            Process.Start(Path.Combine("inc", "flashplayer_32_sa_debug.exe"), $"\"" + "http://localhost:80/clients/" + this.Version.ToString() + "\"").WaitForExit();
+            Process.Start(Path.Combine("inc", "flashplayer_32_sa.exe"), $"\"" + "http://localhost:80/clients/" + this.Version.ToString() + "\"").WaitForExit();
         }
 
         /// <summary>

@@ -271,15 +271,15 @@ namespace MyGame
                     return;
                 }
                 case "god":
-                    if (this.lockedroom && player.canEdit)
-                    {
+                    //if (this.lockedroom && player.canEdit)
+                    //{
                         base.Broadcast("god", new object[]
                         {
                         player.Id,
                         m.GetBoolean(0U)
                         });
                         player.isgod = m.GetBoolean(0U);
-                    }
+                    //}
                     return;
                 case "time":
                     player.Send("time", new object[]

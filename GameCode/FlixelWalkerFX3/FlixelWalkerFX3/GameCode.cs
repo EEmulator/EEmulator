@@ -55,10 +55,13 @@ namespace MyGame
 
         public override void UserJoined(Player player)
         {
-            if (this.editkey == "" || (player.JoinData.ContainsKey("editkey") && player.JoinData["editkey"] == this.editkey))
-            {
-                player.canEdit = true;
-            }
+            player.canEdit = true;
+
+            //if (this.editkey == "" || (player.JoinData.ContainsKey("editkey") && player.JoinData["editkey"] == this.editkey))
+            //{
+            //    player.canEdit = true;
+            //}
+
             foreach (var player2 in base.Players)
             {
                 if (player2 != player)
