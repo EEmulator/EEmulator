@@ -447,6 +447,7 @@ namespace EverybodyEdits.Game
         public override bool AllowUserJoin(Player player)
         {
             Console.WriteLine("Users joining");
+            player.CanEdit = true;
 
             if (player.PlayerObject.Contains("linkedTo"))
             {
@@ -3023,7 +3024,7 @@ namespace EverybodyEdits.Game
                     case 710:
                     case 711:
                     {
-                        if ((player.Owner || player.IsAdmin) && player.HasGoldMembership)
+                        if ((player.Owner || player.IsAdmin) /*&& player.HasGoldMembership*/)
                         {
                             this.SetBrick(layerNum, cx, cy, brick, (uint)player.Id);
                         }

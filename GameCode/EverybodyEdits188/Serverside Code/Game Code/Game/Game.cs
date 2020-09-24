@@ -2453,9 +2453,11 @@ namespace EverybodyEdits.Game
                     }
                     case (int)ItemTypes.Spike:
                     {
-                        if (this.owned && (player.owner || player.canbemod) &&
-                            player.getBrickPackCount("brickspike") * 10 > this.baseworld.spikesCount() ||
-                            this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Spike)
+                        //if (this.owned && (player.owner || player.canbemod) &&
+                        //    player.getBrickPackCount("brickspike") * 10 > this.baseworld.spikesCount() ||
+                        //    this.baseworld.getBrickType(0, (int)cx, (int)cy) == (int)ItemTypes.Spike)
+                        //{
+                        if (this.owned)
                         {
                             var rotation = (uint)m.GetInt(4);
                             if (rotation >= 4) rotation -= 4;
